@@ -30,8 +30,9 @@ namespace ArchiveSystem
         public string selectedFolder = "";
         public string picture_path = "";
         public string Doc_source = "";
-        
-         
+        public int DepID = 0;
+
+
         string FTP_ip = ConfigurationSettings.AppSettings["FTP_Path"];
         string FTP_user = ConfigurationSettings.AppSettings["FTP_user"];
         string FTP_pass = ConfigurationSettings.AppSettings["FTP_pass"];
@@ -136,7 +137,7 @@ SELECT  [DepartmentID]
         void callLogin_info()
         {
             LBL_USERNAME.Text = Login._user;
-
+            DepID = Login._depID;
             //bring dep name from id 
             int depid = Login._depID;
 
@@ -164,9 +165,9 @@ SELECT  [DepartmentID]
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            metroTabControl1.SelectTab(0);
+             
             //--------------moh------------------
-           
+            metroTabControl1.SelectTab(0);
             COM_bookStatus.SelectedIndex = 0;
             COM_PaperType.SelectedIndex = 0;
             COM_priority.SelectedIndex = 0;
@@ -179,6 +180,8 @@ SELECT  [DepartmentID]
             Fill_bookType();
             callLogin_info();
             Select_Departments();
+            DepartmentBooks();
+            AssignmentBooks();
             //--------------end------------------
 
 
@@ -749,6 +752,116 @@ SELECT  [DepartmentID]
 
         }
 
+
+        private void DepartmentBooks()
+        {
+            try
+            {
+                string query = string.Format(@"SELECT   [ArchiveBookID]
+      ,[BookCode]
+      ,[BookNumber]
+      ,[BookDate]
+      ,[InboundNumber]
+      ,[InboundDate]
+      ,[Subject]
+      ,[BooksTypeID]
+      ,[From]
+      ,[To]
+      ,[BookPriority]
+      ,[ArchivedDate]
+      ,[BookPaperType]
+      ,[Notes]
+      ,[DepartmentID_archivedBy]
+      ,[UserID_archivedBy]
+      ,[BookStatus]
+      ,[Privacy]
+      ,[SearchKeys]
+  FROM [ArchiveSystem].[dbo].[ArchiveBooks_TBL] where DepartmentID_archivedBy={0}", DepID, con);
+
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable depBook = new DataTable();
+
+                adp.Fill(depBook);
+                DGV_DepartmentBooks.DataSource = depBook;
+
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private void AssignmentBooks()
+        {
+            try
+            {
+                string query = string.Format(@"   SELECT
+       [BookCode]
+      ,[BookNumber]
+      ,[BookDate]
+      ,[InboundNumber]
+      ,[InboundDate]
+      ,[Subject]
+      ,[BooksTypeID]
+      ,[From]
+      ,[To]
+      ,[BookPriority]
+      ,[ArchivedDate]
+      ,[BookPaperType]
+      ,[Notes]
+      ,[DepartmentID_archivedBy]
+      ,[UserID_archivedBy]
+      ,[BookStatus]
+      ,[Privacy]
+      ,[SearchKeys]
+
+            FROM[ArchiveSystem].[dbo].[Assign&Comment_TBL]
+   inner JOIN[ArchiveBooks_TBL] ON[Assign&Comment_TBL].ArchiveBookID = [ArchiveBooks_TBL].ArchiveBookID
+   where[Assign&Comment_TBL].DepartmentID = {0}", DepID, con);
+
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable AssignBooks = new DataTable();
+
+                adp.Fill(AssignBooks);
+                DGV_assignation.DataSource = AssignBooks;
+
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+         
+        }
+        private void LBL_USERNAME_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel29_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
         //private void panel3_Paint(object sender, PaintEventArgs e)
         //{
 

@@ -114,6 +114,19 @@
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.DGV_DepartmentBooks = new System.Windows.Forms.DataGridView();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.panel30 = new System.Windows.Forms.Panel();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.panel32 = new System.Windows.Forms.Panel();
+            this.DGV_assignation = new System.Windows.Forms.DataGridView();
             this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -130,10 +143,16 @@
             this.panel20.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.metroTabPage3.SuspendLayout();
+            this.metroTabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel29.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel26.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_DepartmentBooks)).BeginInit();
+            this.panel32.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -190,7 +209,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(10, 10);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.RightToLeftLayout = true;
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(1025, 559);
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
@@ -861,6 +880,12 @@
             // 
             // metroTabPage3
             // 
+            this.metroTabPage3.Controls.Add(this.panel26);
+            this.metroTabPage3.Controls.Add(this.panel25);
+            this.metroTabPage3.Controls.Add(this.panel24);
+            this.metroTabPage3.Controls.Add(this.panel23);
+            this.metroTabPage3.Controls.Add(this.panel22);
+            this.metroTabPage3.Controls.Add(this.panel21);
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.HorizontalScrollbarSize = 10;
@@ -875,6 +900,11 @@
             // 
             // metroTabPage4
             // 
+            this.metroTabPage4.Controls.Add(this.panel32);
+            this.metroTabPage4.Controls.Add(this.panel27);
+            this.metroTabPage4.Controls.Add(this.panel28);
+            this.metroTabPage4.Controls.Add(this.panel30);
+            this.metroTabPage4.Controls.Add(this.panel31);
             this.metroTabPage4.HorizontalScrollbarBarColor = true;
             this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.HorizontalScrollbarSize = 10;
@@ -1025,6 +1055,7 @@
             this.LBL_USERNAME.Size = new System.Drawing.Size(38, 14);
             this.LBL_USERNAME.TabIndex = 167;
             this.LBL_USERNAME.Text = "label2";
+            this.LBL_USERNAME.Click += new System.EventHandler(this.LBL_USERNAME_Click);
             // 
             // panel29
             // 
@@ -1034,6 +1065,7 @@
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(1045, 20);
             this.panel29.TabIndex = 4;
+            this.panel29.Paint += new System.Windows.Forms.PaintEventHandler(this.panel29_Paint);
             // 
             // FOLDERS_prefermCLick
             // 
@@ -1094,6 +1126,114 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panel21
+            // 
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel21.Location = new System.Drawing.Point(1007, 0);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(10, 517);
+            this.panel21.TabIndex = 2;
+            // 
+            // panel22
+            // 
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel22.Location = new System.Drawing.Point(0, 0);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(10, 517);
+            this.panel22.TabIndex = 3;
+            // 
+            // panel23
+            // 
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel23.Location = new System.Drawing.Point(10, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(997, 10);
+            this.panel23.TabIndex = 4;
+            // 
+            // panel24
+            // 
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel24.Location = new System.Drawing.Point(10, 507);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(997, 10);
+            this.panel24.TabIndex = 5;
+            // 
+            // panel25
+            // 
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel25.Location = new System.Drawing.Point(10, 10);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(997, 94);
+            this.panel25.TabIndex = 6;
+            // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.DGV_DepartmentBooks);
+            this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel26.Location = new System.Drawing.Point(10, 104);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(997, 403);
+            this.panel26.TabIndex = 7;
+            // 
+            // DGV_DepartmentBooks
+            // 
+            this.DGV_DepartmentBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_DepartmentBooks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_DepartmentBooks.Location = new System.Drawing.Point(0, 0);
+            this.DGV_DepartmentBooks.Name = "DGV_DepartmentBooks";
+            this.DGV_DepartmentBooks.Size = new System.Drawing.Size(997, 403);
+            this.DGV_DepartmentBooks.TabIndex = 0;
+            // 
+            // panel27
+            // 
+            this.panel27.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel27.Location = new System.Drawing.Point(10, 10);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(997, 94);
+            this.panel27.TabIndex = 10;
+            // 
+            // panel28
+            // 
+            this.panel28.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel28.Location = new System.Drawing.Point(10, 0);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(997, 10);
+            this.panel28.TabIndex = 9;
+            // 
+            // panel30
+            // 
+            this.panel30.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel30.Location = new System.Drawing.Point(0, 0);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(10, 517);
+            this.panel30.TabIndex = 8;
+            // 
+            // panel31
+            // 
+            this.panel31.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel31.Location = new System.Drawing.Point(1007, 0);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(10, 517);
+            this.panel31.TabIndex = 7;
+            // 
+            // panel32
+            // 
+            this.panel32.Controls.Add(this.DGV_assignation);
+            this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel32.Location = new System.Drawing.Point(10, 104);
+            this.panel32.Name = "panel32";
+            this.panel32.Size = new System.Drawing.Size(997, 413);
+            this.panel32.TabIndex = 11;
+            // 
+            // DGV_assignation
+            // 
+            this.DGV_assignation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_assignation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_assignation.Location = new System.Drawing.Point(0, 0);
+            this.DGV_assignation.Name = "DGV_assignation";
+            this.DGV_assignation.Size = new System.Drawing.Size(997, 413);
+            this.DGV_assignation.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1132,11 +1272,17 @@
             this.panel15.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.metroTabPage3.ResumeLayout(false);
+            this.metroTabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel29.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel26.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_DepartmentBooks)).EndInit();
+            this.panel32.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1230,6 +1376,19 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button FOLDERS_prefermCLick;
         private System.Windows.Forms.Button BTN_RefrshFolders;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.DataGridView DGV_DepartmentBooks;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel panel32;
+        private System.Windows.Forms.DataGridView DGV_assignation;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.Panel panel31;
     }
 }
 
