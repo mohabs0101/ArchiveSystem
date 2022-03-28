@@ -353,6 +353,7 @@
             this.DGV_Folders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.DGV_Folders.Size = new System.Drawing.Size(201, 121);
             this.DGV_Folders.TabIndex = 0;
+            this.DGV_Folders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Folders_CellContentClick);
             this.DGV_Folders.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Folders_CellMouseClick);
             // 
             // panel19

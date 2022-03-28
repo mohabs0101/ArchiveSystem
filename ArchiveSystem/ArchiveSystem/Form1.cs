@@ -689,7 +689,7 @@ SELECT  [DepartmentID]
                 Properties.Settings.Default.DOC_Source = Doc_source;
 
                 Properties.Settings.Default.Save();
-                this.Form1_Load(null, null);
+                
             }
             catch
             {
@@ -742,6 +742,11 @@ SELECT  [DepartmentID]
         private void BTN_RefrshFolders_Click(object sender, EventArgs e)
         {
             Refresh_Folders();
+        }
+
+        private void DGV_Folders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         //private void panel3_Paint(object sender, PaintEventArgs e)
