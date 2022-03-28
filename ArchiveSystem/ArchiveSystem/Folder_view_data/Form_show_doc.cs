@@ -99,7 +99,7 @@ namespace ArchiveSystem.Folder_view_data
 
             foreach (string Item  in ListView_show_doc.SelectedItems)
             {
-                pictureBox_show_doc.Load(path_folder_client_temp + @"\" Item.in);
+                //pictureBox_show_doc.Load(path_folder_client_temp + @"\" Item.in);
 
             }
 
