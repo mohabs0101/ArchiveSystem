@@ -33,9 +33,9 @@ namespace ArchiveSystem
         public int DepID = 0;
 
 
-        string FTP_ip = ConfigurationSettings.AppSettings["FTP_Path"];
-        string FTP_user = ConfigurationSettings.AppSettings["FTP_user"];
-        string FTP_pass = ConfigurationSettings.AppSettings["FTP_pass"];
+        string FTP_ip = ConfigurationSettings.AppSettings["FTP_Server_Ip"];
+        string FTP_user = ConfigurationSettings.AppSettings["FTP_Server_user"];
+        string FTP_pass = ConfigurationSettings.AppSettings["FTP_Server_pass"];
 
 
 
@@ -180,7 +180,7 @@ SELECT  [DepartmentID]
             Fill_bookType();
             callLogin_info();
             Select_Departments();
-            DepartmentBooks();
+            //DepartmentBooks();
             AssignmentBooks();
             //--------------end------------------
 
@@ -286,7 +286,7 @@ SELECT  [DepartmentID]
             string From = TXT_From.Text;
             string To = TXT_To.Text;
             string SearchKeys = TXT_SearchKEys.Text;
-
+            string Question = TXT_assignTitle.Text;
             // check list 
             //get list of checked rows 
             List<string> files_checked = new List<string>();
@@ -411,9 +411,10 @@ SELECT  [DepartmentID]
                         string asssignQuery = string.Format(@" INSERT INTO [dbo].[Assign&Comment_TBL]
            ([ArchiveBookID]
            ,[DepartmentID]
-           ,[Comment])
+           ,[Comment]
+,[Question])
      VALUES
-           ( {0},{1},N'{2}')", Book_id, id, "", con);
+           ( {0},{1},N'{2}',N'{3}')", Book_id, id, "", Question, con);
 
                         con.Open();
                         SqlCommand cmd2 = new SqlCommand(asssignQuery, con);
@@ -753,53 +754,53 @@ SELECT  [DepartmentID]
         }
 
 
-        private void DepartmentBooks()
-        {
-            try
-            {
-                string query = string.Format(@"SELECT   [ArchiveBookID]
-      ,[BookCode]
-      ,[BookNumber]
-      ,[BookDate]
-      ,[InboundNumber]
-      ,[InboundDate]
-      ,[Subject]
-      ,[BooksTypeID]
-      ,[From]
-      ,[To]
-      ,[BookPriority]
-      ,[ArchivedDate]
-      ,[BookPaperType]
-      ,[Notes]
-      ,[DepartmentID_archivedBy]
-      ,[UserID_archivedBy]
-      ,[BookStatus]
-      ,[Privacy]
-      ,[SearchKeys]
-  FROM [ArchiveSystem].[dbo].[ArchiveBooks_TBL] where DepartmentID_archivedBy={0}", DepID, con);
+  //      private void DepartmentBooks()
+  //      {
+  //          try
+  //          {
+  //              string query = string.Format(@"SELECT   [ArchiveBookID]
+  //    ,[BookCode]
+  //    ,[BookNumber]
+  //    ,[BookDate]
+  //    ,[InboundNumber]
+  //    ,[InboundDate]
+  //    ,[Subject]
+  //    ,[BooksTypeID]
+  //    ,[From]
+  //    ,[To]
+  //    ,[BookPriority]
+  //    ,[ArchivedDate]
+  //    ,[BookPaperType]
+  //    ,[Notes]
+  //    ,[DepartmentID_archivedBy]
+  //    ,[UserID_archivedBy]
+  //    ,[BookStatus]
+  //    ,[Privacy]
+  //    ,[SearchKeys]
+  //FROM [ArchiveSystem].[dbo].[ArchiveBooks_TBL] where DepartmentID_archivedBy={0}", DepID, con);
 
 
 
 
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
+  //              con.Open();
+  //              SqlCommand cmd = new SqlCommand(query, con);
 
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+  //              SqlDataAdapter adp = new SqlDataAdapter(cmd);
 
-                DataTable depBook = new DataTable();
+  //              DataTable depBook = new DataTable();
 
-                adp.Fill(depBook);
-                DGV_DepartmentBooks.DataSource = depBook;
+  //              adp.Fill(depBook);
+  //              DGV_DepartmentBooks.DataSource = depBook;
 
-                con.Close();
+  //              con.Close();
 
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+  //          }
+  //          catch (Exception ex)
+  //          {
+  //              MessageBox.Show(ex.ToString());
+  //          }
+  //      }
         private void AssignmentBooks()
         {
             try
