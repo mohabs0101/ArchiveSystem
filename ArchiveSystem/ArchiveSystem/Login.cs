@@ -22,6 +22,8 @@ namespace ArchiveSystem
         public static int _userID;
         public static int _depID;
         public static string _permitionTYpeID;
+        
+
         public static string _con = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         SqlConnection con = new SqlConnection(_con);
 

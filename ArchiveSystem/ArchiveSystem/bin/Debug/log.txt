@@ -159,3 +159,41 @@
 
 3/28/2022 11:31:13 AM: Application started
 3/28/2022 11:31:13 AM: Configuration loaded
+
+3/28/2022 11:43:30 AM: Application started
+3/28/2022 11:43:30 AM: Configuration loaded
+
+3/28/2022 12:49:13 PM: Application started
+3/28/2022 12:49:13 PM: Configuration loaded
+
+3/28/2022 1:28:23 PM: Application started
+3/28/2022 1:28:23 PM: Configuration loaded
+3/28/2022 1:31:25 PM: Configuration saved
+3/28/2022 1:31:30 PM: Starting acquisition (Brother)
+3/28/2022 1:31:30 PM: Setup device handling
+3/28/2022 1:31:30 PM: Setup device properties
+3/28/2022 1:31:30 PM: DEBUG: document handling 2
+3/28/2022 1:31:30 PM: DEBUG: feeder status 3
+3/28/2022 1:31:45 PM: Finished scanning 1 files
+3/28/2022 1:31:45 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\كتاب خاص للذاتية
+
+3/28/2022 1:32:30 PM: Application started
+3/28/2022 1:32:30 PM: Configuration loaded
+
+3/28/2022 1:33:43 PM: Application started
+3/28/2022 1:33:43 PM: Configuration loaded
+
+3/28/2022 1:35:52 PM: Application started
+3/28/2022 1:35:52 PM: Configuration loaded
+
+3/28/2022 1:36:44 PM: Application started
+3/28/2022 1:36:44 PM: Configuration loaded
+
+3/28/2022 1:40:31 PM: Application started
+3/28/2022 1:40:31 PM: Configuration loaded
+
+3/28/2022 1:42:43 PM: Application started
+3/28/2022 1:42:43 PM: Configuration loaded
+
+3/28/2022 1:43:29 PM: Application started
+3/28/2022 1:43:29 PM: Configuration loaded
