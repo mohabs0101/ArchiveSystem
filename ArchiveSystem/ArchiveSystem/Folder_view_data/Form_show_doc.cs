@@ -68,7 +68,7 @@ namespace ArchiveSystem.Folder_view_data
             ListView_show_doc.Items.Clear();
             ImageList_add_viwe.Images.Clear();
 
-            ImageList_add_viwe.ImageSize = new Size(100, 100);
+            ImageList_add_viwe.ImageSize = new Size(200, 200);
             ListView_show_doc.Columns[0].Width = 120;
 
             string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
@@ -93,6 +93,21 @@ namespace ArchiveSystem.Folder_view_data
 
         }
 
-        
+        private void ListView_show_doc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
+
+            foreach (string Item  in ListView_show_doc.SelectedItems)
+            {
+                pictureBox_show_doc.Load(path_folder_client_temp + @"\" Item.in);
+
+            }
+
+       
+           
+
+
+       
+        }
     }
 }
