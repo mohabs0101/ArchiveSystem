@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ScannerID>{6BDD1FC6-810F-11D0-BEC7-08002BE2092F}\0000</ScannerID>
+  <ScannerName>Brother DCP-7040</ScannerName>
+  <ButtonVID>0</ButtonVID>
+  <ButtonPID>0</ButtonPID>
+  <ButtonReadSize>0</ButtonReadSize>
+  <AutoConnect>false</AutoConnect>
+  <SavePath>C:\Users\mohab.MOHAMMED\Desktop\archivedocs\nbn</SavePath>
+  <ScanDpi>100</ScanDpi>
+  <ScanColor>1</ScanColor>
+  <ScanADF>false</ScanADF>
+  <ScanTryFlatbed>false</ScanTryFlatbed>
+  <StartMinimized>false</StartMinimized>
+  <ShowErrors>false</ShowErrors>
+</Config>
