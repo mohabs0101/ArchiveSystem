@@ -56,6 +56,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Scanning_Folder = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TXT_assignTitle = new System.Windows.Forms.TextBox();
             this.BTN_RefrshFolders = new System.Windows.Forms.Button();
             this.COM_bookStatus = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -117,8 +119,6 @@
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TXT_assignTitle = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -367,6 +367,7 @@
             this.panel19.Controls.Add(this.panel20);
             this.panel19.Controls.Add(this.BTN_addfolder);
             this.panel19.Controls.Add(this.BTN_DELFolder);
+            this.panel19.Controls.Add(this.BTN_RefrshFolders);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(0, 0);
             this.panel19.Name = "panel19";
@@ -379,7 +380,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(39, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(123, 28);
+            this.panel20.Size = new System.Drawing.Size(102, 28);
             this.panel20.TabIndex = 169;
             // 
             // TXT_addFolder
@@ -389,7 +390,7 @@
             this.TXT_addFolder.Location = new System.Drawing.Point(0, 0);
             this.TXT_addFolder.Multiline = true;
             this.TXT_addFolder.Name = "TXT_addFolder";
-            this.TXT_addFolder.Size = new System.Drawing.Size(123, 28);
+            this.TXT_addFolder.Size = new System.Drawing.Size(102, 28);
             this.TXT_addFolder.TabIndex = 167;
             this.TXT_addFolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -398,7 +399,7 @@
             this.BTN_addfolder.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.BTN_addfolder.Dock = System.Windows.Forms.DockStyle.Right;
             this.BTN_addfolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_addfolder.Location = new System.Drawing.Point(162, 0);
+            this.BTN_addfolder.Location = new System.Drawing.Point(141, 0);
             this.BTN_addfolder.Name = "BTN_addfolder";
             this.BTN_addfolder.Size = new System.Drawing.Size(39, 28);
             this.BTN_addfolder.TabIndex = 168;
@@ -462,7 +463,6 @@
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel12.Controls.Add(this.label3);
             this.panel12.Controls.Add(this.TXT_assignTitle);
-            this.panel12.Controls.Add(this.BTN_RefrshFolders);
             this.panel12.Controls.Add(this.COM_bookStatus);
             this.panel12.Controls.Add(this.label2);
             this.panel12.Controls.Add(this.COM_priority);
@@ -500,13 +500,32 @@
             this.panel12.Size = new System.Drawing.Size(723, 497);
             this.panel12.TabIndex = 3;
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(266, 319);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.TabIndex = 170;
+            this.label3.Text = "عنوان المتابعة";
+            // 
+            // TXT_assignTitle
+            // 
+            this.TXT_assignTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_assignTitle.Location = new System.Drawing.Point(66, 335);
+            this.TXT_assignTitle.Multiline = true;
+            this.TXT_assignTitle.Name = "TXT_assignTitle";
+            this.TXT_assignTitle.Size = new System.Drawing.Size(268, 52);
+            this.TXT_assignTitle.TabIndex = 169;
+            // 
             // BTN_RefrshFolders
             // 
-            this.BTN_RefrshFolders.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BTN_RefrshFolders.Dock = System.Windows.Forms.DockStyle.Right;
             this.BTN_RefrshFolders.Image = global::ArchiveSystem.Properties.Resources.icons8_refresh_16;
-            this.BTN_RefrshFolders.Location = new System.Drawing.Point(6, 103);
+            this.BTN_RefrshFolders.Location = new System.Drawing.Point(180, 0);
             this.BTN_RefrshFolders.Name = "BTN_RefrshFolders";
-            this.BTN_RefrshFolders.Size = new System.Drawing.Size(22, 25);
+            this.BTN_RefrshFolders.Size = new System.Drawing.Size(21, 28);
             this.BTN_RefrshFolders.TabIndex = 168;
             this.BTN_RefrshFolders.UseVisualStyleBackColor = true;
             this.BTN_RefrshFolders.Click += new System.EventHandler(this.BTN_RefrshFolders_Click);
@@ -1140,25 +1159,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // TXT_assignTitle
-            // 
-            this.TXT_assignTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXT_assignTitle.Location = new System.Drawing.Point(66, 335);
-            this.TXT_assignTitle.Multiline = true;
-            this.TXT_assignTitle.Name = "TXT_assignTitle";
-            this.TXT_assignTitle.Size = new System.Drawing.Size(268, 52);
-            this.TXT_assignTitle.TabIndex = 169;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(266, 319);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
-            this.label3.TabIndex = 170;
-            this.label3.Text = "عنوان المتابعة";
             // 
             // Form1
             // 
