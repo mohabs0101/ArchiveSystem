@@ -68,7 +68,7 @@ namespace ArchiveSystem.Folder_view_data
             ListView_show_doc.Items.Clear();
             ImageList_add_viwe.Images.Clear();
 
-            ImageList_add_viwe.ImageSize = new Size(200, 200);
+            ImageList_add_viwe.ImageSize = new Size(100, 100);
             ListView_show_doc.Columns[0].Width = 120;
 
             string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
@@ -89,25 +89,122 @@ namespace ArchiveSystem.Folder_view_data
                 ListView_show_doc.Items.Add(fi.Name, ImageList_add_viwe.Images.Count - 1);
 
             }
-          
+
 
         }
-
+        string pic;
         private void ListView_show_doc_SelectedIndexChanged(object sender, EventArgs e)
         {
             string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
 
-            foreach (string Item  in ListView_show_doc.SelectedItems)
+            ListView.SelectedListViewItemCollection breakfast = this.ListView_show_doc.SelectedItems;
+
+            foreach (ListViewItem Item in breakfast)
             {
-                //pictureBox_show_doc.Load(path_folder_client_temp + @"\" Item.in);
+
+                try
+                {
+                    pic = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                    pictureBox_show_doc.Load(pic);
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Process.Start(pic);
+                }
 
             }
 
-       
-           
+        }
 
+        void Rotat_img(RotateFlipType r90)
+        {
+            try
+            {
+                Image img = pictureBox_show_doc.Image;
+                img.RotateFlip(r90);
+                pictureBox_show_doc.Image = img;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private void btn_RotateR90_Click(object sender, EventArgs e)
+        {
+            Rotat_img(RotateFlipType.Rotate90FlipNone);
+        }
+        private void btn_RotateL90_Click(object sender, EventArgs e)
+        {
+            Rotat_img(RotateFlipType.Rotate180FlipNone);
+        }
 
        
+
+       
+
+        private void ZoomInOut(bool zoom)
+        {
+            try
+            { 
+            //Zoom ratio by which the images will be zoomed by default
+            int zoomRatio = 10;
+            //Set the zoomed width and height
+            int widthZoom = pictureBox_show_doc.Width * zoomRatio / 100;
+            int heightZoom = pictureBox_show_doc.Height * zoomRatio / 100;
+            //zoom = true --> zoom in
+            //zoom = false --> zoom out
+            if (!zoom)
+            {
+                widthZoom *= -1;
+                heightZoom *= -1;
+            }
+            //Add the width and height to the picture box dimensions
+            pictureBox_show_doc.Width += widthZoom;
+            pictureBox_show_doc.Height += heightZoom;
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+        private void btn_zoom_in_Click(object sender, EventArgs e)
+        {
+            ZoomInOut(true);
+        }
+
+        private void btn_zoom_out_Click(object sender, EventArgs e)
+        {
+            ZoomInOut(false);
+        }
+
+        private void cm_type_show_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cm_type_show.SelectedIndex == 0)
+            {
+                ListView_show_doc.View = View.Details;
+                ListView_show_doc.GridLines = true;
+            }
+            else if (cm_type_show.SelectedIndex == 1)
+            { ListView_show_doc.View = View.LargeIcon; }
+            else if (cm_type_show.SelectedIndex == 2)
+            { ListView_show_doc.View = View.List; }
+            else if (cm_type_show.SelectedIndex == 3)
+            { ListView_show_doc.View = View.SmallIcon; }
+            else if (cm_type_show.SelectedIndex == 4)
+            { //ListView_show_doc.View = View.Tile
+            }
+
+        }
+        private void TSM_open_file_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(pic);
+        }
+
+        private void TSM_open_all_file_Click(object sender, EventArgs e)
+        {
+            string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
+            System.Diagnostics.Process.Start(path_folder_client_temp);
         }
     }
 }
