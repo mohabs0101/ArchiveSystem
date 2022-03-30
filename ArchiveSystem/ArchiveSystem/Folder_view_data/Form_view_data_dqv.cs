@@ -33,7 +33,6 @@ namespace ArchiveSystem.Folder_view_data
         {
 
 
-
             adapter = new SqlDataAdapter(@"SELECT
 
 dbo.ArchiveBooks_TBL.BookCode as [كود الكتاب],
@@ -248,6 +247,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             }
         }
 
+        public static string BookCode;
         private void advanc_dgv_view_data_doc_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
            try
@@ -283,6 +283,8 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
 
                 var path = string.Format(path_folder_client_temp);
+
+                BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
 
                 Form_show_doc s_doc1 = new Form_show_doc();
                 s_doc1.Show();

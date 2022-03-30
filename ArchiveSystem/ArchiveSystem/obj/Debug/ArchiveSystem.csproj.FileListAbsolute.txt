@@ -74,3 +74,4 @@ C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\
 C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.pdb
 C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Folder_view_data.Form_show_doc.resources
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Folder_view_data.Form_show_doc.resources
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Folder_Tracker.Form_Tracker_Procedure.resources

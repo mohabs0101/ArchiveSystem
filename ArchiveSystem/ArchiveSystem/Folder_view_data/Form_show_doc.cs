@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Configuration;
 using System.Diagnostics;
+using System.Data.SqlClient;
+using ArchiveSystem.Folder_Tracker;
 
 namespace ArchiveSystem.Folder_view_data
 {
@@ -27,7 +29,41 @@ namespace ArchiveSystem.Folder_view_data
             throw new NotImplementedException();
         }
 
+        public static string _con = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+        SqlConnection con = new SqlConnection(_con);
 
+        DataTable dt = new DataTable();
+        SqlDataAdapter adapter;
+
+
+        void Fill_bookType()
+        {
+            try
+            {
+                string query = string.Format(@" SELECT   [BooksTypeID]
+      ,[BookTypeName]
+  FROM [ArchiveSystem].[dbo].[BooksType_TBL]", con);
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable booktypes = new DataTable();
+
+                adp.Fill(booktypes);
+                COM_bookType.DataSource = booktypes;
+                COM_bookType.DisplayMember = "BookTypeName";
+                COM_bookType.ValueMember = "BooksTypeID";
+
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
         String fn_g;
 
@@ -58,18 +94,76 @@ namespace ArchiveSystem.Folder_view_data
 
         }
 
-
-
-        private void Form_show_doc_Load(object sender, EventArgs e)
+       
+        public static string book_ID;
+        void read_details_doc()
         {
-            ListView_show_doc.Columns.Add("الملف", 300);
-            ListView_show_doc.View = View.LargeIcon;
+            con.Open();
+            SqlCommand cmd = new SqlCommand(@"SELECT  
+dbo.ArchiveBooks_TBL.ArchiveBookID,
+dbo.ArchiveBooks_TBL.BookCode,
+dbo.ArchiveBooks_TBL.BookNumber,
+dbo.ArchiveBooks_TBL.BookDate,
+dbo.ArchiveBooks_TBL.InboundNumber,
+dbo.ArchiveBooks_TBL.InboundDate,
+dbo.ArchiveBooks_TBL.Subject,
+dbo.BooksType_TBL.BookTypeName,
+dbo.ArchiveBooks_TBL.[From],
+dbo.ArchiveBooks_TBL.[To],
+dbo.ArchiveBooks_TBL.SearchKeys,
+dbo.ArchiveBooks_TBL.BookPriority,
+dbo.ArchiveBooks_TBL.ArchivedDate,
+dbo.ArchiveBooks_TBL.BookPaperType,
+dbo.ArchiveBooks_TBL.Notes,
+dbo.Departments_TBL.DepartmentName,
+dbo.Users_TBL.Username,
+dbo.ArchiveBooks_TBL.BookStatus,
+dbo.ArchiveBooks_TBL.Privacy
+  FROM ArchiveBooks_TBL INNER JOIN
+                  dbo.Departments_TBL ON dbo.ArchiveBooks_TBL.DepartmentID_archivedBy = dbo.Departments_TBL.DepartmentID INNER JOIN
+                  dbo.Users_TBL ON dbo.ArchiveBooks_TBL.UserID_archivedBy = dbo.Users_TBL.UserID INNER JOIN
+                  dbo.BooksType_TBL ON dbo.ArchiveBooks_TBL.BooksTypeID = dbo.BooksType_TBL.BooksTypeID
+WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
+            cmd.Parameters.AddWithValue("@Param1", Form_view_data_dqv.BookCode);
+
+            SqlDataReader dr1 = cmd.ExecuteReader();
+            
+
+           dr1.Read();
+            if (dr1.HasRows)
+            {
+                book_ID = dr1["ArchiveBookID"].ToString();
+                txt_book_code.Text = dr1["BookCode"].ToString();
+                TXT_bookNumber.Text = dr1["BookNumber"].ToString();
+                DT_bookDate.Text = dr1["BookDate"].ToString();
+                TXT_Book_recive_number.Text = dr1["InboundNumber"].ToString();
+                DT_bookRecive_date.Text = dr1["InboundDate"].ToString();
+                TXT_Subject.Text = dr1["Subject"].ToString();
+                COM_bookType.Text = dr1["BookTypeName"].ToString();
+                TXT_From.Text = dr1["From"].ToString();
+                TXT_To.Text = dr1[@"To"].ToString();
+                TXT_SearchKEys.Text = dr1["SearchKeys"].ToString();
+                COM_priority.Text = dr1["BookPriority"].ToString();
+                txt_ArchivedDate.Text = dr1["ArchivedDate"].ToString();
+                COM_PaperType.Text = dr1["BookPaperType"].ToString();
+                TXT_notes.Text = dr1["Notes"].ToString();
+                txt_DepartmentName.Text = dr1["DepartmentName"].ToString();
+                txt_Username.Text = dr1["Username"].ToString();
+                COM_bookStatus.Text = dr1["BookStatus"].ToString();
+                COM_privicy.Text = dr1["Privacy"].ToString();
+
+            }
+            dr1.Close();
+            con.Close();
+        }
+
+       
+
+        void show_files_doc()
+        {
             ListView_show_doc.Items.Clear();
             ImageList_add_viwe.Images.Clear();
-
-            ImageList_add_viwe.ImageSize = new Size(100, 100);
-            ListView_show_doc.Columns[0].Width = 120;
 
             string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
 
@@ -89,9 +183,24 @@ namespace ArchiveSystem.Folder_view_data
                 ListView_show_doc.Items.Add(fi.Name, ImageList_add_viwe.Images.Count - 1);
 
             }
-
-
         }
+
+        private void Form_show_doc_Load(object sender, EventArgs e)
+        {
+            Fill_bookType();
+
+            ListView_show_doc.Columns.Add("الملف", 300);
+            cm_type_show.SelectedIndex = 1; //or ListView_show_doc.View = View.LargeIcon;
+            ImageList_add_viwe.ImageSize = new Size(100, 100);
+            ListView_show_doc.Columns[0].Width = 250;
+
+
+            read_details_doc();
+            show_files_doc();
+           
+        }
+
+
         string pic;
         private void ListView_show_doc_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -205,6 +314,12 @@ namespace ArchiveSystem.Folder_view_data
         {
             string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
             System.Diagnostics.Process.Start(path_folder_client_temp);
+        }
+
+        private void btn_add_Tracker_Click(object sender, EventArgs e)
+        {
+            Form_Tracker_Procedure tp = new Form_Tracker_Procedure();
+            tp.Show();
         }
     }
 }
