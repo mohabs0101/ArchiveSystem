@@ -238,8 +238,7 @@
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "تسجيل الدخول";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Right;
-            this.Load += new System.EventHandler(this.Login_Load);
-            this.panel5.ResumeLayout(false);
+             this.panel5.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

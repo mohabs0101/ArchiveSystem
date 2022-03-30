@@ -57,8 +57,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Scanning_Folder = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TXT_assignTitle = new System.Windows.Forms.TextBox();
             this.COM_bookStatus = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.COM_priority = new System.Windows.Forms.ComboBox();
@@ -67,8 +65,6 @@
             this.COM_bookType = new System.Windows.Forms.ComboBox();
             this.DT_bookRecive_date = new System.Windows.Forms.DateTimePicker();
             this.DT_bookDate = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.COMLIST_assination = new System.Windows.Forms.CheckedListBox();
             this.BTN_Archive = new System.Windows.Forms.Button();
             this.TXT_SearchKEys = new System.Windows.Forms.TextBox();
             this.TXT_bookNumber = new System.Windows.Forms.TextBox();
@@ -111,19 +107,19 @@
             this.button3 = new System.Windows.Forms.Button();
             this.Folder_Brows_DOC_Source = new System.Windows.Forms.FolderBrowserDialog();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
             this.LBL_permitionType = new System.Windows.Forms.Label();
+            this.panel22 = new System.Windows.Forms.Panel();
             this.LBL_department = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
             this.LBL_USERNAME = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
             this.FOLDERS_prefermCLick = new System.Windows.Forms.Button();
             this.LBL_ARCHIVEtitle = new System.Windows.Forms.Label();
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.panel23 = new System.Windows.Forms.Panel();
             this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -144,11 +140,11 @@
             this.panel32.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.panel29.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel21.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -367,7 +363,6 @@
             this.DGV_Folders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.DGV_Folders.Size = new System.Drawing.Size(201, 121);
             this.DGV_Folders.TabIndex = 0;
-            this.DGV_Folders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Folders_CellContentClick);
             this.DGV_Folders.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Folders_CellMouseClick);
             // 
             // panel19
@@ -438,7 +433,6 @@
             this.BTN_RefrshFolders.Size = new System.Drawing.Size(21, 28);
             this.BTN_RefrshFolders.TabIndex = 168;
             this.BTN_RefrshFolders.UseVisualStyleBackColor = true;
-            this.BTN_RefrshFolders.Click += new System.EventHandler(this.BTN_RefrshFolders_Click);
             // 
             // panel15
             // 
@@ -480,8 +474,6 @@
             // 
             this.panel12.AutoScroll = true;
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel12.Controls.Add(this.label3);
-            this.panel12.Controls.Add(this.TXT_assignTitle);
             this.panel12.Controls.Add(this.COM_bookStatus);
             this.panel12.Controls.Add(this.label2);
             this.panel12.Controls.Add(this.COM_priority);
@@ -490,8 +482,6 @@
             this.panel12.Controls.Add(this.COM_bookType);
             this.panel12.Controls.Add(this.DT_bookRecive_date);
             this.panel12.Controls.Add(this.DT_bookDate);
-            this.panel12.Controls.Add(this.label5);
-            this.panel12.Controls.Add(this.COMLIST_assination);
             this.panel12.Controls.Add(this.BTN_Archive);
             this.panel12.Controls.Add(this.TXT_SearchKEys);
             this.panel12.Controls.Add(this.TXT_bookNumber);
@@ -519,25 +509,6 @@
             this.panel12.Size = new System.Drawing.Size(723, 497);
             this.panel12.TabIndex = 3;
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(275, 319);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
-            this.label3.TabIndex = 170;
-            this.label3.Text = "عنوان المتابعة";
-            // 
-            // TXT_assignTitle
-            // 
-            this.TXT_assignTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXT_assignTitle.Location = new System.Drawing.Point(75, 335);
-            this.TXT_assignTitle.Multiline = true;
-            this.TXT_assignTitle.Name = "TXT_assignTitle";
-            this.TXT_assignTitle.Size = new System.Drawing.Size(268, 52);
-            this.TXT_assignTitle.TabIndex = 169;
-            // 
             // COM_bookStatus
             // 
             this.COM_bookStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -545,7 +516,7 @@
             this.COM_bookStatus.Items.AddRange(new object[] {
             "منتهي",
             "قيد المتابعة"});
-            this.COM_bookStatus.Location = new System.Drawing.Point(383, 260);
+            this.COM_bookStatus.Location = new System.Drawing.Point(198, 201);
             this.COM_bookStatus.Name = "COM_bookStatus";
             this.COM_bookStatus.Size = new System.Drawing.Size(136, 21);
             this.COM_bookStatus.TabIndex = 12;
@@ -555,7 +526,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(456, 236);
+            this.label2.Location = new System.Drawing.Point(271, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 21);
             this.label2.TabIndex = 167;
@@ -623,36 +594,12 @@
             this.DT_bookDate.TabIndex = 2;
             this.DT_bookDate.Value = new System.DateTime(2022, 3, 23, 0, 0, 0, 0);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(249, 190);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 21);
-            this.label5.TabIndex = 165;
-            this.label5.Text = "متابعة الاقسام";
-            // 
-            // COMLIST_assination
-            // 
-            this.COMLIST_assination.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.COMLIST_assination.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.COMLIST_assination.FormattingEnabled = true;
-            this.COMLIST_assination.HorizontalScrollbar = true;
-            this.COMLIST_assination.Location = new System.Drawing.Point(66, 216);
-            this.COMLIST_assination.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
-            this.COMLIST_assination.MultiColumn = true;
-            this.COMLIST_assination.Name = "COMLIST_assination";
-            this.COMLIST_assination.ScrollAlwaysVisible = true;
-            this.COMLIST_assination.Size = new System.Drawing.Size(268, 79);
-            this.COMLIST_assination.TabIndex = 14;
-            // 
             // BTN_Archive
             // 
             this.BTN_Archive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_Archive.BackColor = System.Drawing.Color.MediumAquamarine;
             this.BTN_Archive.Font = new System.Drawing.Font("Marlett", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_Archive.Location = new System.Drawing.Point(75, 393);
+            this.BTN_Archive.Location = new System.Drawing.Point(566, 360);
             this.BTN_Archive.Name = "BTN_Archive";
             this.BTN_Archive.Size = new System.Drawing.Size(142, 41);
             this.BTN_Archive.TabIndex = 16;
@@ -662,7 +609,7 @@
             // 
             // TXT_SearchKEys
             // 
-            this.TXT_SearchKEys.Location = new System.Drawing.Point(384, 308);
+            this.TXT_SearchKEys.Location = new System.Drawing.Point(381, 262);
             this.TXT_SearchKEys.Multiline = true;
             this.TXT_SearchKEys.Name = "TXT_SearchKEys";
             this.TXT_SearchKEys.Size = new System.Drawing.Size(326, 79);
@@ -723,10 +670,10 @@
             // 
             // TXT_notes
             // 
-            this.TXT_notes.Location = new System.Drawing.Point(384, 423);
+            this.TXT_notes.Location = new System.Drawing.Point(10, 262);
             this.TXT_notes.Multiline = true;
             this.TXT_notes.Name = "TXT_notes";
-            this.TXT_notes.Size = new System.Drawing.Size(324, 68);
+            this.TXT_notes.Size = new System.Drawing.Size(324, 79);
             this.TXT_notes.TabIndex = 15;
             // 
             // label10
@@ -817,7 +764,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(625, 284);
+            this.label15.Location = new System.Drawing.Point(622, 238);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(89, 21);
             this.label15.TabIndex = 144;
@@ -847,7 +794,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(645, 399);
+            this.label18.Location = new System.Drawing.Point(271, 236);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(67, 21);
             this.label18.TabIndex = 147;
@@ -1080,16 +1027,14 @@
             this.panel5.Size = new System.Drawing.Size(1045, 128);
             this.panel5.TabIndex = 4;
             // 
-            // label4
+            // panel23
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(939, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 19);
-            this.label4.TabIndex = 170;
-            this.label4.Text = ":         الصلاحية  ";
+            this.panel23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel23.Controls.Add(this.LBL_permitionType);
+            this.panel23.Location = new System.Drawing.Point(701, 112);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(233, 21);
+            this.panel23.TabIndex = 173;
             // 
             // LBL_permitionType
             // 
@@ -1100,7 +1045,15 @@
             this.LBL_permitionType.Size = new System.Drawing.Size(38, 14);
             this.LBL_permitionType.TabIndex = 169;
             this.LBL_permitionType.Text = "label4";
-            this.LBL_permitionType.Click += new System.EventHandler(this.LBL_permitionType_Click);
+            // 
+            // panel22
+            // 
+            this.panel22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel22.Controls.Add(this.LBL_department);
+            this.panel22.Location = new System.Drawing.Point(701, 94);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(233, 21);
+            this.panel22.TabIndex = 172;
             // 
             // LBL_department
             // 
@@ -1111,6 +1064,15 @@
             this.LBL_department.Size = new System.Drawing.Size(38, 14);
             this.LBL_department.TabIndex = 168;
             this.LBL_department.Text = "label3";
+            // 
+            // panel21
+            // 
+            this.panel21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel21.Controls.Add(this.LBL_USERNAME);
+            this.panel21.Location = new System.Drawing.Point(701, 74);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(233, 21);
+            this.panel21.TabIndex = 171;
             // 
             // LBL_USERNAME
             // 
@@ -1123,7 +1085,17 @@
             this.LBL_USERNAME.TabIndex = 167;
             this.LBL_USERNAME.Text = "label2";
             this.LBL_USERNAME.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LBL_USERNAME.Click += new System.EventHandler(this.LBL_USERNAME_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(939, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 19);
+            this.label4.TabIndex = 170;
+            this.label4.Text = ":         الصلاحية  ";
             // 
             // panel29
             // 
@@ -1133,7 +1105,6 @@
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(1045, 10);
             this.panel29.TabIndex = 4;
-            this.panel29.Paint += new System.Windows.Forms.PaintEventHandler(this.panel29_Paint);
             // 
             // FOLDERS_prefermCLick
             // 
@@ -1143,7 +1114,6 @@
             this.FOLDERS_prefermCLick.TabIndex = 169;
             this.FOLDERS_prefermCLick.Text = "ؤةي";
             this.FOLDERS_prefermCLick.UseVisualStyleBackColor = true;
-            this.FOLDERS_prefermCLick.Click += new System.EventHandler(this.FOLDERS_prefermCLick_Click);
             // 
             // LBL_ARCHIVEtitle
             // 
@@ -1194,33 +1164,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel21
-            // 
-            this.panel21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel21.Controls.Add(this.LBL_USERNAME);
-            this.panel21.Location = new System.Drawing.Point(701, 74);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(233, 21);
-            this.panel21.TabIndex = 171;
-            // 
-            // panel22
-            // 
-            this.panel22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel22.Controls.Add(this.LBL_department);
-            this.panel22.Location = new System.Drawing.Point(701, 94);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(233, 21);
-            this.panel22.TabIndex = 172;
-            // 
-            // panel23
-            // 
-            this.panel23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel23.Controls.Add(this.LBL_permitionType);
-            this.panel23.Location = new System.Drawing.Point(701, 112);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(233, 21);
-            this.panel23.TabIndex = 173;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1264,14 +1207,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel29.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
+            this.panel29.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1304,8 +1247,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckedListBox COMLIST_assination;
         private System.Windows.Forms.Button BTN_Archive;
         private System.Windows.Forms.TextBox TXT_SearchKEys;
         private System.Windows.Forms.TextBox TXT_bookNumber;
@@ -1369,8 +1310,6 @@
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.Panel panel31;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TXT_assignTitle;
         private System.Windows.Forms.Label LBL_permitionType;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel21;

@@ -24,3 +24,4 @@ C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\D
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.csproj.CopyComplete
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.exe
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.pdb
+C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Folder_Tracker.Form_Tracker_Procedure.resources
