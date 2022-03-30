@@ -44,7 +44,7 @@ namespace ArchiveSystem
 
 
 
-      public  void Refresh_Folders()
+        public void Refresh_Folders()
         {
             try
             {
@@ -62,7 +62,7 @@ namespace ArchiveSystem
                 }
                 DGV_Folders.DataSource = null;
                 DGV_Folders.DataSource = folderDT;
-              
+
             }
             catch
             {
@@ -140,7 +140,7 @@ SELECT  [DepartmentID]
             DepID = Login._depID;
             //bring dep name from id 
             int depid = Login._depID;
-
+            int permitionid = Login._permitionTYpeID;
             string query = string.Format(@" SELECT  [DepartmentID]
       ,[DepartmentName]
   FROM [ArchiveSystem].[dbo].[Departments_TBL] where DepartmentID={0}", depid, con);
@@ -161,11 +161,29 @@ SELECT  [DepartmentID]
             }
             con.Close();
 
+            string query2 = string.Format(@" SELECT  
+      [PermitionType]
+  FROM [ArchiveSystem].[dbo].[PermitionType_TBL] where PermitionTypeID={0}", permitionid, con);
 
+            con.Open();
+            SqlCommand cmd2 = new SqlCommand(query2, con);
+
+            SqlDataAdapter permition = new SqlDataAdapter(cmd2);
+
+            DataTable permitionDT = new DataTable();
+
+            permition.Fill(permitionDT);
+            if (permitionDT.Rows.Count > 0)
+            {
+                string per_name = permitionDT.Rows[0]["PermitionType"].ToString();
+                //put dep name in lable 
+                LBL_permitionType.Text = per_name;
+            }
+            con.Close();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-             
+
             //--------------moh------------------
             metroTabControl1.SelectTab(0);
             COM_bookStatus.SelectedIndex = 0;
@@ -342,6 +360,56 @@ SELECT  [DepartmentID]
                     boxes.Add(TXT_SearchKEys);
                 }
                 else { TXT_SearchKEys.BackColor = Color.White; }
+
+                if (string.IsNullOrWhiteSpace(TXT_assignTitle.Text))
+                {
+                    foreach (int indexChecked in COMLIST_assination.CheckedIndices)
+                    {
+                        if (COMLIST_assination.GetItemCheckState(indexChecked) == CheckState.Checked)
+                        {
+                            boxes.Add(TXT_assignTitle);
+
+
+                        }
+                        else if (COMLIST_assination.GetItemCheckState(indexChecked) != CheckState.Checked)
+                        {
+
+                            TXT_assignTitle.BackColor = Color.White;
+
+
+                        }
+                    }
+
+                }
+                else if (TXT_assignTitle.Text != null)
+                {
+
+
+                    foreach (int indexChecked in COMLIST_assination.CheckedIndices)
+                    { 
+                        if (COMLIST_assination.GetItemCheckState(indexChecked) == CheckState.Checked)
+                        {
+
+                            TXT_assignTitle.BackColor = Color.White;
+
+
+                        }
+                        else if (COMLIST_assination.GetItemCheckState(indexChecked) != CheckState.Checked)
+                        {
+
+                            MessageBox.Show("الرجاء مليء جميع الحقول");
+
+
+                        }
+                    }
+
+                }
+
+
+
+
+
+
                 foreach (var item in boxes)
                 {
                     if (string.IsNullOrWhiteSpace(item.Text))
@@ -454,7 +522,7 @@ SELECT  [DepartmentID]
 
 
                 foreach (var item in files_checked)
-                { 
+                {
 
                     string filenamechecked = item.ToString();
                     foreach (string file in Files)
@@ -491,7 +559,7 @@ SELECT  [DepartmentID]
                             //DGV_Files.Rows.RemoveAt(ColumnIndex);
                             //DGV_Files.Update();
                             //DGV_Files.Parent.Refresh();
-                            
+
                         }
 
 
@@ -638,9 +706,9 @@ SELECT  [DepartmentID]
         {
             ScanDialog sd = new ScanDialog();
 
-            
+
             sd.Show();
-            
+
         }
 
 
@@ -663,7 +731,7 @@ SELECT  [DepartmentID]
             Refresh_Folders();
         }
 
-         
+
 
         private void BTN_DELFolder_Click(object sender, EventArgs e)
         {
@@ -693,7 +761,7 @@ SELECT  [DepartmentID]
                 Properties.Settings.Default.DOC_Source = Doc_source;
 
                 Properties.Settings.Default.Save();
-                
+
             }
             catch
             {
@@ -703,14 +771,14 @@ SELECT  [DepartmentID]
 
         }
 
-      
+
 
         private void FOLDERS_prefermCLick_Click(object sender, EventArgs e)
         {
-          
+
         }
         //refres folder to display its files 
-      public  void folder_update ()
+        public void folder_update()
 
         {
             string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "", "*.*");//put variable name instade of path
@@ -754,53 +822,53 @@ SELECT  [DepartmentID]
         }
 
 
-  //      private void DepartmentBooks()
-  //      {
-  //          try
-  //          {
-  //              string query = string.Format(@"SELECT   [ArchiveBookID]
-  //    ,[BookCode]
-  //    ,[BookNumber]
-  //    ,[BookDate]
-  //    ,[InboundNumber]
-  //    ,[InboundDate]
-  //    ,[Subject]
-  //    ,[BooksTypeID]
-  //    ,[From]
-  //    ,[To]
-  //    ,[BookPriority]
-  //    ,[ArchivedDate]
-  //    ,[BookPaperType]
-  //    ,[Notes]
-  //    ,[DepartmentID_archivedBy]
-  //    ,[UserID_archivedBy]
-  //    ,[BookStatus]
-  //    ,[Privacy]
-  //    ,[SearchKeys]
-  //FROM [ArchiveSystem].[dbo].[ArchiveBooks_TBL] where DepartmentID_archivedBy={0}", DepID, con);
+        //      private void DepartmentBooks()
+        //      {
+        //          try
+        //          {
+        //              string query = string.Format(@"SELECT   [ArchiveBookID]
+        //    ,[BookCode]
+        //    ,[BookNumber]
+        //    ,[BookDate]
+        //    ,[InboundNumber]
+        //    ,[InboundDate]
+        //    ,[Subject]
+        //    ,[BooksTypeID]
+        //    ,[From]
+        //    ,[To]
+        //    ,[BookPriority]
+        //    ,[ArchivedDate]
+        //    ,[BookPaperType]
+        //    ,[Notes]
+        //    ,[DepartmentID_archivedBy]
+        //    ,[UserID_archivedBy]
+        //    ,[BookStatus]
+        //    ,[Privacy]
+        //    ,[SearchKeys]
+        //FROM [ArchiveSystem].[dbo].[ArchiveBooks_TBL] where DepartmentID_archivedBy={0}", DepID, con);
 
 
 
 
-  //              con.Open();
-  //              SqlCommand cmd = new SqlCommand(query, con);
+        //              con.Open();
+        //              SqlCommand cmd = new SqlCommand(query, con);
 
-  //              SqlDataAdapter adp = new SqlDataAdapter(cmd);
+        //              SqlDataAdapter adp = new SqlDataAdapter(cmd);
 
-  //              DataTable depBook = new DataTable();
+        //              DataTable depBook = new DataTable();
 
-  //              adp.Fill(depBook);
-  //              DGV_DepartmentBooks.DataSource = depBook;
+        //              adp.Fill(depBook);
+        //              DGV_DepartmentBooks.DataSource = depBook;
 
-  //              con.Close();
+        //              con.Close();
 
 
-  //          }
-  //          catch (Exception ex)
-  //          {
-  //              MessageBox.Show(ex.ToString());
-  //          }
-  //      }
+        //          }
+        //          catch (Exception ex)
+        //          {
+        //              MessageBox.Show(ex.ToString());
+        //          }
+        //      }
         private void AssignmentBooks()
         {
             try
@@ -852,7 +920,7 @@ SELECT  [DepartmentID]
             }
 
 
-         
+
         }
         private void LBL_USERNAME_Click(object sender, EventArgs e)
         {
@@ -860,6 +928,11 @@ SELECT  [DepartmentID]
         }
 
         private void panel29_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void LBL_permitionType_Click(object sender, EventArgs e)
         {
 
         }
