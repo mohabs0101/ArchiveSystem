@@ -31,12 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_show_doc));
             this.ListView_show_doc = new System.Windows.Forms.ListView();
+            this.ContextMenuStrip_right_click = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.TSM_open_file = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ImageList_add_viwe = new System.Windows.Forms.ImageList(this.components);
             this.ImageList_Extension = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TXT_notes = new System.Windows.Forms.TextBox();
+            this.TXT_To = new System.Windows.Forms.TextBox();
+            this.TXT_From = new System.Windows.Forms.TextBox();
+            this.TXT_Subject = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.COM_bookStatus = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.COM_priority = new System.Windows.Forms.ComboBox();
@@ -56,16 +65,17 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.TXT_Book_recive_number = new System.Windows.Forms.TextBox();
-            this.TXT_notes = new System.Windows.Forms.TextBox();
-            this.TXT_To = new System.Windows.Forms.TextBox();
-            this.TXT_From = new System.Windows.Forms.TextBox();
-            this.TXT_Subject = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.cm_type_show = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_zoom_out = new System.Windows.Forms.Button();
+            this.btn_zoom_in = new System.Windows.Forms.Button();
+            this.btn_Rotate_180 = new System.Windows.Forms.Button();
+            this.btn_Rotate_90 = new System.Windows.Forms.Button();
             this.pictureBox_show_doc = new System.Windows.Forms.PictureBox();
+            this.TSM_open_all_file = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenuStrip_right_click.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -83,21 +93,45 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ListView_show_doc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ListView_show_doc.ContextMenuStrip = this.ContextMenuStrip_right_click;
             this.ListView_show_doc.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListView_show_doc.LargeImageList = this.ImageList_add_viwe;
-            this.ListView_show_doc.Location = new System.Drawing.Point(10, 9);
+            this.ListView_show_doc.Location = new System.Drawing.Point(11, 54);
             this.ListView_show_doc.Name = "ListView_show_doc";
             this.ListView_show_doc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ListView_show_doc.Size = new System.Drawing.Size(273, 736);
+            this.ListView_show_doc.Size = new System.Drawing.Size(160, 632);
             this.ListView_show_doc.SmallImageList = this.ImageList_add_viwe;
             this.ListView_show_doc.TabIndex = 277;
             this.ListView_show_doc.UseCompatibleStateImageBehavior = false;
             this.ListView_show_doc.SelectedIndexChanged += new System.EventHandler(this.ListView_show_doc_SelectedIndexChanged);
             // 
+            // ContextMenuStrip_right_click
+            // 
+            this.ContextMenuStrip_right_click.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContextMenuStrip_right_click.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ContextMenuStrip_right_click.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSM_open_file,
+            this.ToolStripSeparator1,
+            this.TSM_open_all_file});
+            this.ContextMenuStrip_right_click.Name = "ContextMenuStrip_right_click";
+            this.ContextMenuStrip_right_click.Size = new System.Drawing.Size(211, 94);
+            // 
+            // TSM_open_file
+            // 
+            this.TSM_open_file.Name = "TSM_open_file";
+            this.TSM_open_file.Size = new System.Drawing.Size(210, 28);
+            this.TSM_open_file.Text = "فتح";
+            this.TSM_open_file.Click += new System.EventHandler(this.TSM_open_file_Click);
+            // 
+            // ToolStripSeparator1
+            // 
+            this.ToolStripSeparator1.Name = "ToolStripSeparator1";
+            this.ToolStripSeparator1.Size = new System.Drawing.Size(207, 6);
+            // 
             // ImageList_add_viwe
             // 
             this.ImageList_add_viwe.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.ImageList_add_viwe.ImageSize = new System.Drawing.Size(200, 200);
+            this.ImageList_add_viwe.ImageSize = new System.Drawing.Size(100, 100);
             this.ImageList_add_viwe.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // ImageList_Extension
@@ -160,48 +194,102 @@
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.splitContainer1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.splitContainer1.Size = new System.Drawing.Size(1482, 755);
-            this.splitContainer1.SplitterDistance = 547;
+            this.splitContainer1.Size = new System.Drawing.Size(1482, 735);
+            this.splitContainer1.SplitterDistance = 550;
             this.splitContainer1.TabIndex = 278;
             // 
-            // splitContainer2
+            // label7
             // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(430, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 27);
+            this.label7.TabIndex = 192;
+            this.label7.Text = "رقم الكتاب";
             // 
-            // splitContainer2.Panel1
+            // label8
             // 
-            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Silver;
-            this.splitContainer2.Panel1.Controls.Add(this.panel2);
-            this.splitContainer2.Panel1.Controls.Add(this.ListView_show_doc);
-            this.splitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(417, 92);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 27);
+            this.label8.TabIndex = 193;
+            this.label8.Text = "تاريخ الكتاب";
             // 
-            // splitContainer2.Panel2
+            // label9
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.pictureBox_show_doc);
-            this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.splitContainer2.Size = new System.Drawing.Size(931, 755);
-            this.splitContainer2.SplitterDistance = 287;
-            this.splitContainer2.TabIndex = 0;
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(440, 159);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 27);
+            this.label9.TabIndex = 194;
+            this.label9.Text = "رقم واردنا";
             // 
-            // panel1
+            // label10
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 755);
-            this.panel1.TabIndex = 0;
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(428, 228);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 27);
+            this.label10.TabIndex = 195;
+            this.label10.Text = "تاريخ واردنا";
             // 
-            // panel2
+            // TXT_notes
             // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 755);
-            this.panel2.TabIndex = 278;
+            this.TXT_notes.Location = new System.Drawing.Point(17, 261);
+            this.TXT_notes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TXT_notes.Multiline = true;
+            this.TXT_notes.Name = "TXT_notes";
+            this.TXT_notes.Size = new System.Drawing.Size(220, 82);
+            this.TXT_notes.TabIndex = 190;
+            // 
+            // TXT_To
+            // 
+            this.TXT_To.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXT_To.Location = new System.Drawing.Point(17, 192);
+            this.TXT_To.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TXT_To.Multiline = true;
+            this.TXT_To.Name = "TXT_To";
+            this.TXT_To.Size = new System.Drawing.Size(220, 31);
+            this.TXT_To.TabIndex = 189;
+            // 
+            // TXT_From
+            // 
+            this.TXT_From.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXT_From.Location = new System.Drawing.Point(17, 121);
+            this.TXT_From.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TXT_From.Multiline = true;
+            this.TXT_From.Name = "TXT_From";
+            this.TXT_From.Size = new System.Drawing.Size(220, 31);
+            this.TXT_From.TabIndex = 188;
+            // 
+            // TXT_Subject
+            // 
+            this.TXT_Subject.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXT_Subject.Location = new System.Drawing.Point(17, 53);
+            this.TXT_Subject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TXT_Subject.Multiline = true;
+            this.TXT_Subject.Name = "TXT_Subject";
+            this.TXT_Subject.Size = new System.Drawing.Size(220, 31);
+            this.TXT_Subject.TabIndex = 187;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(164, 232);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(86, 27);
+            this.label18.TabIndex = 191;
+            this.label18.Text = "ملاحضات";
             // 
             // COM_bookStatus
             // 
@@ -221,7 +309,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(271, 301);
+            this.label2.Location = new System.Drawing.Point(277, 301);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 27);
             this.label2.TabIndex = 186;
@@ -319,7 +407,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(302, 159);
+            this.label16.Location = new System.Drawing.Point(308, 159);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(65, 27);
             this.label16.TabIndex = 183;
@@ -330,7 +418,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(150, 22);
+            this.label11.Location = new System.Drawing.Point(156, 22);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 27);
             this.label11.TabIndex = 178;
@@ -341,7 +429,7 @@
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(275, 92);
+            this.label21.Location = new System.Drawing.Point(281, 92);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(94, 27);
             this.label21.TabIndex = 185;
@@ -352,7 +440,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(278, 22);
+            this.label12.Location = new System.Drawing.Point(284, 22);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(89, 27);
             this.label12.TabIndex = 179;
@@ -363,7 +451,7 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(188, 92);
+            this.label13.Location = new System.Drawing.Point(194, 92);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(34, 27);
             this.label13.TabIndex = 180;
@@ -374,7 +462,7 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(192, 159);
+            this.label14.Location = new System.Drawing.Point(198, 159);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(31, 27);
             this.label14.TabIndex = 181;
@@ -395,7 +483,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(274, 228);
+            this.label17.Location = new System.Drawing.Point(280, 228);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(95, 27);
             this.label17.TabIndex = 184;
@@ -411,106 +499,126 @@
             this.TXT_Book_recive_number.Size = new System.Drawing.Size(135, 31);
             this.TXT_Book_recive_number.TabIndex = 170;
             // 
-            // TXT_notes
+            // panel1
             // 
-            this.TXT_notes.Location = new System.Drawing.Point(17, 261);
-            this.TXT_notes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TXT_notes.Multiline = true;
-            this.TXT_notes.Name = "TXT_notes";
-            this.TXT_notes.Size = new System.Drawing.Size(220, 82);
-            this.TXT_notes.TabIndex = 190;
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 735);
+            this.panel1.TabIndex = 0;
             // 
-            // TXT_To
+            // splitContainer2
             // 
-            this.TXT_To.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_To.Location = new System.Drawing.Point(17, 192);
-            this.TXT_To.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TXT_To.Multiline = true;
-            this.TXT_To.Name = "TXT_To";
-            this.TXT_To.Size = new System.Drawing.Size(220, 31);
-            this.TXT_To.TabIndex = 189;
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer2.Location = new System.Drawing.Point(13, 22);
+            this.splitContainer2.Name = "splitContainer2";
             // 
-            // TXT_From
+            // splitContainer2.Panel1
             // 
-            this.TXT_From.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_From.Location = new System.Drawing.Point(17, 121);
-            this.TXT_From.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TXT_From.Multiline = true;
-            this.TXT_From.Name = "TXT_From";
-            this.TXT_From.Size = new System.Drawing.Size(220, 31);
-            this.TXT_From.TabIndex = 188;
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Silver;
+            this.splitContainer2.Panel1.Controls.Add(this.cm_type_show);
+            this.splitContainer2.Panel1.Controls.Add(this.panel2);
+            this.splitContainer2.Panel1.Controls.Add(this.ListView_show_doc);
+            this.splitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
-            // TXT_Subject
+            // splitContainer2.Panel2
             // 
-            this.TXT_Subject.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_Subject.Location = new System.Drawing.Point(17, 53);
-            this.TXT_Subject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TXT_Subject.Multiline = true;
-            this.TXT_Subject.Name = "TXT_Subject";
-            this.TXT_Subject.Size = new System.Drawing.Size(220, 31);
-            this.TXT_Subject.TabIndex = 187;
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.Silver;
+            this.splitContainer2.Panel2.Controls.Add(this.btn_zoom_out);
+            this.splitContainer2.Panel2.Controls.Add(this.btn_zoom_in);
+            this.splitContainer2.Panel2.Controls.Add(this.btn_Rotate_180);
+            this.splitContainer2.Panel2.Controls.Add(this.btn_Rotate_90);
+            this.splitContainer2.Panel2.Controls.Add(this.pictureBox_show_doc);
+            this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.splitContainer2.Size = new System.Drawing.Size(903, 698);
+            this.splitContainer2.SplitterDistance = 174;
+            this.splitContainer2.TabIndex = 0;
             // 
-            // label18
+            // cm_type_show
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(164, 232);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(86, 27);
-            this.label18.TabIndex = 191;
-            this.label18.Text = "ملاحضات";
+            this.cm_type_show.Font = new System.Drawing.Font("Tahoma", 10.2F);
+            this.cm_type_show.FormattingEnabled = true;
+            this.cm_type_show.Items.AddRange(new object[] {
+            "تفاصيل",
+            "ايقونة كبيرة",
+            "لستة",
+            "ايقونة صغيرة",
+            "عناوين"});
+            this.cm_type_show.Location = new System.Drawing.Point(10, 9);
+            this.cm_type_show.Name = "cm_type_show";
+            this.cm_type_show.Size = new System.Drawing.Size(160, 29);
+            this.cm_type_show.TabIndex = 369;
+            this.cm_type_show.Text = "ايقونة كبيرة";
+            this.cm_type_show.SelectedIndexChanged += new System.EventHandler(this.cm_type_show_SelectedIndexChanged);
             // 
-            // label7
+            // panel2
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(424, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 27);
-            this.label7.TabIndex = 192;
-            this.label7.Text = "رقم الكتاب";
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 698);
+            this.panel2.TabIndex = 278;
             // 
-            // label8
+            // btn_zoom_out
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(411, 92);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 27);
-            this.label8.TabIndex = 193;
-            this.label8.Text = "تاريخ الكتاب";
+            this.btn_zoom_out.Location = new System.Drawing.Point(186, 9);
+            this.btn_zoom_out.Name = "btn_zoom_out";
+            this.btn_zoom_out.Size = new System.Drawing.Size(95, 39);
+            this.btn_zoom_out.TabIndex = 3;
+            this.btn_zoom_out.Text = "Zoom OUT";
+            this.btn_zoom_out.UseVisualStyleBackColor = true;
+            this.btn_zoom_out.Click += new System.EventHandler(this.btn_zoom_out_Click);
             // 
-            // label9
+            // btn_zoom_in
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(434, 159);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 27);
-            this.label9.TabIndex = 194;
-            this.label9.Text = "رقم واردنا";
+            this.btn_zoom_in.Location = new System.Drawing.Point(287, 9);
+            this.btn_zoom_in.Name = "btn_zoom_in";
+            this.btn_zoom_in.Size = new System.Drawing.Size(95, 39);
+            this.btn_zoom_in.TabIndex = 2;
+            this.btn_zoom_in.Text = "Zoom IN";
+            this.btn_zoom_in.UseVisualStyleBackColor = true;
+            this.btn_zoom_in.Click += new System.EventHandler(this.btn_zoom_in_Click);
             // 
-            // label10
+            // btn_Rotate_180
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(422, 228);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 27);
-            this.label10.TabIndex = 195;
-            this.label10.Text = "تاريخ واردنا";
+            this.btn_Rotate_180.Location = new System.Drawing.Point(415, 9);
+            this.btn_Rotate_180.Name = "btn_Rotate_180";
+            this.btn_Rotate_180.Size = new System.Drawing.Size(95, 39);
+            this.btn_Rotate_180.TabIndex = 1;
+            this.btn_Rotate_180.Text = "R 180";
+            this.btn_Rotate_180.UseVisualStyleBackColor = true;
+            this.btn_Rotate_180.Click += new System.EventHandler(this.btn_RotateL90_Click);
+            // 
+            // btn_Rotate_90
+            // 
+            this.btn_Rotate_90.Location = new System.Drawing.Point(516, 9);
+            this.btn_Rotate_90.Name = "btn_Rotate_90";
+            this.btn_Rotate_90.Size = new System.Drawing.Size(95, 39);
+            this.btn_Rotate_90.TabIndex = 1;
+            this.btn_Rotate_90.Text = "R 90";
+            this.btn_Rotate_90.UseVisualStyleBackColor = true;
+            this.btn_Rotate_90.Click += new System.EventHandler(this.btn_RotateR90_Click);
             // 
             // pictureBox_show_doc
             // 
-            this.pictureBox_show_doc.Location = new System.Drawing.Point(13, 9);
+            this.pictureBox_show_doc.BackColor = System.Drawing.Color.White;
+            this.pictureBox_show_doc.Location = new System.Drawing.Point(18, 54);
             this.pictureBox_show_doc.Name = "pictureBox_show_doc";
-            this.pictureBox_show_doc.Size = new System.Drawing.Size(614, 700);
+            this.pictureBox_show_doc.Size = new System.Drawing.Size(614, 632);
+            this.pictureBox_show_doc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_show_doc.TabIndex = 0;
             this.pictureBox_show_doc.TabStop = false;
+            // 
+            // TSM_open_all_file
+            // 
+            this.TSM_open_all_file.Name = "TSM_open_all_file";
+            this.TSM_open_all_file.Size = new System.Drawing.Size(210, 28);
+            this.TSM_open_all_file.Text = "فتح الكل";
+            this.TSM_open_all_file.Click += new System.EventHandler(this.TSM_open_all_file_Click);
             // 
             // Form_show_doc
             // 
@@ -521,6 +629,7 @@
             this.Name = "Form_show_doc";
             this.Text = "Form_show_doc";
             this.Load += new System.EventHandler(this.Form_show_doc_Load);
+            this.ContextMenuStrip_right_click.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -573,5 +682,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox_show_doc;
+        private System.Windows.Forms.Button btn_Rotate_90;
+        private System.Windows.Forms.Button btn_Rotate_180;
+        internal System.Windows.Forms.ComboBox cm_type_show;
+        internal System.Windows.Forms.ContextMenuStrip ContextMenuStrip_right_click;
+        internal System.Windows.Forms.ToolStripMenuItem TSM_open_file;
+        internal System.Windows.Forms.ToolStripSeparator ToolStripSeparator1;
+        private System.Windows.Forms.Button btn_zoom_in;
+        private System.Windows.Forms.Button btn_zoom_out;
+        private System.Windows.Forms.ToolStripMenuItem TSM_open_all_file;
     }
 }

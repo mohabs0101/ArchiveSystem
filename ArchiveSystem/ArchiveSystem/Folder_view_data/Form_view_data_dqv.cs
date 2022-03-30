@@ -268,7 +268,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                     System.GC.Collect();
                     System.GC.WaitForPendingFinalizers();
                     //----------end-------------
-
+                 
                     file.Delete();
 
                 }
