@@ -21,7 +21,7 @@ namespace ArchiveSystem
         public static string _user;
         public static int _userID;
         public static int _depID;
-        public static string _permitionTYpeID;
+        public static int _permitionTYpeID;
         
 
         public static string _con = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
@@ -66,7 +66,7 @@ namespace ArchiveSystem
                     int depID = Convert.ToInt32(dt.Rows[0]["DepartmentID"]);
                      
                     string user = dt.Rows[0]["Username"].ToString();
-                    string permitiontypeID = dt.Rows[0]["PermitionTypeID"].ToString();
+                    int permitiontypeID =Convert.ToInt32( dt.Rows[0]["PermitionTypeID"].ToString());
 
 
 
@@ -75,7 +75,7 @@ namespace ArchiveSystem
                        _user=user.ToString();
                     _userID = userID;
                     _depID = depID;
-                    _permitionTYpeID = permitiontypeID.ToString();
+                    _permitionTYpeID = permitiontypeID ;
 
                     Form1 f1 = new Form1();
                     f1.Show();
