@@ -68,10 +68,10 @@ SELECT  [DepartmentID]
             adapter = new SqlDataAdapter(@"SELECT 
 
 dbo.Departments_TBL.DepartmentName as [القسم],
-dbo.[Assign&Comment_TBL].Question as [المهمة],
-dbo.[Assign&Comment_TBL].Comment as [الاجراء],
-dbo.[Assign&Comment_TBL].note_me as [الملاحظات],
-dbo.[Assign&Comment_TBL].date_add as [تاريخ الاضافة]
+dbo.[Assign&Comment_TBL].Task as [المهمة],
+dbo.[Assign&Comment_TBL].Action as [الاجراء],
+dbo.[Assign&Comment_TBL].Note as [الملاحظات],
+dbo.[Assign&Comment_TBL].DateAdded as [تاريخ الاضافة]
 
 FROM     dbo.ArchiveBooks_TBL INNER JOIN
                   dbo.[Assign&Comment_TBL] ON dbo.ArchiveBooks_TBL.ArchiveBookID = dbo.[Assign&Comment_TBL].ArchiveBookID INNER JOIN

@@ -26,6 +26,7 @@ namespace ArchiveSystem.Folder_view_data
         SqlConnection con = new SqlConnection(_con);
 
 
+
         DataTable dt = new DataTable();
         SqlDataAdapter adapter;
 
@@ -60,10 +61,13 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                   dbo.Users_TBL ON dbo.ArchiveBooks_TBL.UserID_archivedBy = dbo.Users_TBL.UserID INNER JOIN
                   dbo.BooksType_TBL ON dbo.ArchiveBooks_TBL.BooksTypeID = dbo.BooksType_TBL.BooksTypeID
 
-
+WHERE (dbo.ArchiveBooks_TBL.BookDate between @Param1 and @Param2)
+AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
                 ", con);
-
-
+            adapter.SelectCommand.Parameters.AddWithValue("@Param1", DT_bookDate_from.Value.Date);
+            adapter.SelectCommand.Parameters.AddWithValue("@Param2", DT_bookDate_to.Value.Date);
+            adapter.SelectCommand.Parameters.AddWithValue("@Param3", DT_bookRecive_date_from.Value.Date);
+            adapter.SelectCommand.Parameters.AddWithValue("@Param4", DT_bookRecive_date_to.Value.Date);
 
             dt.Clear();
 
@@ -76,6 +80,8 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
         private void Form_view_data_dqv_Load(object sender, EventArgs e)
         {
+            DT_bookDate_to.Value = DateTime.Now;
+            DT_bookRecive_date_to.Value = DateTime.Now;
 
             fill_dgv_view_data_doc();
 
@@ -85,6 +91,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             //   }
 
 
+            advanc_dgv_view_data_doc.RowTemplate.Height = 30;
 
             advanc_dgv_view_data_doc.Columns[0].HeaderCell.Style.BackColor = Color.DeepSkyBlue;
             advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 11);
@@ -129,11 +136,11 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
             for (int i = 0; i < advanc_dgv_view_data_doc.Columns.Count - 1; i++)
             {
-
+                
                 advanc_dgv_view_data_doc.Columns[i].HeaderCell.Style.BackColor = Color.LightGray;
 
                 advanc_dgv_view_data_doc.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DeepSkyBlue;
-
+               
             }
             txt_seach.Select();
         }
@@ -144,7 +151,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
             this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", Convert.ToInt32(NumericUpDown_font_size.Value) + 1);
             this.advanc_dgv_view_data_doc.DefaultCellStyle.Font = new Font("Tahoma", Convert.ToInt32(NumericUpDown_font_size.Value));
-
+            
         }
 
         private void advanc_dgv_view_data_doc_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -297,8 +304,117 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                 MessageBox.Show(ex.ToString());
             }
         }
-      
+        //-----------------END------------------------
 
+
+
+             //////////////code filter bettween date////////////////////
+        private void btn_show_filter_Click(object sender, EventArgs e)
+        {
+            if (panel_filter.Visible == false)
+            {
+                panel_filter.Visible = true;
+            }
+            else
+            {
+                panel_filter.Visible = false;
+            }
+        }
+        private void btn_close_show_fliter_Click(object sender, EventArgs e)
+        {
+            panel_filter.Visible = false;
+        }
+        private void btn_filter_Click(object sender, EventArgs e)
+        {
+
+            fill_dgv_view_data_doc();
+            panel_filter.Visible = false;
+            btn_show_filter.BackColor = Color.Salmon;
+
+            if (com_mode_filter_bookDate.SelectedIndex > 0)
+            {
+                advanc_dgv_view_data_doc.Columns[2].HeaderCell.Style.BackColor = Color.Salmon;
+            }
+           
+            if (com_mode_filter_bookRecive.SelectedIndex > 0)
+            {
+                advanc_dgv_view_data_doc.Columns[4].HeaderCell.Style.BackColor = Color.Salmon;
+            }
+        }
+
+        private void btn_clear_fliter_Click(object sender, EventArgs e)
+        {
+            DT_bookDate_from.Value=Convert.ToDateTime("1990/01/01");
+            DT_bookDate_to.Value = DateTime.Now;
+            DT_bookRecive_date_from.Value = Convert.ToDateTime("1990/01/01");
+            DT_bookRecive_date_to.Value = DateTime.Now;
+           
+            btn_filter_Click(null, null);
+            btn_show_filter.BackColor = Color.DeepSkyBlue;
+
+            if (com_mode_filter_bookDate.SelectedIndex > 0)
+            {
+                advanc_dgv_view_data_doc.Columns[2].HeaderCell.Style.BackColor = Color.LightGray;
+            }
+            if (com_mode_filter_bookRecive.SelectedIndex > 0)
+            {
+                advanc_dgv_view_data_doc.Columns[4].HeaderCell.Style.BackColor = Color.LightGray;
+            }
+        }
+
+        private void com_mode_filter_bookDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (com_mode_filter_bookDate.SelectedIndex == 0)//Day now
+            {
+                DT_bookDate_from.Value = Convert.ToDateTime(DateTime.Now.Year + "/"+ DateTime.Now.Month + "/"+ DateTime.Now.Day);// Convert.ToDateTime(DateTime.Now.Year + DateTime.Now.Month);
+                DT_bookDate_to.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day);
+                panel_DT_bookDate.Visible = false;
+            }
+            else if (com_mode_filter_bookDate.SelectedIndex == 1)// month now
+            {
+                DT_bookDate_from.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/1");
+                DT_bookDate_to.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/31");
+                panel_DT_bookDate.Visible = false;
+            }
+            else if (com_mode_filter_bookDate.SelectedIndex == 2)// year now
+            {
+                DT_bookDate_from.Value = Convert.ToDateTime(DateTime.Now.Year + "/1" + "/1");
+                DT_bookDate_to.Value = Convert.ToDateTime(DateTime.Now.Year + "/12" + "/31");
+                panel_DT_bookDate.Visible = false;
+            }
+            else if (com_mode_filter_bookDate.SelectedIndex == 3)// custome
+            {
+                panel_DT_bookDate.Visible = true;
+               
+            }
+        }
+        
+        private void com_mode_filter_bookRecive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (com_mode_filter_bookRecive.SelectedIndex == 0)
+            {
+                DT_bookRecive_date_from.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day);// Convert.ToDateTime(DateTime.Now.Year + DateTime.Now.Month);
+                DT_bookRecive_date_to.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day);
+                panel_DT_bookRecive_date.Visible = false;
+            }
+            else if (com_mode_filter_bookRecive.SelectedIndex == 1)
+            {
+                DT_bookRecive_date_from.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/1");
+                DT_bookRecive_date_to.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/31");
+                panel_DT_bookRecive_date.Visible = false;
+            }
+            else if (com_mode_filter_bookRecive.SelectedIndex == 2)
+            {
+                DT_bookRecive_date_from.Value = Convert.ToDateTime(DateTime.Now.Year + "/1" + "/1");
+                DT_bookRecive_date_to.Value = Convert.ToDateTime(DateTime.Now.Year + "/12" + "/31");
+                panel_DT_bookRecive_date.Visible = false;
+            }
+            else if (com_mode_filter_bookRecive.SelectedIndex == 3)
+            {
+                panel_DT_bookRecive_date.Visible = true;
+
+            }
+        }
         //-----------------END------------------------
     }
 }

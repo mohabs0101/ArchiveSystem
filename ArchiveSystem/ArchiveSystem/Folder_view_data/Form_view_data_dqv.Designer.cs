@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_seach = new System.Windows.Forms.TextBox();
             this.btn_search_claer = new System.Windows.Forms.Button();
             this.Label2_count_doc = new System.Windows.Forms.Label();
@@ -39,8 +39,40 @@
             this.NumericUpDown_font_size = new System.Windows.Forms.NumericUpDown();
             this.Label2 = new System.Windows.Forms.Label();
             this.advanc_dgv_view_data_doc = new Zuby.ADGV.AdvancedDataGridView();
+            this.DT_bookRecive_date_from = new System.Windows.Forms.DateTimePicker();
+            this.DT_bookRecive_date_to = new System.Windows.Forms.DateTimePicker();
+            this.btn_filter = new System.Windows.Forms.Button();
+            this.panel_filter = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel_DT_bookDate = new System.Windows.Forms.Panel();
+            this.DT_bookDate_from = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.DT_bookDate_to = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.com_mode_filter_bookDate = new System.Windows.Forms.ComboBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.com_mode_filter_bookRecive = new System.Windows.Forms.ComboBox();
+            this.panel_DT_bookRecive_date = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_clear_fliter = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_close_show_fliter = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_show_filter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_font_size)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_view_data_doc)).BeginInit();
+            this.panel_filter.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.panel_DT_bookDate.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel_DT_bookRecive_date.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_seach
@@ -78,7 +110,7 @@
             // 
             this.Label2_count_doc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label2_count_doc.AutoSize = true;
-            this.Label2_count_doc.Location = new System.Drawing.Point(1032, 27);
+            this.Label2_count_doc.Location = new System.Drawing.Point(968, 29);
             this.Label2_count_doc.Name = "Label2_count_doc";
             this.Label2_count_doc.Size = new System.Drawing.Size(23, 17);
             this.Label2_count_doc.TabIndex = 401;
@@ -88,7 +120,7 @@
             // 
             this.Label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(1034, 9);
+            this.Label1.Location = new System.Drawing.Point(970, 11);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(70, 17);
             this.Label1.TabIndex = 400;
@@ -99,7 +131,7 @@
             this.Label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label15.AutoSize = true;
             this.Label15.BackColor = System.Drawing.Color.White;
-            this.Label15.Location = new System.Drawing.Point(1061, 26);
+            this.Label15.Location = new System.Drawing.Point(997, 28);
             this.Label15.Name = "Label15";
             this.Label15.Size = new System.Drawing.Size(13, 17);
             this.Label15.TabIndex = 408;
@@ -110,7 +142,7 @@
             this.Label2_count_doc_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label2_count_doc_search.AutoSize = true;
             this.Label2_count_doc_search.BackColor = System.Drawing.Color.White;
-            this.Label2_count_doc_search.Location = new System.Drawing.Point(1074, 26);
+            this.Label2_count_doc_search.Location = new System.Drawing.Point(1010, 28);
             this.Label2_count_doc_search.Name = "Label2_count_doc_search";
             this.Label2_count_doc_search.Size = new System.Drawing.Size(59, 17);
             this.Label2_count_doc_search.TabIndex = 407;
@@ -158,23 +190,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.advanc_dgv_view_data_doc.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.advanc_dgv_view_data_doc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_view_data_doc.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_view_data_doc.DefaultCellStyle = dataGridViewCellStyle10;
             this.advanc_dgv_view_data_doc.EnableHeadersVisualStyles = false;
             this.advanc_dgv_view_data_doc.FilterAndSortEnabled = true;
             this.advanc_dgv_view_data_doc.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
@@ -189,12 +221,327 @@
             this.advanc_dgv_view_data_doc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.advanc_dgv_view_data_doc_CellPainting);
             this.advanc_dgv_view_data_doc.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.advanc_dgv_view_data_doc_ColumnHeaderMouseClick);
             // 
+            // DT_bookRecive_date_from
+            // 
+            this.DT_bookRecive_date_from.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT_bookRecive_date_from.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_bookRecive_date_from.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DT_bookRecive_date_from.Location = new System.Drawing.Point(8, 18);
+            this.DT_bookRecive_date_from.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DT_bookRecive_date_from.Name = "DT_bookRecive_date_from";
+            this.DT_bookRecive_date_from.Size = new System.Drawing.Size(135, 32);
+            this.DT_bookRecive_date_from.TabIndex = 412;
+            this.DT_bookRecive_date_from.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            // 
+            // DT_bookRecive_date_to
+            // 
+            this.DT_bookRecive_date_to.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT_bookRecive_date_to.Checked = false;
+            this.DT_bookRecive_date_to.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_bookRecive_date_to.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DT_bookRecive_date_to.Location = new System.Drawing.Point(8, 58);
+            this.DT_bookRecive_date_to.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DT_bookRecive_date_to.Name = "DT_bookRecive_date_to";
+            this.DT_bookRecive_date_to.Size = new System.Drawing.Size(135, 32);
+            this.DT_bookRecive_date_to.TabIndex = 413;
+            this.DT_bookRecive_date_to.Value = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
+            // 
+            // btn_filter
+            // 
+            this.btn_filter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_filter.Location = new System.Drawing.Point(225, 329);
+            this.btn_filter.Name = "btn_filter";
+            this.btn_filter.Size = new System.Drawing.Size(125, 46);
+            this.btn_filter.TabIndex = 414;
+            this.btn_filter.Text = "تصفية";
+            this.btn_filter.UseVisualStyleBackColor = true;
+            this.btn_filter.Click += new System.EventHandler(this.btn_filter_Click);
+            // 
+            // panel_filter
+            // 
+            this.panel_filter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_filter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_filter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_filter.Controls.Add(this.tabControl1);
+            this.panel_filter.Controls.Add(this.btn_clear_fliter);
+            this.panel_filter.Controls.Add(this.panel1);
+            this.panel_filter.Controls.Add(this.btn_filter);
+            this.panel_filter.Controls.Add(this.panel2);
+            this.panel_filter.Location = new System.Drawing.Point(617, 119);
+            this.panel_filter.Name = "panel_filter";
+            this.panel_filter.Size = new System.Drawing.Size(427, 394);
+            this.panel_filter.TabIndex = 415;
+            this.panel_filter.Visible = false;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(43, 68);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tabControl1.RightToLeftLayout = true;
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(357, 242);
+            this.tabControl1.TabIndex = 424;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel_DT_bookDate);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.com_mode_filter_bookDate);
+            this.tabPage1.Location = new System.Drawing.Point(4, 33);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(349, 205);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "تاريخ الكتاب";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel_DT_bookDate
+            // 
+            this.panel_DT_bookDate.Controls.Add(this.DT_bookDate_from);
+            this.panel_DT_bookDate.Controls.Add(this.label5);
+            this.panel_DT_bookDate.Controls.Add(this.label6);
+            this.panel_DT_bookDate.Controls.Add(this.DT_bookDate_to);
+            this.panel_DT_bookDate.Location = new System.Drawing.Point(87, 100);
+            this.panel_DT_bookDate.Name = "panel_DT_bookDate";
+            this.panel_DT_bookDate.Size = new System.Drawing.Size(200, 100);
+            this.panel_DT_bookDate.TabIndex = 423;
+            this.panel_DT_bookDate.Visible = false;
+            // 
+            // DT_bookDate_from
+            // 
+            this.DT_bookDate_from.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT_bookDate_from.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_bookDate_from.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DT_bookDate_from.Location = new System.Drawing.Point(3, 20);
+            this.DT_bookDate_from.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DT_bookDate_from.Name = "DT_bookDate_from";
+            this.DT_bookDate_from.Size = new System.Drawing.Size(135, 32);
+            this.DT_bookDate_from.TabIndex = 416;
+            this.DT_bookDate_from.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(154, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 23);
+            this.label5.TabIndex = 420;
+            this.label5.Text = "الـــــــى";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(155, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 23);
+            this.label6.TabIndex = 419;
+            this.label6.Text = "مــــن";
+            // 
+            // DT_bookDate_to
+            // 
+            this.DT_bookDate_to.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT_bookDate_to.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_bookDate_to.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DT_bookDate_to.Location = new System.Drawing.Point(3, 60);
+            this.DT_bookDate_to.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DT_bookDate_to.Name = "DT_bookDate_to";
+            this.DT_bookDate_to.Size = new System.Drawing.Size(135, 32);
+            this.DT_bookDate_to.TabIndex = 418;
+            this.DT_bookDate_to.Value = new System.DateTime(2022, 3, 23, 0, 0, 0, 0);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(161, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(127, 23);
+            this.label9.TabIndex = 422;
+            this.label9.Text = "الفلترة حسب المدة";
+            // 
+            // com_mode_filter_bookDate
+            // 
+            this.com_mode_filter_bookDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.com_mode_filter_bookDate.FormattingEnabled = true;
+            this.com_mode_filter_bookDate.Items.AddRange(new object[] {
+            "اليوم",
+            "الشهر الحالي",
+            "السنة الحالية",
+            "مخصص"});
+            this.com_mode_filter_bookDate.Location = new System.Drawing.Point(90, 47);
+            this.com_mode_filter_bookDate.Name = "com_mode_filter_bookDate";
+            this.com_mode_filter_bookDate.Size = new System.Drawing.Size(196, 32);
+            this.com_mode_filter_bookDate.TabIndex = 421;
+            this.com_mode_filter_bookDate.SelectedIndexChanged += new System.EventHandler(this.com_mode_filter_bookDate_SelectedIndexChanged);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.com_mode_filter_bookRecive);
+            this.tabPage2.Controls.Add(this.panel_DT_bookRecive_date);
+            this.tabPage2.Location = new System.Drawing.Point(4, 33);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(349, 205);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "تاريخ واردنا";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(161, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(127, 23);
+            this.label8.TabIndex = 424;
+            this.label8.Text = "الفلترة حسب المدة";
+            // 
+            // com_mode_filter_bookRecive
+            // 
+            this.com_mode_filter_bookRecive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.com_mode_filter_bookRecive.FormattingEnabled = true;
+            this.com_mode_filter_bookRecive.Items.AddRange(new object[] {
+            "اليوم",
+            "الشهر الحالي",
+            "السنة الحالية",
+            "مخصص"});
+            this.com_mode_filter_bookRecive.Location = new System.Drawing.Point(90, 49);
+            this.com_mode_filter_bookRecive.Name = "com_mode_filter_bookRecive";
+            this.com_mode_filter_bookRecive.Size = new System.Drawing.Size(196, 32);
+            this.com_mode_filter_bookRecive.TabIndex = 423;
+            this.com_mode_filter_bookRecive.SelectedIndexChanged += new System.EventHandler(this.com_mode_filter_bookRecive_SelectedIndexChanged);
+            // 
+            // panel_DT_bookRecive_date
+            // 
+            this.panel_DT_bookRecive_date.Controls.Add(this.DT_bookRecive_date_from);
+            this.panel_DT_bookRecive_date.Controls.Add(this.label4);
+            this.panel_DT_bookRecive_date.Controls.Add(this.DT_bookRecive_date_to);
+            this.panel_DT_bookRecive_date.Controls.Add(this.label3);
+            this.panel_DT_bookRecive_date.Location = new System.Drawing.Point(86, 98);
+            this.panel_DT_bookRecive_date.Name = "panel_DT_bookRecive_date";
+            this.panel_DT_bookRecive_date.Size = new System.Drawing.Size(200, 100);
+            this.panel_DT_bookRecive_date.TabIndex = 416;
+            this.panel_DT_bookRecive_date.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(157, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 23);
+            this.label4.TabIndex = 415;
+            this.label4.Text = "الـــــــى";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(158, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 23);
+            this.label3.TabIndex = 414;
+            this.label3.Text = "مــــن";
+            // 
+            // btn_clear_fliter
+            // 
+            this.btn_clear_fliter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear_fliter.Location = new System.Drawing.Point(80, 329);
+            this.btn_clear_fliter.Name = "btn_clear_fliter";
+            this.btn_clear_fliter.Size = new System.Drawing.Size(125, 46);
+            this.btn_clear_fliter.TabIndex = 423;
+            this.btn_clear_fliter.Text = "الغاء التصفية";
+            this.btn_clear_fliter.UseVisualStyleBackColor = true;
+            this.btn_clear_fliter.Click += new System.EventHandler(this.btn_clear_fliter_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.Controls.Add(this.btn_close_show_fliter);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(425, 52);
+            this.panel1.TabIndex = 422;
+            // 
+            // btn_close_show_fliter
+            // 
+            this.btn_close_show_fliter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_close_show_fliter.BackColor = System.Drawing.Color.DarkGray;
+            this.btn_close_show_fliter.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_close_show_fliter.FlatAppearance.BorderSize = 0;
+            this.btn_close_show_fliter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.btn_close_show_fliter.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.btn_close_show_fliter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close_show_fliter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close_show_fliter.Location = new System.Drawing.Point(368, 9);
+            this.btn_close_show_fliter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_close_show_fliter.Name = "btn_close_show_fliter";
+            this.btn_close_show_fliter.Size = new System.Drawing.Size(43, 34);
+            this.btn_close_show_fliter.TabIndex = 422;
+            this.btn_close_show_fliter.Text = "x";
+            this.btn_close_show_fliter.UseVisualStyleBackColor = false;
+            this.btn_close_show_fliter.Click += new System.EventHandler(this.btn_close_show_fliter_Click);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(213, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(139, 27);
+            this.label7.TabIndex = 421;
+            this.label7.Text = "الفلترة بين تاريخين";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(425, 10);
+            this.panel2.TabIndex = 0;
+            // 
+            // btn_show_filter
+            // 
+            this.btn_show_filter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_show_filter.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_show_filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_show_filter.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_show_filter.Location = new System.Drawing.Point(1094, 9);
+            this.btn_show_filter.Name = "btn_show_filter";
+            this.btn_show_filter.Size = new System.Drawing.Size(47, 37);
+            this.btn_show_filter.TabIndex = 416;
+            this.btn_show_filter.Text = "فلتر";
+            this.btn_show_filter.UseVisualStyleBackColor = false;
+            this.btn_show_filter.Click += new System.EventHandler(this.btn_show_filter_Click);
+            // 
             // Form_view_data_dqv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1499, 818);
+            this.Controls.Add(this.panel_filter);
+            this.Controls.Add(this.btn_show_filter);
             this.Controls.Add(this.advanc_dgv_view_data_doc);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.NumericUpDown_font_size);
@@ -212,6 +559,18 @@
             this.Load += new System.EventHandler(this.Form_view_data_dqv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_font_size)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_view_data_doc)).EndInit();
+            this.panel_filter.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.panel_DT_bookDate.ResumeLayout(false);
+            this.panel_DT_bookDate.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.panel_DT_bookRecive_date.ResumeLayout(false);
+            this.panel_DT_bookRecive_date.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +586,30 @@
         internal System.Windows.Forms.NumericUpDown NumericUpDown_font_size;
         internal System.Windows.Forms.Label Label2;
         private Zuby.ADGV.AdvancedDataGridView advanc_dgv_view_data_doc;
+        private System.Windows.Forms.DateTimePicker DT_bookRecive_date_from;
+        private System.Windows.Forms.DateTimePicker DT_bookRecive_date_to;
+        private System.Windows.Forms.Button btn_filter;
+        private System.Windows.Forms.Panel panel_filter;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker DT_bookDate_to;
+        private System.Windows.Forms.DateTimePicker DT_bookDate_from;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_show_filter;
+        private System.Windows.Forms.Panel panel1;
+        internal System.Windows.Forms.Button btn_close_show_fliter;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_clear_fliter;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ComboBox com_mode_filter_bookDate;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel_DT_bookRecive_date;
+        private System.Windows.Forms.Panel panel_DT_bookDate;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox com_mode_filter_bookRecive;
     }
 }
