@@ -293,7 +293,7 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
 
                 BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
 
-                Form_show_doc s_doc1 = new Form_show_doc();
+                Form_show_docs s_doc1 = new Form_show_docs();
                 s_doc1.Show();
 
                 //System.Diagnostics.Process.Start(path);
