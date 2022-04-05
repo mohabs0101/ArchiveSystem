@@ -526,7 +526,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(264, 177);
+            this.label2.Location = new System.Drawing.Point(294, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 21);
             this.label2.TabIndex = 167;
@@ -599,7 +599,7 @@
             this.BTN_Archive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_Archive.BackColor = System.Drawing.Color.MediumAquamarine;
             this.BTN_Archive.Font = new System.Drawing.Font("Marlett", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_Archive.Location = new System.Drawing.Point(559, 360);
+            this.BTN_Archive.Location = new System.Drawing.Point(589, 360);
             this.BTN_Archive.Name = "BTN_Archive";
             this.BTN_Archive.Size = new System.Drawing.Size(142, 41);
             this.BTN_Archive.TabIndex = 16;
@@ -629,7 +629,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(642, 9);
+            this.label7.Location = new System.Drawing.Point(672, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 21);
             this.label7.TabIndex = 136;
@@ -640,7 +640,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(631, 66);
+            this.label8.Location = new System.Drawing.Point(661, 66);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 21);
             this.label8.TabIndex = 137;
@@ -651,7 +651,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(476, 120);
+            this.label16.Location = new System.Drawing.Point(506, 120);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(50, 21);
             this.label16.TabIndex = 145;
@@ -662,7 +662,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(651, 120);
+            this.label9.Location = new System.Drawing.Point(681, 120);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 21);
             this.label9.TabIndex = 138;
@@ -681,7 +681,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(640, 176);
+            this.label10.Location = new System.Drawing.Point(670, 176);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 21);
             this.label10.TabIndex = 139;
@@ -692,7 +692,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(280, 9);
+            this.label11.Location = new System.Drawing.Point(310, 9);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 21);
             this.label11.TabIndex = 140;
@@ -703,7 +703,7 @@
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(453, 66);
+            this.label21.Location = new System.Drawing.Point(483, 66);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(73, 21);
             this.label21.TabIndex = 150;
@@ -714,7 +714,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(455, 9);
+            this.label12.Location = new System.Drawing.Point(485, 9);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 21);
             this.label12.TabIndex = 141;
@@ -725,7 +725,7 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(313, 66);
+            this.label13.Location = new System.Drawing.Point(343, 66);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(27, 21);
             this.label13.TabIndex = 142;
@@ -745,7 +745,7 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(316, 120);
+            this.label14.Location = new System.Drawing.Point(346, 120);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(24, 21);
             this.label14.TabIndex = 143;
@@ -784,7 +784,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(452, 176);
+            this.label17.Location = new System.Drawing.Point(482, 176);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(74, 21);
             this.label17.TabIndex = 146;

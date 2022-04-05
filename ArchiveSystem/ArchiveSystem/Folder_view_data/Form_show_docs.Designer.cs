@@ -55,6 +55,7 @@
             this.TSM_open_file = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.TSM_open_all_file = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSM_delete = new System.Windows.Forms.ToolStripMenuItem();
             this.ImageList_add_viwe = new System.Windows.Forms.ImageList(this.components);
             this.cm_type_show = new System.Windows.Forms.ComboBox();
             this.BTN_addMoreDcos = new System.Windows.Forms.Button();
@@ -359,28 +360,36 @@
             this.ContextMenuStrip_right_click.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSM_open_file,
             this.ToolStripSeparator1,
-            this.TSM_open_all_file});
+            this.TSM_open_all_file,
+            this.TSM_delete});
             this.ContextMenuStrip_right_click.Name = "ContextMenuStrip_right_click";
-            this.ContextMenuStrip_right_click.Size = new System.Drawing.Size(128, 58);
+            this.ContextMenuStrip_right_click.Size = new System.Drawing.Size(151, 82);
             // 
             // TSM_open_file
             // 
             this.TSM_open_file.Name = "TSM_open_file";
-            this.TSM_open_file.Size = new System.Drawing.Size(127, 24);
+            this.TSM_open_file.Size = new System.Drawing.Size(150, 24);
             this.TSM_open_file.Text = "فتح";
             this.TSM_open_file.Click += new System.EventHandler(this.TSM_open_file_Click_1);
             // 
             // ToolStripSeparator1
             // 
             this.ToolStripSeparator1.Name = "ToolStripSeparator1";
-            this.ToolStripSeparator1.Size = new System.Drawing.Size(124, 6);
+            this.ToolStripSeparator1.Size = new System.Drawing.Size(147, 6);
             // 
             // TSM_open_all_file
             // 
             this.TSM_open_all_file.Name = "TSM_open_all_file";
-            this.TSM_open_all_file.Size = new System.Drawing.Size(127, 24);
+            this.TSM_open_all_file.Size = new System.Drawing.Size(150, 24);
             this.TSM_open_all_file.Text = "فتح الكل";
             this.TSM_open_all_file.Click += new System.EventHandler(this.TSM_open_all_file_Click_1);
+            // 
+            // TSM_delete
+            // 
+            this.TSM_delete.Name = "TSM_delete";
+            this.TSM_delete.Size = new System.Drawing.Size(150, 24);
+            this.TSM_delete.Text = "مسح المرفق";
+            this.TSM_delete.Click += new System.EventHandler(this.TSM_delete_Click);
             // 
             // ImageList_add_viwe
             // 
@@ -1017,5 +1026,6 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btn_add_Tracker;
+        private System.Windows.Forms.ToolStripMenuItem TSM_delete;
     }
 }

@@ -35,17 +35,17 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.DGV_Folders = new System.Windows.Forms.DataGridView();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.TXT_addFolder = new System.Windows.Forms.TextBox();
             this.BTN_DELFolder = new System.Windows.Forms.Button();
             this.BTN_addfolder = new System.Windows.Forms.Button();
+            this.DGV_Folders = new System.Windows.Forms.DataGridView();
             this.panel13 = new System.Windows.Forms.Panel();
             this.Scanning_Folder = new System.Windows.Forms.Button();
             this.BTN_RefrshFolders = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.BTN_Scan = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -57,13 +57,17 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.BTN_AddDocs = new System.Windows.Forms.Button();
+            this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Folders)).BeginInit();
-            this.panel14.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Folders)).BeginInit();
+            this.panel13.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Files)).BeginInit();
@@ -71,6 +75,7 @@
             this.panel17.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,10 +104,11 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.BTN_AddDocs);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(30, 477);
+            this.panel4.Location = new System.Drawing.Point(30, 438);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(901, 10);
+            this.panel4.Size = new System.Drawing.Size(901, 49);
             this.panel4.TabIndex = 3;
             // 
             // panel5
@@ -110,7 +116,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(30, 70);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(901, 26);
+            this.panel5.Size = new System.Drawing.Size(901, 100);
             this.panel5.TabIndex = 4;
             // 
             // panel6
@@ -118,50 +124,42 @@
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(30, 96);
+            this.panel6.Location = new System.Drawing.Point(30, 170);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(901, 381);
+            this.panel6.Size = new System.Drawing.Size(901, 268);
             this.panel6.TabIndex = 5;
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.panel15);
             this.panel8.Controls.Add(this.panel10);
-            this.panel8.Controls.Add(this.panel11);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(435, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(466, 381);
+            this.panel8.Size = new System.Drawing.Size(466, 268);
             this.panel8.TabIndex = 2;
             // 
-            // panel15
+            // panel10
             // 
-            this.panel15.Controls.Add(this.DGV_Folders);
-            this.panel15.Controls.Add(this.panel14);
-            this.panel15.Controls.Add(this.panel13);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(238, 46);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(228, 335);
-            this.panel15.TabIndex = 5;
+            this.panel10.Controls.Add(this.panel18);
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel10.Location = new System.Drawing.Point(0, 10);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(466, 258);
+            this.panel10.TabIndex = 4;
             // 
-            // DGV_Folders
+            // panel18
             // 
-            this.DGV_Folders.AllowUserToAddRows = false;
-            this.DGV_Folders.AllowUserToDeleteRows = false;
-            this.DGV_Folders.AllowUserToResizeColumns = false;
-            this.DGV_Folders.AllowUserToResizeRows = false;
-            this.DGV_Folders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGV_Folders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DGV_Folders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGV_Folders.Location = new System.Drawing.Point(0, 73);
-            this.DGV_Folders.Name = "DGV_Folders";
-            this.DGV_Folders.ReadOnly = true;
-            this.DGV_Folders.RowHeadersVisible = false;
-            this.DGV_Folders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            this.DGV_Folders.Size = new System.Drawing.Size(228, 262);
-            this.DGV_Folders.TabIndex = 5;
+            this.panel18.Controls.Add(this.panel15);
+            this.panel18.Controls.Add(this.panel14);
+            this.panel18.Controls.Add(this.panel13);
+            this.panel18.Controls.Add(this.panel16);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel18.Location = new System.Drawing.Point(244, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(222, 258);
+            this.panel18.TabIndex = 3;
             // 
             // panel14
             // 
@@ -169,10 +167,10 @@
             this.panel14.Controls.Add(this.BTN_DELFolder);
             this.panel14.Controls.Add(this.BTN_addfolder);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(0, 36);
+            this.panel14.Location = new System.Drawing.Point(0, 72);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(228, 37);
-            this.panel14.TabIndex = 4;
+            this.panel14.Size = new System.Drawing.Size(222, 37);
+            this.panel14.TabIndex = 7;
             // 
             // TXT_addFolder
             // 
@@ -181,7 +179,7 @@
             this.TXT_addFolder.Location = new System.Drawing.Point(43, 0);
             this.TXT_addFolder.Multiline = true;
             this.TXT_addFolder.Name = "TXT_addFolder";
-            this.TXT_addFolder.Size = new System.Drawing.Size(137, 37);
+            this.TXT_addFolder.Size = new System.Drawing.Size(131, 37);
             this.TXT_addFolder.TabIndex = 172;
             this.TXT_addFolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -203,23 +201,41 @@
             this.BTN_addfolder.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.BTN_addfolder.Dock = System.Windows.Forms.DockStyle.Right;
             this.BTN_addfolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_addfolder.Location = new System.Drawing.Point(180, 0);
+            this.BTN_addfolder.Location = new System.Drawing.Point(174, 0);
             this.BTN_addfolder.Name = "BTN_addfolder";
             this.BTN_addfolder.Size = new System.Drawing.Size(48, 37);
             this.BTN_addfolder.TabIndex = 169;
             this.BTN_addfolder.Text = "+";
             this.BTN_addfolder.UseVisualStyleBackColor = false;
             // 
+            // DGV_Folders
+            // 
+            this.DGV_Folders.AllowUserToAddRows = false;
+            this.DGV_Folders.AllowUserToDeleteRows = false;
+            this.DGV_Folders.AllowUserToResizeColumns = false;
+            this.DGV_Folders.AllowUserToResizeRows = false;
+            this.DGV_Folders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_Folders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DGV_Folders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_Folders.Location = new System.Drawing.Point(0, 0);
+            this.DGV_Folders.Name = "DGV_Folders";
+            this.DGV_Folders.ReadOnly = true;
+            this.DGV_Folders.RowHeadersVisible = false;
+            this.DGV_Folders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.DGV_Folders.Size = new System.Drawing.Size(222, 149);
+            this.DGV_Folders.TabIndex = 5;
+            this.DGV_Folders.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Folders_CellMouseClick);
+            // 
             // panel13
             // 
             this.panel13.Controls.Add(this.Scanning_Folder);
             this.panel13.Controls.Add(this.BTN_RefrshFolders);
-            this.panel13.Controls.Add(this.button1);
+            this.panel13.Controls.Add(this.BTN_Scan);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Location = new System.Drawing.Point(0, 36);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(228, 36);
-            this.panel13.TabIndex = 3;
+            this.panel13.Size = new System.Drawing.Size(222, 36);
+            this.panel13.TabIndex = 6;
             // 
             // Scanning_Folder
             // 
@@ -232,46 +248,39 @@
             this.Scanning_Folder.TabIndex = 167;
             this.Scanning_Folder.Text = "تحديث المصدر";
             this.Scanning_Folder.UseVisualStyleBackColor = false;
+            this.Scanning_Folder.Click += new System.EventHandler(this.Scanning_Folder_Click);
             // 
             // BTN_RefrshFolders
             // 
             this.BTN_RefrshFolders.Dock = System.Windows.Forms.DockStyle.Right;
             this.BTN_RefrshFolders.Image = global::ArchiveSystem.Properties.Resources.icons8_refresh_16;
-            this.BTN_RefrshFolders.Location = new System.Drawing.Point(133, 0);
+            this.BTN_RefrshFolders.Location = new System.Drawing.Point(94, 0);
             this.BTN_RefrshFolders.Name = "BTN_RefrshFolders";
             this.BTN_RefrshFolders.Size = new System.Drawing.Size(33, 36);
             this.BTN_RefrshFolders.TabIndex = 170;
             this.BTN_RefrshFolders.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // BTN_Scan
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(166, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 36);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "مسح ضؤي";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.panel16);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(238, 10);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(228, 36);
-            this.panel10.TabIndex = 4;
+            this.BTN_Scan.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BTN_Scan.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_Scan.Location = new System.Drawing.Point(127, 0);
+            this.BTN_Scan.Name = "BTN_Scan";
+            this.BTN_Scan.Size = new System.Drawing.Size(95, 36);
+            this.BTN_Scan.TabIndex = 1;
+            this.BTN_Scan.Text = "مسح ضؤي";
+            this.BTN_Scan.UseVisualStyleBackColor = true;
+            this.BTN_Scan.Click += new System.EventHandler(this.BTN_Scan_Click);
             // 
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.Cornsilk;
             this.panel16.Controls.Add(this.label2);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(228, 36);
-            this.panel16.TabIndex = 4;
+            this.panel16.Size = new System.Drawing.Size(222, 36);
+            this.panel16.TabIndex = 5;
             // 
             // label2
             // 
@@ -279,7 +288,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(96, 10);
+            this.label2.Location = new System.Drawing.Point(76, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 21);
             this.label2.TabIndex = 0;
@@ -292,9 +301,9 @@
             this.panel11.Controls.Add(this.CHK_selectall);
             this.panel11.Controls.Add(this.panel12);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel11.Location = new System.Drawing.Point(0, 10);
+            this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(238, 371);
+            this.panel11.Size = new System.Drawing.Size(238, 258);
             this.panel11.TabIndex = 2;
             // 
             // DGV_Files
@@ -310,8 +319,9 @@
             this.DGV_Files.Name = "DGV_Files";
             this.DGV_Files.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.DGV_Files.RowHeadersVisible = false;
-            this.DGV_Files.Size = new System.Drawing.Size(238, 318);
+            this.DGV_Files.Size = new System.Drawing.Size(238, 205);
             this.DGV_Files.TabIndex = 3;
+            this.DGV_Files.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Files_CellClick);
             // 
             // CHK_selectall
             // 
@@ -325,6 +335,7 @@
             this.CHK_selectall.Text = "اختيار الكل";
             this.CHK_selectall.UseVisualStyleBackColor = false;
             this.CHK_selectall.Visible = false;
+            this.CHK_selectall.CheckedChanged += new System.EventHandler(this.CHK_selectall_CheckedChanged);
             // 
             // panel12
             // 
@@ -351,7 +362,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(76, 10);
+            this.label1.Location = new System.Drawing.Point(93, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 21);
             this.label1.TabIndex = 0;
@@ -372,7 +383,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(435, 381);
+            this.panel7.Size = new System.Drawing.Size(435, 268);
             this.panel7.TabIndex = 1;
             // 
             // pictureBox1
@@ -380,9 +391,32 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(435, 381);
+            this.pictureBox1.Size = new System.Drawing.Size(435, 268);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.DGV_Folders);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel15.Location = new System.Drawing.Point(0, 109);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(222, 149);
+            this.panel15.TabIndex = 8;
+            // 
+            // BTN_AddDocs
+            // 
+            this.BTN_AddDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_AddDocs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.BTN_AddDocs.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_AddDocs.Location = new System.Drawing.Point(789, 9);
+            this.BTN_AddDocs.Name = "BTN_AddDocs";
+            this.BTN_AddDocs.Size = new System.Drawing.Size(106, 37);
+            this.BTN_AddDocs.TabIndex = 1;
+            this.BTN_AddDocs.Text = "اضافة";
+            this.BTN_AddDocs.UseVisualStyleBackColor = false;
+            this.BTN_AddDocs.Click += new System.EventHandler(this.BTN_AddDocs_Click);
             // 
             // EditeDocs
             // 
@@ -398,14 +432,15 @@
             this.Name = "EditeDocs";
             this.Text = "ارفاق مستندات";
             this.Load += new System.EventHandler(this.EditeDocs_Load);
+            this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Folders)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Folders)).EndInit();
             this.panel13.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -416,6 +451,7 @@
             this.panel17.PerformLayout();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel15.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -432,24 +468,27 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox CHK_selectall;
         private System.Windows.Forms.DataGridView DGV_Files;
         private System.Windows.Forms.DataGridView DGV_Folders;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button Scanning_Folder;
-        private System.Windows.Forms.Button BTN_addfolder;
-        private System.Windows.Forms.Button BTN_RefrshFolders;
-        private System.Windows.Forms.Button BTN_DELFolder;
-        private System.Windows.Forms.TextBox TXT_addFolder;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.TextBox TXT_addFolder;
+        private System.Windows.Forms.Button BTN_DELFolder;
+        private System.Windows.Forms.Button BTN_addfolder;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button Scanning_Folder;
+        private System.Windows.Forms.Button BTN_RefrshFolders;
+        private System.Windows.Forms.Button BTN_Scan;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button BTN_AddDocs;
     }
 }

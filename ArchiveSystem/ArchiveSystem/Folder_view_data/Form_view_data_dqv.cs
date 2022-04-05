@@ -136,11 +136,11 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
 
             for (int i = 0; i < advanc_dgv_view_data_doc.Columns.Count - 1; i++)
             {
-                
+
                 advanc_dgv_view_data_doc.Columns[i].HeaderCell.Style.BackColor = Color.LightGray;
 
                 advanc_dgv_view_data_doc.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DeepSkyBlue;
-               
+
             }
             txt_seach.Select();
         }
@@ -151,7 +151,7 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
 
             this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", Convert.ToInt32(NumericUpDown_font_size.Value) + 1);
             this.advanc_dgv_view_data_doc.DefaultCellStyle.Font = new Font("Tahoma", Convert.ToInt32(NumericUpDown_font_size.Value));
-            
+
         }
 
         private void advanc_dgv_view_data_doc_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -247,6 +247,7 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
                 response.Close();
 
 
+
             }
             catch (Exception ex)
             {
@@ -257,16 +258,11 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
         public static string BookCode;
         private void advanc_dgv_view_data_doc_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-           try
+            try
             {
-             
                 string[] files = GetFileList();
 
                 System.IO.DirectoryInfo di = new DirectoryInfo(path_folder_client_temp);
-
-
-
-
 
                 foreach (FileInfo file in di.GetFiles())
                 {
@@ -275,12 +271,10 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
                     System.GC.Collect();
                     System.GC.WaitForPendingFinalizers();
                     //----------end-------------
-                 
+
                     file.Delete();
 
                 }
-
-
 
                 foreach (string file in files)
                 {
@@ -308,7 +302,7 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
 
 
 
-             //////////////code filter bettween date////////////////////
+        //////////////code filter bettween date////////////////////
         private void btn_show_filter_Click(object sender, EventArgs e)
         {
             if (panel_filter.Visible == false)
@@ -335,7 +329,7 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
             {
                 advanc_dgv_view_data_doc.Columns[2].HeaderCell.Style.BackColor = Color.Salmon;
             }
-           
+
             if (com_mode_filter_bookRecive.SelectedIndex > 0)
             {
                 advanc_dgv_view_data_doc.Columns[4].HeaderCell.Style.BackColor = Color.Salmon;
@@ -344,11 +338,11 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
 
         private void btn_clear_fliter_Click(object sender, EventArgs e)
         {
-            DT_bookDate_from.Value=Convert.ToDateTime("1990/01/01");
+            DT_bookDate_from.Value = Convert.ToDateTime("1990/01/01");
             DT_bookDate_to.Value = DateTime.Now;
             DT_bookRecive_date_from.Value = Convert.ToDateTime("1990/01/01");
             DT_bookRecive_date_to.Value = DateTime.Now;
-           
+
             btn_filter_Click(null, null);
             btn_show_filter.BackColor = Color.DeepSkyBlue;
 
@@ -366,7 +360,7 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
         {
             if (com_mode_filter_bookDate.SelectedIndex == 0)//Day now
             {
-                DT_bookDate_from.Value = Convert.ToDateTime(DateTime.Now.Year + "/"+ DateTime.Now.Month + "/"+ DateTime.Now.Day);// Convert.ToDateTime(DateTime.Now.Year + DateTime.Now.Month);
+                DT_bookDate_from.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day);// Convert.ToDateTime(DateTime.Now.Year + DateTime.Now.Month);
                 DT_bookDate_to.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day);
                 panel_DT_bookDate.Visible = false;
             }
@@ -385,10 +379,10 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
             else if (com_mode_filter_bookDate.SelectedIndex == 3)// custome
             {
                 panel_DT_bookDate.Visible = true;
-               
+
             }
         }
-        
+
         private void com_mode_filter_bookRecive_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (com_mode_filter_bookRecive.SelectedIndex == 0)

@@ -72,3 +72,959 @@
 3/31/2022 9:24:48 PM: Application started
 
 3/31/2022 9:25:45 PM: Application started
+
+4/2/2022 8:01:18 AM: Application started
+
+4/2/2022 10:13:35 AM: Application started
+
+4/2/2022 10:27:44 AM: Application started
+
+4/2/2022 10:38:50 AM: Application started
+4/2/2022 10:40:22 AM: Configuration saved
+
+4/2/2022 10:42:06 AM: Application started
+4/2/2022 10:42:06 AM: Configuration loaded
+
+4/2/2022 10:46:09 AM: Application started
+4/2/2022 10:46:09 AM: Configuration loaded
+
+4/2/2022 10:47:14 AM: Application started
+4/2/2022 10:47:14 AM: Configuration loaded
+
+4/2/2022 10:48:19 AM: Application started
+4/2/2022 10:48:19 AM: Configuration loaded
+
+4/2/2022 10:48:48 AM: Application started
+4/2/2022 10:48:48 AM: Configuration loaded
+
+4/2/2022 11:03:40 AM: Application started
+4/2/2022 11:03:40 AM: Configuration loaded
+4/2/2022 11:04:00 AM: Configuration saved
+4/2/2022 11:04:16 AM: Configuration saved
+
+4/2/2022 11:04:25 AM: Application started
+4/2/2022 11:04:26 AM: Configuration loaded
+4/2/2022 11:04:28 AM: Application closed
+
+4/2/2022 11:04:31 AM: Application started
+4/2/2022 11:04:32 AM: Configuration loaded
+4/2/2022 11:04:40 AM: Configuration saved
+4/2/2022 11:05:09 AM: Configuration saved
+4/2/2022 11:05:11 AM: Configuration saved
+4/2/2022 11:05:24 AM: Starting acquisition (Brother)
+4/2/2022 11:05:24 AM: Setup device handling
+4/2/2022 11:05:24 AM: Setup device properties
+4/2/2022 11:05:24 AM: DEBUG: document handling 1
+4/2/2022 11:05:24 AM: DEBUG: feeder status 3
+
+4/2/2022 11:06:02 AM: Application started
+4/2/2022 11:06:02 AM: Configuration loaded
+4/2/2022 11:06:02 AM: Configuration saved
+4/2/2022 11:06:10 AM: Configuration saved
+4/2/2022 11:06:15 AM: Starting acquisition (Brother)
+4/2/2022 11:06:15 AM: Setup device handling
+4/2/2022 11:06:15 AM: Setup device properties
+4/2/2022 11:06:15 AM: DEBUG: document handling 1
+4/2/2022 11:06:15 AM: DEBUG: feeder status 3
+4/2/2022 11:06:15 AM: Device is busy, retrying in 2s...
+4/2/2022 11:06:17 AM: DEBUG: document handling 1
+4/2/2022 11:06:17 AM: DEBUG: feeder status 3
+4/2/2022 11:06:18 AM: Device is busy, retrying in 2s...
+4/2/2022 11:06:20 AM: DEBUG: document handling 1
+4/2/2022 11:06:20 AM: DEBUG: feeder status 3
+4/2/2022 11:06:38 AM: DEBUG: document handling 1
+4/2/2022 11:06:38 AM: DEBUG: feeder status 3
+4/2/2022 11:06:48 AM: DEBUG: document handling 1
+4/2/2022 11:06:48 AM: DEBUG: feeder status 3
+4/2/2022 11:06:48 AM: Paper feed empty
+4/2/2022 11:06:48 AM: Finished scanning 2 files
+4/2/2022 11:06:48 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\xx
+
+4/2/2022 11:06:58 AM: Application started
+4/2/2022 11:06:58 AM: Configuration loaded
+4/2/2022 11:06:58 AM: Configuration saved
+
+4/2/2022 11:16:06 AM: Application started
+4/2/2022 11:16:06 AM: Configuration loaded
+4/2/2022 11:16:06 AM: Configuration saved
+
+4/2/2022 11:18:11 AM: Application started
+4/2/2022 11:18:11 AM: Configuration loaded
+4/2/2022 11:18:11 AM: Configuration saved
+
+4/2/2022 11:19:22 AM: Application started
+4/2/2022 11:19:23 AM: Configuration loaded
+4/2/2022 11:19:23 AM: Configuration saved
+
+4/2/2022 11:20:28 AM: Application started
+4/2/2022 11:20:28 AM: Configuration loaded
+4/2/2022 11:20:28 AM: Configuration saved
+
+4/2/2022 11:35:03 AM: Application started
+4/2/2022 11:35:03 AM: Configuration loaded
+4/2/2022 11:35:03 AM: Configuration saved
+
+4/2/2022 11:41:30 AM: Application started
+4/2/2022 11:41:30 AM: Configuration loaded
+4/2/2022 11:41:30 AM: Configuration saved
+4/2/2022 11:41:43 AM: Configuration saved
+4/2/2022 11:41:47 AM: Starting acquisition (Brother)
+4/2/2022 11:41:47 AM: Setup device handling
+4/2/2022 11:41:47 AM: Setup device properties
+4/2/2022 11:41:47 AM: DEBUG: document handling 1
+4/2/2022 11:41:47 AM: DEBUG: feeder status 3
+4/2/2022 11:41:47 AM: Paper feed empty
+4/2/2022 11:41:47 AM: Finished scanning 0 files
+4/2/2022 11:41:54 AM: Starting acquisition (Brother)
+4/2/2022 11:41:54 AM: Setup device handling
+
+4/2/2022 11:42:00 AM: Application started
+4/2/2022 11:42:01 AM: Configuration loaded
+4/2/2022 11:42:01 AM: Configuration saved
+4/2/2022 11:42:05 AM: Configuration saved
+4/2/2022 11:42:06 AM: Starting acquisition (Brother)
+4/2/2022 11:42:06 AM: Setup device handling
+4/2/2022 11:42:06 AM: Setup device properties
+4/2/2022 11:42:06 AM: DEBUG: document handling 1
+4/2/2022 11:42:06 AM: DEBUG: feeder status 3
+4/2/2022 11:42:20 AM: DEBUG: document handling 1
+4/2/2022 11:42:20 AM: DEBUG: feeder status 3
+4/2/2022 11:42:30 AM: DEBUG: document handling 1
+4/2/2022 11:42:30 AM: DEBUG: feeder status 3
+4/2/2022 11:42:30 AM: Paper feed empty
+4/2/2022 11:42:30 AM: Finished scanning 2 files
+4/2/2022 11:42:30 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\xx
+
+4/2/2022 11:43:27 AM: Application started
+4/2/2022 11:43:27 AM: Configuration loaded
+4/2/2022 11:43:27 AM: Configuration saved
+
+4/2/2022 11:44:21 AM: Application started
+4/2/2022 11:44:22 AM: Configuration loaded
+4/2/2022 11:44:22 AM: Configuration saved
+
+4/2/2022 11:45:50 AM: Application started
+4/2/2022 11:45:50 AM: Configuration loaded
+4/2/2022 11:45:51 AM: Configuration saved
+
+4/2/2022 11:50:42 AM: Application started
+4/2/2022 11:50:42 AM: Configuration loaded
+4/2/2022 11:50:42 AM: Configuration saved
+
+4/2/2022 11:52:03 AM: Application started
+4/2/2022 11:52:04 AM: Configuration loaded
+4/2/2022 11:52:04 AM: Configuration saved
+
+4/2/2022 11:52:21 AM: Application started
+4/2/2022 11:52:21 AM: Configuration loaded
+4/2/2022 11:52:21 AM: Configuration saved
+4/2/2022 11:52:32 AM: Configuration saved
+4/2/2022 11:52:39 AM: Configuration saved
+4/2/2022 11:52:44 AM: Starting acquisition (Brother)
+4/2/2022 11:52:44 AM: Setup device handling
+4/2/2022 11:52:44 AM: Setup device properties
+4/2/2022 11:52:44 AM: DEBUG: document handling 1
+4/2/2022 11:52:44 AM: DEBUG: feeder status 3
+4/2/2022 11:52:58 AM: DEBUG: document handling 1
+4/2/2022 11:52:58 AM: DEBUG: feeder status 3
+4/2/2022 11:53:08 AM: DEBUG: document handling 1
+4/2/2022 11:53:08 AM: DEBUG: feeder status 3
+4/2/2022 11:53:08 AM: Paper feed empty
+4/2/2022 11:53:08 AM: Finished scanning 2 files
+4/2/2022 11:53:08 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 11:55:42 AM: Application started
+4/2/2022 11:55:42 AM: Configuration loaded
+4/2/2022 11:55:42 AM: Configuration saved
+
+4/2/2022 11:56:54 AM: Application started
+4/2/2022 11:56:54 AM: Configuration loaded
+4/2/2022 11:56:54 AM: Configuration saved
+
+4/2/2022 11:57:47 AM: Application started
+4/2/2022 11:57:47 AM: Configuration loaded
+4/2/2022 11:57:47 AM: Configuration saved
+4/2/2022 11:57:58 AM: Configuration saved
+4/2/2022 11:58:01 AM: Starting acquisition (Brother)
+4/2/2022 11:58:01 AM: Setup device handling
+4/2/2022 11:58:01 AM: Setup device properties
+4/2/2022 11:58:01 AM: DEBUG: document handling 1
+4/2/2022 11:58:01 AM: DEBUG: feeder status 3
+4/2/2022 11:58:02 AM: Paper feed empty
+4/2/2022 11:58:02 AM: Finished scanning 0 files
+4/2/2022 11:58:06 AM: Configuration saved
+4/2/2022 11:58:07 AM: Starting acquisition (Brother)
+4/2/2022 11:58:07 AM: Setup device handling
+4/2/2022 11:58:07 AM: Setup device properties
+4/2/2022 11:58:07 AM: DEBUG: document handling 2
+4/2/2022 11:58:07 AM: DEBUG: feeder status 3
+4/2/2022 11:58:22 AM: Finished scanning 1 files
+4/2/2022 11:58:22 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 11:59:24 AM: Application started
+4/2/2022 11:59:24 AM: Configuration loaded
+
+4/2/2022 12:02:33 PM: Application started
+4/2/2022 12:02:33 PM: Configuration loaded
+
+4/2/2022 12:03:34 PM: Application started
+4/2/2022 12:03:34 PM: Configuration loaded
+
+4/2/2022 12:06:41 PM: Application started
+4/2/2022 12:06:41 PM: Configuration loaded
+
+4/2/2022 12:38:33 PM: Application started
+4/2/2022 12:38:33 PM: Configuration loaded
+
+4/2/2022 12:38:56 PM: Application started
+4/2/2022 12:38:56 PM: Configuration loaded
+4/2/2022 12:39:13 PM: Starting acquisition (Brother)
+4/2/2022 12:39:13 PM: Setup device handling
+4/2/2022 12:39:13 PM: Setup device properties
+
+4/2/2022 12:39:19 PM: Application started
+4/2/2022 12:39:19 PM: Configuration loaded
+4/2/2022 12:39:49 PM: Starting acquisition (Brother)
+4/2/2022 12:39:49 PM: Setup device handling
+4/2/2022 12:39:49 PM: Setup device properties
+4/2/2022 12:39:49 PM: DEBUG: document handling 2
+4/2/2022 12:39:49 PM: DEBUG: feeder status 3
+4/2/2022 12:40:04 PM: Finished scanning 1 files
+4/2/2022 12:40:04 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 12:40:39 PM: Application started
+4/2/2022 12:40:39 PM: Configuration loaded
+
+4/2/2022 12:53:51 PM: Application started
+4/2/2022 12:53:51 PM: Configuration loaded
+4/2/2022 12:54:18 PM: Starting acquisition (Brother)
+4/2/2022 12:54:18 PM: Setup device handling
+4/2/2022 12:54:18 PM: Setup device properties
+4/2/2022 12:54:18 PM: DEBUG: document handling 2
+4/2/2022 12:54:18 PM: DEBUG: feeder status 3
+4/2/2022 12:54:33 PM: Finished scanning 1 files
+4/2/2022 12:54:33 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 12:55:26 PM: Application started
+4/2/2022 12:55:26 PM: Configuration loaded
+
+4/2/2022 1:03:15 PM: Application started
+4/2/2022 1:03:15 PM: Configuration loaded
+4/2/2022 1:04:03 PM: Starting acquisition (Brother)
+4/2/2022 1:04:03 PM: Setup device handling
+4/2/2022 1:04:03 PM: Setup device properties
+4/2/2022 1:04:03 PM: DEBUG: document handling 2
+4/2/2022 1:04:03 PM: DEBUG: feeder status 3
+4/2/2022 1:04:19 PM: Finished scanning 1 files
+4/2/2022 1:04:19 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 1:06:49 PM: Application started
+4/2/2022 1:06:49 PM: Configuration loaded
+4/2/2022 1:07:47 PM: Starting acquisition (Brother)
+4/2/2022 1:07:47 PM: Setup device handling
+4/2/2022 1:07:47 PM: Setup device properties
+4/2/2022 1:07:47 PM: DEBUG: document handling 2
+4/2/2022 1:07:47 PM: DEBUG: feeder status 3
+
+4/2/2022 1:07:53 PM: Application started
+4/2/2022 1:07:54 PM: Configuration loaded
+4/2/2022 1:08:08 PM: Starting acquisition (Brother)
+4/2/2022 1:08:08 PM: Setup device handling
+4/2/2022 1:08:08 PM: Setup device properties
+4/2/2022 1:08:08 PM: DEBUG: document handling 2
+4/2/2022 1:08:08 PM: DEBUG: feeder status 3
+4/2/2022 1:08:23 PM: Finished scanning 1 files
+4/2/2022 1:08:23 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 1:14:22 PM: Application started
+4/2/2022 1:14:22 PM: Configuration loaded
+4/2/2022 1:14:47 PM: Starting acquisition (Brother)
+4/2/2022 1:14:47 PM: Setup device handling
+4/2/2022 1:14:47 PM: Setup device properties
+4/2/2022 1:14:47 PM: DEBUG: document handling 2
+4/2/2022 1:14:47 PM: DEBUG: feeder status 3
+4/2/2022 1:15:02 PM: Finished scanning 1 files
+4/2/2022 1:15:02 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 1:15:59 PM: Application started
+4/2/2022 1:15:59 PM: Configuration loaded
+
+4/2/2022 1:39:25 PM: Application started
+4/2/2022 1:39:25 PM: Configuration loaded
+4/2/2022 1:39:49 PM: Starting acquisition (Brother)
+4/2/2022 1:39:49 PM: Setup device handling
+4/2/2022 1:39:49 PM: Setup device properties
+4/2/2022 1:39:49 PM: DEBUG: document handling 2
+4/2/2022 1:39:49 PM: DEBUG: feeder status 3
+4/2/2022 1:40:04 PM: Finished scanning 1 files
+4/2/2022 1:40:04 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 1:41:04 PM: Application started
+4/2/2022 1:41:04 PM: Configuration loaded
+
+4/2/2022 1:44:01 PM: Application started
+4/2/2022 1:44:01 PM: Configuration loaded
+4/2/2022 1:53:42 PM: Application closed
+
+4/2/2022 2:17:36 PM: Application started
+4/2/2022 2:17:36 PM: Configuration loaded
+
+4/2/2022 2:17:49 PM: Application started
+4/2/2022 2:17:49 PM: Configuration loaded
+
+4/2/2022 2:19:56 PM: Application started
+4/2/2022 2:19:56 PM: Configuration loaded
+4/2/2022 2:20:09 PM: Starting acquisition (Brother)
+4/2/2022 2:20:09 PM: Setup device handling
+4/2/2022 2:20:09 PM: Setup device properties
+4/2/2022 2:20:09 PM: DEBUG: document handling 2
+4/2/2022 2:20:09 PM: DEBUG: feeder status 3
+4/2/2022 2:20:24 PM: Finished scanning 1 files
+4/2/2022 2:20:24 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 2:20:38 PM: Application started
+4/2/2022 2:20:38 PM: Configuration loaded
+
+4/2/2022 2:21:23 PM: Application started
+4/2/2022 2:21:24 PM: Configuration loaded
+4/2/2022 2:21:36 PM: Starting acquisition (Brother)
+4/2/2022 2:21:36 PM: Setup device handling
+4/2/2022 2:21:36 PM: Setup device properties
+4/2/2022 2:21:36 PM: DEBUG: document handling 2
+4/2/2022 2:21:36 PM: DEBUG: feeder status 3
+4/2/2022 2:21:52 PM: Finished scanning 1 files
+4/2/2022 2:21:52 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/2/2022 2:21:57 PM: Starting acquisition (Brother)
+4/2/2022 2:21:57 PM: Setup device handling
+4/2/2022 2:21:57 PM: Setup device properties
+4/2/2022 2:21:57 PM: DEBUG: document handling 2
+4/2/2022 2:21:57 PM: DEBUG: feeder status 3
+4/2/2022 2:22:12 PM: Finished scanning 1 files
+4/2/2022 2:22:12 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 2:22:25 PM: Application started
+4/2/2022 2:22:25 PM: Configuration loaded
+
+4/2/2022 2:23:32 PM: Application started
+4/2/2022 2:23:32 PM: Configuration loaded
+
+4/2/2022 2:23:58 PM: Application started
+4/2/2022 2:23:59 PM: Configuration loaded
+4/2/2022 2:24:12 PM: Starting acquisition (Brother)
+4/2/2022 2:24:12 PM: Setup device handling
+4/2/2022 2:24:12 PM: Setup device properties
+4/2/2022 2:24:12 PM: DEBUG: document handling 2
+4/2/2022 2:24:12 PM: DEBUG: feeder status 3
+4/2/2022 2:24:27 PM: Finished scanning 1 files
+4/2/2022 2:24:27 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/2/2022 2:24:29 PM: Starting acquisition (Brother)
+4/2/2022 2:24:29 PM: Setup device handling
+4/2/2022 2:24:29 PM: Setup device properties
+4/2/2022 2:24:29 PM: DEBUG: document handling 2
+4/2/2022 2:24:29 PM: DEBUG: feeder status 3
+4/2/2022 2:24:51 PM: Finished scanning 1 files
+4/2/2022 2:24:51 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 2:25:04 PM: Application started
+4/2/2022 2:25:04 PM: Configuration loaded
+
+4/2/2022 2:27:10 PM: Application started
+4/2/2022 2:27:10 PM: Configuration loaded
+4/2/2022 2:27:20 PM: Starting acquisition (Brother)
+4/2/2022 2:27:20 PM: Setup device handling
+4/2/2022 2:27:20 PM: Setup device properties
+4/2/2022 2:27:20 PM: DEBUG: document handling 2
+4/2/2022 2:27:20 PM: DEBUG: feeder status 3
+4/2/2022 2:27:35 PM: Finished scanning 1 files
+4/2/2022 2:27:35 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/2/2022 2:27:41 PM: Starting acquisition (Brother)
+4/2/2022 2:27:41 PM: Setup device handling
+4/2/2022 2:27:41 PM: Setup device properties
+4/2/2022 2:27:41 PM: DEBUG: document handling 2
+4/2/2022 2:27:41 PM: DEBUG: feeder status 3
+4/2/2022 2:27:56 PM: Finished scanning 1 files
+4/2/2022 2:27:56 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 2:28:07 PM: Application started
+4/2/2022 2:28:07 PM: Configuration loaded
+
+4/2/2022 2:33:00 PM: Application started
+4/2/2022 2:33:00 PM: Configuration loaded
+4/2/2022 2:33:16 PM: Starting acquisition (Brother)
+4/2/2022 2:33:16 PM: Setup device handling
+4/2/2022 2:33:16 PM: Setup device properties
+4/2/2022 2:33:16 PM: DEBUG: document handling 2
+4/2/2022 2:33:16 PM: DEBUG: feeder status 3
+4/2/2022 2:33:31 PM: Finished scanning 1 files
+4/2/2022 2:33:31 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/2/2022 2:33:33 PM: Starting acquisition (Brother)
+4/2/2022 2:33:33 PM: Setup device handling
+4/2/2022 2:33:33 PM: Setup device properties
+4/2/2022 2:33:33 PM: DEBUG: document handling 2
+4/2/2022 2:33:33 PM: DEBUG: feeder status 3
+4/2/2022 2:33:52 PM: Finished scanning 1 files
+4/2/2022 2:33:52 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 2:34:04 PM: Application started
+4/2/2022 2:34:04 PM: Configuration loaded
+
+4/2/2022 2:34:58 PM: Application started
+4/2/2022 2:34:58 PM: Configuration loaded
+4/2/2022 2:35:10 PM: Starting acquisition (Brother)
+4/2/2022 2:35:10 PM: Setup device handling
+4/2/2022 2:35:10 PM: Setup device properties
+4/2/2022 2:35:10 PM: DEBUG: document handling 2
+4/2/2022 2:35:10 PM: DEBUG: feeder status 3
+
+4/2/2022 2:35:17 PM: Application started
+4/2/2022 2:35:17 PM: Configuration loaded
+4/2/2022 2:35:28 PM: Starting acquisition (Brother)
+4/2/2022 2:35:28 PM: Setup device handling
+4/2/2022 2:35:28 PM: Setup device properties
+4/2/2022 2:35:28 PM: DEBUG: document handling 2
+4/2/2022 2:35:28 PM: DEBUG: feeder status 3
+4/2/2022 2:35:43 PM: Finished scanning 1 files
+4/2/2022 2:35:43 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/2/2022 2:35:44 PM: Starting acquisition (Brother)
+4/2/2022 2:35:44 PM: Setup device handling
+4/2/2022 2:35:44 PM: Setup device properties
+4/2/2022 2:35:44 PM: DEBUG: document handling 2
+4/2/2022 2:35:44 PM: DEBUG: feeder status 3
+4/2/2022 2:36:03 PM: Finished scanning 1 files
+4/2/2022 2:36:03 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 2:36:58 PM: Application started
+4/2/2022 2:36:58 PM: Configuration loaded
+
+4/2/2022 2:38:04 PM: Application started
+4/2/2022 2:38:04 PM: Configuration loaded
+4/2/2022 2:38:14 PM: Starting acquisition (Brother)
+4/2/2022 2:38:14 PM: Setup device handling
+4/2/2022 2:38:14 PM: Setup device properties
+4/2/2022 2:38:14 PM: DEBUG: document handling 2
+4/2/2022 2:38:14 PM: DEBUG: feeder status 3
+4/2/2022 2:38:29 PM: Finished scanning 1 files
+4/2/2022 2:38:29 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/2/2022 2:38:48 PM: Starting acquisition (Brother)
+4/2/2022 2:38:48 PM: Setup device handling
+4/2/2022 2:38:48 PM: Setup device properties
+4/2/2022 2:38:48 PM: DEBUG: document handling 2
+4/2/2022 2:38:48 PM: DEBUG: feeder status 3
+4/2/2022 2:39:03 PM: Finished scanning 1 files
+4/2/2022 2:39:03 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 2:39:15 PM: Application started
+4/2/2022 2:39:15 PM: Configuration loaded
+
+4/2/2022 2:39:45 PM: Application started
+4/2/2022 2:39:45 PM: Configuration loaded
+4/2/2022 2:40:06 PM: Configuration saved
+4/2/2022 2:40:06 PM: Starting acquisition (Brother)
+4/2/2022 2:40:06 PM: Setup device handling
+4/2/2022 2:40:06 PM: Setup device properties
+4/2/2022 2:40:06 PM: DEBUG: document handling 1
+4/2/2022 2:40:06 PM: DEBUG: feeder status 3
+4/2/2022 2:40:20 PM: DEBUG: document handling 1
+4/2/2022 2:40:20 PM: DEBUG: feeder status 3
+4/2/2022 2:40:28 PM: DEBUG: document handling 1
+4/2/2022 2:40:28 PM: DEBUG: feeder status 3
+4/2/2022 2:40:37 PM: DEBUG: document handling 1
+4/2/2022 2:40:37 PM: DEBUG: feeder status 3
+4/2/2022 2:40:47 PM: DEBUG: document handling 1
+4/2/2022 2:40:47 PM: DEBUG: feeder status 3
+4/2/2022 2:40:47 PM: Paper feed empty
+4/2/2022 2:40:47 PM: Finished scanning 4 files
+4/2/2022 2:40:47 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 2:41:02 PM: Application started
+4/2/2022 2:41:02 PM: Configuration loaded
+4/2/2022 2:41:02 PM: Configuration saved
+
+4/2/2022 2:41:37 PM: Application started
+4/2/2022 2:41:37 PM: Configuration loaded
+4/2/2022 2:41:37 PM: Configuration saved
+4/2/2022 2:41:53 PM: Configuration saved
+4/2/2022 2:42:22 PM: Starting acquisition (Brother)
+4/2/2022 2:42:22 PM: Setup device handling
+4/2/2022 2:42:22 PM: Setup device properties
+4/2/2022 2:42:22 PM: DEBUG: document handling 1
+4/2/2022 2:42:22 PM: DEBUG: feeder status 3
+4/2/2022 2:42:35 PM: DEBUG: document handling 1
+4/2/2022 2:42:35 PM: DEBUG: feeder status 3
+4/2/2022 2:42:44 PM: DEBUG: document handling 1
+4/2/2022 2:42:44 PM: DEBUG: feeder status 3
+
+4/2/2022 2:42:58 PM: Application started
+4/2/2022 2:42:59 PM: Configuration loaded
+4/2/2022 2:42:59 PM: Configuration saved
+4/2/2022 2:43:08 PM: Configuration saved
+4/2/2022 2:43:09 PM: Configuration saved
+4/2/2022 2:43:10 PM: Starting acquisition (Brother)
+4/2/2022 2:43:10 PM: Setup device handling
+4/2/2022 2:43:10 PM: Setup device properties
+4/2/2022 2:43:10 PM: DEBUG: document handling 2
+4/2/2022 2:43:10 PM: DEBUG: feeder status 3
+4/2/2022 2:43:10 PM: Device is busy, retrying in 2s...
+4/2/2022 2:43:12 PM: DEBUG: document handling 2
+4/2/2022 2:43:12 PM: DEBUG: feeder status 3
+4/2/2022 2:43:13 PM: Device is busy, retrying in 2s...
+4/2/2022 2:43:15 PM: DEBUG: document handling 2
+4/2/2022 2:43:15 PM: DEBUG: feeder status 3
+4/2/2022 2:43:35 PM: Finished scanning 1 files
+4/2/2022 2:43:35 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/2/2022 2:43:36 PM: Starting acquisition (Brother)
+4/2/2022 2:43:36 PM: Setup device handling
+4/2/2022 2:43:36 PM: Setup device properties
+4/2/2022 2:43:37 PM: DEBUG: document handling 2
+4/2/2022 2:43:37 PM: DEBUG: feeder status 3
+4/2/2022 2:43:56 PM: Finished scanning 1 files
+4/2/2022 2:43:56 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/2/2022 2:44:15 PM: Application started
+4/2/2022 2:44:15 PM: Configuration loaded
+
+4/2/2022 2:44:31 PM: Application started
+4/2/2022 2:44:32 PM: Configuration loaded
+
+4/4/2022 8:57:48 AM: Application started
+4/4/2022 8:57:48 AM: Configuration loaded
+4/4/2022 8:58:21 AM: [Error] The provided scanner device could not be found.
+4/4/2022 8:58:32 AM: Starting acquisition (Brother)
+4/4/2022 8:58:32 AM: Setup device handling
+4/4/2022 8:58:32 AM: Setup device properties
+4/4/2022 8:58:32 AM: DEBUG: document handling 2
+4/4/2022 8:58:32 AM: DEBUG: feeder status 3
+4/4/2022 8:58:48 AM: Finished scanning 1 files
+4/4/2022 8:58:48 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/4/2022 8:58:58 AM: Starting acquisition (Brother)
+4/4/2022 8:58:58 AM: Setup device handling
+4/4/2022 8:58:58 AM: Setup device properties
+4/4/2022 8:58:58 AM: DEBUG: document handling 2
+4/4/2022 8:58:58 AM: DEBUG: feeder status 3
+4/4/2022 8:59:13 AM: Finished scanning 1 files
+4/4/2022 8:59:13 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/4/2022 9:00:12 AM: Application started
+4/4/2022 9:00:12 AM: Configuration loaded
+
+4/4/2022 9:01:34 AM: Application started
+4/4/2022 9:01:34 AM: Configuration loaded
+
+4/4/2022 9:01:50 AM: Application started
+4/4/2022 9:01:50 AM: Configuration loaded
+
+4/4/2022 9:02:25 AM: Application started
+4/4/2022 9:02:25 AM: Configuration loaded
+
+4/4/2022 9:03:18 AM: Application started
+4/4/2022 9:03:18 AM: Configuration loaded
+
+4/4/2022 9:04:45 AM: Application started
+4/4/2022 9:04:45 AM: Configuration loaded
+
+4/4/2022 9:05:17 AM: Application started
+4/4/2022 9:05:17 AM: Configuration loaded
+
+4/4/2022 9:09:28 AM: Application started
+4/4/2022 9:09:28 AM: Configuration loaded
+4/4/2022 9:09:44 AM: Starting acquisition (Brother)
+4/4/2022 9:09:44 AM: Setup device handling
+4/4/2022 9:09:44 AM: Setup device properties
+4/4/2022 9:09:44 AM: DEBUG: document handling 2
+4/4/2022 9:09:44 AM: DEBUG: feeder status 3
+4/4/2022 9:10:00 AM: Finished scanning 1 files
+4/4/2022 9:10:00 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/4/2022 9:10:45 AM: Starting acquisition (Brother)
+4/4/2022 9:10:45 AM: Setup device handling
+4/4/2022 9:10:45 AM: Setup device properties
+4/4/2022 9:10:45 AM: DEBUG: document handling 2
+4/4/2022 9:10:45 AM: DEBUG: feeder status 3
+4/4/2022 9:11:00 AM: Finished scanning 1 files
+4/4/2022 9:11:00 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/4/2022 9:11:05 AM: Starting acquisition (Brother)
+4/4/2022 9:11:05 AM: Setup device handling
+4/4/2022 9:11:05 AM: Setup device properties
+4/4/2022 9:11:05 AM: DEBUG: document handling 2
+4/4/2022 9:11:05 AM: DEBUG: feeder status 3
+4/4/2022 9:11:21 AM: Finished scanning 1 files
+4/4/2022 9:11:21 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/4/2022 9:12:32 AM: Application started
+4/4/2022 9:12:33 AM: Configuration loaded
+
+4/4/2022 9:17:30 AM: Application started
+4/4/2022 9:17:31 AM: Configuration loaded
+
+4/4/2022 9:29:07 AM: Application started
+4/4/2022 9:29:07 AM: Configuration loaded
+
+4/4/2022 9:29:53 AM: Application started
+4/4/2022 9:29:54 AM: Configuration loaded
+4/4/2022 9:30:31 AM: Starting acquisition (Brother)
+4/4/2022 9:30:31 AM: Setup device handling
+4/4/2022 9:30:31 AM: Setup device properties
+4/4/2022 9:30:31 AM: DEBUG: document handling 2
+4/4/2022 9:30:31 AM: DEBUG: feeder status 3
+4/4/2022 9:30:46 AM: Finished scanning 1 files
+4/4/2022 9:30:46 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/4/2022 9:31:25 AM: Starting acquisition (Brother)
+4/4/2022 9:31:25 AM: Setup device handling
+4/4/2022 9:31:25 AM: Setup device properties
+4/4/2022 9:31:25 AM: DEBUG: document handling 2
+4/4/2022 9:31:25 AM: DEBUG: feeder status 3
+4/4/2022 9:31:41 AM: Finished scanning 1 files
+4/4/2022 9:31:41 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/4/2022 9:33:40 AM: Application started
+4/4/2022 9:33:40 AM: Configuration loaded
+
+4/4/2022 10:00:50 AM: Application started
+4/4/2022 10:00:50 AM: Configuration loaded
+4/4/2022 10:02:09 AM: Starting acquisition (Brother)
+4/4/2022 10:02:09 AM: Setup device handling
+4/4/2022 10:02:09 AM: Setup device properties
+4/4/2022 10:02:09 AM: DEBUG: document handling 2
+4/4/2022 10:02:09 AM: DEBUG: feeder status 3
+4/4/2022 10:02:24 AM: Finished scanning 1 files
+4/4/2022 10:02:24 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/4/2022 10:02:25 AM: Starting acquisition (Brother)
+4/4/2022 10:02:25 AM: Setup device handling
+4/4/2022 10:02:25 AM: Setup device properties
+4/4/2022 10:02:25 AM: DEBUG: document handling 2
+4/4/2022 10:02:25 AM: DEBUG: feeder status 3
+4/4/2022 10:02:44 AM: Finished scanning 1 files
+4/4/2022 10:02:44 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/4/2022 10:03:23 AM: Application started
+4/4/2022 10:03:23 AM: Configuration loaded
+
+4/4/2022 10:10:08 AM: Application started
+4/4/2022 10:10:08 AM: Configuration loaded
+
+4/4/2022 10:14:12 AM: Application started
+4/4/2022 10:14:12 AM: Configuration loaded
+
+4/4/2022 10:14:41 AM: Application started
+4/4/2022 10:14:42 AM: Configuration loaded
+4/4/2022 10:14:52 AM: Starting acquisition (Brother)
+4/4/2022 10:14:52 AM: Setup device handling
+4/4/2022 10:14:52 AM: Setup device properties
+4/4/2022 10:14:52 AM: DEBUG: document handling 2
+4/4/2022 10:14:52 AM: DEBUG: feeder status 3
+4/4/2022 10:15:07 AM: Finished scanning 1 files
+4/4/2022 10:15:07 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/4/2022 10:15:09 AM: Starting acquisition (Brother)
+4/4/2022 10:15:09 AM: Setup device handling
+4/4/2022 10:15:09 AM: Setup device properties
+4/4/2022 10:15:09 AM: DEBUG: document handling 2
+4/4/2022 10:15:09 AM: DEBUG: feeder status 3
+4/4/2022 10:15:28 AM: Finished scanning 1 files
+4/4/2022 10:15:28 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/4/2022 10:15:48 AM: Application started
+4/4/2022 10:15:48 AM: Configuration loaded
+
+4/4/2022 10:16:39 AM: Application started
+4/4/2022 10:16:39 AM: Configuration loaded
+
+4/4/2022 10:20:25 AM: Application started
+4/4/2022 10:20:25 AM: Configuration loaded
+
+4/4/2022 10:31:35 AM: Application started
+4/4/2022 10:31:35 AM: Configuration loaded
+
+4/4/2022 10:32:02 AM: Application started
+4/4/2022 10:32:02 AM: Configuration loaded
+
+4/4/2022 10:32:24 AM: Application started
+4/4/2022 10:32:25 AM: Configuration loaded
+
+4/4/2022 10:34:23 AM: Application started
+4/4/2022 10:34:23 AM: Configuration loaded
+
+4/4/2022 10:40:24 AM: Application started
+4/4/2022 10:40:24 AM: Configuration loaded
+
+4/4/2022 10:40:38 AM: Application started
+4/4/2022 10:40:38 AM: Configuration loaded
+
+4/4/2022 10:41:22 AM: Application started
+4/4/2022 10:41:23 AM: Configuration loaded
+
+4/4/2022 10:41:36 AM: Application started
+4/4/2022 10:41:36 AM: Configuration loaded
+
+4/4/2022 10:41:47 AM: Application started
+4/4/2022 10:41:48 AM: Configuration loaded
+
+4/4/2022 10:42:10 AM: Application started
+4/4/2022 10:42:10 AM: Configuration loaded
+
+4/4/2022 10:48:33 AM: Application started
+4/4/2022 10:48:33 AM: Configuration loaded
+4/4/2022 10:49:05 AM: Starting acquisition (Brother)
+4/4/2022 10:49:05 AM: Setup device handling
+
+4/4/2022 10:49:10 AM: Application started
+4/4/2022 10:49:10 AM: Configuration loaded
+4/4/2022 10:49:17 AM: Starting acquisition (Brother)
+4/4/2022 10:49:17 AM: Setup device handling
+4/4/2022 10:49:17 AM: Setup device properties
+4/4/2022 10:49:18 AM: DEBUG: document handling 2
+4/4/2022 10:49:18 AM: DEBUG: feeder status 3
+4/4/2022 10:49:33 AM: Finished scanning 1 files
+4/4/2022 10:49:33 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+4/4/2022 10:49:34 AM: Starting acquisition (Brother)
+4/4/2022 10:49:34 AM: Setup device handling
+4/4/2022 10:49:34 AM: Setup device properties
+4/4/2022 10:49:35 AM: DEBUG: document handling 2
+4/4/2022 10:49:35 AM: DEBUG: feeder status 3
+4/4/2022 10:49:54 AM: Finished scanning 1 files
+4/4/2022 10:49:54 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b8
+
+4/4/2022 10:50:14 AM: Application started
+4/4/2022 10:50:14 AM: Configuration loaded
+
+4/4/2022 10:51:28 AM: Application started
+4/4/2022 10:51:28 AM: Configuration loaded
+
+4/4/2022 11:13:30 AM: Application started
+4/4/2022 11:13:30 AM: Configuration loaded
+
+4/4/2022 11:13:58 AM: Application started
+4/4/2022 11:13:58 AM: Configuration loaded
+4/4/2022 11:14:14 AM: Starting acquisition (Brother)
+4/4/2022 11:14:14 AM: Setup device handling
+4/4/2022 11:14:14 AM: Setup device properties
+
+4/4/2022 11:15:26 AM: Application started
+4/4/2022 11:15:26 AM: Configuration loaded
+
+4/4/2022 11:16:19 AM: Application started
+4/4/2022 11:16:19 AM: Configuration loaded
+
+4/4/2022 11:16:54 AM: Application started
+4/4/2022 11:16:54 AM: Configuration loaded
+
+4/4/2022 11:23:58 AM: Application started
+4/4/2022 11:23:58 AM: Configuration loaded
+
+4/4/2022 11:24:38 AM: Application started
+4/4/2022 11:24:38 AM: Configuration loaded
+
+4/4/2022 11:35:04 AM: Application started
+4/4/2022 11:35:04 AM: Configuration loaded
+
+4/4/2022 11:35:27 AM: Application started
+4/4/2022 11:35:27 AM: Configuration loaded
+
+4/5/2022 7:15:45 AM: Application started
+4/5/2022 7:15:45 AM: Configuration loaded
+
+4/5/2022 7:17:23 AM: Application started
+4/5/2022 7:17:23 AM: Configuration loaded
+
+4/5/2022 7:28:08 AM: Application started
+4/5/2022 7:28:09 AM: Configuration loaded
+
+4/5/2022 7:28:52 AM: Application started
+4/5/2022 7:28:52 AM: Configuration loaded
+
+4/5/2022 7:29:47 AM: Application started
+4/5/2022 7:29:47 AM: Configuration loaded
+
+4/5/2022 7:31:39 AM: Application started
+4/5/2022 7:31:39 AM: Configuration loaded
+
+4/5/2022 7:32:25 AM: Application started
+4/5/2022 7:32:25 AM: Configuration loaded
+
+4/5/2022 7:34:13 AM: Application started
+4/5/2022 7:34:13 AM: Configuration loaded
+
+4/5/2022 7:35:11 AM: Application started
+4/5/2022 7:35:11 AM: Configuration loaded
+
+4/5/2022 7:35:47 AM: Application started
+4/5/2022 7:35:47 AM: Configuration loaded
+
+4/5/2022 7:42:55 AM: Application started
+4/5/2022 7:42:56 AM: Configuration loaded
+
+4/5/2022 7:43:25 AM: Application started
+4/5/2022 7:43:25 AM: Configuration loaded
+
+4/5/2022 7:50:53 AM: Application started
+4/5/2022 7:50:53 AM: Configuration loaded
+
+4/5/2022 7:51:21 AM: Application started
+4/5/2022 7:51:21 AM: Configuration loaded
+
+4/5/2022 7:51:40 AM: Application started
+4/5/2022 7:51:40 AM: Configuration loaded
+
+4/5/2022 7:52:19 AM: Application started
+4/5/2022 7:52:20 AM: Configuration loaded
+
+4/5/2022 7:55:26 AM: Application started
+4/5/2022 7:55:26 AM: Configuration loaded
+
+4/5/2022 7:57:02 AM: Application started
+4/5/2022 7:57:02 AM: Configuration loaded
+
+4/5/2022 7:57:41 AM: Application started
+4/5/2022 7:57:41 AM: Configuration loaded
+
+4/5/2022 8:02:49 AM: Application started
+4/5/2022 8:02:49 AM: Configuration loaded
+
+4/5/2022 8:03:42 AM: Application started
+4/5/2022 8:03:42 AM: Configuration loaded
+
+4/5/2022 8:06:26 AM: Application started
+4/5/2022 8:06:27 AM: Configuration loaded
+
+4/5/2022 8:30:21 AM: Application started
+4/5/2022 8:30:21 AM: Configuration loaded
+
+4/5/2022 8:30:38 AM: Application started
+4/5/2022 8:30:38 AM: Configuration loaded
+
+4/5/2022 8:31:08 AM: Application started
+4/5/2022 8:31:08 AM: Configuration loaded
+4/5/2022 8:32:35 AM: Configuration saved
+4/5/2022 8:32:50 AM: Configuration saved
+4/5/2022 8:32:51 AM: Starting acquisition (Brother)
+4/5/2022 8:32:51 AM: Setup device handling
+4/5/2022 8:32:51 AM: Setup device properties
+4/5/2022 8:32:51 AM: DEBUG: document handling 2
+4/5/2022 8:32:51 AM: DEBUG: feeder status 3
+4/5/2022 8:33:07 AM: Finished scanning 1 files
+4/5/2022 8:33:07 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\b4
+
+4/5/2022 8:37:18 AM: Application started
+4/5/2022 8:37:18 AM: Configuration loaded
+
+4/5/2022 8:40:34 AM: Application started
+4/5/2022 8:40:34 AM: Configuration loaded
+
+4/5/2022 8:45:37 AM: Application started
+4/5/2022 8:45:37 AM: Configuration loaded
+
+4/5/2022 8:49:17 AM: Application started
+4/5/2022 8:49:17 AM: Configuration loaded
+
+4/5/2022 8:54:31 AM: Application started
+4/5/2022 8:54:31 AM: Configuration loaded
+
+4/5/2022 8:57:06 AM: Application started
+4/5/2022 8:57:06 AM: Configuration loaded
+
+4/5/2022 8:59:21 AM: Application started
+4/5/2022 8:59:21 AM: Configuration loaded
+
+4/5/2022 9:00:52 AM: Application started
+4/5/2022 9:00:52 AM: Configuration loaded
+
+4/5/2022 9:27:39 AM: Application started
+4/5/2022 9:27:39 AM: Configuration loaded
+
+4/5/2022 9:34:17 AM: Application started
+4/5/2022 9:34:17 AM: Configuration loaded
+
+4/5/2022 9:41:25 AM: Application started
+4/5/2022 9:41:26 AM: Configuration loaded
+
+4/5/2022 9:48:24 AM: Application started
+4/5/2022 9:48:24 AM: Configuration loaded
+
+4/5/2022 10:44:56 AM: Application started
+4/5/2022 10:44:56 AM: Configuration loaded
+
+4/5/2022 10:58:21 AM: Application started
+4/5/2022 10:58:21 AM: Configuration loaded
+
+4/5/2022 11:01:21 AM: Application started
+4/5/2022 11:01:21 AM: Configuration loaded
+
+4/5/2022 11:03:00 AM: Application started
+4/5/2022 11:03:00 AM: Configuration loaded
+
+4/5/2022 11:07:39 AM: Application started
+4/5/2022 11:07:39 AM: Configuration loaded
+
+4/5/2022 11:08:54 AM: Application started
+4/5/2022 11:08:54 AM: Configuration loaded
+
+4/5/2022 11:10:29 AM: Application started
+4/5/2022 11:10:29 AM: Configuration loaded
+
+4/5/2022 11:13:17 AM: Application started
+4/5/2022 11:13:17 AM: Configuration loaded
+
+4/5/2022 11:14:30 AM: Application started
+4/5/2022 11:14:30 AM: Configuration loaded
+
+4/5/2022 11:16:17 AM: Application started
+4/5/2022 11:16:17 AM: Configuration loaded
+
+4/5/2022 11:24:56 AM: Application started
+4/5/2022 11:24:56 AM: Configuration loaded
+
+4/5/2022 11:49:10 AM: Application started
+4/5/2022 11:49:11 AM: Configuration loaded
+
+4/5/2022 11:53:06 AM: Application started
+4/5/2022 11:53:06 AM: Configuration loaded
+
+4/5/2022 11:54:02 AM: Application started
+4/5/2022 11:54:02 AM: Configuration loaded
+
+4/5/2022 11:57:19 AM: Application started
+4/5/2022 11:57:19 AM: Configuration loaded
+
+4/5/2022 12:03:45 PM: Application started
+4/5/2022 12:03:45 PM: Configuration loaded
+
+4/5/2022 12:11:55 PM: Application started
+4/5/2022 12:11:55 PM: Configuration loaded
+
+4/5/2022 12:11:58 PM: Application started
+4/5/2022 12:11:58 PM: Configuration loaded
+
+4/5/2022 12:12:51 PM: Application started
+4/5/2022 12:12:51 PM: Configuration loaded
+
+4/5/2022 12:32:51 PM: Application started
+4/5/2022 12:32:52 PM: Configuration loaded
+
+4/5/2022 12:34:12 PM: Application started
+4/5/2022 12:34:12 PM: Configuration loaded
+
+4/5/2022 12:35:53 PM: Application started
+4/5/2022 12:35:54 PM: Configuration loaded
+
+4/5/2022 12:36:47 PM: Application started
+4/5/2022 12:36:47 PM: Configuration loaded
+
+4/5/2022 12:38:36 PM: Application started
+4/5/2022 12:38:36 PM: Configuration loaded
+4/5/2022 12:39:24 PM: [Error] The provided scanner device could not be found.
+4/5/2022 12:39:31 PM: Configuration saved
+4/5/2022 12:39:32 PM: [Error] The provided scanner device could not be found.
+4/5/2022 12:39:38 PM: [Error] The provided scanner device could not be found.
+
+4/5/2022 5:45:15 PM: Application started
+4/5/2022 5:45:16 PM: Configuration loaded
+
+4/5/2022 5:46:18 PM: Application started
+4/5/2022 5:46:18 PM: Configuration loaded
+
+4/5/2022 5:47:19 PM: Application started
+4/5/2022 5:47:19 PM: Configuration loaded
+
+4/5/2022 5:51:34 PM: Application started
+4/5/2022 5:51:34 PM: Configuration loaded
+
+4/5/2022 5:52:43 PM: Application started
+4/5/2022 5:52:43 PM: Configuration loaded

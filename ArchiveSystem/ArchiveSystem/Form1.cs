@@ -86,7 +86,7 @@ namespace ArchiveSystem
 
 
 
-
+             
 
         }
         //read files of folder into dgv files by clicking on folder
@@ -304,7 +304,7 @@ namespace ArchiveSystem
 
 
 
-                    //put all files of selected older in array 
+                    //put all files of selected folder in array 
 
                     string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
 
@@ -323,6 +323,7 @@ namespace ArchiveSystem
                             {
                                 //upload selected files only 
                                 string fn = subject + file_name;
+
                                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + fn);
                                 request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
                                 request.Method = WebRequestMethods.Ftp.UploadFile;

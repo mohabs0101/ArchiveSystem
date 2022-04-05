@@ -12,10 +12,15 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Data.SqlClient;
 using ArchiveSystem.Folder_Tracker;
+using System.Net;
+
 namespace ArchiveSystem.Folder_view_data
 {
-    public partial class Form_show_docs   : MetroFramework.Forms.MetroForm
+    public partial class Form_show_docs : MetroFramework.Forms.MetroForm
     {
+        public static string _subject;
+        public static string _BookType;
+        public static string _bookCode;
         public Form_show_docs()
         {
             InitializeComponent();
@@ -29,7 +34,7 @@ namespace ArchiveSystem.Folder_view_data
 
         DataTable dt = new DataTable();
         SqlDataAdapter adapter;
-         
+
         void Fill_bookType()
         {
             try
@@ -85,7 +90,7 @@ namespace ArchiveSystem.Folder_view_data
             { ImageList_add_viwe.Images.Add(fn_g, ImageList_Extension.Images[7]); }
             else
             { ImageList_add_viwe.Images.Add(fn_g, Bitmap.FromFile(fn_g)); }
-
+            //ImageList_add_viwe.Dispose();
         }
 
         string pic;
@@ -147,14 +152,22 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 COM_bookStatus.Text = dr1["BookStatus"].ToString();
                 COM_privicy.Text = dr1["Privacy"].ToString();
 
+
+                _subject = TXT_Subject.Text;
+                _BookType = COM_bookType.Text;
+                _bookCode = txt_book_code.Text;
             }
             dr1.Close();
             con.Close();
         }
 
 
+        //public void PrefermCall()
+        //{
+        //    show_files_doc();
 
-        void show_files_doc()
+        //}
+        public void show_files_doc()
         {
             ListView_show_doc.Items.Clear();
             ImageList_add_viwe.Images.Clear();
@@ -176,9 +189,12 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
                 ListView_show_doc.Items.Add(fi.Name, ImageList_add_viwe.Images.Count - 1);
 
+
+
             }
+
         }
-         
+
         void Rotat_img(RotateFlipType r90)
         {
             try
@@ -192,7 +208,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
             }
         }
-       
+
         private void ZoomInOut(bool zoom)
         {
             try
@@ -219,9 +235,8 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             }
 
         }
-        
-     
-         
+
+
         private void Form_show_docs_Load_1(object sender, EventArgs e)
         {
             TabControlBookdetails.RightToLeft = RightToLeft.Yes;
@@ -271,7 +286,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
         {
             ZoomInOut(true);
         }
-         private void btn_Rotate_180_Click(object sender, EventArgs e)
+        private void btn_Rotate_180_Click(object sender, EventArgs e)
         {
             Rotat_img(RotateFlipType.Rotate180FlipNone);
         }
@@ -281,7 +296,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             Rotat_img(RotateFlipType.Rotate90FlipNone);
 
         }
-       
+
 
         private void ListView_show_doc_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -294,17 +309,32 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
                 try
                 {
-                    pic = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
-                    pictureBox_show_doc.Load(pic);
+                    //pic = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                    //pictureBox_show_doc.Load(pic);
+
+                    for (int i = 0; i < ListView_show_doc.Items.Count; i++)
+                    {
+                        String file_name = ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                        Image image2 = Image.FromFile(path_folder_client_temp + @"\" + file_name + "");//put var here
+
+                        pictureBox_show_doc.Image = new Bitmap(image2);
+
+                        image2.Dispose();
+                        //get pah to use it to display img in wndows exploror
+                        //picture_path = (Doc_source + @"\" + selectedFolder + @"\" + file_name + "");
+                    }
+                    //System.Diagnostics.Process.Start(pic);
+
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Process.Start(pic);
+                    MessageBox.Show(ex.ToString());
                 }
 
             }
+
         }
-         
+
         private void TSM_open_file_Click_1(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(pic);
@@ -318,9 +348,96 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
         private void BTN_addMoreDcos_Click(object sender, EventArgs e)
         {
+            this.Hide();
             EditeDocs.EditeDocs ed = new EditeDocs.EditeDocs();
-            ed.Show(); 
+            ed.Show();
 
+        }
+
+        private void TSM_delete_Click(object sender, EventArgs e)
+        {
+            string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
+            ListView.SelectedListViewItemCollection breakfast = this.ListView_show_doc.SelectedItems;
+
+            foreach (ListViewItem Item in breakfast)
+            {
+                pic = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+
+                string fn = ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+
+
+                //------------
+                string FTP_ip = ConfigurationSettings.AppSettings["FTP_Server_Ip"];
+                string FTP_user = ConfigurationSettings.AppSettings["FTP_Server_user"];
+                string FTP_pass = ConfigurationSettings.AppSettings["FTP_Server_pass"];
+                string type = COM_bookType.Text;
+                string bookcode = txt_book_code.Text;
+
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + type + "/" + bookcode + "/" + fn);
+                request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
+                //delete it from server
+                request.Method = WebRequestMethods.Ftp.DeleteFile;
+
+
+
+                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+
+                MessageBox.Show(response.StatusDescription);
+                response.Close();
+                //delete it localy
+                if (File.Exists(pic))
+                {
+                    //ListView_show_doc.Dispose();
+                    //ImageList_add_viwe.Dispose();
+                    //Image img = new Bitmap(pic);
+                    //pictureBox_show_doc.Image = img.GetThumbnailImage(350, 350, null, new IntPtr());
+                    //pictureBox_show_doc.Dispose();
+
+                    System.GC.Collect();
+                    System.GC.WaitForPendingFinalizers();
+                    //pictureBox_show_doc.Dispose();
+
+                    File.Delete(pic);
+                    //refresh listview
+                    show_files_doc();
+                    // Form_show_docs s_doc1 = new Form_show_docs();
+                    //s_doc1.Show();
+
+                }
+
+
+
+
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            ListView_show_doc.Items.Clear();
+            ImageList_add_viwe.Images.Clear();
+
+            string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
+
+            foreach (string file in System.IO.Directory.GetFiles(path_folder_client_temp))
+            {
+
+                fn_g = file;
+
+                check_Extension_file();
+
+
+                FileInfo fi = new FileInfo(fn_g);
+
+                //var files_n = new List<String>();
+                //files_n.Add(fi.FullName);
+
+                ListView_show_doc.Items.Add(fi.Name, ImageList_add_viwe.Images.Count - 1);
+
+
+
+            }
         }
     }
 }
