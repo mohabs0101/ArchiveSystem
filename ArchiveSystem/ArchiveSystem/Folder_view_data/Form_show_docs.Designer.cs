@@ -100,7 +100,28 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.btn_add_Tracker = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TXT_assignTitle = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.COMLIST_assination = new System.Windows.Forms.CheckedListBox();
+            this.advanc_dgv_Assign_Comment = new Zuby.ADGV.AdvancedDataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_show_doc)).BeginInit();
             this.panel14.SuspendLayout();
@@ -117,6 +138,11 @@
             this.panel12.SuspendLayout();
             this.panel8.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
+            this.panel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_Assign_Comment)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel24.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -800,7 +826,7 @@
             this.TabControlBookdetails.Location = new System.Drawing.Point(0, 0);
             this.TabControlBookdetails.Name = "TabControlBookdetails";
             this.TabControlBookdetails.RightToLeftLayout = true;
-            this.TabControlBookdetails.SelectedIndex = 0;
+            this.TabControlBookdetails.SelectedIndex = 1;
             this.TabControlBookdetails.Size = new System.Drawing.Size(1030, 451);
             this.TabControlBookdetails.TabIndex = 0;
             this.TabControlBookdetails.UseSelectable = true;
@@ -893,7 +919,12 @@
             // 
             // metroTabPage2
             // 
-            this.metroTabPage2.Controls.Add(this.btn_add_Tracker);
+            this.metroTabPage2.Controls.Add(this.panel22);
+            this.metroTabPage2.Controls.Add(this.panel21);
+            this.metroTabPage2.Controls.Add(this.panel20);
+            this.metroTabPage2.Controls.Add(this.panel19);
+            this.metroTabPage2.Controls.Add(this.panel18);
+            this.metroTabPage2.Controls.Add(this.panel17);
             this.metroTabPage2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
@@ -907,16 +938,235 @@
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
-            // btn_add_Tracker
+            // panel17
             // 
-            this.btn_add_Tracker.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_Tracker.Location = new System.Drawing.Point(366, 176);
-            this.btn_add_Tracker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_add_Tracker.Name = "btn_add_Tracker";
-            this.btn_add_Tracker.Size = new System.Drawing.Size(171, 35);
-            this.btn_add_Tracker.TabIndex = 225;
-            this.btn_add_Tracker.Text = "اضافة متابعة للكتاب";
-            this.btn_add_Tracker.UseVisualStyleBackColor = true;
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel17.Location = new System.Drawing.Point(1012, 0);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(10, 409);
+            this.panel17.TabIndex = 2;
+            // 
+            // panel18
+            // 
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel18.Location = new System.Drawing.Point(0, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(10, 409);
+            this.panel18.TabIndex = 3;
+            // 
+            // panel19
+            // 
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(10, 0);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(1002, 10);
+            this.panel19.TabIndex = 4;
+            // 
+            // panel20
+            // 
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel20.Location = new System.Drawing.Point(10, 399);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(1002, 10);
+            this.panel20.TabIndex = 5;
+            // 
+            // panel21
+            // 
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(10, 10);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(1002, 10);
+            this.panel21.TabIndex = 6;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.panel24);
+            this.panel22.Controls.Add(this.panel23);
+            this.panel22.Controls.Add(this.label6);
+            this.panel22.Controls.Add(this.TXT_assignTitle);
+            this.panel22.Controls.Add(this.label19);
+            this.panel22.Controls.Add(this.COMLIST_assination);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel22.Location = new System.Drawing.Point(10, 20);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(1002, 379);
+            this.panel22.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(888, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 19);
+            this.label6.TabIndex = 226;
+            this.label6.Text = "عنوان المتابعة";
+            // 
+            // TXT_assignTitle
+            // 
+            this.TXT_assignTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_assignTitle.Location = new System.Drawing.Point(678, 29);
+            this.TXT_assignTitle.Multiline = true;
+            this.TXT_assignTitle.Name = "TXT_assignTitle";
+            this.TXT_assignTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TXT_assignTitle.Size = new System.Drawing.Size(318, 96);
+            this.TXT_assignTitle.TabIndex = 225;
+            // 
+            // label19
+            // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(544, 4);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(91, 21);
+            this.label19.TabIndex = 224;
+            this.label19.Text = "اشاره  الى قسم";
+            // 
+            // COMLIST_assination
+            // 
+            this.COMLIST_assination.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.COMLIST_assination.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.COMLIST_assination.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.COMLIST_assination.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.COMLIST_assination.FormattingEnabled = true;
+            this.COMLIST_assination.HorizontalScrollbar = true;
+            this.COMLIST_assination.Location = new System.Drawing.Point(302, 29);
+            this.COMLIST_assination.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
+            this.COMLIST_assination.MultiColumn = true;
+            this.COMLIST_assination.Name = "COMLIST_assination";
+            this.COMLIST_assination.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.COMLIST_assination.ScrollAlwaysVisible = true;
+            this.COMLIST_assination.Size = new System.Drawing.Size(345, 92);
+            this.COMLIST_assination.TabIndex = 223;
+            // 
+            // advanc_dgv_Assign_Comment
+            // 
+            this.advanc_dgv_Assign_Comment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advanc_dgv_Assign_Comment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advanc_dgv_Assign_Comment.FilterAndSortEnabled = true;
+            this.advanc_dgv_Assign_Comment.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.advanc_dgv_Assign_Comment.Location = new System.Drawing.Point(0, 0);
+            this.advanc_dgv_Assign_Comment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.advanc_dgv_Assign_Comment.MultiSelect = false;
+            this.advanc_dgv_Assign_Comment.Name = "advanc_dgv_Assign_Comment";
+            this.advanc_dgv_Assign_Comment.ReadOnly = true;
+            this.advanc_dgv_Assign_Comment.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.advanc_dgv_Assign_Comment.RowTemplate.Height = 26;
+            this.advanc_dgv_Assign_Comment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advanc_dgv_Assign_Comment.Size = new System.Drawing.Size(1002, 123);
+            this.advanc_dgv_Assign_Comment.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.advanc_dgv_Assign_Comment.TabIndex = 227;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripComboBox1,
+            this.toolStripTextBox1,
+            this.toolStripSeparator2,
+            this.toolStripMenuItem2});
+            this.contextMenuStrip1.Name = "ContextMenuStrip_right_click";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 86);
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "مكتمل",
+            "قيد الانجاز",
+            "متوقف"});
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.toolStripComboBox1.Text = "مكتمل";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(178, 6);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 24);
+            this.toolStripMenuItem2.Text = "حفظ";
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.advanc_dgv_Assign_Comment);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel23.Location = new System.Drawing.Point(0, 256);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(1002, 123);
+            this.panel23.TabIndex = 232;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.button4);
+            this.panel24.Controls.Add(this.button3);
+            this.panel24.Controls.Add(this.button2);
+            this.panel24.Controls.Add(this.button1);
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel24.Location = new System.Drawing.Point(0, 188);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(1002, 68);
+            this.panel24.TabIndex = 233;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(364, 18);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(153, 33);
+            this.button4.TabIndex = 235;
+            this.button4.Text = "انهاء كمكتمل نهائيا";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(523, 18);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(111, 33);
+            this.button3.TabIndex = 234;
+            this.button3.Text = "حذف مهمة";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(640, 18);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(115, 33);
+            this.button2.TabIndex = 233;
+            this.button2.Text = "تعديل مهمة";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(833, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 33);
+            this.button1.TabIndex = 232;
+            this.button1.Text = "اضافة مهمة جديدة";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form_show_docs
             // 
@@ -950,6 +1200,13 @@
             this.panel12.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_Assign_Comment)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip1.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel24.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1025,7 +1282,28 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Button btn_add_Tracker;
         private System.Windows.Forms.ToolStripMenuItem TSM_delete;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TXT_assignTitle;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.CheckedListBox COMLIST_assination;
+        private Zuby.ADGV.AdvancedDataGridView advanc_dgv_Assign_Comment;
+        internal System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        internal System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel23;
     }
 }

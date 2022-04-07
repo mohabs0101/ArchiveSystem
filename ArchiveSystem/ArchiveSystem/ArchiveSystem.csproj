@@ -70,18 +70,6 @@
     <Compile Include="EditeDocs\EditeDocs.Designer.cs">
       <DependentUpon>EditeDocs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Folder_Tracker\Form_Tracker_Procedure.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Folder_Tracker\Form_Tracker_Procedure.Designer.cs">
-      <DependentUpon>Form_Tracker_Procedure.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Folder_view_data\Form_show_doc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Folder_view_data\Form_show_doc.Designer.cs">
-      <DependentUpon>Form_show_doc.cs</DependentUpon>
-    </Compile>
     <Compile Include="Folder_view_data\Form_show_docs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,12 +115,6 @@
     <Compile Include="WIAScanner.cs" />
     <EmbeddedResource Include="EditeDocs\EditeDocs.resx">
       <DependentUpon>EditeDocs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Folder_Tracker\Form_Tracker_Procedure.resx">
-      <DependentUpon>Form_Tracker_Procedure.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Folder_view_data\Form_show_doc.resx">
-      <DependentUpon>Form_show_doc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folder_view_data\Form_show_docs.resx">
       <DependentUpon>Form_show_docs.cs</DependentUpon>

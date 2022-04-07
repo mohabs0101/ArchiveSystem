@@ -11,7 +11,8 @@ using System.IO;
 using System.Configuration;
 using System.Diagnostics;
 using System.Data.SqlClient;
-using ArchiveSystem.Folder_Tracker;
+ 
+
 using System.Net;
 
 namespace ArchiveSystem.Folder_view_data
@@ -34,6 +35,66 @@ namespace ArchiveSystem.Folder_view_data
 
         DataTable dt = new DataTable();
         SqlDataAdapter adapter;
+
+        void Select_Departments()
+        {
+            try
+            {
+                string query = string.Format(@"  
+SELECT  [DepartmentID]
+      ,[DepartmentName]
+  FROM [ArchiveSystem].[dbo].[Departments_TBL]", con);
+
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dep = new DataTable();
+
+                adp.Fill(dep);
+                COMLIST_assination.DataSource = dep;
+                COMLIST_assination.DisplayMember = "DepartmentName";
+                COMLIST_assination.ValueMember = "DepartmentID";
+
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+        void Assign_Comment_TBL()
+        {
+
+//            adapter = new SqlDataAdapter(@"SELECT 
+
+//dbo.Departments_TBL.DepartmentName as [القسم],
+//dbo.[Assign&Comment_TBL].Task as [المهمة],
+//dbo.[Assign&Comment_TBL].Action as [الاجراء],
+//dbo.[Assign&Comment_TBL].Note as [الملاحظات],
+//dbo.[Assign&Comment_TBL].DateAdded as [تاريخ الاضافة]
+
+//FROM     dbo.ArchiveBooks_TBL INNER JOIN
+//                  dbo.[Assign&Comment_TBL] ON dbo.ArchiveBooks_TBL.ArchiveBookID = dbo.[Assign&Comment_TBL].ArchiveBookID INNER JOIN
+//                  dbo.Departments_TBL ON dbo.[Assign&Comment_TBL].DepartmentID = dbo.Departments_TBL.DepartmentID
+//WHERE  ([Assign&Comment_TBL].ArchiveBookID) = @Param1
+
+//                ", con);
+//            adapter.SelectCommand.Parameters.AddWithValue("@Param1", Form_show_doc.book_ID);
+
+            //dt.Clear();
+
+            //adapter.Fill(dt);
+            //advanc_dgv_Assign_Comment.DataSource = dt;
+        }
 
         void Fill_bookType()
         {
@@ -239,6 +300,12 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
         private void Form_show_docs_Load_1(object sender, EventArgs e)
         {
+            TabControlBookdetails.SelectTab(0);
+            Select_Departments();
+
+            Assign_Comment_TBL();
+
+
             TabControlBookdetails.RightToLeft = RightToLeft.Yes;
             TabControlBookdetails.RightToLeftLayout = true;
             Fill_bookType();
@@ -273,8 +340,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
         private void btn_add_Tracker_Click_1(object sender, EventArgs e)
         {
-            Form_Tracker_Procedure tp = new Form_Tracker_Procedure();
-            tp.Show();
+           
         }
 
         private void btn_zoom_out_Click_1(object sender, EventArgs e)

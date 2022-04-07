@@ -13,8 +13,6 @@ C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\D
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\Interop.WIA.dll
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.csproj.ResolveComReference.cache
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.EditeDocs.EditeDocs.resources
-C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Folder_Tracker.Form_Tracker_Procedure.resources
-C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Folder_view_data.Form_show_doc.resources
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Folder_view_data.Form_show_docs.resources
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Folder_view_data.Form_view_data_dqv.resources
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Form1.resources
