@@ -92,13 +92,15 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
             this.panel32 = new System.Windows.Forms.Panel();
-            this.DGV_assignation = new System.Windows.Forms.DataGridView();
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel31 = new System.Windows.Forms.Panel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.PICBOX_failICON = new System.Windows.Forms.PictureBox();
+            this.PICBOX_successICON = new System.Windows.Forms.PictureBox();
+            this.LBL_FTPconValue = new System.Windows.Forms.Label();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.button6 = new System.Windows.Forms.Button();
@@ -120,6 +122,7 @@
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DGV_assignation = new Zuby.ADGV.AdvancedDataGridView();
             this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -138,21 +141,24 @@
             this.panel12.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.panel32.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).BeginInit();
+            this.metroPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PICBOX_failICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PICBOX_successICON)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel29.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1078, 30);
+            this.panel1.Location = new System.Drawing.Point(1301, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 535);
+            this.panel1.Size = new System.Drawing.Size(10, 738);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -160,7 +166,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(20, 30);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 535);
+            this.panel2.Size = new System.Drawing.Size(10, 738);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -168,15 +174,15 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(30, 30);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1048, 10);
+            this.panel3.Size = new System.Drawing.Size(1271, 10);
             this.panel3.TabIndex = 2;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(30, 555);
+            this.panel4.Location = new System.Drawing.Point(30, 758);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1048, 10);
+            this.panel4.Size = new System.Drawing.Size(1271, 10);
             this.panel4.TabIndex = 3;
             // 
             // panel7
@@ -189,7 +195,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(30, 168);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1048, 387);
+            this.panel7.Size = new System.Drawing.Size(1271, 590);
             this.panel7.TabIndex = 5;
             // 
             // metroTabControl1
@@ -197,11 +203,11 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabControl1.Location = new System.Drawing.Point(10, 10);
+            this.metroTabControl1.Location = new System.Drawing.Point(10, 42);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.RightToLeftLayout = true;
-            this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(1028, 367);
+            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.Size = new System.Drawing.Size(1251, 538);
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
             // 
@@ -218,7 +224,7 @@
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.metroTabPage1.Size = new System.Drawing.Size(1020, 325);
+            this.metroTabPage1.Size = new System.Drawing.Size(1243, 496);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "كتاب جديد";
             this.metroTabPage1.VerticalScrollbar = true;
@@ -234,7 +240,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(10, 10);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1000, 305);
+            this.panel11.Size = new System.Drawing.Size(1223, 476);
             this.panel11.TabIndex = 6;
             // 
             // panel14
@@ -244,7 +250,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(76, 305);
+            this.panel14.Size = new System.Drawing.Size(299, 476);
             this.panel14.TabIndex = 5;
             // 
             // PicB_displayBOOK
@@ -252,7 +258,7 @@
             this.PicB_displayBOOK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PicB_displayBOOK.Location = new System.Drawing.Point(0, 0);
             this.PicB_displayBOOK.Name = "PicB_displayBOOK";
-            this.PicB_displayBOOK.Size = new System.Drawing.Size(76, 305);
+            this.PicB_displayBOOK.Size = new System.Drawing.Size(299, 476);
             this.PicB_displayBOOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PicB_displayBOOK.TabIndex = 0;
             this.PicB_displayBOOK.TabStop = false;
@@ -266,9 +272,9 @@
             this.panel13.Controls.Add(this.panel16);
             this.panel13.Controls.Add(this.panel15);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel13.Location = new System.Drawing.Point(76, 0);
+            this.panel13.Location = new System.Drawing.Point(299, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(201, 305);
+            this.panel13.Size = new System.Drawing.Size(201, 476);
             this.panel13.TabIndex = 4;
             // 
             // panel18
@@ -279,7 +285,7 @@
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel18.Location = new System.Drawing.Point(0, 240);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(201, 65);
+            this.panel18.Size = new System.Drawing.Size(201, 236);
             this.panel18.TabIndex = 3;
             // 
             // CHK_selectall
@@ -309,7 +315,7 @@
             this.DGV_Files.Name = "DGV_Files";
             this.DGV_Files.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.DGV_Files.RowHeadersVisible = false;
-            this.DGV_Files.Size = new System.Drawing.Size(201, 65);
+            this.DGV_Files.Size = new System.Drawing.Size(201, 236);
             this.DGV_Files.TabIndex = 0;
             this.DGV_Files.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Files_CellClick);
             // 
@@ -504,9 +510,9 @@
             this.panel12.Controls.Add(this.label18);
             this.panel12.Controls.Add(this.TXT_Book_recive_number);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel12.Location = new System.Drawing.Point(277, 0);
+            this.panel12.Location = new System.Drawing.Point(500, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(723, 305);
+            this.panel12.Size = new System.Drawing.Size(723, 476);
             this.panel12.TabIndex = 3;
             // 
             // COM_bookStatus
@@ -526,7 +532,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(299, 177);
+            this.label2.Location = new System.Drawing.Point(260, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 21);
             this.label2.TabIndex = 167;
@@ -599,7 +605,7 @@
             this.BTN_Archive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_Archive.BackColor = System.Drawing.Color.MediumAquamarine;
             this.BTN_Archive.Font = new System.Drawing.Font("Marlett", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_Archive.Location = new System.Drawing.Point(594, 360);
+            this.BTN_Archive.Location = new System.Drawing.Point(611, 360);
             this.BTN_Archive.Name = "BTN_Archive";
             this.BTN_Archive.Size = new System.Drawing.Size(142, 41);
             this.BTN_Archive.TabIndex = 16;
@@ -629,7 +635,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(677, 9);
+            this.label7.Location = new System.Drawing.Point(638, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 21);
             this.label7.TabIndex = 136;
@@ -640,7 +646,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(666, 66);
+            this.label8.Location = new System.Drawing.Point(627, 66);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 21);
             this.label8.TabIndex = 137;
@@ -651,7 +657,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(511, 120);
+            this.label16.Location = new System.Drawing.Point(472, 120);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(50, 21);
             this.label16.TabIndex = 145;
@@ -662,7 +668,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(686, 120);
+            this.label9.Location = new System.Drawing.Point(647, 120);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 21);
             this.label9.TabIndex = 138;
@@ -670,10 +676,10 @@
             // 
             // TXT_notes
             // 
-            this.TXT_notes.Location = new System.Drawing.Point(10, 262);
+            this.TXT_notes.Location = new System.Drawing.Point(66, 262);
             this.TXT_notes.Multiline = true;
             this.TXT_notes.Name = "TXT_notes";
-            this.TXT_notes.Size = new System.Drawing.Size(324, 79);
+            this.TXT_notes.Size = new System.Drawing.Size(268, 79);
             this.TXT_notes.TabIndex = 15;
             // 
             // label10
@@ -681,7 +687,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(675, 176);
+            this.label10.Location = new System.Drawing.Point(636, 176);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 21);
             this.label10.TabIndex = 139;
@@ -692,7 +698,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(315, 9);
+            this.label11.Location = new System.Drawing.Point(276, 9);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 21);
             this.label11.TabIndex = 140;
@@ -703,7 +709,7 @@
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(488, 66);
+            this.label21.Location = new System.Drawing.Point(449, 66);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(73, 21);
             this.label21.TabIndex = 150;
@@ -714,7 +720,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(490, 9);
+            this.label12.Location = new System.Drawing.Point(451, 9);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 21);
             this.label12.TabIndex = 141;
@@ -725,7 +731,7 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(348, 66);
+            this.label13.Location = new System.Drawing.Point(309, 66);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(27, 21);
             this.label13.TabIndex = 142;
@@ -745,7 +751,7 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(351, 120);
+            this.label14.Location = new System.Drawing.Point(312, 120);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(24, 21);
             this.label14.TabIndex = 143;
@@ -784,7 +790,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(487, 176);
+            this.label17.Location = new System.Drawing.Point(448, 176);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(74, 21);
             this.label17.TabIndex = 146;
@@ -812,9 +818,9 @@
             // panel10
             // 
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(10, 315);
+            this.panel10.Location = new System.Drawing.Point(10, 486);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1000, 10);
+            this.panel10.Size = new System.Drawing.Size(1223, 10);
             this.panel10.TabIndex = 5;
             // 
             // panel9
@@ -822,7 +828,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(10, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1000, 10);
+            this.panel9.Size = new System.Drawing.Size(1223, 10);
             this.panel9.TabIndex = 4;
             // 
             // panel8
@@ -830,15 +836,15 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 325);
+            this.panel8.Size = new System.Drawing.Size(10, 496);
             this.panel8.TabIndex = 3;
             // 
             // panel6
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1010, 0);
+            this.panel6.Location = new System.Drawing.Point(1233, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 325);
+            this.panel6.Size = new System.Drawing.Size(10, 496);
             this.panel6.TabIndex = 2;
             // 
             // metroTabPage4
@@ -853,7 +859,7 @@
             this.metroTabPage4.HorizontalScrollbarSize = 10;
             this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(1020, 325);
+            this.metroTabPage4.Size = new System.Drawing.Size(1243, 496);
             this.metroTabPage4.TabIndex = 4;
             this.metroTabPage4.Text = "المتابعة";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
@@ -866,24 +872,15 @@
             this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel32.Location = new System.Drawing.Point(10, 104);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(1000, 221);
+            this.panel32.Size = new System.Drawing.Size(1223, 392);
             this.panel32.TabIndex = 11;
-            // 
-            // DGV_assignation
-            // 
-            this.DGV_assignation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_assignation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGV_assignation.Location = new System.Drawing.Point(0, 0);
-            this.DGV_assignation.Name = "DGV_assignation";
-            this.DGV_assignation.Size = new System.Drawing.Size(1000, 221);
-            this.DGV_assignation.TabIndex = 0;
             // 
             // panel27
             // 
             this.panel27.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel27.Location = new System.Drawing.Point(10, 10);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(1000, 94);
+            this.panel27.Size = new System.Drawing.Size(1223, 94);
             this.panel27.TabIndex = 10;
             // 
             // panel28
@@ -891,7 +888,7 @@
             this.panel28.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel28.Location = new System.Drawing.Point(10, 0);
             this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(1000, 10);
+            this.panel28.Size = new System.Drawing.Size(1223, 10);
             this.panel28.TabIndex = 9;
             // 
             // panel30
@@ -899,15 +896,15 @@
             this.panel30.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel30.Location = new System.Drawing.Point(0, 0);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(10, 325);
+            this.panel30.Size = new System.Drawing.Size(10, 496);
             this.panel30.TabIndex = 8;
             // 
             // panel31
             // 
             this.panel31.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel31.Location = new System.Drawing.Point(1010, 0);
+            this.panel31.Location = new System.Drawing.Point(1233, 0);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(10, 325);
+            this.panel31.Size = new System.Drawing.Size(10, 496);
             this.panel31.TabIndex = 7;
             // 
             // metroPanel4
@@ -916,9 +913,9 @@
             this.metroPanel4.HorizontalScrollbarBarColor = true;
             this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(10, 377);
+            this.metroPanel4.Location = new System.Drawing.Point(10, 580);
             this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(1028, 10);
+            this.metroPanel4.Size = new System.Drawing.Size(1251, 10);
             this.metroPanel4.TabIndex = 8;
             this.metroPanel4.VerticalScrollbarBarColor = true;
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
@@ -926,17 +923,53 @@
             // 
             // metroPanel3
             // 
+            this.metroPanel3.Controls.Add(this.PICBOX_failICON);
+            this.metroPanel3.Controls.Add(this.PICBOX_successICON);
+            this.metroPanel3.Controls.Add(this.LBL_FTPconValue);
             this.metroPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 10;
             this.metroPanel3.Location = new System.Drawing.Point(10, 0);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(1028, 10);
+            this.metroPanel3.Size = new System.Drawing.Size(1251, 42);
             this.metroPanel3.TabIndex = 7;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // PICBOX_failICON
+            // 
+            this.PICBOX_failICON.Image = global::ArchiveSystem.Properties.Resources.cancel;
+            this.PICBOX_failICON.Location = new System.Drawing.Point(6, 6);
+            this.PICBOX_failICON.Name = "PICBOX_failICON";
+            this.PICBOX_failICON.Size = new System.Drawing.Size(46, 32);
+            this.PICBOX_failICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PICBOX_failICON.TabIndex = 4;
+            this.PICBOX_failICON.TabStop = false;
+            this.PICBOX_failICON.Visible = false;
+            // 
+            // PICBOX_successICON
+            // 
+            this.PICBOX_successICON.Image = global::ArchiveSystem.Properties.Resources._checked;
+            this.PICBOX_successICON.Location = new System.Drawing.Point(6, 7);
+            this.PICBOX_successICON.Name = "PICBOX_successICON";
+            this.PICBOX_successICON.Size = new System.Drawing.Size(46, 32);
+            this.PICBOX_successICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PICBOX_successICON.TabIndex = 3;
+            this.PICBOX_successICON.TabStop = false;
+            this.PICBOX_successICON.Visible = false;
+            // 
+            // LBL_FTPconValue
+            // 
+            this.LBL_FTPconValue.AutoSize = true;
+            this.LBL_FTPconValue.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_FTPconValue.Location = new System.Drawing.Point(58, 11);
+            this.LBL_FTPconValue.Name = "LBL_FTPconValue";
+            this.LBL_FTPconValue.Size = new System.Drawing.Size(50, 23);
+            this.LBL_FTPconValue.TabIndex = 2;
+            this.LBL_FTPconValue.Text = "متصل";
+            this.LBL_FTPconValue.Visible = false;
             // 
             // metroPanel2
             // 
@@ -946,7 +979,7 @@
             this.metroPanel2.HorizontalScrollbarSize = 10;
             this.metroPanel2.Location = new System.Drawing.Point(0, 0);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(10, 387);
+            this.metroPanel2.Size = new System.Drawing.Size(10, 590);
             this.metroPanel2.TabIndex = 6;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
@@ -958,9 +991,9 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(1038, 0);
+            this.metroPanel1.Location = new System.Drawing.Point(1261, 0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(10, 387);
+            this.metroPanel1.Size = new System.Drawing.Size(10, 590);
             this.metroPanel1.TabIndex = 5;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -1024,14 +1057,14 @@
             this.panel5.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel5.Location = new System.Drawing.Point(30, 40);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1048, 128);
+            this.panel5.Size = new System.Drawing.Size(1271, 128);
             this.panel5.TabIndex = 4;
             // 
             // panel23
             // 
             this.panel23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel23.Controls.Add(this.LBL_permitionType);
-            this.panel23.Location = new System.Drawing.Point(704, 112);
+            this.panel23.Location = new System.Drawing.Point(927, 112);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(233, 21);
             this.panel23.TabIndex = 173;
@@ -1050,7 +1083,7 @@
             // 
             this.panel22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel22.Controls.Add(this.LBL_department);
-            this.panel22.Location = new System.Drawing.Point(704, 94);
+            this.panel22.Location = new System.Drawing.Point(927, 94);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(233, 21);
             this.panel22.TabIndex = 172;
@@ -1069,7 +1102,7 @@
             // 
             this.panel21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel21.Controls.Add(this.LBL_USERNAME);
-            this.panel21.Location = new System.Drawing.Point(704, 74);
+            this.panel21.Location = new System.Drawing.Point(927, 74);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(233, 21);
             this.panel21.TabIndex = 171;
@@ -1091,7 +1124,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(942, 108);
+            this.label4.Location = new System.Drawing.Point(1165, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 19);
             this.label4.TabIndex = 170;
@@ -1103,7 +1136,7 @@
             this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel29.Location = new System.Drawing.Point(0, 0);
             this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(1048, 10);
+            this.panel29.Size = new System.Drawing.Size(1271, 10);
             this.panel29.TabIndex = 4;
             // 
             // FOLDERS_prefermCLick
@@ -1134,7 +1167,7 @@
             this.lbl_loginDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_loginDepartment.AutoSize = true;
             this.lbl_loginDepartment.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_loginDepartment.Location = new System.Drawing.Point(938, 90);
+            this.lbl_loginDepartment.Location = new System.Drawing.Point(1161, 90);
             this.lbl_loginDepartment.Name = "lbl_loginDepartment";
             this.lbl_loginDepartment.Size = new System.Drawing.Size(110, 19);
             this.lbl_loginDepartment.TabIndex = 2;
@@ -1145,7 +1178,7 @@
             this.lbl_LoginUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_LoginUsername.AutoSize = true;
             this.lbl_LoginUsername.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LoginUsername.Location = new System.Drawing.Point(942, 70);
+            this.lbl_LoginUsername.Location = new System.Drawing.Point(1165, 70);
             this.lbl_LoginUsername.Name = "lbl_LoginUsername";
             this.lbl_LoginUsername.Size = new System.Drawing.Size(105, 19);
             this.lbl_LoginUsername.TabIndex = 1;
@@ -1164,11 +1197,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // DGV_assignation
+            // 
+            this.DGV_assignation.AllowUserToAddRows = false;
+            this.DGV_assignation.AllowUserToDeleteRows = false;
+            this.DGV_assignation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_assignation.FilterAndSortEnabled = true;
+            this.DGV_assignation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.DGV_assignation.Location = new System.Drawing.Point(0, 0);
+            this.DGV_assignation.Name = "DGV_assignation";
+            this.DGV_assignation.ReadOnly = true;
+            this.DGV_assignation.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DGV_assignation.Size = new System.Drawing.Size(1223, 392);
+            this.DGV_assignation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.DGV_assignation.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 585);
+            this.ClientSize = new System.Drawing.Size(1331, 788);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -1204,7 +1252,10 @@
             this.panel12.PerformLayout();
             this.metroTabPage4.ResumeLayout(false);
             this.panel32.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).EndInit();
+            this.metroPanel3.ResumeLayout(false);
+            this.metroPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PICBOX_failICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PICBOX_successICON)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel23.ResumeLayout(false);
@@ -1215,6 +1266,7 @@
             this.panel21.PerformLayout();
             this.panel29.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1305,7 +1357,6 @@
         private System.Windows.Forms.Button FOLDERS_prefermCLick;
         private System.Windows.Forms.Button BTN_RefrshFolders;
         private System.Windows.Forms.Panel panel32;
-        private System.Windows.Forms.DataGridView DGV_assignation;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Panel panel30;
@@ -1315,6 +1366,10 @@
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.PictureBox PICBOX_successICON;
+        private System.Windows.Forms.Label LBL_FTPconValue;
+        private System.Windows.Forms.PictureBox PICBOX_failICON;
+        private Zuby.ADGV.AdvancedDataGridView DGV_assignation;
     }
 }
 

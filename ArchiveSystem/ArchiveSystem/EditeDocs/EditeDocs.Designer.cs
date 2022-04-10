@@ -32,16 +32,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.BTN_AddDocs = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BTN_GobackToDetails = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.DGV_Folders = new System.Windows.Forms.DataGridView();
             this.panel14 = new System.Windows.Forms.Panel();
             this.TXT_addFolder = new System.Windows.Forms.TextBox();
             this.BTN_DELFolder = new System.Windows.Forms.Button();
             this.BTN_addfolder = new System.Windows.Forms.Button();
-            this.DGV_Folders = new System.Windows.Forms.DataGridView();
             this.panel13 = new System.Windows.Forms.Panel();
             this.Scanning_Folder = new System.Windows.Forms.Button();
             this.BTN_RefrshFolders = new System.Windows.Forms.Button();
@@ -58,15 +61,15 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.BTN_AddDocs = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel18.SuspendLayout();
-            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Folders)).BeginInit();
+            this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -75,7 +78,6 @@
             this.panel17.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -111,13 +113,37 @@
             this.panel4.Size = new System.Drawing.Size(901, 49);
             this.panel4.TabIndex = 3;
             // 
+            // BTN_AddDocs
+            // 
+            this.BTN_AddDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_AddDocs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.BTN_AddDocs.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_AddDocs.Location = new System.Drawing.Point(789, 9);
+            this.BTN_AddDocs.Name = "BTN_AddDocs";
+            this.BTN_AddDocs.Size = new System.Drawing.Size(106, 37);
+            this.BTN_AddDocs.TabIndex = 1;
+            this.BTN_AddDocs.Text = "اضافة";
+            this.BTN_AddDocs.UseVisualStyleBackColor = false;
+            this.BTN_AddDocs.Click += new System.EventHandler(this.BTN_AddDocs_Click);
+            // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.BTN_GobackToDetails);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(30, 70);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(901, 100);
             this.panel5.TabIndex = 4;
+            // 
+            // BTN_GobackToDetails
+            // 
+            this.BTN_GobackToDetails.Location = new System.Drawing.Point(6, 55);
+            this.BTN_GobackToDetails.Name = "BTN_GobackToDetails";
+            this.BTN_GobackToDetails.Size = new System.Drawing.Size(93, 42);
+            this.BTN_GobackToDetails.TabIndex = 0;
+            this.BTN_GobackToDetails.Text = "رجوع";
+            this.BTN_GobackToDetails.UseVisualStyleBackColor = true;
+            this.BTN_GobackToDetails.Click += new System.EventHandler(this.BTN_GobackToDetails_Click);
             // 
             // panel6
             // 
@@ -160,6 +186,33 @@
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(222, 258);
             this.panel18.TabIndex = 3;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.DGV_Folders);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel15.Location = new System.Drawing.Point(0, 109);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(222, 149);
+            this.panel15.TabIndex = 8;
+            // 
+            // DGV_Folders
+            // 
+            this.DGV_Folders.AllowUserToAddRows = false;
+            this.DGV_Folders.AllowUserToDeleteRows = false;
+            this.DGV_Folders.AllowUserToResizeColumns = false;
+            this.DGV_Folders.AllowUserToResizeRows = false;
+            this.DGV_Folders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_Folders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DGV_Folders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_Folders.Location = new System.Drawing.Point(0, 0);
+            this.DGV_Folders.Name = "DGV_Folders";
+            this.DGV_Folders.ReadOnly = true;
+            this.DGV_Folders.RowHeadersVisible = false;
+            this.DGV_Folders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.DGV_Folders.Size = new System.Drawing.Size(222, 149);
+            this.DGV_Folders.TabIndex = 5;
+            this.DGV_Folders.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Folders_CellMouseClick);
             // 
             // panel14
             // 
@@ -207,24 +260,6 @@
             this.BTN_addfolder.TabIndex = 169;
             this.BTN_addfolder.Text = "+";
             this.BTN_addfolder.UseVisualStyleBackColor = false;
-            // 
-            // DGV_Folders
-            // 
-            this.DGV_Folders.AllowUserToAddRows = false;
-            this.DGV_Folders.AllowUserToDeleteRows = false;
-            this.DGV_Folders.AllowUserToResizeColumns = false;
-            this.DGV_Folders.AllowUserToResizeRows = false;
-            this.DGV_Folders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGV_Folders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DGV_Folders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGV_Folders.Location = new System.Drawing.Point(0, 0);
-            this.DGV_Folders.Name = "DGV_Folders";
-            this.DGV_Folders.ReadOnly = true;
-            this.DGV_Folders.RowHeadersVisible = false;
-            this.DGV_Folders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            this.DGV_Folders.Size = new System.Drawing.Size(222, 149);
-            this.DGV_Folders.TabIndex = 5;
-            this.DGV_Folders.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Folders_CellMouseClick);
             // 
             // panel13
             // 
@@ -396,33 +431,12 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.DGV_Folders);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(0, 109);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(222, 149);
-            this.panel15.TabIndex = 8;
-            // 
-            // BTN_AddDocs
-            // 
-            this.BTN_AddDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTN_AddDocs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.BTN_AddDocs.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_AddDocs.Location = new System.Drawing.Point(789, 9);
-            this.BTN_AddDocs.Name = "BTN_AddDocs";
-            this.BTN_AddDocs.Size = new System.Drawing.Size(106, 37);
-            this.BTN_AddDocs.TabIndex = 1;
-            this.BTN_AddDocs.Text = "اضافة";
-            this.BTN_AddDocs.UseVisualStyleBackColor = false;
-            this.BTN_AddDocs.Click += new System.EventHandler(this.BTN_AddDocs_Click);
-            // 
             // EditeDocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 507);
+            this.ControlBox = false;
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -430,16 +444,22 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EditeDocs";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "ارفاق مستندات";
+            this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.Load += new System.EventHandler(this.EditeDocs_Load);
             this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Folders)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Folders)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
@@ -451,7 +471,6 @@
             this.panel17.PerformLayout();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel15.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -490,5 +509,6 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button BTN_AddDocs;
+        private System.Windows.Forms.Button BTN_GobackToDetails;
     }
 }

@@ -198,6 +198,10 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
                     line = reader.ReadLine();
                 }
                 // to remove the trailing '\n'
+                //if (result.Length==0)
+                //{
+                //    MessageBox.Show("هذا الكتاب لا يحتوي على مستندات");
+                //}
                 result.Remove(result.ToString().LastIndexOf('\n'), 1);
                 reader.Close();
                 response.Close();
@@ -207,7 +211,7 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                //System.Windows.Forms.MessageBox.Show(ex.Message);
                 downloadFiles = null;
                 return downloadFiles;
             }
@@ -276,11 +280,16 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
 
                 }
 
-                foreach (string file in files)
+                if (files != null)
                 {
+                    foreach (string file in files)
+                    {
 
-                    Download(file);
-                }
+                        Download(file); 
+
+                    }
+                }    
+                   
 
 
                 var path = string.Format(path_folder_client_temp);

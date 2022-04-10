@@ -63,6 +63,16 @@ namespace ArchiveSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _checked {
+            get {
+                object obj = ResourceManager.GetObject("checked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blue_button_blue_gradient_technology_title_long_box_vector_2870e92a8974f979487b21d7894d03f0 {
             get {
                 object obj = ResourceManager.GetObject("blue-button-blue-gradient-technology-title-long-box-vector-2870e92a8974f979487b21" +
@@ -78,6 +88,16 @@ namespace ArchiveSystem.Properties {
             get {
                 object obj = ResourceManager.GetObject("blue-light-line-vector-hand-drawn-blue-line-science-and-technology-f3fe95ffdce99a" +
                         "57eb1e189a5559a3b8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancel {
+            get {
+                object obj = ResourceManager.GetObject("cancel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

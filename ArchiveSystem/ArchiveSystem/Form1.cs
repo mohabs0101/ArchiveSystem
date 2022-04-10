@@ -67,6 +67,42 @@ namespace ArchiveSystem
 
             //DepartmentBooks();
             AssignmentBooks();
+
+ //check ftp if connected or not 
+            try
+            {
+
+
+                // Get the object used to communicate with the server.
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip);
+                request.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
+
+                // This example assumes the FTP site uses anonymous logon.
+                request.Credentials = new NetworkCredential(FTP_user,FTP_pass);
+
+                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+
+                Stream responseStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(responseStream);
+                Console.WriteLine(reader.ReadToEnd());
+               
+             
+                reader.Close();
+                response.Close();
+                PICBOX_successICON.Visible = true;
+                PICBOX_failICON.Visible = false;
+                LBL_FTPconValue.Text = "متصل";
+                LBL_FTPconValue.Visible = true;
+
+            }
+            catch
+            {
+                LBL_FTPconValue.Text = "غير متصل";
+                LBL_FTPconValue.Visible = true;
+                PICBOX_failICON.Visible = true;
+                PICBOX_successICON.Visible = false;
+
+            }
             //--------------end------------------
 
 
@@ -147,6 +183,9 @@ namespace ArchiveSystem
         //archive both db and ftp files
         private void BTN_Archive_Click(object sender, EventArgs e)
         {
+
+
+
             Random rand = new Random();
 
 
@@ -154,7 +193,7 @@ namespace ArchiveSystem
             int ran = rand.Next(100000, 999999);
 
             string datenow = DateTime.Now.ToString("hhmmss");
-            string currentDate = DateTime.Now.ToString("yyyy:MM:dd");
+            string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             string book_code = TXT_Subject.Text + ran.ToString() + datenow;
             int departmentID = Login._depID;
@@ -251,6 +290,38 @@ namespace ArchiveSystem
             //insert fields into sql db
             else
             {
+                //check ftp connection 
+                try
+                {
+
+
+                    // Get the object used to communicate with the server.
+                    FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip);
+                    request.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
+
+                    // This example assumes the FTP site uses anonymous logon.
+                    request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
+
+                    FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+
+                    Stream responseStream = response.GetResponseStream();
+                    StreamReader reader = new StreamReader(responseStream);
+                    Console.WriteLine(reader.ReadToEnd());
+
+
+                    reader.Close();
+                    response.Close();
+                   
+
+                }
+                catch
+                {
+
+                    MessageBox.Show("لا يمكن الادخال تأكد من الاتصال بالشبكة");
+                    return;
+                }
+
+
 
                 string query = string.Format(@"INSERT INTO [dbo].[ArchiveBooks_TBL]
            ([BookCode]
@@ -288,10 +359,10 @@ namespace ArchiveSystem
 
                 if (Book_id != 0)
                 {
-                    
+
                     //create folder with same bookCode
                     var Typee = COM_bookType.Text;
- 
+
 
 
                     WebRequest request_ = WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/");
@@ -309,7 +380,7 @@ namespace ArchiveSystem
                     string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
 
 
-                   //foreach on checked files
+                    //foreach on checked files
                     foreach (var item in files_checked)
                     {
 
@@ -318,7 +389,7 @@ namespace ArchiveSystem
                         {
 
                             string file_name = Path.GetFileName(file);
-                           
+
                             if (file_name == filenamechecked)
                             {
                                 //upload selected files only 
@@ -344,7 +415,7 @@ namespace ArchiveSystem
 
 
                                 }
-                          
+
 
                             }
 
@@ -352,7 +423,7 @@ namespace ArchiveSystem
 
                         }
                     }
-                     
+
                     //Clear fields
                     TXT_bookNumber.Clear();
                     TXT_Book_recive_number.Clear();
@@ -375,9 +446,9 @@ namespace ArchiveSystem
                         PicB_displayBOOK.Image.Dispose();
                         PicB_displayBOOK.Image = null;
                     }
- 
+
                     //call folder update to remove selected files of folder its like we reclicked on the folder to see what files remain in it
-                   folder_update();
+                    folder_update();
 
 
                     MessageBox.Show("تم ارشفة الكتاب");
@@ -386,7 +457,10 @@ namespace ArchiveSystem
 
                 }
 
-
+                else if (Book_id == 0)
+                {
+                    MessageBox.Show("لم يتم ادخال المعلومات ");
+                }
 
 
 

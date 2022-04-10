@@ -267,28 +267,34 @@ namespace ArchiveSystem.EditeDocs
                 file.Delete();
 
             }
-
-            foreach (string file in files)
+            if (files != null)
             {
+                foreach (string file in files)
+                {
 
-                Download(file);
+                    Download(file);
+                }
+
+                var path = string.Format(path_folder_client_temp);
+
+                //BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
+
+
+                //refresh view list 
+                Form_show_docs fshDocs = new Form_show_docs();
+                fshDocs.Show();
+                //fshDocs.PrefermCall();
+
+
+                MessageBox.Show("تم ارفاق المستندات");
+                this.Hide();
+
+            }
+            else if (files == null)
+            {
+                MessageBox.Show("الرجاء اختيار مستند");
             }
 
-
-            var path = string.Format(path_folder_client_temp);
-
-            //BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
-
-
-            //refresh view list 
-            Form_show_docs fshDocs = new Form_show_docs();
-            fshDocs.Show();
-            //fshDocs.PrefermCall();
-
-
-            MessageBox.Show("تم ارفاق المستندات");
-            this.Hide();
-         
         }
         private string[] GetFileList()
         {
@@ -315,7 +321,10 @@ namespace ArchiveSystem.EditeDocs
                     line = reader.ReadLine();
                 }
                 // to remove the trailing '\n'
-                result.Remove(result.ToString().LastIndexOf('\n'), 1);
+                //if (result.Length !=0)
+                //{
+                    result.Remove(result.ToString().LastIndexOf('\n'), 1);
+                //}
                 reader.Close();
                 response.Close();
 
@@ -324,7 +333,7 @@ namespace ArchiveSystem.EditeDocs
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                //System.Windows.Forms.MessageBox.Show(ex.Message);
                 downloadFiles = null;
                 return downloadFiles;
             }
@@ -368,6 +377,13 @@ namespace ArchiveSystem.EditeDocs
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void BTN_GobackToDetails_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_show_docs fshdocs = new Form_show_docs();
+            fshdocs.Show();
         }
     }
 }

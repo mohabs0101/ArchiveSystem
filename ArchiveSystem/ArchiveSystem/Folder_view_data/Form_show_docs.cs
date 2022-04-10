@@ -71,29 +71,34 @@ SELECT  [DepartmentID]
         }
 
 
-        void Assign_Comment_TBL()
+        void BringFolloWUp_TBL()
         {
+            int departmentID = Login._depID;
 
-//            adapter = new SqlDataAdapter(@"SELECT 
+            int archivebookID =Convert.ToInt32( book_ID.ToString());
+            string query = string.Format(@"SELECT 
 
-//dbo.Departments_TBL.DepartmentName as [القسم],
-//dbo.[Assign&Comment_TBL].Task as [المهمة],
-//dbo.[Assign&Comment_TBL].Action as [الاجراء],
-//dbo.[Assign&Comment_TBL].Note as [الملاحظات],
-//dbo.[Assign&Comment_TBL].DateAdded as [تاريخ الاضافة]
+            dbo.Departments_TBL.DepartmentName as [القسم],
+            dbo.[ArchiveFollowUp].Task as [المهمة],
+            dbo.[ArchiveFollowUp].Action as [الاجراء],
+            dbo.[ArchiveFollowUp].Note as [الملاحظات],
+            dbo.[ArchiveFollowUp].DateAdded as [تاريخ الاضافة]
 
-//FROM     dbo.ArchiveBooks_TBL INNER JOIN
-//                  dbo.[Assign&Comment_TBL] ON dbo.ArchiveBooks_TBL.ArchiveBookID = dbo.[Assign&Comment_TBL].ArchiveBookID INNER JOIN
-//                  dbo.Departments_TBL ON dbo.[Assign&Comment_TBL].DepartmentID = dbo.Departments_TBL.DepartmentID
-//WHERE  ([Assign&Comment_TBL].ArchiveBookID) = @Param1
+            FROM     dbo.ArchiveBooks_TBL INNER JOIN
+                              dbo.[ArchiveFollowUp] ON dbo.ArchiveBooks_TBL.ArchiveBookID = dbo.[ArchiveFollowUp].ArchiveBookID INNER JOIN
+                              dbo.Departments_TBL ON dbo.[ArchiveFollowUp].DepartmentID = dbo.Departments_TBL.DepartmentID
+            WHERE  ArchiveFollowUp.ArchiveBookID={0}  and ArchiveFollowUp.DepartmentID = {1}", archivebookID, departmentID, con  );
 
-//                ", con);
-//            adapter.SelectCommand.Parameters.AddWithValue("@Param1", Form_show_doc.book_ID);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
 
-            //dt.Clear();
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
 
-            //adapter.Fill(dt);
-            //advanc_dgv_Assign_Comment.DataSource = dt;
+            DataTable dt = new DataTable();
+            con.Close();
+            adp.Fill(dt);
+           advanc_dgv_Assign_Comment.DataSource = dt;
+            
         }
 
         void Fill_bookType()
@@ -301,10 +306,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
         private void Form_show_docs_Load_1(object sender, EventArgs e)
         {
             TabControlBookdetails.SelectTab(0);
-            Select_Departments();
-
-            Assign_Comment_TBL();
-
+         
 
             TabControlBookdetails.RightToLeft = RightToLeft.Yes;
             TabControlBookdetails.RightToLeftLayout = true;
@@ -318,6 +320,10 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
             read_details_doc();
             show_files_doc();
+            Select_Departments();
+
+            BringFolloWUp_TBL();
+
         }
 
         private void cm_type_show_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -448,7 +454,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
                 FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 
-                MessageBox.Show(response.StatusDescription);
+                MessageBox.Show("تم حذف المستند");
                 response.Close();
                 //delete it localy
                 if (File.Exists(pic))
@@ -504,6 +510,55 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
 
             }
+        }
+
+        private void BTN_EnableEdite_Click(object sender, EventArgs e)
+        {
+            TXT_bookNumber.Enabled = true;
+            COM_bookType.Enabled = true;
+            TXT_Subject.Enabled = true;
+            DT_bookDate.Enabled = true;
+            COM_privicy.Enabled = true;
+            TXT_From.Enabled = true;
+            TXT_To.Enabled = true;
+            TXT_Book_recive_number.Enabled = true;
+            DT_bookRecive_date.Enabled = true;
+            COM_priority.Enabled = true;
+            COM_PaperType.Enabled = true;
+            COM_bookStatus.Enabled = true;
+            TXT_notes.Enabled = true;
+            TXT_SearchKEys.Enabled = true;
+
+            BTN_SAVE.Visible = true;
+            BTN_StopEditing.Visible = true;
+            this.BTN_EnableEdite.Visible = false;
+         
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            TXT_bookNumber.Enabled = false;
+            COM_bookType.Enabled = false;
+            TXT_Subject.Enabled = false;
+            DT_bookDate.Enabled = false;
+            COM_privicy.Enabled = false;
+            TXT_From.Enabled = false;
+            TXT_To.Enabled = false;
+            TXT_Book_recive_number.Enabled = false;
+            DT_bookRecive_date.Enabled = false;
+            COM_priority.Enabled = false;
+            COM_PaperType.Enabled = false;
+            COM_bookStatus.Enabled = false;
+            TXT_notes.Enabled = false;
+            TXT_SearchKEys.Enabled = false;
+            BTN_SAVE.Visible = false;
+            this.BTN_EnableEdite.Visible = true;
+            this.BTN_StopEditing.Visible = false;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

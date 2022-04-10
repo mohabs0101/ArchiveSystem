@@ -1046,3 +1046,287 @@
 
 4/6/2022 9:38:57 AM: Application started
 4/6/2022 9:38:57 AM: Configuration loaded
+
+4/7/2022 10:03:14 AM: Application started
+4/7/2022 10:03:14 AM: Configuration loaded
+
+4/7/2022 10:08:09 AM: Application started
+4/7/2022 10:08:09 AM: Configuration loaded
+
+4/7/2022 10:19:27 AM: Application started
+4/7/2022 10:19:27 AM: Configuration loaded
+
+4/7/2022 10:23:06 AM: Application started
+4/7/2022 10:23:06 AM: Configuration loaded
+
+4/7/2022 10:23:42 AM: Application started
+4/7/2022 10:23:42 AM: Configuration loaded
+
+4/7/2022 10:25:04 AM: Application started
+4/7/2022 10:25:04 AM: Configuration loaded
+
+4/7/2022 10:26:05 AM: Application started
+4/7/2022 10:26:05 AM: Configuration loaded
+
+4/7/2022 10:29:22 AM: Application started
+4/7/2022 10:29:22 AM: Configuration loaded
+
+4/7/2022 11:11:24 AM: Application started
+4/7/2022 11:11:24 AM: Configuration loaded
+
+4/7/2022 11:16:00 AM: Application started
+4/7/2022 11:16:00 AM: Configuration loaded
+
+4/7/2022 11:19:44 AM: Application started
+4/7/2022 11:19:44 AM: Configuration loaded
+
+4/7/2022 11:33:28 AM: Application started
+4/7/2022 11:33:28 AM: Configuration loaded
+
+4/7/2022 11:35:40 AM: Application started
+4/7/2022 11:35:40 AM: Configuration loaded
+
+4/7/2022 12:53:30 PM: Application started
+4/7/2022 12:53:30 PM: Configuration loaded
+
+4/7/2022 12:54:21 PM: Application started
+4/7/2022 12:54:21 PM: Configuration loaded
+
+4/7/2022 12:56:11 PM: Application started
+4/7/2022 12:56:11 PM: Configuration loaded
+
+4/7/2022 1:05:53 PM: Application started
+4/7/2022 1:05:53 PM: Configuration loaded
+
+4/7/2022 1:07:07 PM: Application started
+4/7/2022 1:07:07 PM: Configuration loaded
+
+4/7/2022 1:07:39 PM: Application started
+4/7/2022 1:07:39 PM: Configuration loaded
+4/7/2022 1:07:43 PM: Application closed
+
+4/7/2022 1:08:06 PM: Application started
+4/7/2022 1:08:07 PM: Configuration loaded
+
+4/7/2022 1:09:51 PM: Application started
+4/7/2022 1:09:51 PM: Configuration loaded
+
+4/7/2022 1:10:36 PM: Application started
+4/7/2022 1:10:36 PM: Configuration loaded
+
+4/7/2022 1:10:56 PM: Application started
+4/7/2022 1:10:56 PM: Configuration loaded
+
+4/7/2022 1:14:30 PM: Application started
+4/7/2022 1:14:31 PM: Configuration loaded
+
+4/7/2022 1:15:17 PM: Application started
+4/7/2022 1:15:17 PM: Configuration loaded
+
+4/7/2022 1:15:50 PM: Application started
+4/7/2022 1:15:50 PM: Configuration loaded
+
+4/7/2022 1:16:42 PM: Application started
+4/7/2022 1:16:42 PM: Configuration loaded
+
+4/7/2022 1:17:36 PM: Application started
+4/7/2022 1:17:36 PM: Configuration loaded
+
+4/7/2022 1:18:36 PM: Application started
+4/7/2022 1:18:36 PM: Configuration loaded
+
+4/7/2022 1:20:10 PM: Application started
+4/7/2022 1:20:10 PM: Configuration loaded
+
+4/7/2022 1:23:25 PM: Application started
+4/7/2022 1:23:26 PM: Configuration loaded
+
+4/9/2022 8:15:42 AM: Application started
+4/9/2022 8:15:43 AM: Configuration loaded
+
+4/9/2022 8:17:28 AM: Application started
+4/9/2022 8:17:28 AM: Configuration loaded
+
+4/9/2022 8:18:27 AM: Application started
+4/9/2022 8:18:28 AM: Configuration loaded
+
+4/9/2022 8:18:47 AM: Application started
+4/9/2022 8:18:47 AM: Configuration loaded
+
+4/9/2022 8:27:05 AM: Application started
+4/9/2022 8:27:05 AM: Configuration loaded
+
+4/9/2022 8:27:32 AM: Application started
+4/9/2022 8:27:32 AM: Configuration loaded
+
+4/9/2022 8:27:56 AM: Application started
+4/9/2022 8:27:56 AM: Configuration loaded
+
+4/9/2022 8:28:27 AM: Application started
+4/9/2022 8:28:27 AM: Configuration loaded
+
+4/9/2022 8:33:22 AM: Application started
+4/9/2022 8:33:22 AM: Configuration loaded
+
+4/9/2022 8:33:48 AM: Application started
+4/9/2022 8:33:48 AM: Configuration loaded
+
+4/9/2022 8:34:19 AM: Application started
+4/9/2022 8:34:19 AM: Configuration loaded
+
+4/9/2022 8:35:18 AM: Application started
+4/9/2022 8:35:18 AM: Configuration loaded
+
+4/9/2022 8:35:37 AM: Application started
+4/9/2022 8:35:37 AM: Configuration loaded
+
+4/9/2022 8:49:52 AM: Application started
+4/9/2022 8:49:52 AM: Configuration loaded
+
+4/9/2022 8:50:33 AM: Application started
+4/9/2022 8:50:33 AM: Configuration loaded
+
+4/9/2022 8:51:48 AM: Application started
+4/9/2022 8:51:48 AM: Configuration loaded
+
+4/9/2022 8:52:01 AM: Application started
+4/9/2022 8:52:01 AM: Configuration loaded
+4/9/2022 8:52:03 AM: Application closed
+
+4/9/2022 8:52:13 AM: Application started
+4/9/2022 8:52:13 AM: Configuration loaded
+
+4/9/2022 8:52:34 AM: Application started
+4/9/2022 8:52:34 AM: Configuration loaded
+
+4/9/2022 9:41:25 AM: Application started
+4/9/2022 9:41:25 AM: Configuration loaded
+
+4/9/2022 9:44:08 AM: Application started
+4/9/2022 9:44:08 AM: Configuration loaded
+
+4/9/2022 9:45:46 AM: Application started
+4/9/2022 9:45:46 AM: Configuration loaded
+
+4/9/2022 9:47:24 AM: Application started
+4/9/2022 9:47:24 AM: Configuration loaded
+
+4/9/2022 9:49:21 AM: Application started
+4/9/2022 9:49:21 AM: Configuration loaded
+
+4/9/2022 9:50:35 AM: Application started
+4/9/2022 9:50:35 AM: Configuration loaded
+
+4/9/2022 9:51:16 AM: Application started
+4/9/2022 9:51:17 AM: Configuration loaded
+
+4/9/2022 9:54:25 AM: Application started
+4/9/2022 9:54:25 AM: Configuration loaded
+
+4/9/2022 9:55:41 AM: Application started
+4/9/2022 9:55:41 AM: Configuration loaded
+
+4/9/2022 9:56:32 AM: Application started
+4/9/2022 9:56:32 AM: Configuration loaded
+
+4/9/2022 10:07:05 AM: Application started
+4/9/2022 10:07:05 AM: Configuration loaded
+
+4/9/2022 10:07:25 AM: Application started
+4/9/2022 10:07:25 AM: Configuration loaded
+
+4/9/2022 10:07:48 AM: Application started
+4/9/2022 10:07:48 AM: Configuration loaded
+
+4/9/2022 10:09:10 AM: Application started
+4/9/2022 10:09:10 AM: Configuration loaded
+
+4/9/2022 10:09:58 AM: Application started
+4/9/2022 10:09:58 AM: Configuration loaded
+
+4/9/2022 10:13:02 AM: Application started
+4/9/2022 10:13:02 AM: Configuration loaded
+
+4/10/2022 2:02:14 AM: Application started
+4/10/2022 2:02:14 AM: Configuration loaded
+
+4/10/2022 2:02:48 AM: Application started
+4/10/2022 2:02:48 AM: Configuration loaded
+
+4/10/2022 2:03:18 AM: Application started
+4/10/2022 2:03:18 AM: Configuration loaded
+
+4/10/2022 2:03:40 AM: Application started
+4/10/2022 2:03:40 AM: Configuration loaded
+
+4/10/2022 2:04:44 AM: Application started
+4/10/2022 2:04:44 AM: Configuration loaded
+
+4/10/2022 2:05:56 AM: Application started
+4/10/2022 2:05:56 AM: Configuration loaded
+
+4/10/2022 2:07:50 AM: Application started
+4/10/2022 2:07:50 AM: Configuration loaded
+
+4/10/2022 2:08:55 AM: Application started
+4/10/2022 2:08:55 AM: Configuration loaded
+
+4/10/2022 2:15:32 AM: Application started
+4/10/2022 2:15:33 AM: Configuration loaded
+
+4/10/2022 2:16:18 AM: Application started
+4/10/2022 2:16:18 AM: Configuration loaded
+
+4/10/2022 2:19:03 AM: Application started
+4/10/2022 2:19:03 AM: Configuration loaded
+
+4/10/2022 2:20:03 AM: Application started
+4/10/2022 2:20:03 AM: Configuration loaded
+
+4/10/2022 2:23:06 AM: Application started
+4/10/2022 2:23:07 AM: Configuration loaded
+
+4/10/2022 2:24:03 AM: Application started
+4/10/2022 2:24:03 AM: Configuration loaded
+
+4/10/2022 2:25:19 AM: Application started
+4/10/2022 2:25:19 AM: Configuration loaded
+
+4/10/2022 2:26:34 AM: Application started
+4/10/2022 2:26:34 AM: Configuration loaded
+
+4/10/2022 2:28:31 AM: Application started
+4/10/2022 2:28:31 AM: Configuration loaded
+
+4/10/2022 2:30:25 AM: Application started
+4/10/2022 2:30:25 AM: Configuration loaded
+
+4/10/2022 2:31:49 AM: Application started
+4/10/2022 2:31:49 AM: Configuration loaded
+
+4/10/2022 2:34:31 AM: Application started
+4/10/2022 2:34:31 AM: Configuration loaded
+
+4/10/2022 8:44:19 AM: Application started
+4/10/2022 8:44:19 AM: Configuration loaded
+
+4/10/2022 8:56:29 AM: Application started
+4/10/2022 8:56:29 AM: Configuration loaded
+
+4/10/2022 8:59:47 AM: Application started
+4/10/2022 8:59:48 AM: Configuration loaded
+
+4/10/2022 9:28:54 AM: Application started
+4/10/2022 9:28:54 AM: Configuration loaded
+
+4/10/2022 9:29:57 AM: Application started
+4/10/2022 9:29:57 AM: Configuration loaded
+
+4/10/2022 9:34:36 AM: Application started
+4/10/2022 9:34:36 AM: Configuration loaded
+
+4/10/2022 9:41:41 AM: Application started
+4/10/2022 9:41:42 AM: Configuration loaded
+
+4/10/2022 9:45:45 AM: Application started
+4/10/2022 9:45:45 AM: Configuration loaded
