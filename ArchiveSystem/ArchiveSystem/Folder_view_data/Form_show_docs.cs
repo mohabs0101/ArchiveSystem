@@ -511,7 +511,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
             }
         }
-
+         
         private void BTN_EnableEdite_Click(object sender, EventArgs e)
         {
             TXT_bookNumber.Enabled = true;
@@ -556,8 +556,53 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             this.BTN_StopEditing.Visible = false;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void BTN_addTask_Click(object sender, EventArgs e)
         {
+
+            try
+            {
+                int Archive_bookID =Convert.ToInt32( book_ID.ToString());
+                int Department_assintToID=Convert.ToInt32( COMLIST_assination.SelectedValue.ToString());
+                string task = TXT_assignTitle.Text;
+                string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
+
+                string query = string.Format(@"INSERT INTO [dbo].[ArchiveFollowUp]
+           ([ArchiveBookID]
+           ,[Department_AssignTO_ID]
+           ,[Task]
+           ,[Action]
+           ,[Note]
+           ,[DateAdded]
+          )
+     VALUES
+           ({0},{1},N'{2}','{3}','{4}','{5}')
+", Archive_bookID, Department_assintToID ,task, "","", currentDate, con);
+
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                int check = (int)cmd.ExecuteNonQuery();
+                con.Close();
+
+                if (check != 0)
+                {
+                    MessageBox.Show("تم اضافة متابعة ");
+
+                }
+
+                else if (check == 0)
+                {
+                    MessageBox.Show("لم يتم ادخال المعلومات ");
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
         }
     }

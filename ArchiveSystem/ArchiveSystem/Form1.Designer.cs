@@ -92,6 +92,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
             this.panel32 = new System.Windows.Forms.Panel();
+            this.DGV_assignation = new Zuby.ADGV.AdvancedDataGridView();
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
@@ -122,7 +123,6 @@
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.DGV_assignation = new Zuby.ADGV.AdvancedDataGridView();
             this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -141,6 +141,7 @@
             this.panel12.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.panel32.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).BeginInit();
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PICBOX_failICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PICBOX_successICON)).BeginInit();
@@ -150,7 +151,6 @@
             this.panel21.SuspendLayout();
             this.panel29.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -875,6 +875,22 @@
             this.panel32.Size = new System.Drawing.Size(1223, 392);
             this.panel32.TabIndex = 11;
             // 
+            // DGV_assignation
+            // 
+            this.DGV_assignation.AllowUserToAddRows = false;
+            this.DGV_assignation.AllowUserToDeleteRows = false;
+            this.DGV_assignation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGV_assignation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_assignation.FilterAndSortEnabled = true;
+            this.DGV_assignation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.DGV_assignation.Location = new System.Drawing.Point(0, 0);
+            this.DGV_assignation.Name = "DGV_assignation";
+            this.DGV_assignation.ReadOnly = true;
+            this.DGV_assignation.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DGV_assignation.Size = new System.Drawing.Size(1223, 392);
+            this.DGV_assignation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.DGV_assignation.TabIndex = 0;
+            // 
             // panel27
             // 
             this.panel27.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1197,21 +1213,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // DGV_assignation
-            // 
-            this.DGV_assignation.AllowUserToAddRows = false;
-            this.DGV_assignation.AllowUserToDeleteRows = false;
-            this.DGV_assignation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGV_assignation.FilterAndSortEnabled = true;
-            this.DGV_assignation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.DGV_assignation.Location = new System.Drawing.Point(0, 0);
-            this.DGV_assignation.Name = "DGV_assignation";
-            this.DGV_assignation.ReadOnly = true;
-            this.DGV_assignation.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGV_assignation.Size = new System.Drawing.Size(1223, 392);
-            this.DGV_assignation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.DGV_assignation.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1252,6 +1253,7 @@
             this.panel12.PerformLayout();
             this.metroTabPage4.ResumeLayout(false);
             this.panel32.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).EndInit();
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PICBOX_failICON)).EndInit();
@@ -1266,7 +1268,6 @@
             this.panel21.PerformLayout();
             this.panel29.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).EndInit();
             this.ResumeLayout(false);
 
         }

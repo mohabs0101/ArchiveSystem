@@ -104,14 +104,14 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.advanc_dgv_Assign_Comment = new Zuby.ADGV.AdvancedDataGridView();
+            this.panel23 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.advanc_dgv_Assign_Comment = new Zuby.ADGV.AdvancedDataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.BTN_addTask = new System.Windows.Forms.Button();
             this.TXT_assignTitle = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.COMLIST_assination = new System.Windows.Forms.CheckedListBox();
@@ -142,9 +142,9 @@
             this.panel8.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.panel22.SuspendLayout();
-            this.panel24.SuspendLayout();
-            this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_Assign_Comment)).BeginInit();
+            this.panel23.SuspendLayout();
+            this.panel24.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1006,10 +1006,10 @@
             // 
             // panel22
             // 
-            this.panel22.Controls.Add(this.panel24);
+            this.panel22.Controls.Add(this.advanc_dgv_Assign_Comment);
             this.panel22.Controls.Add(this.panel23);
             this.panel22.Controls.Add(this.label6);
-            this.panel22.Controls.Add(this.button1);
+            this.panel22.Controls.Add(this.BTN_addTask);
             this.panel22.Controls.Add(this.TXT_assignTitle);
             this.panel22.Controls.Add(this.label19);
             this.panel22.Controls.Add(this.COMLIST_assination);
@@ -1019,15 +1019,43 @@
             this.panel22.Size = new System.Drawing.Size(995, 532);
             this.panel22.TabIndex = 7;
             // 
+            // advanc_dgv_Assign_Comment
+            // 
+            this.advanc_dgv_Assign_Comment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.advanc_dgv_Assign_Comment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advanc_dgv_Assign_Comment.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.advanc_dgv_Assign_Comment.FilterAndSortEnabled = true;
+            this.advanc_dgv_Assign_Comment.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.advanc_dgv_Assign_Comment.Location = new System.Drawing.Point(0, 183);
+            this.advanc_dgv_Assign_Comment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.advanc_dgv_Assign_Comment.MultiSelect = false;
+            this.advanc_dgv_Assign_Comment.Name = "advanc_dgv_Assign_Comment";
+            this.advanc_dgv_Assign_Comment.ReadOnly = true;
+            this.advanc_dgv_Assign_Comment.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.advanc_dgv_Assign_Comment.RowTemplate.Height = 26;
+            this.advanc_dgv_Assign_Comment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advanc_dgv_Assign_Comment.Size = new System.Drawing.Size(995, 284);
+            this.advanc_dgv_Assign_Comment.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.advanc_dgv_Assign_Comment.TabIndex = 227;
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.panel24);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel23.Location = new System.Drawing.Point(0, 467);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(995, 65);
+            this.panel23.TabIndex = 232;
+            // 
             // panel24
             // 
             this.panel24.Controls.Add(this.button4);
             this.panel24.Controls.Add(this.button3);
             this.panel24.Controls.Add(this.button2);
-            this.panel24.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel24.Location = new System.Drawing.Point(0, 341);
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel24.Location = new System.Drawing.Point(0, 0);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(995, 68);
+            this.panel24.Size = new System.Drawing.Size(995, 65);
             this.panel24.TabIndex = 233;
             // 
             // button4
@@ -1066,46 +1094,6 @@
             this.button2.Text = "تعديل مهمة";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(826, 130);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 68);
-            this.button1.TabIndex = 232;
-            this.button1.Text = "اضافة مهمة جديدة";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.advanc_dgv_Assign_Comment);
-            this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel23.Location = new System.Drawing.Point(0, 409);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(995, 123);
-            this.panel23.TabIndex = 232;
-            // 
-            // advanc_dgv_Assign_Comment
-            // 
-            this.advanc_dgv_Assign_Comment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.advanc_dgv_Assign_Comment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advanc_dgv_Assign_Comment.FilterAndSortEnabled = true;
-            this.advanc_dgv_Assign_Comment.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.advanc_dgv_Assign_Comment.Location = new System.Drawing.Point(0, 0);
-            this.advanc_dgv_Assign_Comment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.advanc_dgv_Assign_Comment.MultiSelect = false;
-            this.advanc_dgv_Assign_Comment.Name = "advanc_dgv_Assign_Comment";
-            this.advanc_dgv_Assign_Comment.ReadOnly = true;
-            this.advanc_dgv_Assign_Comment.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.advanc_dgv_Assign_Comment.RowTemplate.Height = 26;
-            this.advanc_dgv_Assign_Comment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advanc_dgv_Assign_Comment.Size = new System.Drawing.Size(995, 123);
-            this.advanc_dgv_Assign_Comment.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.advanc_dgv_Assign_Comment.TabIndex = 227;
-            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1117,14 +1105,28 @@
             this.label6.TabIndex = 226;
             this.label6.Text = "عنوان المتابعة";
             // 
+            // BTN_addTask
+            // 
+            this.BTN_addTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_addTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BTN_addTask.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_addTask.Location = new System.Drawing.Point(831, 130);
+            this.BTN_addTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BTN_addTask.Name = "BTN_addTask";
+            this.BTN_addTask.Size = new System.Drawing.Size(158, 49);
+            this.BTN_addTask.TabIndex = 232;
+            this.BTN_addTask.Text = "اضافة مهمة جديدة";
+            this.BTN_addTask.UseVisualStyleBackColor = false;
+            this.BTN_addTask.Click += new System.EventHandler(this.BTN_addTask_Click);
+            // 
             // TXT_assignTitle
             // 
             this.TXT_assignTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXT_assignTitle.Location = new System.Drawing.Point(671, 29);
+            this.TXT_assignTitle.Location = new System.Drawing.Point(516, 29);
             this.TXT_assignTitle.Multiline = true;
             this.TXT_assignTitle.Name = "TXT_assignTitle";
             this.TXT_assignTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TXT_assignTitle.Size = new System.Drawing.Size(318, 96);
+            this.TXT_assignTitle.Size = new System.Drawing.Size(473, 96);
             this.TXT_assignTitle.TabIndex = 225;
             // 
             // label19
@@ -1132,7 +1134,7 @@
             this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(537, 4);
+            this.label19.Location = new System.Drawing.Point(404, 8);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(91, 21);
             this.label19.TabIndex = 224;
@@ -1146,13 +1148,13 @@
             this.COMLIST_assination.ForeColor = System.Drawing.SystemColors.WindowText;
             this.COMLIST_assination.FormattingEnabled = true;
             this.COMLIST_assination.HorizontalScrollbar = true;
-            this.COMLIST_assination.Location = new System.Drawing.Point(295, 29);
+            this.COMLIST_assination.Location = new System.Drawing.Point(20, 33);
             this.COMLIST_assination.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
             this.COMLIST_assination.MultiColumn = true;
             this.COMLIST_assination.Name = "COMLIST_assination";
             this.COMLIST_assination.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.COMLIST_assination.ScrollAlwaysVisible = true;
-            this.COMLIST_assination.Size = new System.Drawing.Size(345, 92);
+            this.COMLIST_assination.Size = new System.Drawing.Size(487, 92);
             this.COMLIST_assination.TabIndex = 223;
             // 
             // panel21
@@ -1219,6 +1221,7 @@
             // 
             // toolStripTextBox1
             // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1268,9 +1271,9 @@
             this.metroTabPage2.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
-            this.panel24.ResumeLayout(false);
-            this.panel23.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_Assign_Comment)).EndInit();
+            this.panel23.ResumeLayout(false);
+            this.panel24.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -1369,7 +1372,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BTN_addTask;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Button BTN_EnableEdite;
         private System.Windows.Forms.Button BTN_SAVE;
