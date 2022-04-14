@@ -1,13 +1,11 @@
-C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.exe.config
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.exe
-C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.pdb
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\AdvancedDataGridView.dll
-C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\LibUsbDotNet.LibUsbDotNet.dll
-C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\MetroFramework.Design.dll
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\MetroFramework.dll
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.exe.config
+C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\LibUsbDotNet.LibUsbDotNet.dll
+C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\MetroFramework.Design.dll
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\LibUsbDotNet.LibUsbDotNet.pdb
-C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\Interop.WIA.dll
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.csproj.AssemblyReference.cache
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.csproj.SuggestedBindingRedirects.cache
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\Interop.WIA.dll

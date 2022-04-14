@@ -1070,6 +1070,10 @@
             // 
             // advanc_dgv_Assign_Comment
             // 
+            this.advanc_dgv_Assign_Comment.AllowUserToAddRows = false;
+            this.advanc_dgv_Assign_Comment.AllowUserToDeleteRows = false;
+            this.advanc_dgv_Assign_Comment.AllowUserToResizeColumns = false;
+            this.advanc_dgv_Assign_Comment.AllowUserToResizeRows = false;
             this.advanc_dgv_Assign_Comment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.advanc_dgv_Assign_Comment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advanc_dgv_Assign_Comment.Dock = System.Windows.Forms.DockStyle.Bottom;
