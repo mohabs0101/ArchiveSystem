@@ -599,7 +599,7 @@ namespace ArchiveSystem
 
             FROM[ArchiveSystem].[dbo].[ArchiveFollowUp]
    inner JOIN[ArchiveBooks_TBL] ON[ArchiveFollowUp].ArchiveBookID = [ArchiveBooks_TBL].ArchiveBookID
-   where[ArchiveFollowUp].DepartmentID = {0}", DepID, con);
+   where[ArchiveFollowUp].[Department_AssignTO_ID] = {0}", DepID, con);
 
 
 

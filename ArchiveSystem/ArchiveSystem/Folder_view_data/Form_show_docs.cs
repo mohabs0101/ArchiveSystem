@@ -22,6 +22,8 @@ namespace ArchiveSystem.Folder_view_data
         public static string _subject;
         public static string _BookType;
         public static string _bookCode;
+        public static string Archived_by_department_name;//bring this when page load(source fromread_details_doc)
+
         public Form_show_docs()
         {
             InitializeComponent();
@@ -70,34 +72,84 @@ SELECT  [DepartmentID]
             }
         }
 
-
+        //i have login dep id and i have selected book archived dep id 
+        // if they matched so it mean the book i opened is created by same dep so bring full assignation table 
+        // else if not matchet ether the book i opened assing to me or not 
+        //so i will bring the rows that have [Department_AssignTO_ID] as my login dep id 
+        // if it return empty it means there is no assign to me in it
         void BringFolloWUp_TBL()
         {
-            int departmentID = Login._depID;
+            int bookID = Convert.ToInt32(book_ID); //book id of selected book
+            
+            int departmentID = Login._depID;//login dep id
 
-            int archivebookID =Convert.ToInt32( book_ID.ToString());
-            string query = string.Format(@"SELECT 
-
-            dbo.Departments_TBL.DepartmentName as [القسم],
-            dbo.[ArchiveFollowUp].Task as [المهمة],
-            dbo.[ArchiveFollowUp].Action as [الاجراء],
-            dbo.[ArchiveFollowUp].Note as [الملاحظات],
-            dbo.[ArchiveFollowUp].DateAdded as [تاريخ الاضافة]
-
-            FROM     dbo.ArchiveBooks_TBL INNER JOIN
-                              dbo.[ArchiveFollowUp] ON dbo.ArchiveBooks_TBL.ArchiveBookID = dbo.[ArchiveFollowUp].ArchiveBookID INNER JOIN
-                              dbo.Departments_TBL ON dbo.[ArchiveFollowUp].DepartmentID = dbo.Departments_TBL.DepartmentID
-            WHERE  ArchiveFollowUp.ArchiveBookID={0}  and ArchiveFollowUp.DepartmentID = {1}", archivebookID, departmentID, con  );
+            //bring archiveByDepID by its name 
+            string query2 = string.Format(@"SELECT   [DepartmentID]  ,[DepartmentName]
+    
+  FROM [ArchiveSystem].[dbo].[Departments_TBL] where [DepartmentName]=N'{0}'", Archived_by_department_name, con);
 
             con.Open();
-            SqlCommand cmd = new SqlCommand(query, con);
+            SqlCommand cmd2 = new SqlCommand(query2, con);
 
-            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            SqlDataAdapter adp2 = new SqlDataAdapter(cmd2);
 
-            DataTable dt = new DataTable();
+            DataTable dt2 = new DataTable();
             con.Close();
-            adp.Fill(dt);
-           advanc_dgv_Assign_Comment.DataSource = dt;
+            adp2.Fill(dt2);
+            int DepArch_by_ID_ =Convert.ToInt32( dt2.Rows[0][0].ToString());
+
+            int archived_by_bookID = DepArch_by_ID_; //book archived by id 
+
+            if (departmentID== archived_by_bookID)
+            {
+
+                string query3 = string.Format(@"SELECT  [ArchiveFollowUpID]
+      ,[ArchiveBookID]
+      ,[Department_AssignTO_ID]
+      ,[Task]
+      ,[Action]
+      ,[Note]
+      ,[DateAdded]
+  FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] where ArchiveBookID={0}", bookID,  con);
+
+                con.Open();
+                SqlCommand cmd3 = new SqlCommand(query3, con);
+
+                SqlDataAdapter adp3 = new SqlDataAdapter(cmd3);
+
+                DataTable dt3 = new DataTable();
+                con.Close();
+                adp3.Fill(dt3);
+                advanc_dgv_Assign_Comment.DataSource = dt3;
+
+            }
+            else if (departmentID != archived_by_bookID) // it means the book i opened not created by my department
+            {
+                string query = string.Format(@"SELECT  [ArchiveFollowUpID]
+      ,[ArchiveBookID]
+      ,[Department_AssignTO_ID]
+      ,[Task]
+      ,[Action]
+      ,[Note]
+      ,[DateAdded]
+  FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] where [Department_AssignTO_ID]={0} and [ArchiveBookID]={1} ", departmentID, bookID, con);
+
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                con.Close();
+                adp.Fill(dt);
+                advanc_dgv_Assign_Comment.DataSource = dt;
+
+
+            }
+              
             
         }
 
@@ -161,6 +213,7 @@ SELECT  [DepartmentID]
 
         string pic;
         public static string book_ID;
+        
         void read_details_doc()
         {
             con.Open();
@@ -181,6 +234,7 @@ dbo.ArchiveBooks_TBL.ArchivedDate,
 dbo.ArchiveBooks_TBL.BookPaperType,
 dbo.ArchiveBooks_TBL.Notes,
 dbo.Departments_TBL.DepartmentName,
+ 
 dbo.Users_TBL.Username,
 dbo.ArchiveBooks_TBL.BookStatus,
 dbo.ArchiveBooks_TBL.Privacy
@@ -218,16 +272,49 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 COM_bookStatus.Text = dr1["BookStatus"].ToString();
                 COM_privicy.Text = dr1["Privacy"].ToString();
 
-
+ 
                 _subject = TXT_Subject.Text;
                 _BookType = COM_bookType.Text;
                 _bookCode = txt_book_code.Text;
+                Archived_by_department_name = txt_DepartmentName.Text;
+
             }
             dr1.Close();
             con.Close();
         }
 
+  //      void Bring_assignTable()
+  //      {
+  //          try
+  //          {
+               
+  //              int Login_dep =Convert.ToInt32( Login._depID.ToString());
+  //              int book_archivedBy_depID = Convert.ToInt32(book_ID.ToString());
+  //              string query = string.Format(@" SELECT   [BooksTypeID]
+  //    ,[BookTypeName]
+  //FROM [ArchiveSystem].[dbo].[BooksType_TBL]", con);
 
+  //              con.Open();
+  //              SqlCommand cmd = new SqlCommand(query, con);
+
+  //              SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+  //              DataTable booktypes = new DataTable();
+
+  //              adp.Fill(booktypes);
+  //              COM_bookType.DataSource = booktypes;
+  //              COM_bookType.DisplayMember = "BookTypeName";
+  //              COM_bookType.ValueMember = "BooksTypeID";
+
+  //              con.Close();
+
+  //          }
+  //          catch (Exception ex)
+  //          {
+  //              MessageBox.Show(ex.ToString());
+  //          }
+
+  //      }
         //public void PrefermCall()
         //{
         //    show_files_doc();
@@ -323,6 +410,8 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             Select_Departments();
 
             BringFolloWUp_TBL();
+
+            //Bring_assignTable();
 
         }
 
