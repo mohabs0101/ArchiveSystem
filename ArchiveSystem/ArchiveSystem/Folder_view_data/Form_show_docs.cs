@@ -211,7 +211,7 @@ SELECT  [DepartmentID]
             //ImageList_add_viwe.Dispose();
         }
 
-        string pic;
+       
         public static string book_ID;
         
         void read_details_doc()
@@ -348,46 +348,9 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
         }
 
-        void Rotat_img(RotateFlipType r90)
-        {
-            try
-            {
-                Image img = pictureBox_show_doc.Image;
-                img.RotateFlip(r90);
-                pictureBox_show_doc.Image = img;
-            }
-            catch (Exception ex)
-            {
+       
 
-            }
-        }
-
-        private void ZoomInOut(bool zoom)
-        {
-            try
-            {
-                //Zoom ratio by which the images will be zoomed by default
-                int zoomRatio = 10;
-                //Set the zoomed width and height
-                int widthZoom = pictureBox_show_doc.Width * zoomRatio / 100;
-                int heightZoom = pictureBox_show_doc.Height * zoomRatio / 100;
-                //zoom = true --> zoom in
-                //zoom = false --> zoom out
-                if (!zoom)
-                {
-                    widthZoom *= -1;
-                    heightZoom *= -1;
-                }
-                //Add the width and height to the picture box dimensions
-                pictureBox_show_doc.Width += widthZoom;
-                pictureBox_show_doc.Height += heightZoom;
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-        }
+       
 
 
         private void Form_show_docs_Load_1(object sender, EventArgs e)
@@ -438,6 +401,33 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
            
         }
 
+        private void ZoomInOut(bool zoom)
+        {
+            try
+            {
+                //Zoom ratio by which the images will be zoomed by default
+                int zoomRatio = 10;
+                //Set the zoomed width and height
+                int widthZoom = pictureBox_show_doc.Width * zoomRatio / 100;
+                int heightZoom = pictureBox_show_doc.Height * zoomRatio / 100;
+                //zoom = true --> zoom in
+                //zoom = false --> zoom out
+                if (!zoom)
+                {
+                    widthZoom *= -1;
+                    heightZoom *= -1;
+                }
+                //Add the width and height to the picture box dimensions
+                pictureBox_show_doc.Width += widthZoom;
+                pictureBox_show_doc.Height += heightZoom;
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
         private void btn_zoom_out_Click_1(object sender, EventArgs e)
         {
             ZoomInOut(false);
@@ -446,6 +436,19 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
         private void btn_zoom_in_Click_1(object sender, EventArgs e)
         {
             ZoomInOut(true);
+        }
+        void Rotat_img(RotateFlipType r90)
+        {
+            try
+            {
+                Image img = pictureBox_show_doc.Image;
+                img.RotateFlip(r90);
+                pictureBox_show_doc.Image = img;
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
         private void btn_Rotate_180_Click(object sender, EventArgs e)
         {
@@ -458,7 +461,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
         }
 
-
+        string path_file_name;
         private void ListView_show_doc_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
@@ -467,38 +470,40 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
             foreach (ListViewItem Item in breakfast)
             {
-
+             //or
+            //for (int i = 0; i < ListView_show_doc.Items.Count; i++)
+            //{
                 try
                 {
-                    //pic = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                    path_file_name = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                   
                     //pictureBox_show_doc.Load(pic);
-
-                    for (int i = 0; i < ListView_show_doc.Items.Count; i++)
-                    {
-                        String file_name = ListView_show_doc.Items[Item.Index].SubItems[0].Text;
-                        Image image2 = Image.FromFile(path_folder_client_temp + @"\" + file_name + "");//put var here
+                    //or
+                    
+                  
+                        Image image2 = Image.FromFile(path_file_name);//put var here
 
                         pictureBox_show_doc.Image = new Bitmap(image2);
 
                         image2.Dispose();
                         //get pah to use it to display img in wndows exploror
                         //picture_path = (Doc_source + @"\" + selectedFolder + @"\" + file_name + "");
-                    }
-                    //System.Diagnostics.Process.Start(pic);
+                    
+                    
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    System.Diagnostics.Process.Start(path_file_name);
                 }
-
+                //}
             }
 
         }
 
         private void TSM_open_file_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(pic);
+            System.Diagnostics.Process.Start(path_file_name);
         }
 
         private void TSM_open_all_file_Click_1(object sender, EventArgs e)
@@ -522,7 +527,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
             foreach (ListViewItem Item in breakfast)
             {
-                pic = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                path_file_name = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
 
                 string fn = ListView_show_doc.Items[Item.Index].SubItems[0].Text;
 
@@ -546,7 +551,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 MessageBox.Show("تم حذف المستند");
                 response.Close();
                 //delete it localy
-                if (File.Exists(pic))
+                if (File.Exists(path_file_name))
                 {
                     //ListView_show_doc.Dispose();
                     //ImageList_add_viwe.Dispose();
@@ -558,7 +563,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                     System.GC.WaitForPendingFinalizers();
                     //pictureBox_show_doc.Dispose();
 
-                    File.Delete(pic);
+                    File.Delete(path_file_name);
                     //refresh listview
                     show_files_doc();
                     // Form_show_docs s_doc1 = new Form_show_docs();
@@ -693,6 +698,113 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 MessageBox.Show(ex.ToString());
             }
 
+        }
+
+        private void BTN_SAVE_Click(object sender, EventArgs e)
+        {
+            string BookNumber = TXT_bookNumber.Text;
+            string InboundNumber = TXT_Book_recive_number.Text;
+
+            string Subject = TXT_Subject.Text;
+            string From = TXT_From.Text;
+            string To = TXT_To.Text;
+            string SearchKeys = TXT_SearchKEys.Text;
+            if (string.IsNullOrWhiteSpace(BookNumber) || string.IsNullOrWhiteSpace(InboundNumber) || string.IsNullOrWhiteSpace(Subject) || string.IsNullOrWhiteSpace(From) || string.IsNullOrWhiteSpace(To) || string.IsNullOrWhiteSpace(SearchKeys))
+            {
+                List<TextBox> boxes = new List<TextBox>();
+                if (string.IsNullOrWhiteSpace(TXT_bookNumber.Text))
+                {
+
+                    boxes.Add(TXT_bookNumber);
+                }
+                else { TXT_bookNumber.BackColor = Color.White; }
+                if (string.IsNullOrWhiteSpace(TXT_Book_recive_number.Text))
+                {
+                    boxes.Add(TXT_Book_recive_number);
+                }
+                else { TXT_Book_recive_number.BackColor = Color.White; }
+
+                if (string.IsNullOrWhiteSpace(TXT_Subject.Text))
+                {
+
+                    boxes.Add(TXT_Subject);
+                }
+                else { TXT_Subject.BackColor = Color.White; }
+                if (string.IsNullOrWhiteSpace(TXT_From.Text))
+                {
+
+                    boxes.Add(TXT_From);
+                }
+                else { TXT_From.BackColor = Color.White; }
+
+                if (string.IsNullOrWhiteSpace(TXT_To.Text))
+                {
+
+                    boxes.Add(TXT_To);
+                }
+                else { TXT_To.BackColor = Color.White; }
+                if (string.IsNullOrWhiteSpace(TXT_SearchKEys.Text))
+                {
+
+                    boxes.Add(TXT_SearchKEys);
+                }
+                else { TXT_SearchKEys.BackColor = Color.White; }
+
+                foreach (var item in boxes)
+                {
+                    if (string.IsNullOrWhiteSpace(item.Text))
+                    {
+                        item.BackColor = Color.LightSalmon;
+                    }
+                }
+
+                MessageBox.Show("الرجاء مليء جميع الحقول");
+
+
+
+            }
+
+           else
+            { 
+            String strQuery ;
+            con.Open();
+
+            strQuery = @"Update ArchiveBooks_TBL set BookNumber = @BookNumber, BookDate = @BookDate, " +
+                "InboundNumber = @InboundNumber, InboundDate = @InboundDate, Subject = @Subject, BooksTypeID = @BooksTypeID, [From] = @From, [To] = @To," +
+                
+            "SearchKeys = @SearchKeys, BookPriority = @BookPriority, BookPaperType = @BookPaperType, Notes = @Notes, BookStatus = @BookStatus, Privacy = @Privacy" +
+                " Where ArchiveBookID = " + book_ID;
+
+
+
+
+
+            SqlCommand cmd = new SqlCommand(strQuery, con);
+
+            cmd.Parameters.Add(new SqlParameter("@BookNumber", SqlDbType.NVarChar)).Value = TXT_bookNumber.Text;
+            cmd.Parameters.Add(new SqlParameter("@BookDate", SqlDbType.NVarChar)).Value = DT_bookDate.Text;
+            cmd.Parameters.Add(new SqlParameter("@InboundNumber", SqlDbType.NVarChar)).Value = TXT_Book_recive_number.Text;
+            cmd.Parameters.Add(new SqlParameter("@InboundDate", SqlDbType.NVarChar)).Value = DT_bookRecive_date.Text;
+            cmd.Parameters.Add(new SqlParameter("@Subject", SqlDbType.NVarChar)).Value = TXT_Subject.Text;
+            cmd.Parameters.Add(new SqlParameter("@BooksTypeID", SqlDbType.Int)).Value = COM_bookType.SelectedValue;
+            cmd.Parameters.Add(new SqlParameter("@From", SqlDbType.NVarChar)).Value = TXT_From.Text;
+            cmd.Parameters.Add(new SqlParameter("@To", SqlDbType.NVarChar)).Value = TXT_To.Text;
+            cmd.Parameters.Add(new SqlParameter("@SearchKeys", SqlDbType.NVarChar)).Value = TXT_SearchKEys.Text;
+            cmd.Parameters.Add(new SqlParameter("@BookPriority", SqlDbType.NVarChar)).Value = COM_priority.Text;
+            cmd.Parameters.Add(new SqlParameter("@BookPaperType", SqlDbType.NVarChar)).Value = COM_PaperType.Text;
+            cmd.Parameters.Add(new SqlParameter("@Notes", SqlDbType.NVarChar)).Value = TXT_notes.Text;
+            cmd.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = COM_bookStatus.Text;
+            cmd.Parameters.Add(new SqlParameter("@Privacy", SqlDbType.NVarChar)).Value = COM_privicy.Text;
+
+            cmd.ExecuteNonQuery();
+
+
+
+
+            con.Close();
+            button5_Click(null, null);
+                //Form_view_data_dqv.fill_dgv_view_data_doc();
+            }
         }
     }
 }

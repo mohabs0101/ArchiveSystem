@@ -30,7 +30,7 @@ namespace ArchiveSystem.Folder_view_data
         DataTable dt = new DataTable();
         SqlDataAdapter adapter;
 
-        void fill_dgv_view_data_doc()
+       public void fill_dgv_view_data_doc()
         {
 
 
