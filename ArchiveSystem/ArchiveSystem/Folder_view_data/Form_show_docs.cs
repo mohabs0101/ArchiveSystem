@@ -106,10 +106,10 @@ SELECT  [DepartmentID]
                 string query3 = string.Format(@"SELECT  [ArchiveFollowUpID]
       ,[ArchiveBookID]
       ,[Department_AssignTO_ID]
-      ,[Task]
-      ,[Action]
-      ,[Note]
-      ,[DateAdded]
+      ,[Task]as 'المهمة'
+      ,[Action]as 'الاجراء المتخذ'
+      ,[Note]as 'ملاحضة'
+      ,[DateAdded]as 'تاريخ الاضافة'
   FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] where ArchiveBookID={0}", bookID,  con);
 
                 con.Open();
@@ -121,17 +121,20 @@ SELECT  [DepartmentID]
                 con.Close();
                 adp3.Fill(dt3);
                 advanc_dgv_Assign_Comment.DataSource = dt3;
-
+                advanc_dgv_Assign_Comment.Columns[0].Visible = false;
+                advanc_dgv_Assign_Comment.Columns[1].Visible = false;
+                advanc_dgv_Assign_Comment.Columns[2].Visible = false;
             }
             else if (departmentID != archived_by_bookID) // it means the book i opened not created by my department
             {
-                string query = string.Format(@"SELECT  [ArchiveFollowUpID]
+                string query = string.Format(@"SELECT 
+       [ArchiveFollowUpID]
       ,[ArchiveBookID]
       ,[Department_AssignTO_ID]
-      ,[Task]
-      ,[Action]
-      ,[Note]
-      ,[DateAdded]
+      ,[Task] as 'المهمة'
+      ,[Action] as 'الاجراء المتخذ'
+      ,[Note] as 'ملاحضة'
+      ,[DateAdded] as 'تاريخ الاضافة'
   FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] where [Department_AssignTO_ID]={0} and [ArchiveBookID]={1} ", departmentID, bookID, con);
 
 
@@ -146,6 +149,14 @@ SELECT  [DepartmentID]
                 con.Close();
                 adp.Fill(dt);
                 advanc_dgv_Assign_Comment.DataSource = dt;
+                advanc_dgv_Assign_Comment.Columns[0].Visible = false;
+                advanc_dgv_Assign_Comment.Columns[1].Visible = false;
+                advanc_dgv_Assign_Comment.Columns[2].Visible = false;
+
+                TXT_assignTitle.Enabled = false;
+                COMLIST_assination.Enabled = false;
+                BTN_addTask.Enabled = false;
+
 
 
             }
