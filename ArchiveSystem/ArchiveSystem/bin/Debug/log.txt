@@ -1330,3 +1330,443 @@
 
 4/10/2022 9:45:45 AM: Application started
 4/10/2022 9:45:45 AM: Configuration loaded
+
+2022/04/11 10:14:44 AM: Application started
+2022/04/11 10:14:44 AM: Configuration loaded
+
+2022/04/11 10:17:23 AM: Application started
+2022/04/11 10:17:23 AM: Configuration loaded
+
+2022/04/11 1:26:51 PM: Application started
+2022/04/11 1:26:51 PM: Configuration loaded
+2022/04/11 1:27:15 PM: Configuration saved
+2022/04/11 1:27:17 PM: [Error] Cannot access designated save path.
+2022/04/11 1:27:17 PM: [Error] Provided path is not writable
+2022/04/11 1:27:24 PM: [Error] Cannot access designated save path.
+2022/04/11 1:27:24 PM: [Error] Provided path is not writable
+2022/04/11 1:28:11 PM: Configuration saved
+2022/04/11 1:28:13 PM: Starting acquisition (Normal)
+2022/04/11 1:28:13 PM: Setup device handling
+2022/04/11 1:28:13 PM: Cannot configure scanner mode properly
+    System.NullReferenceException: Object reference not set to an instance of an object.
+   at WIA.IProperty.set_Value(Object& pvResult)
+   at ArchiveSystem.WIAScanner.SetDeviceIntProperty(Device& device, Int32 propertyID, Int32 propertyValue) in C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\WIAScanner.cs:line 440
+   at ArchiveSystem.WIAScanner.SetDeviceHandling(Device& device, ScanSettings settings) in C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\WIAScanner.cs:line 169
+2022/04/11 1:28:13 PM: Setup device properties
+2022/04/11 1:28:13 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:28:19 PM: Configuration saved
+2022/04/11 1:28:20 PM: Starting acquisition (Normal)
+2022/04/11 1:28:20 PM: Setup device handling
+2022/04/11 1:28:20 PM: Cannot configure scanner mode properly
+    System.NullReferenceException: Object reference not set to an instance of an object.
+   at WIA.IProperty.set_Value(Object& pvResult)
+   at ArchiveSystem.WIAScanner.SetDeviceIntProperty(Device& device, Int32 propertyID, Int32 propertyValue) in C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\WIAScanner.cs:line 440
+   at ArchiveSystem.WIAScanner.SetDeviceHandling(Device& device, ScanSettings settings) in C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\WIAScanner.cs:line 169
+2022/04/11 1:28:20 PM: Setup device properties
+2022/04/11 1:28:20 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:28:21 PM: Starting acquisition (Normal)
+2022/04/11 1:28:21 PM: Setup device handling
+2022/04/11 1:28:21 PM: Cannot configure scanner mode properly
+    System.NullReferenceException: Object reference not set to an instance of an object.
+   at WIA.IProperty.set_Value(Object& pvResult)
+   at ArchiveSystem.WIAScanner.SetDeviceIntProperty(Device& device, Int32 propertyID, Int32 propertyValue) in C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\WIAScanner.cs:line 440
+   at ArchiveSystem.WIAScanner.SetDeviceHandling(Device& device, ScanSettings settings) in C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\WIAScanner.cs:line 169
+2022/04/11 1:28:21 PM: Setup device properties
+2022/04/11 1:28:21 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:28:22 PM: Starting acquisition (Normal)
+2022/04/11 1:28:22 PM: Setup device handling
+2022/04/11 1:28:22 PM: Cannot configure scanner mode properly
+    System.NullReferenceException: Object reference not set to an instance of an object.
+   at WIA.IProperty.set_Value(Object& pvResult)
+   at ArchiveSystem.WIAScanner.SetDeviceIntProperty(Device& device, Int32 propertyID, Int32 propertyValue) in C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\WIAScanner.cs:line 440
+   at ArchiveSystem.WIAScanner.SetDeviceHandling(Device& device, ScanSettings settings) in C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\WIAScanner.cs:line 169
+2022/04/11 1:28:22 PM: Setup device properties
+2022/04/11 1:28:22 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:28:47 PM: Starting acquisition (Normal)
+2022/04/11 1:28:47 PM: Setup device handling
+2022/04/11 1:28:47 PM: Cannot configure scanner mode properly
+    System.NullReferenceException: Object reference not set to an instance of an object.
+   at WIA.IProperty.set_Value(Object& pvResult)
+   at ArchiveSystem.WIAScanner.SetDeviceIntProperty(Device& device, Int32 propertyID, Int32 propertyValue) in C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\WIAScanner.cs:line 440
+   at ArchiveSystem.WIAScanner.SetDeviceHandling(Device& device, ScanSettings settings) in C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\WIAScanner.cs:line 169
+2022/04/11 1:28:47 PM: Setup device properties
+2022/04/11 1:28:47 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:28:56 PM: Configuration saved
+2022/04/11 1:28:57 PM: Starting acquisition (Normal)
+2022/04/11 1:28:57 PM: Setup device handling
+2022/04/11 1:28:57 PM: Setup device properties
+2022/04/11 1:28:57 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:29:00 PM: Starting acquisition (Normal)
+2022/04/11 1:29:00 PM: Setup device handling
+2022/04/11 1:29:00 PM: Setup device properties
+2022/04/11 1:29:00 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:29:00 PM: Starting acquisition (Normal)
+2022/04/11 1:29:00 PM: Setup device handling
+2022/04/11 1:29:00 PM: Setup device properties
+2022/04/11 1:29:00 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:29:00 PM: Starting acquisition (Normal)
+2022/04/11 1:29:00 PM: Setup device handling
+2022/04/11 1:29:00 PM: Setup device properties
+2022/04/11 1:29:00 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:29:01 PM: Starting acquisition (Normal)
+2022/04/11 1:29:01 PM: Setup device handling
+2022/04/11 1:29:01 PM: Setup device properties
+2022/04/11 1:29:01 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:29:05 PM: Starting acquisition (Normal)
+2022/04/11 1:29:05 PM: Setup device handling
+2022/04/11 1:29:05 PM: Setup device properties
+2022/04/11 1:29:05 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:29:12 PM: Configuration saved
+2022/04/11 1:29:12 PM: Configuration saved
+2022/04/11 1:29:14 PM: Starting acquisition (Normal)
+2022/04/11 1:29:14 PM: Setup device handling
+2022/04/11 1:29:14 PM: Setup device properties
+2022/04/11 1:29:14 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:31:42 PM: Configuration saved
+2022/04/11 1:31:48 PM: Starting acquisition (Normal)
+2022/04/11 1:31:48 PM: Setup device handling
+2022/04/11 1:31:48 PM: Setup device properties
+2022/04/11 1:31:48 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:31:50 PM: Configuration saved
+2022/04/11 1:31:51 PM: Starting acquisition (Normal)
+2022/04/11 1:31:51 PM: Setup device handling
+2022/04/11 1:31:51 PM: Setup device properties
+2022/04/11 1:31:51 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:31:52 PM: Starting acquisition (Normal)
+2022/04/11 1:31:52 PM: Setup device handling
+2022/04/11 1:31:52 PM: Setup device properties
+2022/04/11 1:31:52 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:31:52 PM: Starting acquisition (Normal)
+2022/04/11 1:31:52 PM: Setup device handling
+2022/04/11 1:31:52 PM: Setup device properties
+2022/04/11 1:31:52 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:31:52 PM: Starting acquisition (Normal)
+2022/04/11 1:31:52 PM: Setup device handling
+2022/04/11 1:31:52 PM: Setup device properties
+2022/04/11 1:31:52 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:31:52 PM: Starting acquisition (Normal)
+2022/04/11 1:31:52 PM: Setup device handling
+2022/04/11 1:31:52 PM: Setup device properties
+2022/04/11 1:31:52 PM: [Error] Cannot connect to scanner, please check your device and try again.
+2022/04/11 1:32:05 PM: Configuration saved
+2022/04/11 1:32:05 PM: Configuration saved
+2022/04/11 1:32:07 PM: Starting acquisition (Normal)
+2022/04/11 1:32:07 PM: Setup device handling
+2022/04/11 1:32:07 PM: Setup device properties
+2022/04/11 1:32:07 PM: [Error] Cannot connect to scanner, please check your device and try again.
+
+2022/04/12 10:13:40 AM: Application started
+2022/04/12 10:13:40 AM: Configuration loaded
+2022/04/12 10:13:40 AM: Configuration saved
+2022/04/12 10:13:40 AM: Configuration saved
+
+2022/04/12 10:16:05 AM: Application started
+2022/04/12 10:16:05 AM: Configuration loaded
+2022/04/12 10:16:05 AM: Configuration saved
+2022/04/12 10:16:05 AM: Configuration saved
+
+2022/04/12 10:20:57 AM: Application started
+2022/04/12 10:20:57 AM: Configuration loaded
+2022/04/12 10:20:57 AM: Configuration saved
+2022/04/12 10:20:57 AM: Configuration saved
+
+2022/04/13 8:33:54 AM: Application started
+2022/04/13 8:33:54 AM: Configuration loaded
+2022/04/13 8:33:54 AM: Configuration saved
+2022/04/13 8:33:54 AM: Configuration saved
+
+2022/04/13 8:35:36 AM: Application started
+2022/04/13 8:35:37 AM: Configuration loaded
+2022/04/13 8:35:37 AM: Configuration saved
+2022/04/13 8:35:37 AM: Configuration saved
+
+2022/04/13 8:37:20 AM: Application started
+2022/04/13 8:37:20 AM: Configuration loaded
+2022/04/13 8:37:20 AM: Configuration saved
+2022/04/13 8:37:20 AM: Configuration saved
+
+2022/04/13 8:40:41 AM: Application started
+2022/04/13 8:40:41 AM: Configuration loaded
+2022/04/13 8:40:41 AM: Configuration saved
+2022/04/13 8:40:41 AM: Configuration saved
+
+2022/04/13 8:42:13 AM: Application started
+2022/04/13 8:42:14 AM: Configuration loaded
+2022/04/13 8:42:14 AM: Configuration saved
+2022/04/13 8:42:14 AM: Configuration saved
+
+2022/04/13 8:43:58 AM: Application started
+2022/04/13 8:43:59 AM: Configuration loaded
+2022/04/13 8:43:59 AM: Configuration saved
+2022/04/13 8:43:59 AM: Configuration saved
+
+2022/04/13 8:49:25 AM: Application started
+2022/04/13 8:49:25 AM: Configuration loaded
+2022/04/13 8:49:25 AM: Configuration saved
+2022/04/13 8:49:25 AM: Configuration saved
+
+2022/04/13 8:53:27 AM: Application started
+2022/04/13 8:53:27 AM: Configuration loaded
+2022/04/13 8:53:27 AM: Configuration saved
+2022/04/13 8:53:27 AM: Configuration saved
+
+2022/04/13 8:54:48 AM: Application started
+2022/04/13 8:54:48 AM: Configuration loaded
+2022/04/13 8:54:48 AM: Configuration saved
+2022/04/13 8:54:48 AM: Configuration saved
+
+2022/04/13 8:55:39 AM: Application started
+2022/04/13 8:55:40 AM: Configuration loaded
+2022/04/13 8:55:40 AM: Configuration saved
+2022/04/13 8:55:40 AM: Configuration saved
+
+2022/04/13 8:56:55 AM: Application started
+2022/04/13 8:56:55 AM: Configuration loaded
+2022/04/13 8:56:55 AM: Configuration saved
+2022/04/13 8:56:55 AM: Configuration saved
+
+2022/04/13 8:58:29 AM: Application started
+2022/04/13 8:58:29 AM: Configuration loaded
+2022/04/13 8:58:29 AM: Configuration saved
+2022/04/13 8:58:29 AM: Configuration saved
+
+2022/04/13 9:04:06 AM: Application started
+2022/04/13 9:04:06 AM: Configuration loaded
+2022/04/13 9:04:06 AM: Configuration saved
+2022/04/13 9:04:06 AM: Configuration saved
+2022/04/13 9:04:08 AM: Application closed
+
+2022/04/13 9:06:13 AM: Application started
+2022/04/13 9:06:13 AM: Configuration loaded
+2022/04/13 9:06:13 AM: Configuration saved
+2022/04/13 9:06:13 AM: Configuration saved
+
+2022/04/13 9:07:10 AM: Application started
+2022/04/13 9:07:10 AM: Configuration loaded
+2022/04/13 9:07:10 AM: Configuration saved
+2022/04/13 9:07:10 AM: Configuration saved
+
+2022/04/13 9:23:47 AM: Application started
+2022/04/13 9:23:47 AM: Configuration loaded
+2022/04/13 9:23:47 AM: Configuration saved
+2022/04/13 9:23:47 AM: Configuration saved
+
+2022/04/13 9:41:23 AM: Application started
+2022/04/13 9:41:23 AM: Configuration loaded
+2022/04/13 9:41:23 AM: Configuration saved
+2022/04/13 9:41:23 AM: Configuration saved
+
+2022/04/13 9:48:18 AM: Application started
+2022/04/13 9:48:18 AM: Configuration loaded
+2022/04/13 9:48:18 AM: Configuration saved
+2022/04/13 9:48:18 AM: Configuration saved
+
+2022/04/13 9:55:11 AM: Application started
+2022/04/13 9:55:11 AM: Configuration loaded
+2022/04/13 9:55:11 AM: Configuration saved
+2022/04/13 9:55:11 AM: Configuration saved
+
+2022/04/13 9:57:33 AM: Application started
+2022/04/13 9:57:33 AM: Configuration loaded
+2022/04/13 9:57:33 AM: Configuration saved
+2022/04/13 9:57:33 AM: Configuration saved
+
+2022/04/13 10:25:00 AM: Application started
+2022/04/13 10:25:00 AM: Configuration loaded
+2022/04/13 10:25:00 AM: Configuration saved
+2022/04/13 10:25:00 AM: Configuration saved
+
+2022/04/13 10:48:36 AM: Application started
+2022/04/13 10:48:36 AM: Configuration loaded
+2022/04/13 10:48:36 AM: Configuration saved
+2022/04/13 10:48:36 AM: Configuration saved
+
+2022/04/13 10:48:58 AM: Application started
+2022/04/13 10:48:58 AM: Configuration loaded
+2022/04/13 10:48:58 AM: Configuration saved
+2022/04/13 10:48:58 AM: Configuration saved
+
+2022/04/13 10:50:11 AM: Application started
+2022/04/13 10:50:11 AM: Configuration loaded
+2022/04/13 10:50:11 AM: Configuration saved
+2022/04/13 10:50:11 AM: Configuration saved
+
+2022/04/13 10:51:00 AM: Application started
+2022/04/13 10:51:00 AM: Configuration loaded
+2022/04/13 10:51:00 AM: Configuration saved
+2022/04/13 10:51:00 AM: Configuration saved
+
+2022/04/13 10:53:20 AM: Application started
+2022/04/13 10:53:21 AM: Configuration loaded
+2022/04/13 10:53:21 AM: Configuration saved
+2022/04/13 10:53:21 AM: Configuration saved
+
+2022/04/13 10:54:12 AM: Application started
+2022/04/13 10:54:12 AM: Configuration loaded
+2022/04/13 10:54:12 AM: Configuration saved
+2022/04/13 10:54:12 AM: Configuration saved
+
+2022/04/13 10:56:27 AM: Application started
+2022/04/13 10:56:27 AM: Configuration loaded
+2022/04/13 10:56:27 AM: Configuration saved
+2022/04/13 10:56:27 AM: Configuration saved
+
+2022/04/13 10:56:36 AM: Application started
+2022/04/13 10:56:36 AM: Configuration loaded
+2022/04/13 10:56:36 AM: Configuration saved
+2022/04/13 10:56:36 AM: Configuration saved
+
+2022/04/13 10:57:20 AM: Application started
+2022/04/13 10:57:20 AM: Configuration loaded
+2022/04/13 10:57:20 AM: Configuration saved
+2022/04/13 10:57:20 AM: Configuration saved
+
+2022/04/13 10:59:10 AM: Application started
+2022/04/13 10:59:10 AM: Configuration loaded
+2022/04/13 10:59:10 AM: Configuration saved
+2022/04/13 10:59:10 AM: Configuration saved
+
+2022/04/13 10:59:59 AM: Application started
+2022/04/13 10:59:59 AM: Configuration loaded
+2022/04/13 10:59:59 AM: Configuration saved
+2022/04/13 10:59:59 AM: Configuration saved
+
+2022/04/13 11:00:59 AM: Application started
+2022/04/13 11:01:00 AM: Configuration loaded
+2022/04/13 11:01:00 AM: Configuration saved
+2022/04/13 11:01:00 AM: Configuration saved
+
+2022/04/13 11:02:53 AM: Application started
+2022/04/13 11:02:54 AM: Configuration loaded
+2022/04/13 11:02:54 AM: Configuration saved
+2022/04/13 11:02:54 AM: Configuration saved
+
+2022/04/13 11:06:59 AM: Application started
+2022/04/13 11:06:59 AM: Configuration loaded
+2022/04/13 11:06:59 AM: Configuration saved
+2022/04/13 11:06:59 AM: Configuration saved
+
+2022/04/13 11:13:37 AM: Application started
+2022/04/13 11:13:37 AM: Configuration loaded
+2022/04/13 11:13:37 AM: Configuration saved
+2022/04/13 11:13:37 AM: Configuration saved
+
+2022/04/13 11:14:15 AM: Application started
+2022/04/13 11:14:15 AM: Configuration loaded
+2022/04/13 11:14:15 AM: Configuration saved
+2022/04/13 11:14:15 AM: Configuration saved
+
+2022/04/13 11:15:02 AM: Application started
+2022/04/13 11:15:02 AM: Configuration loaded
+2022/04/13 11:15:02 AM: Configuration saved
+2022/04/13 11:15:02 AM: Configuration saved
+
+2022/04/13 11:15:22 AM: Application started
+2022/04/13 11:15:22 AM: Configuration loaded
+2022/04/13 11:15:22 AM: Configuration saved
+2022/04/13 11:15:22 AM: Configuration saved
+
+2022/04/13 11:17:14 AM: Application started
+2022/04/13 11:17:14 AM: Configuration loaded
+2022/04/13 11:17:14 AM: Configuration saved
+2022/04/13 11:17:14 AM: Configuration saved
+
+2022/04/13 11:20:23 AM: Application started
+2022/04/13 11:20:23 AM: Configuration loaded
+2022/04/13 11:20:23 AM: Configuration saved
+2022/04/13 11:20:23 AM: Configuration saved
+
+2022/04/13 11:24:15 AM: Application started
+2022/04/13 11:24:15 AM: Configuration loaded
+2022/04/13 11:24:15 AM: Configuration saved
+2022/04/13 11:24:15 AM: Configuration saved
+
+2022/04/13 11:25:45 AM: Application started
+2022/04/13 11:25:45 AM: Configuration loaded
+2022/04/13 11:25:45 AM: Configuration saved
+2022/04/13 11:25:45 AM: Configuration saved
+
+2022/04/13 11:28:00 AM: Application started
+2022/04/13 11:28:00 AM: Configuration loaded
+2022/04/13 11:28:00 AM: Configuration saved
+2022/04/13 11:28:00 AM: Configuration saved
+
+2022/04/13 11:29:37 AM: Application started
+2022/04/13 11:29:37 AM: Configuration loaded
+2022/04/13 11:29:37 AM: Configuration saved
+2022/04/13 11:29:37 AM: Configuration saved
+
+2022/04/13 11:31:22 AM: Application started
+2022/04/13 11:31:22 AM: Configuration loaded
+2022/04/13 11:31:22 AM: Configuration saved
+2022/04/13 11:31:22 AM: Configuration saved
+
+2022/04/13 11:31:36 AM: Application started
+2022/04/13 11:31:36 AM: Configuration loaded
+2022/04/13 11:31:36 AM: Configuration saved
+2022/04/13 11:31:36 AM: Configuration saved
+
+2022/04/13 11:35:02 AM: Application started
+2022/04/13 11:35:02 AM: Configuration loaded
+2022/04/13 11:35:02 AM: Configuration saved
+2022/04/13 11:35:02 AM: Configuration saved
+
+2022/04/13 11:35:15 AM: Application started
+2022/04/13 11:35:15 AM: Configuration loaded
+2022/04/13 11:35:15 AM: Configuration saved
+2022/04/13 11:35:15 AM: Configuration saved
+
+2022/04/13 11:35:35 AM: Application started
+2022/04/13 11:35:35 AM: Configuration loaded
+2022/04/13 11:35:35 AM: Configuration saved
+2022/04/13 11:35:35 AM: Configuration saved
+
+2022/04/13 11:36:25 AM: Application started
+2022/04/13 11:36:25 AM: Configuration loaded
+2022/04/13 11:36:25 AM: Configuration saved
+2022/04/13 11:36:25 AM: Configuration saved
+
+2022/04/13 11:36:54 AM: Application started
+2022/04/13 11:36:54 AM: Configuration loaded
+2022/04/13 11:36:54 AM: Configuration saved
+2022/04/13 11:36:54 AM: Configuration saved
+
+2022/04/13 11:38:12 AM: Application started
+2022/04/13 11:38:13 AM: Configuration loaded
+2022/04/13 11:38:13 AM: Configuration saved
+2022/04/13 11:38:13 AM: Configuration saved
+
+2022/04/13 11:38:45 AM: Application started
+2022/04/13 11:38:45 AM: Configuration loaded
+2022/04/13 11:38:45 AM: Configuration saved
+2022/04/13 11:38:45 AM: Configuration saved
+
+2022/04/13 11:40:51 AM: Application started
+2022/04/13 11:40:51 AM: Configuration loaded
+2022/04/13 11:40:51 AM: Configuration saved
+2022/04/13 11:40:51 AM: Configuration saved
+
+2022/04/13 11:42:19 AM: Application started
+2022/04/13 11:42:20 AM: Configuration loaded
+2022/04/13 11:42:20 AM: Configuration saved
+2022/04/13 11:42:20 AM: Configuration saved
+
+2022/04/13 11:44:19 AM: Application started
+2022/04/13 11:44:19 AM: Configuration loaded
+2022/04/13 11:44:19 AM: Configuration saved
+2022/04/13 11:44:19 AM: Configuration saved
+
+2022/04/13 11:44:45 AM: Application started
+2022/04/13 11:44:45 AM: Configuration loaded
+2022/04/13 11:44:45 AM: Configuration saved
+2022/04/13 11:44:45 AM: Configuration saved
+
+2022/04/13 11:47:57 AM: Application started
+2022/04/13 11:47:57 AM: Configuration loaded
+2022/04/13 11:47:57 AM: Configuration saved
+2022/04/13 11:47:57 AM: Configuration saved
+
+2022/04/14 8:35:48 AM: Application started
+2022/04/14 8:35:49 AM: Configuration loaded
+2022/04/14 8:35:49 AM: Configuration saved
+2022/04/14 8:35:49 AM: Configuration saved

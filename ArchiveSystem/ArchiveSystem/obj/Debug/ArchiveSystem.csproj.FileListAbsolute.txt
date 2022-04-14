@@ -25,3 +25,29 @@ C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\D
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.csproj.CopyComplete
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.exe
 C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.pdb
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.exe.config
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.exe
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.pdb
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\AdvancedDataGridView.dll
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\LibUsbDotNet.LibUsbDotNet.dll
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\MetroFramework.Design.dll
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\MetroFramework.dll
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\LibUsbDotNet.LibUsbDotNet.pdb
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\Interop.WIA.dll
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.csprojAssemblyReference.cache
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\Interop.WIA.dll
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.csproj.ResolveComReference.cache
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.EditeDocs.EditeDocs.resources
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Folder_view_data.Form_show_docs.resources
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Folder_view_data.Form_view_data_dqv.resources
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Form1.resources
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Login.resources
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Properties.Resources.resources
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.ScanDialog.resources
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.SelectScanner.resources
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.csproj.GenerateResource.cache
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.csproj.CoreCompileInputs.cache
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.csproj.CopyComplete
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.exe
+C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.pdb
