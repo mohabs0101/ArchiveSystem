@@ -68,7 +68,7 @@ namespace ArchiveSystem
             //DepartmentBooks();
             AssignmentBooks();
 
-            //check ftp if connected or not 
+ //check ftp if connected or not 
             try
             {
 
@@ -577,19 +577,17 @@ namespace ArchiveSystem
         {
             try
             {
-                string query = string.Format(@"SELECT
-       
-      
-     [BookCode]
-,[BookNumber]
+                string query = string.Format(@"   SELECT
+       [BookCode]
+      ,[BookNumber]
       ,[BookDate]
       ,[InboundNumber]
- ,[InboundDate]
+      ,[InboundDate]
       ,[Subject]
       ,[BooksTypeID]
       ,[From]
       ,[To]
-  ,[BookPriority]
+      ,[BookPriority]
       ,[ArchivedDate]
       ,[BookPaperType]
       ,[Notes]
@@ -598,14 +596,15 @@ namespace ArchiveSystem
       ,[BookStatus]
       ,[Privacy]
       ,[SearchKeys]
-    
 
             FROM[ArchiveSystem].[dbo].[ArchiveFollowUp]
-   inner JOIN[ArchiveBooks_TBL]ON[ArchiveFollowUp].ArchiveBookID = [ArchiveBooks_TBL].ArchiveBookID
-   where[ArchiveFollowUp].DepartmentID = {0}", DepID, con);
+   inner JOIN[ArchiveBooks_TBL] ON[ArchiveFollowUp].ArchiveBookID = [ArchiveBooks_TBL].ArchiveBookID
+   where[ArchiveFollowUp].[Department_AssignTO_ID] = {0}", DepID, con);
 
 
-        con.Open();
+
+
+                con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
@@ -618,7 +617,7 @@ namespace ArchiveSystem
                 con.Close();
 
 
-        }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -626,7 +625,7 @@ namespace ArchiveSystem
 
 
 
-}
+        }
 
         //get folders (scanned books) of speacific folders
         public void Refresh_Folders()

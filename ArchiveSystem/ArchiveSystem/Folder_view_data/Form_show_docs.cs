@@ -22,6 +22,8 @@ namespace ArchiveSystem.Folder_view_data
         public static string _subject;
         public static string _BookType;
         public static string _bookCode;
+        public static string Archived_by_department_name;//bring this when page load(source fromread_details_doc)
+
         public Form_show_docs()
         {
             InitializeComponent();
@@ -41,9 +43,12 @@ namespace ArchiveSystem.Folder_view_data
             try
             {
                 string query = string.Format(@"  
-             SELECT  [DepartmentID]
-            ,[DepartmentName]
-             FROM [ArchiveSystem].[dbo].[Departments_TBL]", con);
+SELECT  [DepartmentID]
+      ,[DepartmentName]
+  FROM [ArchiveSystem].[dbo].[Departments_TBL]", con);
+
+
+
 
                 con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -58,6 +63,8 @@ namespace ArchiveSystem.Folder_view_data
                 COMLIST_assination.ValueMember = "DepartmentID";
 
                 con.Close();
+
+
             }
             catch (Exception ex)
             {
@@ -65,34 +72,84 @@ namespace ArchiveSystem.Folder_view_data
             }
         }
 
-
+        //i have login dep id and i have selected book archived dep id 
+        // if they matched so it mean the book i opened is created by same dep so bring full assignation table 
+        // else if not matchet ether the book i opened assing to me or not 
+        //so i will bring the rows that have [Department_AssignTO_ID] as my login dep id 
+        // if it return empty it means there is no assign to me in it
         void BringFolloWUp_TBL()
         {
-            int departmentID = Login._depID;
+            int bookID = Convert.ToInt32(book_ID); //book id of selected book
+            
+            int departmentID = Login._depID;//login dep id
 
-            int archivebookID =Convert.ToInt32( book_ID.ToString());
-            string query = string.Format(@"SELECT 
-
-            dbo.Departments_TBL.DepartmentName as [القسم],
-            dbo.[ArchiveFollowUp].Task as [المهمة],
-            dbo.[ArchiveFollowUp].Action as [الاجراء],
-            dbo.[ArchiveFollowUp].Note as [الملاحظات],
-            dbo.[ArchiveFollowUp].DateAdded as [تاريخ الاضافة]
-
-            FROM     dbo.ArchiveBooks_TBL INNER JOIN
-                              dbo.[ArchiveFollowUp] ON dbo.ArchiveBooks_TBL.ArchiveBookID = dbo.[ArchiveFollowUp].ArchiveBookID INNER JOIN
-                              dbo.Departments_TBL ON dbo.[ArchiveFollowUp].DepartmentID = dbo.Departments_TBL.DepartmentID
-            WHERE  ArchiveFollowUp.ArchiveBookID={0}  and ArchiveFollowUp.DepartmentID = {1}", archivebookID, departmentID, con  );
+            //bring archiveByDepID by its name 
+            string query2 = string.Format(@"SELECT   [DepartmentID]  ,[DepartmentName]
+    
+  FROM [ArchiveSystem].[dbo].[Departments_TBL] where [DepartmentName]=N'{0}'", Archived_by_department_name, con);
 
             con.Open();
-            SqlCommand cmd = new SqlCommand(query, con);
+            SqlCommand cmd2 = new SqlCommand(query2, con);
 
-            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            SqlDataAdapter adp2 = new SqlDataAdapter(cmd2);
 
-            DataTable dt = new DataTable();
+            DataTable dt2 = new DataTable();
             con.Close();
-            adp.Fill(dt);
-           advanc_dgv_Assign_Comment.DataSource = dt;
+            adp2.Fill(dt2);
+            int DepArch_by_ID_ =Convert.ToInt32( dt2.Rows[0][0].ToString());
+
+            int archived_by_bookID = DepArch_by_ID_; //book archived by id 
+
+            if (departmentID== archived_by_bookID)
+            {
+
+                string query3 = string.Format(@"SELECT  [ArchiveFollowUpID]
+      ,[ArchiveBookID]
+      ,[Department_AssignTO_ID]
+      ,[Task]
+      ,[Action]
+      ,[Note]
+      ,[DateAdded]
+  FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] where ArchiveBookID={0}", bookID,  con);
+
+                con.Open();
+                SqlCommand cmd3 = new SqlCommand(query3, con);
+
+                SqlDataAdapter adp3 = new SqlDataAdapter(cmd3);
+
+                DataTable dt3 = new DataTable();
+                con.Close();
+                adp3.Fill(dt3);
+                advanc_dgv_Assign_Comment.DataSource = dt3;
+
+            }
+            else if (departmentID != archived_by_bookID) // it means the book i opened not created by my department
+            {
+                string query = string.Format(@"SELECT  [ArchiveFollowUpID]
+      ,[ArchiveBookID]
+      ,[Department_AssignTO_ID]
+      ,[Task]
+      ,[Action]
+      ,[Note]
+      ,[DateAdded]
+  FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] where [Department_AssignTO_ID]={0} and [ArchiveBookID]={1} ", departmentID, bookID, con);
+
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                con.Close();
+                adp.Fill(dt);
+                advanc_dgv_Assign_Comment.DataSource = dt;
+
+
+            }
+              
             
         }
 
@@ -154,8 +211,9 @@ namespace ArchiveSystem.Folder_view_data
             //ImageList_add_viwe.Dispose();
         }
 
-        
+        string pic;
         public static string book_ID;
+        
         void read_details_doc()
         {
             con.Open();
@@ -176,6 +234,7 @@ dbo.ArchiveBooks_TBL.ArchivedDate,
 dbo.ArchiveBooks_TBL.BookPaperType,
 dbo.ArchiveBooks_TBL.Notes,
 dbo.Departments_TBL.DepartmentName,
+ 
 dbo.Users_TBL.Username,
 dbo.ArchiveBooks_TBL.BookStatus,
 dbo.ArchiveBooks_TBL.Privacy
@@ -213,16 +272,49 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 COM_bookStatus.Text = dr1["BookStatus"].ToString();
                 COM_privicy.Text = dr1["Privacy"].ToString();
 
-                //send to form EditeDocs
+ 
                 _subject = TXT_Subject.Text;
                 _BookType = COM_bookType.Text;
                 _bookCode = txt_book_code.Text;
+                Archived_by_department_name = txt_DepartmentName.Text;
+
             }
             dr1.Close();
             con.Close();
         }
 
+  //      void Bring_assignTable()
+  //      {
+  //          try
+  //          {
+               
+  //              int Login_dep =Convert.ToInt32( Login._depID.ToString());
+  //              int book_archivedBy_depID = Convert.ToInt32(book_ID.ToString());
+  //              string query = string.Format(@" SELECT   [BooksTypeID]
+  //    ,[BookTypeName]
+  //FROM [ArchiveSystem].[dbo].[BooksType_TBL]", con);
 
+  //              con.Open();
+  //              SqlCommand cmd = new SqlCommand(query, con);
+
+  //              SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+  //              DataTable booktypes = new DataTable();
+
+  //              adp.Fill(booktypes);
+  //              COM_bookType.DataSource = booktypes;
+  //              COM_bookType.DisplayMember = "BookTypeName";
+  //              COM_bookType.ValueMember = "BooksTypeID";
+
+  //              con.Close();
+
+  //          }
+  //          catch (Exception ex)
+  //          {
+  //              MessageBox.Show(ex.ToString());
+  //          }
+
+  //      }
         //public void PrefermCall()
         //{
         //    show_files_doc();
@@ -250,50 +342,11 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
                 ListView_show_doc.Items.Add(fi.Name, ImageList_add_viwe.Images.Count - 1);
 
+
+
             }
 
         }
-
-        private void Form_show_docs_Load_1(object sender, EventArgs e)
-        {
-            TabControlBookdetails.SelectTab(0);
-
-
-            TabControlBookdetails.RightToLeft = RightToLeft.Yes;
-            TabControlBookdetails.RightToLeftLayout = true;
-            Fill_bookType();
-
-            ListView_show_doc.Columns.Add("الملف", 300);
-            cm_type_show.SelectedIndex = 1; //or ListView_show_doc.View = View.LargeIcon;
-            ImageList_add_viwe.ImageSize = new Size(100, 100);
-            ListView_show_doc.Columns[0].Width = 250;
-
-            read_details_doc();
-            show_files_doc();
-            Select_Departments();
-
-            BringFolloWUp_TBL();
-
-        }
-
-        private void cm_type_show_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (cm_type_show.SelectedIndex == 0)
-            {
-                ListView_show_doc.View = View.Details;
-                ListView_show_doc.GridLines = true;
-            }
-            else if (cm_type_show.SelectedIndex == 1)
-            { ListView_show_doc.View = View.LargeIcon; }
-            else if (cm_type_show.SelectedIndex == 2)
-            { ListView_show_doc.View = View.List; }
-            else if (cm_type_show.SelectedIndex == 3)
-            { ListView_show_doc.View = View.SmallIcon; }
-            else if (cm_type_show.SelectedIndex == 4)
-            { //ListView_show_doc.View = View.Tile
-            }
-        }
-
 
         void Rotat_img(RotateFlipType r90)
         {
@@ -308,20 +361,6 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
             }
         }
-        private void btn_Rotate_90_Click(object sender, EventArgs e)
-        {
-            Rotat_img(RotateFlipType.Rotate90FlipNone);
-        }
-        private void btn_Rotate_180_Click(object sender, EventArgs e)
-        {
-            Rotat_img(RotateFlipType.Rotate180FlipNone);
-        }
-
-
-
-
-        
-       
 
         private void ZoomInOut(bool zoom)
         {
@@ -350,6 +389,55 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
         }
 
+
+        private void Form_show_docs_Load_1(object sender, EventArgs e)
+        {
+            TabControlBookdetails.SelectTab(0);
+         
+
+            TabControlBookdetails.RightToLeft = RightToLeft.Yes;
+            TabControlBookdetails.RightToLeftLayout = true;
+            Fill_bookType();
+
+            ListView_show_doc.Columns.Add("الملف", 300);
+            cm_type_show.SelectedIndex = 1; //or ListView_show_doc.View = View.LargeIcon;
+            ImageList_add_viwe.ImageSize = new Size(100, 100);
+            ListView_show_doc.Columns[0].Width = 250;
+
+
+            read_details_doc();
+            show_files_doc();
+            Select_Departments();
+
+            BringFolloWUp_TBL();
+
+            //Bring_assignTable();
+
+        }
+
+        private void cm_type_show_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cm_type_show.SelectedIndex == 0)
+            {
+                ListView_show_doc.View = View.Details;
+                ListView_show_doc.GridLines = true;
+            }
+            else if (cm_type_show.SelectedIndex == 1)
+            { ListView_show_doc.View = View.LargeIcon; }
+            else if (cm_type_show.SelectedIndex == 2)
+            { ListView_show_doc.View = View.List; }
+            else if (cm_type_show.SelectedIndex == 3)
+            { ListView_show_doc.View = View.SmallIcon; }
+            else if (cm_type_show.SelectedIndex == 4)
+            { //ListView_show_doc.View = View.Tile
+            }
+        }
+
+        private void btn_add_Tracker_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
         private void btn_zoom_out_Click_1(object sender, EventArgs e)
         {
             ZoomInOut(false);
@@ -359,11 +447,18 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
         {
             ZoomInOut(true);
         }
+        private void btn_Rotate_180_Click(object sender, EventArgs e)
+        {
+            Rotat_img(RotateFlipType.Rotate180FlipNone);
+        }
+
+        private void btn_Rotate_90_Click(object sender, EventArgs e)
+        {
+            Rotat_img(RotateFlipType.Rotate90FlipNone);
+
+        }
 
 
-
-
-        string path_file_name;
         private void ListView_show_doc_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
@@ -372,30 +467,29 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
             foreach (ListViewItem Item in breakfast)
             {
-            //for (int i = 0; i < ListView_show_doc.Items.Count; i++)
-                //{
+
                 try
                 {
-                       path_file_name = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
-                    
-                       //pictureBox_show_doc.Load(pic);
-                      
-                       //or //So that we can delete with out proplems
-                      
-                        Image image2 = Image.FromFile(path_file_name);//put var here
-                        pictureBox_show_doc.Image = new Bitmap(image2);
-                        image2.Dispose();
+                    //pic = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                    //pictureBox_show_doc.Load(pic);
 
+                    for (int i = 0; i < ListView_show_doc.Items.Count; i++)
+                    {
+                        String file_name = ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                        Image image2 = Image.FromFile(path_folder_client_temp + @"\" + file_name + "");//put var here
+
+                        pictureBox_show_doc.Image = new Bitmap(image2);
+
+                        image2.Dispose();
                         //get pah to use it to display img in wndows exploror
                         //picture_path = (Doc_source + @"\" + selectedFolder + @"\" + file_name + "");
-                    //}
-                    
+                    }
+                    //System.Diagnostics.Process.Start(pic);
 
                 }
                 catch (Exception ex)
                 {
-                   System.Diagnostics.Process.Start(path_file_name);
-                   // MessageBox.Show(ex.ToString());
+                    MessageBox.Show(ex.ToString());
                 }
 
             }
@@ -404,7 +498,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
         private void TSM_open_file_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(path_file_name);
+            System.Diagnostics.Process.Start(pic);
         }
 
         private void TSM_open_all_file_Click_1(object sender, EventArgs e)
@@ -428,7 +522,8 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
             foreach (ListViewItem Item in breakfast)
             {
-               
+                pic = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+
                 string fn = ListView_show_doc.Items[Item.Index].SubItems[0].Text;
 
 
@@ -451,7 +546,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 MessageBox.Show("تم حذف المستند");
                 response.Close();
                 //delete it localy
-                if (File.Exists(path_file_name))
+                if (File.Exists(pic))
                 {
                     //ListView_show_doc.Dispose();
                     //ImageList_add_viwe.Dispose();
@@ -463,7 +558,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                     System.GC.WaitForPendingFinalizers();
                     //pictureBox_show_doc.Dispose();
 
-                    File.Delete(path_file_name);
+                    File.Delete(pic);
                     //refresh listview
                     show_files_doc();
                     // Form_show_docs s_doc1 = new Form_show_docs();
@@ -505,12 +600,9 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
             }
         }
-
+         
         private void BTN_EnableEdite_Click(object sender, EventArgs e)
         {
-            if (BTN_EnableEdite.Text == "فتح التعديل")
-            {
-            BTN_EnableEdite.Text = "الغاء التعديل";
             TXT_bookNumber.Enabled = true;
             COM_bookType.Enabled = true;
             TXT_Subject.Enabled = true;
@@ -527,12 +619,13 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             TXT_SearchKEys.Enabled = true;
 
             BTN_SAVE.Visible = true;
-            //BTN_StopEditing.Visible = true;
-            //this.BTN_EnableEdite.Visible = false;
-            }
-            else
-            {
-            BTN_EnableEdite.Text = "فتح التعديل";
+            BTN_StopEditing.Visible = true;
+            this.BTN_EnableEdite.Visible = false;
+         
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
             TXT_bookNumber.Enabled = false;
             COM_bookType.Enabled = false;
             TXT_Subject.Enabled = false;
@@ -548,54 +641,58 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             TXT_notes.Enabled = false;
             TXT_SearchKEys.Enabled = false;
             BTN_SAVE.Visible = false;
-            //this.BTN_EnableEdite.Visible = true;
-            //this.BTN_StopEditing.Visible = false;
+            this.BTN_EnableEdite.Visible = true;
+            this.BTN_StopEditing.Visible = false;
+        }
+
+        private void BTN_addTask_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                int Archive_bookID =Convert.ToInt32( book_ID.ToString());
+                int Department_assintToID=Convert.ToInt32( COMLIST_assination.SelectedValue.ToString());
+                string task = TXT_assignTitle.Text;
+                string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
+
+                string query = string.Format(@"INSERT INTO [dbo].[ArchiveFollowUp]
+           ([ArchiveBookID]
+           ,[Department_AssignTO_ID]
+           ,[Task]
+           ,[Action]
+           ,[Note]
+           ,[DateAdded]
+          )
+     VALUES
+           ({0},{1},N'{2}','{3}','{4}','{5}')
+", Archive_bookID, Department_assintToID ,task, "","", currentDate, con);
+
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                int check = (int)cmd.ExecuteNonQuery();
+                con.Close();
+
+                if (check != 0)
+                {
+                    MessageBox.Show("تم اضافة متابعة ");
+
+                }
+
+                else if (check == 0)
+                {
+                    MessageBox.Show("لم يتم ادخال المعلومات ");
+                }
+
+
             }
-            
-         
-        }
-
-        private void BTN_SAVE_Click(object sender, EventArgs e)
-        {
-//            con.Open();
-//            String strQuery;
-//            strQuery = @"Update ArchiveBooks_TBL set BookNumber = @BookNumber, BookDate = @BookDate, InboundNumber = @InboundNumber,
-//InboundDate = @InboundDate, Subject = @Subject, BooksTypeID = @BooksTypeID,
-//                             Where ArchiveBookID = " + book_ID;
-
-//            SqlCommand cmd = new SqlCommand(strQuery, con);
-
-
-//            cmd.Parameters.Add(new SqlParameter("@BookNumber", SqlDbType.NVarChar)).Value = TXT_bookNumber.Text;
-//            cmd.Parameters.Add(new SqlParameter("@BookDate", SqlDbType.NVarChar)).Value = DT_bookDate.Text;
-//            cmd.Parameters.Add(new SqlParameter("@InboundNumber", SqlDbType.NVarChar)).Value = TXT_Book_recive_number.Text;
-//            cmd.Parameters.Add(new SqlParameter("@InboundDate", SqlDbType.NVarChar)).Value = DT_bookRecive_date.Text;
-//            cmd.Parameters.Add(new SqlParameter("@Subject", SqlDbType.NVarChar)).Value = TXT_Subject.Text;
-//            cmd.Parameters.Add(new SqlParameter("@BooksTypeID", SqlDbType.Int)).Value = COM_bookType.SelectedValue;
-
-
-//            cmd.ExecuteNonQuery();
-
-
-//            con.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_add_Tracker_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }
