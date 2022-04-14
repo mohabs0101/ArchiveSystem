@@ -85,7 +85,6 @@ namespace ArchiveSystem.EditeDocs
 
                 table.Rows.Add(false, file.Name);
 
-
             }
 
             DGV_Files.DataSource = table;

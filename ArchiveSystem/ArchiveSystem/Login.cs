@@ -73,14 +73,14 @@ namespace ArchiveSystem
                 {
                     MessageBox.Show("اسم المستخدم او الرمز  غير صحيح");
                 }
-                 
-            }
+
+        }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
 
-        }
+}
         //login with enter key button
         private void TXT_pass_KeyDown(object sender, KeyEventArgs e)
         {
