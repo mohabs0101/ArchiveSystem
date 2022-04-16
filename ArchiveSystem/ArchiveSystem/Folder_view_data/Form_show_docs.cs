@@ -11,7 +11,8 @@ using System.IO;
 using System.Configuration;
 using System.Diagnostics;
 using System.Data.SqlClient;
- 
+
+
 
 using System.Net;
 
@@ -47,9 +48,6 @@ SELECT  [DepartmentID]
       ,[DepartmentName]
   FROM [ArchiveSystem].[dbo].[Departments_TBL]", con);
 
-
-
-
                 con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
 
@@ -72,97 +70,7 @@ SELECT  [DepartmentID]
             }
         }
 
-        //i have login dep id and i have selected book archived dep id 
-        // if they matched so it mean the book i opened is created by same dep so bring full assignation table 
-        // else if not matchet ether the book i opened assing to me or not 
-        //so i will bring the rows that have [Department_AssignTO_ID] as my login dep id 
-        // if it return empty it means there is no assign to me in it
-        void BringFolloWUp_TBL()
-        {
-            int bookID = Convert.ToInt32(book_ID); //book id of selected book
-            
-            int departmentID = Login._depID;//login dep id
-
-            //bring archiveByDepID by its name 
-            string query2 = string.Format(@"SELECT   [DepartmentID]  ,[DepartmentName]
-    
-  FROM [ArchiveSystem].[dbo].[Departments_TBL] where [DepartmentName]=N'{0}'", Archived_by_department_name, con);
-
-            con.Open();
-            SqlCommand cmd2 = new SqlCommand(query2, con);
-
-            SqlDataAdapter adp2 = new SqlDataAdapter(cmd2);
-
-            DataTable dt2 = new DataTable();
-            con.Close();
-            adp2.Fill(dt2);
-            int DepArch_by_ID_ =Convert.ToInt32( dt2.Rows[0][0].ToString());
-
-            int archived_by_bookID = DepArch_by_ID_; //book archived by id 
-
-            if (departmentID== archived_by_bookID)
-            {
-
-                string query3 = string.Format(@"SELECT  [ArchiveFollowUpID]
-      ,[ArchiveBookID]
-      ,[Department_AssignTO_ID]
-      ,[Task]as 'المهمة'
-      ,[Action]as 'الاجراء المتخذ'
-      ,[Note]as 'ملاحضة'
-      ,[DateAdded]as 'تاريخ الاضافة'
-  FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] where ArchiveBookID={0}", bookID,  con);
-
-                con.Open();
-                SqlCommand cmd3 = new SqlCommand(query3, con);
-
-                SqlDataAdapter adp3 = new SqlDataAdapter(cmd3);
-
-                DataTable dt3 = new DataTable();
-                con.Close();
-                adp3.Fill(dt3);
-                advanc_dgv_Assign_Comment.DataSource = dt3;
-                advanc_dgv_Assign_Comment.Columns[0].Visible = false;
-                advanc_dgv_Assign_Comment.Columns[1].Visible = false;
-                advanc_dgv_Assign_Comment.Columns[2].Visible = false;
-            }
-            else if (departmentID != archived_by_bookID) // it means the book i opened not created by my department
-            {
-                string query = string.Format(@"SELECT 
-       [ArchiveFollowUpID]
-      ,[ArchiveBookID]
-      ,[Department_AssignTO_ID]
-      ,[Task] as 'المهمة'
-      ,[Action] as 'الاجراء المتخذ'
-      ,[Note] as 'ملاحضة'
-      ,[DateAdded] as 'تاريخ الاضافة'
-  FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] where [Department_AssignTO_ID]={0} and [ArchiveBookID]={1} ", departmentID, bookID, con);
-
-
-
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-
-                DataTable dt = new DataTable();
-                con.Close();
-                adp.Fill(dt);
-                advanc_dgv_Assign_Comment.DataSource = dt;
-                advanc_dgv_Assign_Comment.Columns[0].Visible = false;
-                advanc_dgv_Assign_Comment.Columns[1].Visible = false;
-                advanc_dgv_Assign_Comment.Columns[2].Visible = false;
-
-                TXT_assignTitle.Enabled = false;
-                COMLIST_assination.Enabled = false;
-                BTN_addTask.Enabled = false;
-
-
-
-            }
-              
-            
-        }
+       
 
         void Fill_bookType()
         {
@@ -387,6 +295,11 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
             //Bring_assignTable();
 
+
+            advanc_dgv_Assign_Comment.Columns[3].Width = 200;
+            advanc_dgv_Assign_Comment.Columns[4].Width = 150;
+            advanc_dgv_Assign_Comment.Columns[5].Width = 90;
+            advanc_dgv_Assign_Comment.Columns[6].Width = 200;
         }
 
         private void cm_type_show_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -620,7 +533,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
         private void BTN_EnableEdite_Click(object sender, EventArgs e)
         {
             TXT_bookNumber.Enabled = true;
-            COM_bookType.Enabled = true;
+            //COM_bookType.Enabled = true;
             TXT_Subject.Enabled = true;
             DT_bookDate.Enabled = true;
             COM_privicy.Enabled = true;
@@ -643,7 +556,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
         private void button5_Click(object sender, EventArgs e)
         {
             TXT_bookNumber.Enabled = false;
-            COM_bookType.Enabled = false;
+            //COM_bookType.Enabled = false;
             TXT_Subject.Enabled = false;
             DT_bookDate.Enabled = false;
             COM_privicy.Enabled = false;
@@ -661,55 +574,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             this.BTN_StopEditing.Visible = false;
         }
 
-        private void BTN_addTask_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                int Archive_bookID =Convert.ToInt32( book_ID.ToString());
-                int Department_assintToID=Convert.ToInt32( COMLIST_assination.SelectedValue.ToString());
-                string task = TXT_assignTitle.Text;
-                string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
-
-                string query = string.Format(@"INSERT INTO [dbo].[ArchiveFollowUp]
-           ([ArchiveBookID]
-           ,[Department_AssignTO_ID]
-           ,[Task]
-           ,[Action]
-           ,[Note]
-           ,[DateAdded]
-          )
-     VALUES
-           ({0},{1},N'{2}','{3}','{4}','{5}')
-", Archive_bookID, Department_assintToID ,task, "","", currentDate, con);
-
-
-
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-                int check = (int)cmd.ExecuteNonQuery();
-                con.Close();
-
-                if (check != 0)
-                {
-                    MessageBox.Show("تم اضافة متابعة ");
-
-                }
-
-                else if (check == 0)
-                {
-                    MessageBox.Show("لم يتم ادخال المعلومات ");
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-        }
+       
 
         private void BTN_SAVE_Click(object sender, EventArgs e)
         {
@@ -781,15 +646,11 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             con.Open();
 
             strQuery = @"Update ArchiveBooks_TBL set BookNumber = @BookNumber, BookDate = @BookDate, " +
-                "InboundNumber = @InboundNumber, InboundDate = @InboundDate, Subject = @Subject, BooksTypeID = @BooksTypeID, [From] = @From, [To] = @To," +
+                "InboundNumber = @InboundNumber, InboundDate = @InboundDate, Subject = @Subject, [From] = @From, [To] = @To," +
                 
             "SearchKeys = @SearchKeys, BookPriority = @BookPriority, BookPaperType = @BookPaperType, Notes = @Notes, BookStatus = @BookStatus, Privacy = @Privacy" +
                 " Where ArchiveBookID = " + book_ID;
-
-
-
-
-
+                
             SqlCommand cmd = new SqlCommand(strQuery, con);
 
             cmd.Parameters.Add(new SqlParameter("@BookNumber", SqlDbType.NVarChar)).Value = TXT_bookNumber.Text;
@@ -797,7 +658,6 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             cmd.Parameters.Add(new SqlParameter("@InboundNumber", SqlDbType.NVarChar)).Value = TXT_Book_recive_number.Text;
             cmd.Parameters.Add(new SqlParameter("@InboundDate", SqlDbType.NVarChar)).Value = DT_bookRecive_date.Text;
             cmd.Parameters.Add(new SqlParameter("@Subject", SqlDbType.NVarChar)).Value = TXT_Subject.Text;
-            cmd.Parameters.Add(new SqlParameter("@BooksTypeID", SqlDbType.Int)).Value = COM_bookType.SelectedValue;
             cmd.Parameters.Add(new SqlParameter("@From", SqlDbType.NVarChar)).Value = TXT_From.Text;
             cmd.Parameters.Add(new SqlParameter("@To", SqlDbType.NVarChar)).Value = TXT_To.Text;
             cmd.Parameters.Add(new SqlParameter("@SearchKeys", SqlDbType.NVarChar)).Value = TXT_SearchKEys.Text;
@@ -814,7 +674,285 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
             con.Close();
             button5_Click(null, null);
-                //Form_view_data_dqv.fill_dgv_view_data_doc();
+
+                Form_view_data_dqv FVD = new Form_view_data_dqv();
+
+                FVD.fill_dgv_view_data_doc();
+              
+            }
+
+
+
+
+        }
+
+
+        //-///////////////start code FollowUp//////////////////
+
+        //i have login dep id and i have selected book archived dep id 
+        // if they matched so it mean the book i opened is created by same dep so bring full assignation table 
+        // else if not matchet ether the book i opened assing to me or not 
+        //so i will bring the rows that have [Department_AssignTO_ID] as my login dep id 
+        // if it return empty it means there is no assign to me in it
+        void BringFolloWUp_TBL()
+        {
+            int bookID = Convert.ToInt32(book_ID); //book id of selected book
+
+            int departmentID = Login._depID;//login dep id
+
+            //bring archiveByDepID by its name 
+            string query2 = string.Format(@"SELECT   [DepartmentID]  ,[DepartmentName]
+    
+  FROM [ArchiveSystem].[dbo].[Departments_TBL] where [DepartmentName]=N'{0}'", Archived_by_department_name, con);
+
+            con.Open();
+            SqlCommand cmd2 = new SqlCommand(query2, con);
+
+            SqlDataAdapter adp2 = new SqlDataAdapter(cmd2);
+
+            DataTable dt2 = new DataTable();
+            con.Close();
+            adp2.Fill(dt2);
+            int DepArch_by_ID_ = Convert.ToInt32(dt2.Rows[0][0].ToString());
+
+            int archived_by_bookID = DepArch_by_ID_; //book archived by id 
+
+            if (departmentID == archived_by_bookID)
+            {
+
+                string query3 = string.Format(@"SELECT  [ArchiveFollowUpID]
+      ,[ArchiveBookID]
+      ,[Department_AssignTO_ID]
+      ,[Task]as 'المهمة'
+      ,[DepartmentName]as 'القسم'
+      ,[Action]as 'الاجراء المتخذ'
+      ,[Note]as 'ملاحضة'
+      ,[DateAdded]as 'تاريخ الاضافة'
+  FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] INNER JOIN
+                  dbo.Departments_TBL ON dbo.ArchiveFollowUp.Department_AssignTO_ID = dbo.Departments_TBL.DepartmentID 
+where ArchiveBookID={0}", bookID, con);
+
+                con.Open();
+                SqlCommand cmd3 = new SqlCommand(query3, con);
+
+                SqlDataAdapter adp3 = new SqlDataAdapter(cmd3);
+
+                DataTable dt3 = new DataTable();
+                con.Close();
+                adp3.Fill(dt3);
+                advanc_dgv_Assign_Comment.DataSource = dt3;
+
+                advanc_dgv_Assign_Comment.Columns[0].Visible = false;
+                advanc_dgv_Assign_Comment.Columns[1].Visible = false;
+                advanc_dgv_Assign_Comment.Columns[2].Visible = false;
+            }
+            else if (departmentID != archived_by_bookID) // it means the book i opened not created by my department
+            {
+                string query = string.Format(@"SELECT 
+       [ArchiveFollowUpID]
+      ,[ArchiveBookID]
+      ,[Department_AssignTO_ID]
+      ,[Task] as 'المهمة'
+      ,[DepartmentName]as 'القسم'
+      ,[Action] as 'الاجراء المتخذ'
+      ,[Note] as 'ملاحضة'
+      ,[DateAdded] as 'تاريخ الاضافة'
+  FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] INNER JOIN
+                  dbo.Departments_TBL ON dbo.ArchiveFollowUp.Department_AssignTO_ID = dbo.Departments_TBL.DepartmentID 
+   where [Department_AssignTO_ID]={0} and [ArchiveBookID]={1} ", departmentID, bookID, con);
+
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                con.Close();
+                adp.Fill(dt);
+                advanc_dgv_Assign_Comment.DataSource = dt;
+
+                advanc_dgv_Assign_Comment.Columns[0].Visible = false;
+                advanc_dgv_Assign_Comment.Columns[1].Visible = false;
+                advanc_dgv_Assign_Comment.Columns[2].Visible = false;
+
+                TXT_assignTitle.Enabled = false;
+                COMLIST_assination.Enabled = false;
+                BTN_addTask.Enabled = false;
+
+
+
+            }
+
+
+        }
+
+        private void BTN_addTask_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(TXT_assignTitle.Text))
+            {
+                List<TextBox> boxes = new List<TextBox>();
+                if (string.IsNullOrWhiteSpace(TXT_assignTitle.Text))
+                {
+
+                    boxes.Add(TXT_assignTitle);
+                }
+                else {TXT_assignTitle.BackColor = Color.White; }
+                foreach (var item in boxes)
+                {
+                    if (string.IsNullOrWhiteSpace(item.Text))
+                    {
+                        item.BackColor = Color.LightSalmon;
+                    }
+                }
+                MessageBox.Show("يجب ادخال نص", "لم يتم ");
+                return;
+            }
+
+            if (COMLIST_assination.CheckedItems.Count != 0)
+            { }
+
+            else
+            {
+                MessageBox.Show("يجب الاشارة الى قسم واحد على الاقل وذالك من خلال وضع علامة صح", "لم يتم ");
+                return;
+            }
+
+                try
+            {
+                int Archive_bookID = Convert.ToInt32(book_ID.ToString());
+                int Department_assintToID = Convert.ToInt32(COMLIST_assination.SelectedValue.ToString());
+                string task = TXT_assignTitle.Text;
+                string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
+
+                string query = string.Format(@"INSERT INTO [dbo].[ArchiveFollowUp]
+           ([ArchiveBookID]
+           ,[Department_AssignTO_ID]
+           ,[Task]
+           ,[Action]
+           ,[Note]
+           ,[DateAdded]
+          )
+     VALUES
+           ({0},{1},N'{2}','{3}','{4}','{5}')
+", Archive_bookID, Department_assintToID, task, "انتظار الاجراء", "", currentDate, con);
+
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                int check = (int)cmd.ExecuteNonQuery();
+
+
+                //final status to doc
+                String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where ArchiveBookID = " + book_ID;
+
+                SqlCommand cmd1 = new SqlCommand(strQuery, con);
+
+                cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "قيد المتابعة";
+               
+                cmd1.ExecuteNonQuery();
+
+
+                con.Close();
+
+                BringFolloWUp_TBL();
+              
+
+                if (check != 0)
+                {
+                    TXT_assignTitle.Text = "";
+                   
+                    MessageBox.Show("تم اضافة متابعة ");
+
+                }
+
+                else if (check == 0)
+                {
+                    MessageBox.Show("لم يتم ادخال المعلومات ");
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void tSMenuItem_FollowUp_Save_Click(object sender, EventArgs e)
+        {
+            con.Open();
+          
+            String strQuery = @"Update ArchiveFollowUp set Action = @Action, Note = @Note Where ArchiveFollowUpID = " + advanc_dgv_Assign_Comment.CurrentRow.Cells[0].Value;
+
+            SqlCommand cmd1 = new SqlCommand(strQuery, con);
+
+            cmd1.Parameters.Add(new SqlParameter("@Action", SqlDbType.NVarChar)).Value = tSComBox_FollowUp_type.SelectedItem;
+            cmd1.Parameters.Add(new SqlParameter("@Note", SqlDbType.NVarChar)).Value = tSTXT_FollowUp_Not.Text;
+
+            cmd1.ExecuteNonQuery();
+
+
+            con.Close();
+
+            BringFolloWUp_TBL();
+
+            tSComBox_FollowUp_type.Text = "";
+            tSTXT_FollowUp_Not.Text = "";
+        }
+
+        private void BTN_deleteTask_Click(object sender, EventArgs e)
+        {
+            if (advanc_dgv_Assign_Comment.RowCount == 0)
+            {
+                MessageBox.Show("لايمكن الحذف لاتوجد مهام لحذفها","لم يتم ");
+               return ;
+            }
+
+          
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("هل انت متاكد بانك تريد حذف هذة المهمة", "تاكيد", buttons);
+            if (result == DialogResult.No)
+            {
+              return;
+            }
+        
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Delete from ArchiveFollowUp where ArchiveFollowUpID =" + advanc_dgv_Assign_Comment.CurrentRow.Cells[0].Value, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            BringFolloWUp_TBL();
+        
+        }
+
+        private void BTN_editTask_Click(object sender, EventArgs e)
+        {
+            if (advanc_dgv_Assign_Comment.RowCount == 0)
+            {
+                MessageBox.Show("لاتوجد مهام لتعديلها", "لم يتم ");
+                return;
+            }
+
+            TXT_assignTitle.Text = Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[3].Value);
+            string deName = Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[4].Value);
+
+            for (int x = 0; x < COMLIST_assination.Items.Count; x++)
+
+            {
+                if (COMLIST_assination.Items[x].ToString() == deName)
+                {
+                    COMLIST_assination.SetItemChecked(x, true);
+                }
+                else
+                {
+                    COMLIST_assination.SetItemChecked(x, false);
+                }
             }
         }
     }

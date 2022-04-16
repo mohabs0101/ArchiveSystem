@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_seach = new System.Windows.Forms.TextBox();
             this.btn_search_claer = new System.Windows.Forms.Button();
             this.Label2_count_doc = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_show_filter = new System.Windows.Forms.Button();
+            this.btn_fill_doc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_font_size)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_view_data_doc)).BeginInit();
             this.panel_filter.SuspendLayout();
@@ -185,28 +186,29 @@
             // advanc_dgv_view_data_doc
             // 
             this.advanc_dgv_view_data_doc.AllowUserToAddRows = false;
+            this.advanc_dgv_view_data_doc.AllowUserToDeleteRows = false;
             this.advanc_dgv_view_data_doc.AllowUserToOrderColumns = true;
             this.advanc_dgv_view_data_doc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.advanc_dgv_view_data_doc.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.advanc_dgv_view_data_doc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_view_data_doc.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_view_data_doc.DefaultCellStyle = dataGridViewCellStyle2;
             this.advanc_dgv_view_data_doc.EnableHeadersVisualStyles = false;
             this.advanc_dgv_view_data_doc.FilterAndSortEnabled = true;
             this.advanc_dgv_view_data_doc.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
@@ -534,12 +536,25 @@
             this.btn_show_filter.UseVisualStyleBackColor = false;
             this.btn_show_filter.Click += new System.EventHandler(this.btn_show_filter_Click);
             // 
+            // btn_fill_doc
+            // 
+            this.btn_fill_doc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_fill_doc.Font = new System.Drawing.Font("Tahoma", 10.2F);
+            this.btn_fill_doc.Location = new System.Drawing.Point(826, 10);
+            this.btn_fill_doc.Name = "btn_fill_doc";
+            this.btn_fill_doc.Size = new System.Drawing.Size(95, 33);
+            this.btn_fill_doc.TabIndex = 417;
+            this.btn_fill_doc.Text = "تحديث";
+            this.btn_fill_doc.UseVisualStyleBackColor = true;
+            this.btn_fill_doc.Click += new System.EventHandler(this.btn_fill_doc_Click);
+            // 
             // Form_view_data_dqv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1499, 818);
+            this.Controls.Add(this.btn_fill_doc);
             this.Controls.Add(this.panel_filter);
             this.Controls.Add(this.btn_show_filter);
             this.Controls.Add(this.advanc_dgv_view_data_doc);
@@ -611,5 +626,6 @@
         private System.Windows.Forms.Panel panel_DT_bookDate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox com_mode_filter_bookRecive;
+        private System.Windows.Forms.Button btn_fill_doc;
     }
 }
