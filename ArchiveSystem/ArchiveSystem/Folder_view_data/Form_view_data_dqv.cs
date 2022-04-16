@@ -78,7 +78,7 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
         }
 
 
-        private void Form_view_data_dqv_Load(object sender, EventArgs e)
+        public void Form_view_data_dqv_Load(object sender, EventArgs e)
         {
             DT_bookDate_to.Value = DateTime.Now;
             DT_bookRecive_date_to.Value = DateTime.Now;
@@ -418,6 +418,13 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
 
             }
         }
-        //-----------------END------------------------
+
+        private void btn_fill_doc_Click(object sender, EventArgs e)
+        {
+            fill_dgv_view_data_doc();
+        }
+
+
+       
     }
 }

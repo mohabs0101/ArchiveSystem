@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_show_docs));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -105,11 +107,16 @@
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.panel22 = new System.Windows.Forms.Panel();
             this.advanc_dgv_Assign_Comment = new Zuby.ADGV.AdvancedDataGridView();
+            this.contextMenuStrip_FollowUp = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tSComBox_FollowUp_type = new System.Windows.Forms.ToolStripComboBox();
+            this.tSTXT_FollowUp_Not = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tSMenuItem_FollowUp_Save = new System.Windows.Forms.ToolStripMenuItem();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BTN_deleteTask = new System.Windows.Forms.Button();
+            this.BTN_editTask = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.BTN_addTask = new System.Windows.Forms.Button();
             this.TXT_assignTitle = new System.Windows.Forms.TextBox();
@@ -120,11 +127,6 @@
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_show_doc)).BeginInit();
             this.panel14.SuspendLayout();
@@ -143,9 +145,9 @@
             this.metroTabPage2.SuspendLayout();
             this.panel22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_Assign_Comment)).BeginInit();
+            this.contextMenuStrip_FollowUp.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel24.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -931,7 +933,7 @@
             this.TabControlBookdetails.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TabControlBookdetails.Name = "TabControlBookdetails";
             this.TabControlBookdetails.RightToLeftLayout = true;
-            this.TabControlBookdetails.SelectedIndex = 0;
+            this.TabControlBookdetails.SelectedIndex = 1;
             this.TabControlBookdetails.Size = new System.Drawing.Size(1193, 744);
             this.TabControlBookdetails.TabIndex = 0;
             this.TabControlBookdetails.UseSelectable = true;
@@ -1072,11 +1074,27 @@
             // 
             this.advanc_dgv_Assign_Comment.AllowUserToAddRows = false;
             this.advanc_dgv_Assign_Comment.AllowUserToDeleteRows = false;
-            this.advanc_dgv_Assign_Comment.AllowUserToResizeColumns = false;
-            this.advanc_dgv_Assign_Comment.AllowUserToResizeRows = false;
-            this.advanc_dgv_Assign_Comment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.advanc_dgv_Assign_Comment.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_Assign_Comment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.advanc_dgv_Assign_Comment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advanc_dgv_Assign_Comment.ContextMenuStrip = this.contextMenuStrip_FollowUp;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_Assign_Comment.DefaultCellStyle = dataGridViewCellStyle4;
             this.advanc_dgv_Assign_Comment.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.advanc_dgv_Assign_Comment.EnableHeadersVisualStyles = false;
             this.advanc_dgv_Assign_Comment.FilterAndSortEnabled = true;
             this.advanc_dgv_Assign_Comment.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advanc_dgv_Assign_Comment.Location = new System.Drawing.Point(0, 236);
@@ -1091,6 +1109,49 @@
             this.advanc_dgv_Assign_Comment.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advanc_dgv_Assign_Comment.TabIndex = 227;
             // 
+            // contextMenuStrip_FollowUp
+            // 
+            this.contextMenuStrip_FollowUp.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip_FollowUp.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip_FollowUp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tSComBox_FollowUp_type,
+            this.tSTXT_FollowUp_Not,
+            this.toolStripSeparator2,
+            this.tSMenuItem_FollowUp_Save});
+            this.contextMenuStrip_FollowUp.Name = "ContextMenuStrip_right_click";
+            this.contextMenuStrip_FollowUp.Size = new System.Drawing.Size(211, 103);
+            // 
+            // tSComBox_FollowUp_type
+            // 
+            this.tSComBox_FollowUp_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tSComBox_FollowUp_type.Items.AddRange(new object[] {
+            "مكتمل",
+            "قيد الانجاز",
+            "متوقف"});
+            this.tSComBox_FollowUp_type.Name = "tSComBox_FollowUp_type";
+            this.tSComBox_FollowUp_type.Size = new System.Drawing.Size(121, 28);
+            // 
+            // tSTXT_FollowUp_Not
+            // 
+            this.tSTXT_FollowUp_Not.BackColor = System.Drawing.SystemColors.Info;
+            this.tSTXT_FollowUp_Not.Name = "tSTXT_FollowUp_Not";
+            this.tSTXT_FollowUp_Not.Size = new System.Drawing.Size(150, 27);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(207, 6);
+            // 
+            // tSMenuItem_FollowUp_Save
+            // 
+            this.tSMenuItem_FollowUp_Save.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.tSMenuItem_FollowUp_Save.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tSMenuItem_FollowUp_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSMenuItem_FollowUp_Save.Name = "tSMenuItem_FollowUp_Save";
+            this.tSMenuItem_FollowUp_Save.Size = new System.Drawing.Size(210, 32);
+            this.tSMenuItem_FollowUp_Save.Text = "حفظ";
+            this.tSMenuItem_FollowUp_Save.Click += new System.EventHandler(this.tSMenuItem_FollowUp_Save_Click);
+            // 
             // panel23
             // 
             this.panel23.Controls.Add(this.panel24);
@@ -1104,8 +1165,8 @@
             // panel24
             // 
             this.panel24.Controls.Add(this.button4);
-            this.panel24.Controls.Add(this.button3);
-            this.panel24.Controls.Add(this.button2);
+            this.panel24.Controls.Add(this.BTN_deleteTask);
+            this.panel24.Controls.Add(this.BTN_editTask);
             this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel24.Location = new System.Drawing.Point(0, 0);
             this.panel24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1125,29 +1186,31 @@
             this.button4.Text = "انهاء كمكتمل نهائيا";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BTN_deleteTask
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(883, 18);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 41);
-            this.button3.TabIndex = 234;
-            this.button3.Text = "حذف مهمة";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BTN_deleteTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_deleteTask.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_deleteTask.Location = new System.Drawing.Point(883, 18);
+            this.BTN_deleteTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BTN_deleteTask.Name = "BTN_deleteTask";
+            this.BTN_deleteTask.Size = new System.Drawing.Size(129, 41);
+            this.BTN_deleteTask.TabIndex = 234;
+            this.BTN_deleteTask.Text = "حذف مهمة";
+            this.BTN_deleteTask.UseVisualStyleBackColor = true;
+            this.BTN_deleteTask.Click += new System.EventHandler(this.BTN_deleteTask_Click);
             // 
-            // button2
+            // BTN_editTask
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1020, 18);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 41);
-            this.button2.TabIndex = 233;
-            this.button2.Text = "تعديل مهمة";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BTN_editTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_editTask.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_editTask.Location = new System.Drawing.Point(1020, 18);
+            this.BTN_editTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BTN_editTask.Name = "BTN_editTask";
+            this.BTN_editTask.Size = new System.Drawing.Size(134, 41);
+            this.BTN_editTask.TabIndex = 233;
+            this.BTN_editTask.Text = "تعديل مهمة";
+            this.BTN_editTask.UseVisualStyleBackColor = true;
+            this.BTN_editTask.Click += new System.EventHandler(this.BTN_editTask_Click);
             // 
             // label6
             // 
@@ -1163,7 +1226,7 @@
             // BTN_addTask
             // 
             this.BTN_addTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTN_addTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BTN_addTask.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.BTN_addTask.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_addTask.Location = new System.Drawing.Point(969, 160);
             this.BTN_addTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1177,12 +1240,12 @@
             // TXT_assignTitle
             // 
             this.TXT_assignTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXT_assignTitle.Location = new System.Drawing.Point(602, 36);
+            this.TXT_assignTitle.Location = new System.Drawing.Point(602, 41);
             this.TXT_assignTitle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TXT_assignTitle.Multiline = true;
             this.TXT_assignTitle.Name = "TXT_assignTitle";
             this.TXT_assignTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TXT_assignTitle.Size = new System.Drawing.Size(551, 117);
+            this.TXT_assignTitle.Size = new System.Drawing.Size(551, 112);
             this.TXT_assignTitle.TabIndex = 225;
             // 
             // label19
@@ -1258,45 +1321,6 @@
             this.panel17.Size = new System.Drawing.Size(12, 702);
             this.panel17.TabIndex = 2;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBox1,
-            this.toolStripTextBox1,
-            this.toolStripSeparator2,
-            this.toolStripMenuItem2});
-            this.contextMenuStrip1.Name = "ContextMenuStrip_right_click";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 99);
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.Items.AddRange(new object[] {
-            "مكتمل",
-            "قيد الانجاز",
-            "متوقف"});
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 28);
-            this.toolStripComboBox1.Text = "مكتمل";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
-            this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(178, 6);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 28);
-            this.toolStripMenuItem2.Text = "حفظ";
-            // 
             // Form_show_docs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1334,10 +1358,10 @@
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_Assign_Comment)).EndInit();
+            this.contextMenuStrip_FollowUp.ResumeLayout(false);
+            this.contextMenuStrip_FollowUp.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
-            this.contextMenuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1425,15 +1449,15 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.CheckedListBox COMLIST_assination;
         private Zuby.ADGV.AdvancedDataGridView advanc_dgv_Assign_Comment;
-        internal System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        internal System.Windows.Forms.ContextMenuStrip contextMenuStrip_FollowUp;
+        private System.Windows.Forms.ToolStripComboBox tSComBox_FollowUp_type;
+        private System.Windows.Forms.ToolStripTextBox tSTXT_FollowUp_Not;
         internal System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tSMenuItem_FollowUp_Save;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BTN_deleteTask;
+        private System.Windows.Forms.Button BTN_editTask;
         private System.Windows.Forms.Button BTN_addTask;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Button BTN_EnableEdite;
