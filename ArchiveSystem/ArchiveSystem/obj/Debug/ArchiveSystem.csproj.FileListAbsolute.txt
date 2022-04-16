@@ -49,3 +49,5 @@ C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\
 C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.csproj.CopyComplete
 C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.exe
 C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.pdb
+C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.pdb
+C:\Users\mohab.MOHAMMED\Desktop\Github\Archive\ArchiveSystem\ArchiveSystem\bin\Debug\Interop.WIA.dll
