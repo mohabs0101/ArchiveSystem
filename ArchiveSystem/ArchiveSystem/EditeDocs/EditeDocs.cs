@@ -384,5 +384,22 @@ namespace ArchiveSystem.EditeDocs
             Form_show_docs fshdocs = new Form_show_docs();
             fshdocs.Show();
         }
+
+        private void BTN_addfolder_Click(object sender, EventArgs e)
+        {
+            string root = Doc_source + @"\" + TXT_addFolder.Text + "";
+
+            Directory.CreateDirectory(root);
+            Refresh_Folders();
+        }
+
+        private void BTN_DELFolder_Click(object sender, EventArgs e)
+        {
+            string root = Doc_source + @"\" + TXT_addFolder.Text + "";
+
+            Directory.Delete(root, true);
+
+            Refresh_Folders();
+        }
     }
 }
