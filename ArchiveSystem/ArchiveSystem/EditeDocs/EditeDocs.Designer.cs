@@ -248,6 +248,7 @@
             this.BTN_DELFolder.Text = "-";
             this.BTN_DELFolder.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BTN_DELFolder.UseVisualStyleBackColor = false;
+            this.BTN_DELFolder.Click += new System.EventHandler(this.BTN_DELFolder_Click);
             // 
             // BTN_addfolder
             // 
@@ -260,6 +261,7 @@
             this.BTN_addfolder.TabIndex = 169;
             this.BTN_addfolder.Text = "+";
             this.BTN_addfolder.UseVisualStyleBackColor = false;
+            this.BTN_addfolder.Click += new System.EventHandler(this.BTN_addfolder_Click);
             // 
             // panel13
             // 
