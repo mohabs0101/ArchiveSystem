@@ -376,13 +376,13 @@ AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
             else if (com_mode_filter_bookDate.SelectedIndex == 1)// month now
             {
                 DT_bookDate_from.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/1");
-                DT_bookDate_to.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/31");
+                DT_bookDate_to.Value = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/30");
                 panel_DT_bookDate.Visible = false;
             }
             else if (com_mode_filter_bookDate.SelectedIndex == 2)// year now
             {
                 DT_bookDate_from.Value = Convert.ToDateTime(DateTime.Now.Year + "/1" + "/1");
-                DT_bookDate_to.Value = Convert.ToDateTime(DateTime.Now.Year + "/12" + "/31");
+                DT_bookDate_to.Value = Convert.ToDateTime(DateTime.Now.Year + "/12" + "/30");
                 panel_DT_bookDate.Visible = false;
             }
             else if (com_mode_filter_bookDate.SelectedIndex == 3)// custome

@@ -132,7 +132,7 @@ SELECT  [DepartmentID]
 
        
         public static string book_ID;
-        
+        string BookStatus;
         void read_details_doc()
         {
             con.Open();
@@ -189,6 +189,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 txt_DepartmentName.Text = dr1["DepartmentName"].ToString();
                 txt_Username.Text = dr1["Username"].ToString();
                 COM_bookStatus.Text = dr1["BookStatus"].ToString();
+                BookStatus = dr1["BookStatus"].ToString();
                 COM_privicy.Text = dr1["Privacy"].ToString();
 
  
@@ -300,6 +301,20 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             advanc_dgv_Assign_Comment.Columns[4].Width = 150;
             advanc_dgv_Assign_Comment.Columns[5].Width = 90;
             advanc_dgv_Assign_Comment.Columns[6].Width = 200;
+
+
+            tSComBox_FollowUp_type.SelectedIndex = 0;
+
+
+
+            if (BookStatus == "مكتمل")
+            {
+                btn_edit_status_FollowUp.Text = "اضافة الى المتابعه"; 
+            }
+            else
+            {
+                btn_edit_status_FollowUp.Text = "ازالة من المتابعه";
+            }
         }
 
         private void cm_type_show_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -954,6 +969,58 @@ where ArchiveBookID={0}", bookID, con);
                     COMLIST_assination.SetItemChecked(x, false);
                 }
             }
+        }
+
+        private void advanc_dgv_Assign_Comment_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tSComBox_FollowUp_type.SelectedItem = Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[5].Value);
+            tSTXT_FollowUp_Not.Text = Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[6].Value);
+        }
+
+        private void btn_edit_status_FollowUp_Click(object sender, EventArgs e)
+        {
+
+          if (btn_edit_status_FollowUp.Text == "اضافة الى المتابعه")
+            {
+            con.Open();
+            //final status to doc
+            String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where ArchiveBookID = " + book_ID;
+            SqlCommand cmd1 = new SqlCommand(strQuery, con);
+            cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "قيد المتابعة";
+            cmd1.ExecuteNonQuery();
+            con.Close();
+            btn_edit_status_FollowUp.Text = "ازالة من المتابعه";
+            MessageBox.Show("تم اضافة الكتاب الى المتابعة", "تم ");
+            }
+          else
+            {
+                for (int x = 0; x < advanc_dgv_Assign_Comment.Rows.Count; x++)
+
+                {
+                    if (Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[5].Value) != "مكتمل")
+                    {
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                 DialogResult result = MessageBox.Show("توجد مهمة واحدة او اكثر قيد المتابعة الى الان, ولم يتم عمل لها اجراء مكتمل "+ System.Environment.NewLine + "هل انته متاكد من ازالة الكتاب من المتابعه", "تاكيد", buttons);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                    break;
+                }
+                   
+                }
+
+                con.Open();
+                //final status to doc
+                String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where ArchiveBookID = " + book_ID;
+                SqlCommand cmd1 = new SqlCommand(strQuery, con);
+                cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "مكتمل";
+                cmd1.ExecuteNonQuery();
+                con.Close();
+                btn_edit_status_FollowUp.Text = "اضافة الى المتابعه";
+                MessageBox.Show("تم ازالة الكتاب من المتابعة", "تم ");
+            }
+           
         }
     }
 }
