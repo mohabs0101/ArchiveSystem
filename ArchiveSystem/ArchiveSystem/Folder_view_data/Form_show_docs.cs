@@ -230,7 +230,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 TXT_notes.Text = dr1["Notes"].ToString();
                 txt_DepartmentName.Text = dr1["DepartmentName"].ToString();
                 txt_Username.Text = dr1["Username"].ToString();
-                COM_bookStatus.Text = dr1["BookStatus"].ToString();
+                TXT_bookStatus.Text = dr1["BookStatus"].ToString();
                 BookStatus = dr1["BookStatus"].ToString();
                 COM_privicy.Text = dr1["Privacy"].ToString();
 
@@ -607,7 +607,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             DT_bookRecive_date.Enabled = true;
             COM_priority.Enabled = true;
             COM_PaperType.Enabled = true;
-            COM_bookStatus.Enabled = true;
+            //COM_bookStatus.Enabled = true;
             TXT_notes.Enabled = true;
             TXT_SearchKEys.Enabled = true;
 
@@ -630,7 +630,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             DT_bookRecive_date.Enabled = false;
             COM_priority.Enabled = false;
             COM_PaperType.Enabled = false;
-            COM_bookStatus.Enabled = false;
+            TXT_bookStatus.Enabled = false;
             TXT_notes.Enabled = false;
             TXT_SearchKEys.Enabled = false;
             BTN_SAVE.Visible = false;
@@ -728,7 +728,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             cmd.Parameters.Add(new SqlParameter("@BookPriority", SqlDbType.NVarChar)).Value = COM_priority.Text;
             cmd.Parameters.Add(new SqlParameter("@BookPaperType", SqlDbType.NVarChar)).Value = COM_PaperType.Text;
             cmd.Parameters.Add(new SqlParameter("@Notes", SqlDbType.NVarChar)).Value = TXT_notes.Text;
-            cmd.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = COM_bookStatus.Text;
+            cmd.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = TXT_bookStatus.Text;
             cmd.Parameters.Add(new SqlParameter("@Privacy", SqlDbType.NVarChar)).Value = COM_privicy.Text;
 
             cmd.ExecuteNonQuery();

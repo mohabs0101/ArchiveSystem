@@ -53,7 +53,7 @@ namespace ArchiveSystem
             //--------------moh------------------
             // set indexes of comboboxes
             metroTabControl1.SelectTab(0);
-            COM_bookStatus.SelectedIndex = 0;
+            
             COM_PaperType.SelectedIndex = 0;
             COM_priority.SelectedIndex = 0;
             COM_privicy.SelectedIndex = 0;
@@ -322,7 +322,7 @@ namespace ArchiveSystem
                 }
 
 
-
+              string  COM_bookStatus = "بدون متابعة";
                 string query = string.Format(@"INSERT INTO [dbo].[ArchiveBooks_TBL]
            ([BookCode]
            ,[BookNumber]
@@ -347,7 +347,7 @@ namespace ArchiveSystem
             ) output INSERTED.ArchiveBookID
      VALUES
            (N'{0}','{1}','{2}','{3}','{4}',N'{5}',{6},N'{7}',N'{8}',N'{9}','{10}',N'{11}',N'{12}',{13},{14},N'{15}',N'{16}',N'{17}')
-", book_code, BookNumber, DT_bookDate.Text, InboundNumber, InboundDate, Subject, COM_bookType.SelectedValue, From, To, COM_priority.Text, currentDate, COM_PaperType.Text, TXT_notes.Text, departmentID, userid, COM_bookStatus.Text, COM_privicy.Text, SearchKeys, con);
+", book_code, BookNumber, DT_bookDate.Text, InboundNumber, InboundDate, Subject, COM_bookType.SelectedValue, From, To, COM_priority.Text, currentDate, COM_PaperType.Text, TXT_notes.Text, departmentID, userid, COM_bookStatus , COM_privicy.Text, SearchKeys, con);
 
 
 
@@ -432,8 +432,7 @@ namespace ArchiveSystem
                     TXT_To.Clear();
                     TXT_SearchKEys.Clear();
                     TXT_notes.Clear();
-                    COM_bookStatus.SelectedIndex = 0;
-                    COM_PaperType.SelectedIndex = 0;
+                     COM_PaperType.SelectedIndex = 0;
                     COM_priority.SelectedIndex = 0;
                     COM_privicy.SelectedIndex = 0;
                     COM_bookType.SelectedIndex = 0;
