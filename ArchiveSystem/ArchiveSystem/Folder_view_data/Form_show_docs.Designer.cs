@@ -106,15 +106,23 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.btn_edit_status_FollowUp = new System.Windows.Forms.Button();
             this.advanc_dgv_Assign_Comment = new Zuby.ADGV.AdvancedDataGridView();
             this.contextMenuStrip_FollowUp = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.اختارالاجراءالمناسبToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.tSComBox_FollowUp_type = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.ادخلملاحظةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.tSTXT_FollowUp_Not = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tSMenuItem_FollowUp_Save = new System.Windows.Forms.ToolStripMenuItem();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.btn_edit_status_FollowUp = new System.Windows.Forms.Button();
             this.BTN_deleteTask = new System.Windows.Forms.Button();
             this.BTN_editTask = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -127,14 +135,7 @@
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.اختارالاجراءالمناسبToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.ادخلملاحظةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.listView_Departments = new System.Windows.Forms.ListView();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_show_doc)).BeginInit();
             this.panel14.SuspendLayout();
@@ -1064,6 +1065,7 @@
             // 
             // panel22
             // 
+            this.panel22.Controls.Add(this.listView_Departments);
             this.panel22.Controls.Add(this.btn_edit_status_FollowUp);
             this.panel22.Controls.Add(this.advanc_dgv_Assign_Comment);
             this.panel22.Controls.Add(this.panel23);
@@ -1078,6 +1080,19 @@
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(1161, 666);
             this.panel22.TabIndex = 7;
+            // 
+            // btn_edit_status_FollowUp
+            // 
+            this.btn_edit_status_FollowUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_edit_status_FollowUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edit_status_FollowUp.Location = new System.Drawing.Point(975, 24);
+            this.btn_edit_status_FollowUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_edit_status_FollowUp.Name = "btn_edit_status_FollowUp";
+            this.btn_edit_status_FollowUp.Size = new System.Drawing.Size(178, 41);
+            this.btn_edit_status_FollowUp.TabIndex = 235;
+            this.btn_edit_status_FollowUp.Text = "اضافة الى المتابعه";
+            this.btn_edit_status_FollowUp.UseVisualStyleBackColor = true;
+            this.btn_edit_status_FollowUp.Click += new System.EventHandler(this.btn_edit_status_FollowUp_Click);
             // 
             // advanc_dgv_Assign_Comment
             // 
@@ -1139,6 +1154,19 @@
             this.contextMenuStrip_FollowUp.Name = "ContextMenuStrip_right_click";
             this.contextMenuStrip_FollowUp.Size = new System.Drawing.Size(261, 203);
             // 
+            // اختارالاجراءالمناسبToolStripMenuItem
+            // 
+            this.اختارالاجراءالمناسبToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
+            this.اختارالاجراءالمناسبToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.اختارالاجراءالمناسبToolStripMenuItem.Name = "اختارالاجراءالمناسبToolStripMenuItem";
+            this.اختارالاجراءالمناسبToolStripMenuItem.Size = new System.Drawing.Size(260, 32);
+            this.اختارالاجراءالمناسبToolStripMenuItem.Text = "اختار الاجراء المناسب";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(257, 6);
+            // 
             // tSComBox_FollowUp_type
             // 
             this.tSComBox_FollowUp_type.BackColor = System.Drawing.Color.LemonChiffon;
@@ -1151,12 +1179,47 @@
             this.tSComBox_FollowUp_type.Name = "tSComBox_FollowUp_type";
             this.tSComBox_FollowUp_type.Size = new System.Drawing.Size(150, 28);
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(257, 6);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toolStripSeparator3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(257, 6);
+            // 
+            // ادخلملاحظةToolStripMenuItem
+            // 
+            this.ادخلملاحظةToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
+            this.ادخلملاحظةToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ادخلملاحظةToolStripMenuItem.Name = "ادخلملاحظةToolStripMenuItem";
+            this.ادخلملاحظةToolStripMenuItem.Size = new System.Drawing.Size(260, 32);
+            this.ادخلملاحظةToolStripMenuItem.Text = "ادخل ملاحظة";
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(257, 6);
+            // 
             // tSTXT_FollowUp_Not
             // 
             this.tSTXT_FollowUp_Not.BackColor = System.Drawing.Color.LemonChiffon;
             this.tSTXT_FollowUp_Not.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tSTXT_FollowUp_Not.Name = "tSTXT_FollowUp_Not";
             this.tSTXT_FollowUp_Not.Size = new System.Drawing.Size(200, 27);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(257, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(257, 6);
             // 
             // toolStripSeparator2
             // 
@@ -1193,19 +1256,6 @@
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(1161, 80);
             this.panel24.TabIndex = 233;
-            // 
-            // btn_edit_status_FollowUp
-            // 
-            this.btn_edit_status_FollowUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_edit_status_FollowUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_edit_status_FollowUp.Location = new System.Drawing.Point(975, 24);
-            this.btn_edit_status_FollowUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_edit_status_FollowUp.Name = "btn_edit_status_FollowUp";
-            this.btn_edit_status_FollowUp.Size = new System.Drawing.Size(178, 41);
-            this.btn_edit_status_FollowUp.TabIndex = 235;
-            this.btn_edit_status_FollowUp.Text = "اضافة الى المتابعه";
-            this.btn_edit_status_FollowUp.UseVisualStyleBackColor = true;
-            this.btn_edit_status_FollowUp.Click += new System.EventHandler(this.btn_edit_status_FollowUp_Click);
             // 
             // BTN_deleteTask
             // 
@@ -1342,53 +1392,17 @@
             this.panel17.Size = new System.Drawing.Size(12, 702);
             this.panel17.TabIndex = 2;
             // 
-            // اختارالاجراءالمناسبToolStripMenuItem
+            // listView_Departments
             // 
-            this.اختارالاجراءالمناسبToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
-            this.اختارالاجراءالمناسبToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.اختارالاجراءالمناسبToolStripMenuItem.Name = "اختارالاجراءالمناسبToolStripMenuItem";
-            this.اختارالاجراءالمناسبToolStripMenuItem.Size = new System.Drawing.Size(260, 32);
-            this.اختارالاجراءالمناسبToolStripMenuItem.Text = "اختار الاجراء المناسب";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.toolStripSeparator3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(257, 6);
-            // 
-            // ادخلملاحظةToolStripMenuItem
-            // 
-            this.ادخلملاحظةToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
-            this.ادخلملاحظةToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ادخلملاحظةToolStripMenuItem.Name = "ادخلملاحظةToolStripMenuItem";
-            this.ادخلملاحظةToolStripMenuItem.Size = new System.Drawing.Size(260, 32);
-            this.ادخلملاحظةToolStripMenuItem.Text = "ادخل ملاحظة";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(257, 6);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(257, 6);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(257, 6);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(257, 6);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(257, 6);
+            this.listView_Departments.CheckBoxes = true;
+            this.listView_Departments.FullRowSelect = true;
+            this.listView_Departments.Location = new System.Drawing.Point(40, 0);
+            this.listView_Departments.Name = "listView_Departments";
+            this.listView_Departments.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.listView_Departments.RightToLeftLayout = true;
+            this.listView_Departments.Size = new System.Drawing.Size(556, 130);
+            this.listView_Departments.TabIndex = 236;
+            this.listView_Departments.UseCompatibleStateImageBehavior = false;
             // 
             // Form_show_docs
             // 
@@ -1540,5 +1554,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ListView listView_Departments;
     }
 }

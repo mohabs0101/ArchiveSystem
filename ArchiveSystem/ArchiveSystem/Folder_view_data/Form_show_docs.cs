@@ -70,7 +70,49 @@ SELECT  [DepartmentID]
             }
         }
 
-       
+        void fill_Departments()
+        {
+            try
+            {
+                string query = string.Format(@"  
+SELECT  [DepartmentID]
+      ,[DepartmentName]
+  FROM [ArchiveSystem].[dbo].[Departments_TBL]", con);
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dep = new DataTable();
+
+                adp.Fill(dep);
+
+                listView_Departments.View = View.Details;
+                listView_Departments.GridLines = true;
+                listView_Departments.Columns.Add("معرف القسم", 50);
+                listView_Departments.Columns.Add("القسم", 300);
+
+                foreach (DataRow r in dep.Rows)
+                {
+                  
+                    ListViewItem item = new ListViewItem(r["DepartmentID"].ToString());
+                    item.SubItems.Add(r["DepartmentName"].ToString());
+
+                    listView_Departments.Items.AddRange(new ListViewItem[] {item });
+                       
+                }
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
 
         void Fill_bookType()
         {
@@ -288,11 +330,18 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             ListView_show_doc.Columns[0].Width = 250;
 
 
+           
+
             read_details_doc();
             show_files_doc();
+            fill_Departments();
             Select_Departments();
 
             BringFolloWUp_TBL();
+
+          
+
+
 
             //Bring_assignTable();
 
