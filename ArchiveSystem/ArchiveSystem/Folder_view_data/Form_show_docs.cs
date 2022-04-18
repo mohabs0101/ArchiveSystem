@@ -39,36 +39,7 @@ namespace ArchiveSystem.Folder_view_data
         DataTable dt = new DataTable();
         SqlDataAdapter adapter;
 
-        void Select_Departments()
-        {
-            try
-            {
-                string query = string.Format(@"  
-SELECT  [DepartmentID]
-      ,[DepartmentName]
-  FROM [ArchiveSystem].[dbo].[Departments_TBL]", con);
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-
-                DataTable dep = new DataTable();
-
-                adp.Fill(dep);
-                COMLIST_assination.DataSource = dep;
-                COMLIST_assination.DisplayMember = "DepartmentName";
-                COMLIST_assination.ValueMember = "DepartmentID";
-
-                con.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+    
 
         void fill_Departments()
         {
@@ -90,7 +61,7 @@ SELECT  [DepartmentID]
 
                 listView_Departments.View = View.Details;
                 listView_Departments.GridLines = true;
-                listView_Departments.Columns.Add("معرف القسم", 50);
+                listView_Departments.Columns.Add("معرف", 25);
                 listView_Departments.Columns.Add("القسم", 300);
 
                 foreach (DataRow r in dep.Rows)
@@ -335,7 +306,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             read_details_doc();
             show_files_doc();
             fill_Departments();
-            Select_Departments();
+        
 
             BringFolloWUp_TBL();
 
@@ -356,7 +327,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
 
 
-            if (BookStatus == "مكتمل")
+            if (BookStatus == "بدون متابعة")
             {
                 btn_edit_status_FollowUp.Text = "اضافة الى المتابعه"; 
             }
@@ -712,7 +683,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             strQuery = @"Update ArchiveBooks_TBL set BookNumber = @BookNumber, BookDate = @BookDate, " +
                 "InboundNumber = @InboundNumber, InboundDate = @InboundDate, Subject = @Subject, [From] = @From, [To] = @To," +
                 
-            "SearchKeys = @SearchKeys, BookPriority = @BookPriority, BookPaperType = @BookPaperType, Notes = @Notes, BookStatus = @BookStatus, Privacy = @Privacy" +
+            "SearchKeys = @SearchKeys, BookPriority = @BookPriority, BookPaperType = @BookPaperType, Notes = @Notes, Privacy = @Privacy" +
                 " Where ArchiveBookID = " + book_ID;
                 
             SqlCommand cmd = new SqlCommand(strQuery, con);
@@ -728,7 +699,6 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             cmd.Parameters.Add(new SqlParameter("@BookPriority", SqlDbType.NVarChar)).Value = COM_priority.Text;
             cmd.Parameters.Add(new SqlParameter("@BookPaperType", SqlDbType.NVarChar)).Value = COM_PaperType.Text;
             cmd.Parameters.Add(new SqlParameter("@Notes", SqlDbType.NVarChar)).Value = TXT_notes.Text;
-            cmd.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = TXT_bookStatus.Text;
             cmd.Parameters.Add(new SqlParameter("@Privacy", SqlDbType.NVarChar)).Value = COM_privicy.Text;
 
             cmd.ExecuteNonQuery();
@@ -842,8 +812,8 @@ where ArchiveBookID={0}", bookID, con);
                 advanc_dgv_Assign_Comment.Columns[1].Visible = false;
                 advanc_dgv_Assign_Comment.Columns[2].Visible = false;
 
-                TXT_assignTitle.Enabled = false;
-                COMLIST_assination.Enabled = false;
+                comboB_FollowUp_Title.Enabled = false;
+                listView_Departments.Enabled = false;
                 BTN_addTask.Enabled = false;
 
 
@@ -855,28 +825,15 @@ where ArchiveBookID={0}", bookID, con);
 
         private void BTN_addTask_Click(object sender, EventArgs e)
         {
-
-            if (string.IsNullOrWhiteSpace(TXT_assignTitle.Text))
+            if (comboB_FollowUp_Title.Text == "")
             {
-                List<TextBox> boxes = new List<TextBox>();
-                if (string.IsNullOrWhiteSpace(TXT_assignTitle.Text))
-                {
-
-                    boxes.Add(TXT_assignTitle);
-                }
-                else {TXT_assignTitle.BackColor = Color.White; }
-                foreach (var item in boxes)
-                {
-                    if (string.IsNullOrWhiteSpace(item.Text))
-                    {
-                        item.BackColor = Color.LightSalmon;
-                    }
-                }
-                MessageBox.Show("يجب ادخال نص", "لم يتم ");
-                return;
+                comboB_FollowUp_Title.BackColor = Color.LightSalmon;
             }
+            else { comboB_FollowUp_Title.BackColor = Color.White; }
 
-            if (COMLIST_assination.CheckedItems.Count != 0)
+          
+
+            if (listView_Departments.CheckedItems.Count != 0)
             { }
 
             else
@@ -886,60 +843,63 @@ where ArchiveBookID={0}", bookID, con);
             }
 
                 try
-            {
+                {
                 int Archive_bookID = Convert.ToInt32(book_ID.ToString());
-                int Department_assintToID = Convert.ToInt32(COMLIST_assination.SelectedValue.ToString());
-                string task = TXT_assignTitle.Text;
+              
+                string task = comboB_FollowUp_Title.Text;
                 string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
 
-                string query = string.Format(@"INSERT INTO [dbo].[ArchiveFollowUp]
-           ([ArchiveBookID]
-           ,[Department_AssignTO_ID]
-           ,[Task]
-           ,[Action]
-           ,[Note]
-           ,[DateAdded]
-          )
-     VALUES
-           ({0},{1},N'{2}','{3}','{4}','{5}')
-", Archive_bookID, Department_assintToID, task, "انتظار الاجراء", "", currentDate, con);
-
-
-
-
+                ListView.CheckedListViewItemCollection breakfast = this.listView_Departments.CheckedItems;
                 con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-                int check = (int)cmd.ExecuteNonQuery();
+                foreach (ListViewItem Item in breakfast)
+                {
+                    int Department_assintToID = Convert.ToInt32(listView_Departments.Items[Item.Index].SubItems[0].Text);
+                      
+                       string query = string.Format(@"INSERT INTO [dbo].[ArchiveFollowUp]
+                           ([ArchiveBookID]
+                          ,[Department_AssignTO_ID]
+                          ,[Task]
+                           ,[Action]
+                         ,[Note]
+                        ,[DateAdded]
+                          )
+                         VALUES
+                            ({0},{1},N'{2}','{3}','{4}','{5}')
+                          ", Archive_bookID, Department_assintToID, task, "انتظار الاجراء", "", currentDate, con);
+ 
 
 
-                //final status to doc
+
+                      
+                         SqlCommand cmd = new SqlCommand(query, con);
+                       int check = (int)cmd.ExecuteNonQuery();
+
+                    if (check != 0)
+                    {
+                      
+
+                       //final status to doc
                 String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where ArchiveBookID = " + book_ID;
 
                 SqlCommand cmd1 = new SqlCommand(strQuery, con);
 
                 cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "قيد المتابعة";
-               
+              
                 cmd1.ExecuteNonQuery();
+                     comboB_FollowUp_Title.Text = "";
+                    }
 
-
+                    else if (check == 0)
+                    {
+                    MessageBox.Show("لم يتم ادخال المعلومات ");
+                    }
+                }
                 con.Close();
 
                 BringFolloWUp_TBL();
-              
 
-                if (check != 0)
-                {
-                    TXT_assignTitle.Text = "";
-                   
-                    MessageBox.Show("تم اضافة متابعة ");
 
-                }
-
-                else if (check == 0)
-                {
-                    MessageBox.Show("لم يتم ادخال المعلومات ");
-                }
-
+                MessageBox.Show("تم اضافة متابعة جديدة ");
 
             }
             catch (Exception ex)
@@ -1003,19 +963,20 @@ where ArchiveBookID={0}", bookID, con);
                 return;
             }
 
-            TXT_assignTitle.Text = Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[3].Value);
+            comboB_FollowUp_Title.Text = Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[3].Value);
             string deName = Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[4].Value);
 
-            for (int x = 0; x < COMLIST_assination.Items.Count; x++)
+            for (int x = 0; x < listView_Departments.Items.Count; x++)
 
             {
-                if (COMLIST_assination.Items[x].ToString() == deName)
+                if (listView_Departments.Items[x].ToString() == deName)
                 {
-                    COMLIST_assination.SetItemChecked(x, true);
+                    listView_Departments.CheckedItems[x].Checked = true;
+                    
                 }
                 else
                 {
-                    COMLIST_assination.SetItemChecked(x, false);
+                    listView_Departments.CheckedItems[x].Checked = false;
                 }
             }
         }
@@ -1063,7 +1024,7 @@ where ArchiveBookID={0}", bookID, con);
                 //final status to doc
                 String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where ArchiveBookID = " + book_ID;
                 SqlCommand cmd1 = new SqlCommand(strQuery, con);
-                cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "مكتمل";
+                cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "بدون متابعة";
                 cmd1.ExecuteNonQuery();
                 con.Close();
                 btn_edit_status_FollowUp.Text = "اضافة الى المتابعه";
