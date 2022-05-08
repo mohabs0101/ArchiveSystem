@@ -21,8 +21,11 @@ namespace ArchiveSystem.EditeDocs
 {
     public partial class EditeDocs : MetroFramework.Forms.MetroForm
     {
-        public EditeDocs()
+        public static string _bc;
+        public EditeDocs(string bc)
         {
+            _bc = bc;
+
             InitializeComponent();
         }
         string FTP_ip = ConfigurationSettings.AppSettings["FTP_Server_Ip"];
@@ -280,13 +283,14 @@ namespace ArchiveSystem.EditeDocs
 
 
                 //refresh view list 
-                Form_show_docs fshDocs = new Form_show_docs();
+                this.Hide();
+                Form_show_docs fshDocs = new Form_show_docs(_bc);
                 fshDocs.Show();
                 //fshDocs.PrefermCall();
 
 
                 MessageBox.Show("تم ارفاق المستندات");
-                this.Hide();
+               
 
             }
             else if (files == null)
@@ -381,7 +385,7 @@ namespace ArchiveSystem.EditeDocs
         private void BTN_GobackToDetails_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form_show_docs fshdocs = new Form_show_docs();
+            Form_show_docs fshdocs = new Form_show_docs(_bc);
             fshdocs.Show();
         }
 

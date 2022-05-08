@@ -193,14 +193,24 @@ namespace ArchiveSystem
             int ran = rand.Next(100000, 999999);
 
             string datenow = DateTime.Now.ToString("hhmmss");
-            string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
+            string currentDate = DateTime.Now.ToString("MM/dd/yyyy");
 
             string book_code = TXT_Subject.Text + ran.ToString() + datenow;
             int departmentID = Login._depID;
             int userid = Login._userID;
-            string InboundDate = DT_bookRecive_date.Text;
 
-         
+
+
+            string InboundDate_ = DT_bookRecive_date.Text;
+            DateTime oDate = Convert.ToDateTime(InboundDate_);
+            string InboundDate = oDate.ToString("MM/dd/yyyy");
+
+
+            string DT_bookDate_ = DT_bookDate.Text;
+            DateTime oDate_ = Convert.ToDateTime(DT_bookDate_);
+            string DT_bookDateE = oDate_.ToString("MM/dd/yyyy");
+
+
 
 
             string BookNumber = TXT_bookNumber.Text;
@@ -347,7 +357,7 @@ namespace ArchiveSystem
             ) output INSERTED.ArchiveBookID
      VALUES
            (N'{0}','{1}','{2}','{3}','{4}',N'{5}',{6},N'{7}',N'{8}',N'{9}','{10}',N'{11}',N'{12}',{13},{14},N'{15}',N'{16}',N'{17}')
-", book_code, BookNumber, DT_bookDate.Text, InboundNumber, InboundDate, Subject, COM_bookType.SelectedValue, From, To, COM_priority.Text, currentDate, COM_PaperType.Text, TXT_notes.Text, departmentID, userid, bookStatus_FollowUp, COM_privicy.Text, SearchKeys, con);
+", book_code, BookNumber, DT_bookDateE, InboundNumber, InboundDate, Subject, COM_bookType.SelectedValue, From, To, COM_priority.Text, currentDate, COM_PaperType.Text, TXT_notes.Text, departmentID, userid, bookStatus_FollowUp, COM_privicy.Text, SearchKeys, con);
 
 
 
@@ -576,28 +586,32 @@ namespace ArchiveSystem
         {
             try
             {
-                string query = string.Format(@"   SELECT
-       [BookCode]
-      ,[BookNumber]
-      ,[BookDate]
-      ,[InboundNumber]
-      ,[InboundDate]
-      ,[Subject]
-      ,[BooksTypeID]
-      ,[From]
-      ,[To]
-      ,[BookPriority]
-      ,[ArchivedDate]
-      ,[BookPaperType]
-      ,[Notes]
-      ,[DepartmentID_archivedBy]
-      ,[UserID_archivedBy]
-      ,[BookStatus]
-      ,[Privacy]
-      ,[SearchKeys]
-
+                string query = string.Format(@"  SELECT
+       [BookCode] as 'رمز الكتاب'
+      ,[BookNumber] as 'رقم الكتاب'
+      ,[BookDate]as 'تاريخ الكتاب'
+      ,[InboundNumber]as 'رقم واردنا'
+      ,[InboundDate]as 'تاريخ واردنا'
+      ,[Subject]as 'الموضوع'
+      ,[BooksType_TBL].[BookTypeName]as 'نوع الكتاب'
+      ,[From]as 'من'
+      ,[To]as 'الى'
+      ,[BookPriority]as 'الاولوية'
+      ,[ArchivedDate]as 'تاريخ الارشفة'
+      ,[BookPaperType]as 'نوع النسخة'
+      ,[Notes]as 'ملاحظات'
+      ,[Departments_TBL].[DepartmentName]as 'ارشفة بواسطة-قسم'
+      ,[Users_TBL].[Username]as 'ارشفة بواسطة-اسم'
+      ,[BookStatus]as 'حالة الكتاب'
+      ,[Privacy]as 'الخصوصية'
+      ,[SearchKeys]as 'مفاتيح البحث'
+	  
             FROM[ArchiveSystem].[dbo].[ArchiveFollowUp]
    inner JOIN[ArchiveBooks_TBL] ON[ArchiveFollowUp].ArchiveBookID = [ArchiveBooks_TBL].ArchiveBookID
+      inner JOIN[BooksType_TBL] ON[ArchiveBooks_TBL].[BooksTypeID] = [BooksType_TBL].[BooksTypeID]
+	     inner JOIN[Departments_TBL] ON[ArchiveBooks_TBL].[DepartmentID_archivedBy] = [Departments_TBL].[DepartmentID]
+	     inner JOIN[Users_TBL] ON[ArchiveBooks_TBL].[UserID_archivedBy] = [Users_TBL].[UserID]
+	    
    where[ArchiveFollowUp].[Department_AssignTO_ID] = {0}", DepID, con);
 
 
@@ -733,8 +747,148 @@ namespace ArchiveSystem
             }
             con.Close();
         }
+        string ftp_server_Ip = ConfigurationManager.AppSettings["FTP_Server_Ip"];
+        string ftp_server_username = ConfigurationManager.AppSettings["FTP_Server_user"];
+        string ftp_server_password = ConfigurationManager.AppSettings["FTP_Server_pass"];
+
+        //The path of the file on the client computer with which we will download the files from the FTP file temporarily, and then we delete the downloaded files
+        string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
+        public  string BookCode;
+        private void Download(string fileName)
+        {
+
+            FtpWebRequest reqFTP;
+            try
+            {
+
+                //filePath = <<The full path where the file is to be created. the>>,
+                //fileName = <<Name of the file to be createdNeed not name on FTP server. name name()>>
+                FileStream outputStream = new FileStream(path_folder_client_temp + "\\" + fileName, FileMode.Create);
+                //                                           Here we put the path IP, and file name of the FTP file server
+                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\" + fileName)); 
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + DGV_assignation.CurrentRow.Cells[6].Value.ToString() + @"\" + DGV_assignation.CurrentRow.Cells[0].Value.ToString() + @"\" + fileName));
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                Stream ftpStream = response.GetResponseStream();
+                long cl = response.ContentLength;
+                int bufferSize = 2048;
+                int readCount;
+                byte[] buffer = new byte[bufferSize];
+                readCount = ftpStream.Read(buffer, 0, bufferSize);
+                while (readCount > 0)
+                {
+                    outputStream.Write(buffer, 0, readCount);
+                    readCount = ftpStream.Read(buffer, 0, bufferSize);
+                }
+                ftpStream.Close();
+                outputStream.Close();
+                response.Close();
 
 
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public string[] GetFileList()
+        {
+
+
+            string[] downloadFiles;
+            StringBuilder result = new StringBuilder();
+            FtpWebRequest reqFTP;
+            try
+            {
+                //                                          Here we put the path IP and of the FTP file server
+                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\"));
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + DGV_assignation.CurrentRow.Cells[6].Value.ToString() + @"\" + DGV_assignation.CurrentRow.Cells[0].Value.ToString() + @"\"));
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
+                reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
+                WebResponse response = reqFTP.GetResponse();
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                string line = reader.ReadLine();
+                while (line != null)
+                {
+                    result.Append(line);
+                    result.Append("\n");
+                    line = reader.ReadLine();
+                }
+                // to remove the trailing '\n'
+                //if (result.Length==0)
+                //{
+                //    MessageBox.Show("هذا الكتاب لا يحتوي على مستندات");
+                //}
+                result.Remove(result.ToString().LastIndexOf('\n'), 1);
+                reader.Close();
+                response.Close();
+
+                return result.ToString().Split('\n');
+
+            }
+            catch (Exception ex)
+            {
+                //System.Windows.Forms.MessageBox.Show(ex.Message);
+                downloadFiles = null;
+                return downloadFiles;
+            }
+        }
+        private void DGV_assignation_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string[] files = GetFileList();
+
+                System.IO.DirectoryInfo di = new DirectoryInfo(path_folder_client_temp);
+
+                foreach (FileInfo file in di.GetFiles())
+                {
+                    ////////////important code/////////////
+                    //It allows us to delete when the file is used by the processor
+                    System.GC.Collect();
+                    System.GC.WaitForPendingFinalizers();
+                    //----------end-------------
+
+                    file.Delete();
+
+                }
+
+                if (files != null)
+                {
+                    foreach (string file in files)
+                    {
+
+                        Download(file);
+
+                    }
+                }
+
+
+
+                var path = string.Format(path_folder_client_temp);
+
+                BookCode = DGV_assignation.CurrentRow.Cells[0].Value.ToString();
+
+                Form_show_docs s_doc1 = new Form_show_docs(BookCode);
+                s_doc1.Show();
+
+                //System.Diagnostics.Process.Start(path);
+
+            }
+            catch (WebException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void BTN_RefrshFolders_Click(object sender, EventArgs e)
+        {
+            Refresh_Folders();
+        }
     }
 }

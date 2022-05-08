@@ -23,10 +23,13 @@ namespace ArchiveSystem.Folder_view_data
         public static string _subject;
         public static string _BookType;
         public static string _bookCode;
+        public static string _BC;
+
         public static string Archived_by_department_name;//bring this when page load(source fromread_details_doc)
 
-        public Form_show_docs()
+        public Form_show_docs( string BookCode)
         {
+            _BC = BookCode;
             InitializeComponent();
         }
         public static implicit operator Form_show_docs(ScanDialog v)
@@ -176,7 +179,7 @@ dbo.ArchiveBooks_TBL.Privacy
                   dbo.BooksType_TBL ON dbo.ArchiveBooks_TBL.BooksTypeID = dbo.BooksType_TBL.BooksTypeID
 WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
-            cmd.Parameters.AddWithValue("@Param1", Form_view_data_dqv.BookCode);
+            cmd.Parameters.AddWithValue("@Param1", _BC);
 
             SqlDataReader dr1 = cmd.ExecuteReader();
 
@@ -474,7 +477,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
         private void BTN_addMoreDcos_Click(object sender, EventArgs e)
         {
             this.Hide();
-            EditeDocs.EditeDocs ed = new EditeDocs.EditeDocs();
+            EditeDocs.EditeDocs ed = new EditeDocs.EditeDocs(_BC);
             ed.Show();
 
         }
