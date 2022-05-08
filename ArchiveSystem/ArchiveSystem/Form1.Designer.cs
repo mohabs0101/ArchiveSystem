@@ -204,7 +204,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(10, 42);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.RightToLeftLayout = true;
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1306, 538);
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
@@ -855,7 +855,6 @@
             // 
             this.DGV_assignation.AllowUserToAddRows = false;
             this.DGV_assignation.AllowUserToDeleteRows = false;
-            this.DGV_assignation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGV_assignation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV_assignation.FilterAndSortEnabled = true;
             this.DGV_assignation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
