@@ -691,10 +691,20 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 
             SqlCommand cmd = new SqlCommand(strQuery, con);
 
-            cmd.Parameters.Add(new SqlParameter("@BookNumber", SqlDbType.NVarChar)).Value = TXT_bookNumber.Text;
-            cmd.Parameters.Add(new SqlParameter("@BookDate", SqlDbType.NVarChar)).Value = DT_bookDate.Text;
+
+                string DT_bookDate_= DT_bookDate.Text;
+                DateTime DT_bookDatee = Convert.ToDateTime(DT_bookDate_);
+                string _DT_bookDatee = DT_bookDatee.ToString("yyyy/MM/dd");
+
+                
+                      string DT_bookRecive_date_ = DT_bookRecive_date.Text;
+                DateTime DT_bookRecive_dates = Convert.ToDateTime(DT_bookRecive_date_);
+                string _DT_bookRecive_dates_ = DT_bookRecive_dates.ToString("yyyy/MM/dd");
+
+                cmd.Parameters.Add(new SqlParameter("@BookNumber", SqlDbType.NVarChar)).Value = TXT_bookNumber.Text;
+            cmd.Parameters.Add(new SqlParameter("@BookDate", SqlDbType.NVarChar)).Value = _DT_bookDatee;
             cmd.Parameters.Add(new SqlParameter("@InboundNumber", SqlDbType.NVarChar)).Value = TXT_Book_recive_number.Text;
-            cmd.Parameters.Add(new SqlParameter("@InboundDate", SqlDbType.NVarChar)).Value = DT_bookRecive_date.Text;
+            cmd.Parameters.Add(new SqlParameter("@InboundDate", SqlDbType.NVarChar)).Value = _DT_bookRecive_dates_;
             cmd.Parameters.Add(new SqlParameter("@Subject", SqlDbType.NVarChar)).Value = TXT_Subject.Text;
             cmd.Parameters.Add(new SqlParameter("@From", SqlDbType.NVarChar)).Value = TXT_From.Text;
             cmd.Parameters.Add(new SqlParameter("@To", SqlDbType.NVarChar)).Value = TXT_To.Text;

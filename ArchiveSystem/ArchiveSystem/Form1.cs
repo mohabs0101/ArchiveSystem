@@ -193,7 +193,7 @@ namespace ArchiveSystem
             int ran = rand.Next(100000, 999999);
 
             string datenow = DateTime.Now.ToString("hhmmss");
-            string currentDate = DateTime.Now.ToString("MM/dd/yyyy");
+            string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             string book_code = TXT_Subject.Text + ran.ToString() + datenow;
             int departmentID = Login._depID;
@@ -203,12 +203,12 @@ namespace ArchiveSystem
 
             string InboundDate_ = DT_bookRecive_date.Text;
             DateTime oDate = Convert.ToDateTime(InboundDate_);
-            string InboundDate = oDate.ToString("MM/dd/yyyy");
+            string InboundDate = oDate.ToString("yyyy/MM/dd");
 
 
             string DT_bookDate_ = DT_bookDate.Text;
             DateTime oDate_ = Convert.ToDateTime(DT_bookDate_);
-            string DT_bookDateE = oDate_.ToString("MM/dd/yyyy");
+            string DT_bookDateE = oDate_.ToString("yyyy/MM/dd");
 
 
 
