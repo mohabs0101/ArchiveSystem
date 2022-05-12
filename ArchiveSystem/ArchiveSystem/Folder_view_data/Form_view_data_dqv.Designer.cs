@@ -226,8 +226,9 @@
             // DT_bookRecive_date_from
             // 
             this.DT_bookRecive_date_from.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT_bookRecive_date_from.CustomFormat = "yyyy/MM/dd";
             this.DT_bookRecive_date_from.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DT_bookRecive_date_from.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DT_bookRecive_date_from.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DT_bookRecive_date_from.Location = new System.Drawing.Point(8, 18);
             this.DT_bookRecive_date_from.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DT_bookRecive_date_from.Name = "DT_bookRecive_date_from";
@@ -239,8 +240,9 @@
             // 
             this.DT_bookRecive_date_to.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DT_bookRecive_date_to.Checked = false;
+            this.DT_bookRecive_date_to.CustomFormat = "yyyy/MM/dd";
             this.DT_bookRecive_date_to.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DT_bookRecive_date_to.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DT_bookRecive_date_to.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DT_bookRecive_date_to.Location = new System.Drawing.Point(8, 58);
             this.DT_bookRecive_date_to.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DT_bookRecive_date_to.Name = "DT_bookRecive_date_to";
@@ -319,8 +321,9 @@
             // DT_bookDate_from
             // 
             this.DT_bookDate_from.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT_bookDate_from.CustomFormat = "yyyy/MM/dd";
             this.DT_bookDate_from.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DT_bookDate_from.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DT_bookDate_from.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DT_bookDate_from.Location = new System.Drawing.Point(3, 20);
             this.DT_bookDate_from.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DT_bookDate_from.Name = "DT_bookDate_from";
@@ -353,8 +356,9 @@
             // DT_bookDate_to
             // 
             this.DT_bookDate_to.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT_bookDate_to.CustomFormat = "yyyy/MM/dd";
             this.DT_bookDate_to.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DT_bookDate_to.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DT_bookDate_to.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DT_bookDate_to.Location = new System.Drawing.Point(3, 60);
             this.DT_bookDate_to.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DT_bookDate_to.Name = "DT_bookDate_to";

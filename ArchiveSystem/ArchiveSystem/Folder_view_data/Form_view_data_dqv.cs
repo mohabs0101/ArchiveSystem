@@ -61,13 +61,17 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                   dbo.Users_TBL ON dbo.ArchiveBooks_TBL.UserID_archivedBy = dbo.Users_TBL.UserID INNER JOIN
                   dbo.BooksType_TBL ON dbo.ArchiveBooks_TBL.BooksTypeID = dbo.BooksType_TBL.BooksTypeID
 
-WHERE (dbo.ArchiveBooks_TBL.BookDate between @Param1 and @Param2)
-AND (dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
+           
+            WHERE(dbo.ArchiveBooks_TBL.BookDate between @Param1 and @Param2)
+
                 ", con);
+
+//AND(dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
+
             adapter.SelectCommand.Parameters.AddWithValue("@Param1", DT_bookDate_from.Value.Date);
             adapter.SelectCommand.Parameters.AddWithValue("@Param2", DT_bookDate_to.Value.Date);
-            adapter.SelectCommand.Parameters.AddWithValue("@Param3", DT_bookRecive_date_from.Value.Date);
-            adapter.SelectCommand.Parameters.AddWithValue("@Param4", DT_bookRecive_date_to.Value.Date);
+            //adapter.SelectCommand.Parameters.AddWithValue("@Param3", DT_bookRecive_date_from.Value.Date);
+            //adapter.SelectCommand.Parameters.AddWithValue("@Param4", DT_bookRecive_date_to.Value.Date);
 
             dt.Clear();
 
