@@ -506,10 +506,18 @@ namespace ArchiveSystem
         //display picbox in windows
         private void PicB_displayBOOK_Click(object sender, EventArgs e)
         {
-
+          try
+            { 
             // Use default image viewer  
-            System.Diagnostics.Process.Start(picture_path);
+             System.Diagnostics.Process.Start(picture_path);
+            }
+            catch
+            {
+                MessageBox.Show("لاتوجد صورة لعرضها");
+            }
 
+   
+         
         }
 
 

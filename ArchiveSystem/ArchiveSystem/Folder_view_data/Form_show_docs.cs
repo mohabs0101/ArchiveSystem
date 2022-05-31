@@ -261,9 +261,8 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             ListView_show_doc.Items.Clear();
             ImageList_add_viwe.Images.Clear();
 
-            string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
-
-            foreach (string file in System.IO.Directory.GetFiles(path_folder_client_temp))
+          
+            foreach (string file in System.IO.Directory.GetFiles(Form_view_data_dqv.path_folder_client_temp))
             {
 
                 fn_g = file;
@@ -426,7 +425,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
         string path_file_name;
         private void ListView_show_doc_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
+         
 
             ListView.SelectedListViewItemCollection breakfast = this.ListView_show_doc.SelectedItems;
 
@@ -437,7 +436,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             //{
                 try
                 {
-                    path_file_name = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                    path_file_name = Form_view_data_dqv.path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
                    
                     //pictureBox_show_doc.Load(pic);
                     //or
@@ -465,13 +464,18 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
         private void TSM_open_file_Click_1(object sender, EventArgs e)
         {
+            if (path_file_name == null)
+            {
+                MessageBox.Show("لاتوجد صوره لفتحها");
+                return;
+            }
             System.Diagnostics.Process.Start(path_file_name);
         }
 
         private void TSM_open_all_file_Click_1(object sender, EventArgs e)
         {
-            string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
-            System.Diagnostics.Process.Start(path_folder_client_temp);
+          
+            System.Diagnostics.Process.Start(Form_view_data_dqv.path_folder_client_temp);
         }
 
         private void BTN_addMoreDcos_Click(object sender, EventArgs e)
@@ -484,12 +488,12 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
         private void TSM_delete_Click(object sender, EventArgs e)
         {
-            string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
+           
             ListView.SelectedListViewItemCollection breakfast = this.ListView_show_doc.SelectedItems;
 
             foreach (ListViewItem Item in breakfast)
             {
-                path_file_name = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                path_file_name = Form_view_data_dqv.path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
 
                 string fn = ListView_show_doc.Items[Item.Index].SubItems[0].Text;
 
@@ -546,9 +550,9 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             ListView_show_doc.Items.Clear();
             ImageList_add_viwe.Images.Clear();
 
-            string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
+           
 
-            foreach (string file in System.IO.Directory.GetFiles(path_folder_client_temp))
+            foreach (string file in System.IO.Directory.GetFiles(Form_view_data_dqv.path_folder_client_temp))
             {
 
                 fn_g = file;
