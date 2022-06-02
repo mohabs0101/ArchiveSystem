@@ -16,6 +16,7 @@ using System.Globalization;
 using System.Management;
 using System.Data.SqlClient;
 using ArchiveSystem.Folder_view_data;
+using System.Text.RegularExpressions;
 
 namespace ArchiveSystem
 {
@@ -225,7 +226,13 @@ namespace ArchiveSystem
             string datenow = DateTime.Now.ToString("hhmmss");
             string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
 
-            string book_code = TXT_Subject.Text + ran.ToString() + datenow;
+            string book_code_ = TXT_Subject.Text + ran.ToString() + datenow;
+
+            //allow only araic and english alphabets and numbers and remove all special charicters
+            string book_code = Regex.Replace(book_code_, @"[^0-9a-zA-Zء-ي]", " ");
+            
+            
+               
             int departmentID = Login._depID;
             int userid = Login._userID;
 
