@@ -46,7 +46,34 @@ namespace ArchiveSystem
         SqlConnection con = new SqlConnection(_con);
 
 
+        DataTable DT_TEXTBOX = new DataTable();
+        void Auto_complit_TXT_Subject() //نظع هذا السب في حدث الفورم لود
+        {
+            //DT_TEXTBOX.Clear();
+            //SqlDataAdapter adapter1 = new SqlDataAdapter(@"select Subject from ArchiveBooks_TBL", con);
+
+            //adapter1.Fill(DT_TEXTBOX);
+            //AutoCompleteStringCollection source_txt_foundation_center_name = new AutoCompleteStringCollection();
+
+            //for (int i = 0; i < DT_TEXTBOX.Rows.Count - 1; i++)
+            //{
+            //    source_txt_foundation_center_name.Add(Convert.ToString(DT_TEXTBOX.Rows[i]["Subject"]));
+            //}
+
+
+            //TXT_Subject.AutoCompleteCustomSource = source_txt_foundation_center_name;
+
+
+          
+
+        }
       
+  
+
+
+
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -121,10 +148,13 @@ namespace ArchiveSystem
             //---------------end-----------------
 
 
+            this.WindowState = FormWindowState.Maximized;
 
-             
+       
 
         }
+
+
         //read files of folder into dgv files by clicking on folder
         private void DGV_Folders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -199,11 +229,19 @@ namespace ArchiveSystem
             int departmentID = Login._depID;
             int userid = Login._userID;
 
-
-
+            //اذا كان رقم واردنا فارغ نقوم بادخال تاريخ واردنا
+            string InboundDate="";
+            if (TXT_Book_recive_number.Text == "")
+            {
+                InboundDate = "";
+            }
+            else
+            {
             string InboundDate_ = DT_bookRecive_date.Text;
             DateTime oDate = Convert.ToDateTime(InboundDate_);
-            string InboundDate = oDate.ToString("yyyy/MM/dd");
+             InboundDate = oDate.ToString("yyyy/MM/dd");
+            }
+            
 
 
             string DT_bookDate_ = DT_bookDate.Text;
@@ -235,7 +273,7 @@ namespace ArchiveSystem
                     }
                 }
             }
-            if (string.IsNullOrWhiteSpace(BookNumber) || string.IsNullOrWhiteSpace(InboundNumber) || string.IsNullOrWhiteSpace(Subject) || string.IsNullOrWhiteSpace(From) || string.IsNullOrWhiteSpace(To) || string.IsNullOrWhiteSpace(SearchKeys))
+            if (string.IsNullOrWhiteSpace(BookNumber) || string.IsNullOrWhiteSpace(Subject) || string.IsNullOrWhiteSpace(From) || string.IsNullOrWhiteSpace(To) || string.IsNullOrWhiteSpace(SearchKeys))
             {
                 List<TextBox> boxes = new List<TextBox>();
                 if (string.IsNullOrWhiteSpace(TXT_bookNumber.Text))
@@ -244,11 +282,7 @@ namespace ArchiveSystem
                     boxes.Add(TXT_bookNumber);
                 }
                 else { TXT_bookNumber.BackColor = Color.White; }
-                if (string.IsNullOrWhiteSpace(TXT_Book_recive_number.Text))
-                { 
-                    boxes.Add(TXT_Book_recive_number);
-                }
-                else { TXT_Book_recive_number.BackColor = Color.White; }
+               
 
                 if (string.IsNullOrWhiteSpace(TXT_Subject.Text))
                 {
@@ -402,8 +436,10 @@ namespace ArchiveSystem
 
                             if (file_name == filenamechecked)
                             {
+                               
                                 //upload selected files only 
-                                string fn = subject + file_name;
+                                //string fn = subject + file_name;
+                                string fn = BookNumber + DateTime.Now.ToString("yyyyMMddhhmmss") + Path.GetExtension(file);
 
                                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + fn);
                                 request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
@@ -483,14 +519,22 @@ namespace ArchiveSystem
         {
             foreach (DataGridViewRow row in DGV_Files.Rows)
             {
-                String file_name = DGV_Files.Rows[e.RowIndex].Cells[1].Value.ToString();
-                Image image2 = Image.FromFile(Doc_source + @"\" + selectedFolder + @"\" + file_name + "");//put var here
+                try
+                {
+                    String file_name = DGV_Files.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    Image image2 = Image.FromFile(Doc_source + @"\" + selectedFolder + @"\" + file_name + "");//put var here
 
-                PicB_displayBOOK.Image = new Bitmap(image2);
+                    PicB_displayBOOK.Image = new Bitmap(image2);
 
-                image2.Dispose();
-                //get pah to use it to display img in wndows exploror
-                picture_path = (Doc_source + @"\" + selectedFolder + @"\" + file_name + "");
+                    image2.Dispose();
+                    //get pah to use it to display img in wndows exploror
+                    picture_path = (Doc_source + @"\" + selectedFolder + @"\" + file_name + "");
+                }
+                catch
+                {
+                }
+                
+
             }
         }
 
@@ -898,5 +942,27 @@ namespace ArchiveSystem
         {
             Refresh_Folders();
         }
+
+        private void TXT_Book_recive_number_TextChanged(object sender, EventArgs e)
+        {
+            if (TXT_Book_recive_number.Text == "")
+            {
+                panel_viwe_DT_bookRecive_date.Visible = true;
+                label_check_input_DT_bookRecive_date.Visible = false;
+            }
+            else
+            {
+                panel_viwe_DT_bookRecive_date.Visible = false;
+                label_check_input_DT_bookRecive_date.Visible = true;
+            }
+        }
+
+        private void TXT_Subject_TextChanged(object sender, EventArgs e)
+        {
+            Auto_complit_TXT_Subject();
+        }
+
+
+     
     }
 }

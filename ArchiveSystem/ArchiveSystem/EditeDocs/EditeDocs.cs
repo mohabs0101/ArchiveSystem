@@ -39,6 +39,7 @@ namespace ArchiveSystem.EditeDocs
         public string Doc_source = "";
         public int DepID = 0;
 
+        string BookNumber = Form_show_docs._BookNumber;
         string subject = Form_show_docs._subject;
         string Typee = Form_show_docs._BookType;
         string book_code = Form_show_docs._bookCode;
@@ -175,6 +176,8 @@ namespace ArchiveSystem.EditeDocs
         {
             foreach (DataGridViewRow row in DGV_Files.Rows)
             {
+                try
+                {
                 String file_name = DGV_Files.Rows[e.RowIndex].Cells[1].Value.ToString();
                 Image image2 = Image.FromFile(Doc_source + @"\" + selectedFolder + @"\" + file_name + "");//put var here
 
@@ -183,6 +186,11 @@ namespace ArchiveSystem.EditeDocs
                 image2.Dispose();
                 //get pah to use it to display img in wndows exploror
                 picture_path = (Doc_source + @"\" + selectedFolder + @"\" + file_name + "");
+                }
+               catch
+                {
+
+                }
             }
         }
 
@@ -219,10 +227,11 @@ namespace ArchiveSystem.EditeDocs
                     if (file_name == filenamechecked)
                     {
                         //upload selected files only 
-                       
 
 
-                        string fn = subject + file_name;
+                        
+
+                        string fn = BookNumber + DateTime.Now.ToString("yyyyMMddhhmmss") + Path.GetExtension(file);
 
                         FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + fn);
                         request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
@@ -404,6 +413,11 @@ namespace ArchiveSystem.EditeDocs
             Directory.Delete(root, true);
 
             Refresh_Folders();
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            BTN_GobackToDetails_Click(null, null);
         }
     }
 }

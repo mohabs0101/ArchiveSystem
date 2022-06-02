@@ -20,6 +20,7 @@ namespace ArchiveSystem.Folder_view_data
 {
     public partial class Form_show_docs : MetroFramework.Forms.MetroForm
     {
+        public static string _BookNumber;
         public static string _subject;
         public static string _BookType;
         public static string _bookCode;
@@ -139,7 +140,9 @@ SELECT  [DepartmentID]
             { ImageList_add_viwe.Images.Add(fn_g, ImageList_Extension.Images[5]); }
             else if (Extension_file == ".mp4") //'فيديو
             { ImageList_add_viwe.Images.Add(fn_g, ImageList_Extension.Images[6]); }
-            else if (Extension_file == ".bnp" || Extension_file == ".bmp" || Extension_file == ".gif" || Extension_file == ".tif" || Extension_file == ".exe" || Extension_file == ".dll" || Extension_file == ".ico" || Extension_file == ".glp" || Extension_file == ".psd" || Extension_file == "." || Extension_file == ".xml" || Extension_file == ".html" || Extension_file == ".js" || Extension_file == ".css") //اخرى
+            else if (Extension_file == ".rar") //'ملف مضغوط
+            { ImageList_add_viwe.Images.Add(fn_g, ImageList_Extension.Images[8]); }
+            else if (Extension_file == ".bnp" || Extension_file == ".bmp" || Extension_file == ".gif" || Extension_file == ".tif" || Extension_file == ".exe" || Extension_file == ".dll" || Extension_file == ".ico" || Extension_file == ".glp" || Extension_file == ".psd" || Extension_file == "." || Extension_file == ".xml" || Extension_file == ".html" || Extension_file == ".js" || Extension_file == ".css" || Extension_file == ".rar") //اخرى
             { ImageList_add_viwe.Images.Add(fn_g, ImageList_Extension.Images[7]); }
             else
             { ImageList_add_viwe.Images.Add(fn_g, Bitmap.FromFile(fn_g)); }
@@ -208,7 +211,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 BookStatus = dr1["BookStatus"].ToString();
                 COM_privicy.Text = dr1["Privacy"].ToString();
 
- 
+                _BookNumber = dr1["BookNumber"].ToString();
                 _subject = TXT_Subject.Text;
                 _BookType = COM_bookType.Text;
                 _bookCode = txt_book_code.Text;
@@ -258,6 +261,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
         //}
         public void show_files_doc()
         {
+            Cursor = Cursors.WaitCursor;
             ListView_show_doc.Items.Clear();
             ImageList_add_viwe.Images.Clear();
 
@@ -280,7 +284,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
 
             }
-
+            Cursor = Cursors.Default;
         }
 
        
@@ -620,14 +624,18 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
         private void BTN_SAVE_Click(object sender, EventArgs e)
         {
+          
             string BookNumber = TXT_bookNumber.Text;
-            string InboundNumber = TXT_Book_recive_number.Text;
 
             string Subject = TXT_Subject.Text;
             string From = TXT_From.Text;
             string To = TXT_To.Text;
             string SearchKeys = TXT_SearchKEys.Text;
-            if (string.IsNullOrWhiteSpace(BookNumber) || string.IsNullOrWhiteSpace(InboundNumber) || string.IsNullOrWhiteSpace(Subject) || string.IsNullOrWhiteSpace(From) || string.IsNullOrWhiteSpace(To) || string.IsNullOrWhiteSpace(SearchKeys))
+
+           
+
+
+            if (string.IsNullOrWhiteSpace(BookNumber) || string.IsNullOrWhiteSpace(Subject) || string.IsNullOrWhiteSpace(From) || string.IsNullOrWhiteSpace(To) || string.IsNullOrWhiteSpace(SearchKeys))
             {
                 List<TextBox> boxes = new List<TextBox>();
                 if (string.IsNullOrWhiteSpace(TXT_bookNumber.Text))
@@ -636,11 +644,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                     boxes.Add(TXT_bookNumber);
                 }
                 else { TXT_bookNumber.BackColor = Color.White; }
-                if (string.IsNullOrWhiteSpace(TXT_Book_recive_number.Text))
-                {
-                    boxes.Add(TXT_Book_recive_number);
-                }
-                else { TXT_Book_recive_number.BackColor = Color.White; }
+                
 
                 if (string.IsNullOrWhiteSpace(TXT_Subject.Text))
                 {
@@ -683,8 +687,9 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             }
 
            else
-            { 
-            String strQuery ;
+            {
+                Cursor = Cursors.WaitCursor;
+                String strQuery ;
             con.Open();
 
             strQuery = @"Update ArchiveBooks_TBL set BookNumber = @BookNumber, BookDate = @BookDate, " +
@@ -700,15 +705,26 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 DateTime DT_bookDatee = Convert.ToDateTime(DT_bookDate_);
                 string _DT_bookDatee = DT_bookDatee.ToString("yyyy/MM/dd");
 
-                
-                      string DT_bookRecive_date_ = DT_bookRecive_date.Text;
-                DateTime DT_bookRecive_dates = Convert.ToDateTime(DT_bookRecive_date_);
-                string _DT_bookRecive_dates_ = DT_bookRecive_dates.ToString("yyyy/MM/dd");
+                //اذا كان رقم واردنا فارغ نقوم بادخال تاريخ واردنا
+                string InboundDate = "";
+                if (TXT_Book_recive_number.Text == "")
+                {
+                    InboundDate = "";
+                }
+                else
+                {
+                    string InboundDate_ = DT_bookRecive_date.Text;
+                    DateTime oDate = Convert.ToDateTime(InboundDate_);
+                    InboundDate = oDate.ToString("yyyy/MM/dd");
+                }
+
+
+               
 
                 cmd.Parameters.Add(new SqlParameter("@BookNumber", SqlDbType.NVarChar)).Value = TXT_bookNumber.Text;
             cmd.Parameters.Add(new SqlParameter("@BookDate", SqlDbType.NVarChar)).Value = _DT_bookDatee;
             cmd.Parameters.Add(new SqlParameter("@InboundNumber", SqlDbType.NVarChar)).Value = TXT_Book_recive_number.Text;
-            cmd.Parameters.Add(new SqlParameter("@InboundDate", SqlDbType.NVarChar)).Value = _DT_bookRecive_dates_;
+            cmd.Parameters.Add(new SqlParameter("@InboundDate", SqlDbType.NVarChar)).Value = InboundDate;
             cmd.Parameters.Add(new SqlParameter("@Subject", SqlDbType.NVarChar)).Value = TXT_Subject.Text;
             cmd.Parameters.Add(new SqlParameter("@From", SqlDbType.NVarChar)).Value = TXT_From.Text;
             cmd.Parameters.Add(new SqlParameter("@To", SqlDbType.NVarChar)).Value = TXT_To.Text;
@@ -726,6 +742,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             con.Close();
             button5_Click(null, null);
 
+                Cursor = Cursors.WaitCursor;
                 Form_view_data_dqv FVD = new Form_view_data_dqv();
 
                 FVD.fill_dgv_view_data_doc();
@@ -774,11 +791,11 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 string query3 = string.Format(@"SELECT  [ArchiveFollowUpID]
       ,[ArchiveBookID]
       ,[Department_AssignTO_ID]
-      ,[Task]as 'المهمة'
-      ,[DepartmentName]as 'القسم'
-      ,[Action]as 'الاجراء المتخذ'
-      ,[Note]as 'ملاحضة'
-      ,[DateAdded]as 'تاريخ الاضافة'
+      ,[Task] as 'المهمة'
+      ,[DepartmentName] as 'القسم'
+      ,[Action] as 'الاجراء المتخذم'
+      ,[Note] as 'ملاحضة'
+      ,[DateAdded] as 'تاريخ الاضافة'
   FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] INNER JOIN
                   dbo.Departments_TBL ON dbo.ArchiveFollowUp.Department_AssignTO_ID = dbo.Departments_TBL.DepartmentID 
 where ArchiveBookID={0}", bookID, con);
@@ -804,8 +821,8 @@ where ArchiveBookID={0}", bookID, con);
       ,[ArchiveBookID]
       ,[Department_AssignTO_ID]
       ,[Task] as 'المهمة'
-      ,[DepartmentName]as 'القسم'
-      ,[Action] as 'الاجراء المتخذ'
+      ,[DepartmentName] as 'القسم'
+      ,[Action] as 'الاجراء المتخذم'
       ,[Note] as 'ملاحضة'
       ,[DateAdded] as 'تاريخ الاضافة'
   FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] INNER JOIN
@@ -1048,6 +1065,22 @@ where ArchiveBookID={0}", bookID, con);
                 MessageBox.Show("تم ازالة الكتاب من المتابعة", "تم ");
             }
            
+        }
+
+        private void TXT_Book_recive_number_TextChanged(object sender, EventArgs e)
+        {
+            {
+                if (TXT_Book_recive_number.Text == "")
+                {
+                    panel_viwe_DT_bookRecive_date.Visible = true;
+                    label_check_input_DT_bookRecive_date.Visible = false;
+                }
+                else
+                {
+                    panel_viwe_DT_bookRecive_date.Visible = false;
+                    label_check_input_DT_bookRecive_date.Visible = true;
+                }
+            }
         }
     }
 }

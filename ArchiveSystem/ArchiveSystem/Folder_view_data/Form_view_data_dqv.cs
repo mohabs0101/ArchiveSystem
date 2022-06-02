@@ -32,7 +32,7 @@ namespace ArchiveSystem.Folder_view_data
 
        public void fill_dgv_view_data_doc()
         {
-
+            Cursor = Cursors.WaitCursor;
 
             adapter = new SqlDataAdapter(@"SELECT
 
@@ -46,7 +46,7 @@ dbo.ArchiveBooks_TBL.SearchKeys as [مفاتيح البحث],
 dbo.BooksType_TBL.BookTypeName as [النوع(الكابينة)],
 dbo.ArchiveBooks_TBL.[From] as [من],
 dbo.ArchiveBooks_TBL.[To] as [الى],
-dbo.ArchiveBooks_TBL.SearchKeys as [مفاتيح البحث],
+
 dbo.ArchiveBooks_TBL.BookPriority as [الاولوية],
 dbo.ArchiveBooks_TBL.ArchivedDate as [تاريخ الارشفة],
 dbo.ArchiveBooks_TBL.BookPaperType as [نوع النسخة],
@@ -79,7 +79,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             adapter.Fill(dt);
             advanc_dgv_view_data_doc.DataSource = dt;
             Label2_count_doc.Text = Convert.ToString(BindingContext[dt].Count);
-
+            Cursor = Cursors.Default;
         }
 
 
@@ -98,10 +98,10 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
 
 
-            advanc_dgv_view_data_doc.RowTemplate.Height = 30;
+            advanc_dgv_view_data_doc.RowTemplate.Height = 40;
 
             advanc_dgv_view_data_doc.Columns[0].HeaderCell.Style.BackColor = Color.DeepSkyBlue;
-            advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 11);
+            advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12);
 
 
             advanc_dgv_view_data_doc.AlternatingRowsDefaultCellStyle.BackColor = Color.Silver;
@@ -110,8 +110,11 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             advanc_dgv_view_data_doc.RowsDefaultCellStyle.SelectionBackColor = Color.Orange;
             advanc_dgv_view_data_doc.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
 
+            advanc_dgv_view_data_doc.Columns[0].Width = 0;
             advanc_dgv_view_data_doc.Columns[5].Width = 170;
             advanc_dgv_view_data_doc.Columns[6].Width = 350;
+            advanc_dgv_view_data_doc.Columns[8].Width = 180;
+            advanc_dgv_view_data_doc.Columns[9].Width = 180;
         }
 
         private void btn_search_claer_Click(object sender, EventArgs e)
@@ -171,10 +174,16 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
         private void NumericUpDown_font_size_ValueChanged(object sender, EventArgs e)
         {
-
+       
             this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", Convert.ToInt32(NumericUpDown_font_size.Value) + 1);
             this.advanc_dgv_view_data_doc.DefaultCellStyle.Font = new Font("Tahoma", Convert.ToInt32(NumericUpDown_font_size.Value));
+           
+        }
 
+        private void numericUpDown_Width_columns_ValueChanged(object sender, EventArgs e)
+        {
+            this.advanc_dgv_view_data_doc.RowTemplate.Height = Convert.ToInt32(numericUpDown_Width_columns.Value);
+            fill_dgv_view_data_doc();
         }
 
         private void advanc_dgv_view_data_doc_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -463,5 +472,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
         {
             txt_seach.Select();
         }
+
+       
     }
 }

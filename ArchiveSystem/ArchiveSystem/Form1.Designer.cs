@@ -29,20 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.PicB_displayBOOK = new System.Windows.Forms.PictureBox();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.CHK_selectall = new System.Windows.Forms.CheckBox();
             this.DGV_Files = new System.Windows.Forms.DataGridView();
+            this.CHK_selectall = new System.Windows.Forms.CheckBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -57,15 +50,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Scanning_Folder = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.panel_viwe_DT_bookRecive_date = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.TXT_SearchKEys = new System.Windows.Forms.TextBox();
+            this.DT_bookRecive_date = new System.Windows.Forms.DateTimePicker();
+            this.DT_bookDate = new System.Windows.Forms.DateTimePicker();
+            this.TXT_bookNumber = new System.Windows.Forms.TextBox();
+            this.TXT_Book_recive_number = new System.Windows.Forms.TextBox();
+            this.TXT_Subject = new System.Windows.Forms.TextBox();
+            this.TXT_To = new System.Windows.Forms.TextBox();
+            this.TXT_From = new System.Windows.Forms.TextBox();
             this.COM_priority = new System.Windows.Forms.ComboBox();
             this.COM_privicy = new System.Windows.Forms.ComboBox();
             this.COM_PaperType = new System.Windows.Forms.ComboBox();
             this.COM_bookType = new System.Windows.Forms.ComboBox();
-            this.DT_bookRecive_date = new System.Windows.Forms.DateTimePicker();
-            this.DT_bookDate = new System.Windows.Forms.DateTimePicker();
             this.BTN_Archive = new System.Windows.Forms.Button();
-            this.TXT_SearchKEys = new System.Windows.Forms.TextBox();
-            this.TXT_bookNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -76,32 +75,22 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.TXT_To = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.TXT_From = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.TXT_Subject = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.TXT_Book_recive_number = new System.Windows.Forms.TextBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label_check_input_DT_bookRecive_date = new System.Windows.Forms.Label();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.panel32 = new System.Windows.Forms.Panel();
             this.DGV_assignation = new Zuby.ADGV.AdvancedDataGridView();
-            this.panel27 = new System.Windows.Forms.Panel();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.panel30 = new System.Windows.Forms.Panel();
-            this.panel31 = new System.Windows.Forms.Panel();
-            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.PICBOX_failICON = new System.Windows.Forms.PictureBox();
             this.PICBOX_successICON = new System.Windows.Forms.PictureBox();
             this.LBL_FTPconValue = new System.Windows.Forms.Label();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -115,20 +104,15 @@
             this.panel21 = new System.Windows.Forms.Panel();
             this.LBL_USERNAME = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.FOLDERS_prefermCLick = new System.Windows.Forms.Button();
             this.LBL_ARCHIVEtitle = new System.Windows.Forms.Label();
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicB_displayBOOK)).BeginInit();
             this.panel13.SuspendLayout();
-            this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Files)).BeginInit();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -138,7 +122,6 @@
             this.panel15.SuspendLayout();
             this.panel12.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
-            this.panel32.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).BeginInit();
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PICBOX_failICON)).BeginInit();
@@ -147,81 +130,30 @@
             this.panel23.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel21.SuspendLayout();
-            this.panel29.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1582, 37);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(12, 908);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(23, 37);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(12, 908);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(35, 37);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1547, 12);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(35, 933);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1547, 12);
-            this.panel4.TabIndex = 3;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.metroTabControl1);
-            this.panel7.Controls.Add(this.metroPanel4);
-            this.panel7.Controls.Add(this.metroPanel3);
-            this.panel7.Controls.Add(this.metroPanel2);
-            this.panel7.Controls.Add(this.metroPanel1);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(35, 207);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1547, 726);
-            this.panel7.TabIndex = 5;
             // 
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabControl1.Location = new System.Drawing.Point(12, 52);
+            this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
+            this.metroTabControl1.Location = new System.Drawing.Point(23, 195);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.RightToLeftLayout = true;
             this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(1523, 662);
+            this.metroTabControl1.Size = new System.Drawing.Size(1571, 695);
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
             // 
             // metroTabPage1
             // 
-            this.metroTabPage1.Controls.Add(this.panel11);
-            this.metroTabPage1.Controls.Add(this.panel10);
-            this.metroTabPage1.Controls.Add(this.panel9);
-            this.metroTabPage1.Controls.Add(this.panel8);
-            this.metroTabPage1.Controls.Add(this.panel6);
+            this.metroTabPage1.Controls.Add(this.panel14);
+            this.metroTabPage1.Controls.Add(this.panel13);
+            this.metroTabPage1.Controls.Add(this.panel12);
+            this.metroTabPage1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 12;
@@ -229,7 +161,7 @@
             this.metroTabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.metroTabPage1.Size = new System.Drawing.Size(1515, 620);
+            this.metroTabPage1.Size = new System.Drawing.Size(1563, 653);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "كتاب جديد";
             this.metroTabPage1.VerticalScrollbar = true;
@@ -237,36 +169,30 @@
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 12;
             // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.panel14);
-            this.panel11.Controls.Add(this.panel13);
-            this.panel11.Controls.Add(this.panel12);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(12, 12);
-            this.panel11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1491, 596);
-            this.panel11.TabIndex = 6;
-            // 
             // panel14
             // 
+            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel14.AutoScroll = true;
             this.panel14.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel14.Controls.Add(this.PicB_displayBOOK);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(0, 0);
+            this.panel14.Location = new System.Drawing.Point(0, 8);
             this.panel14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(521, 596);
+            this.panel14.Size = new System.Drawing.Size(581, 641);
             this.panel14.TabIndex = 5;
             // 
             // PicB_displayBOOK
             // 
-            this.PicB_displayBOOK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PicB_displayBOOK.Location = new System.Drawing.Point(0, 0);
+            this.PicB_displayBOOK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PicB_displayBOOK.BackColor = System.Drawing.Color.White;
+            this.PicB_displayBOOK.Location = new System.Drawing.Point(3, 4);
             this.PicB_displayBOOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PicB_displayBOOK.Name = "PicB_displayBOOK";
-            this.PicB_displayBOOK.Size = new System.Drawing.Size(521, 596);
+            this.PicB_displayBOOK.Size = new System.Drawing.Size(575, 633);
             this.PicB_displayBOOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PicB_displayBOOK.TabIndex = 0;
             this.PicB_displayBOOK.TabStop = false;
@@ -274,44 +200,20 @@
             // 
             // panel13
             // 
+            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel13.AutoScroll = true;
             this.panel13.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel13.Controls.Add(this.panel18);
+            this.panel13.Controls.Add(this.DGV_Files);
+            this.panel13.Controls.Add(this.CHK_selectall);
             this.panel13.Controls.Add(this.panel17);
             this.panel13.Controls.Add(this.panel16);
             this.panel13.Controls.Add(this.panel15);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel13.Location = new System.Drawing.Point(521, 0);
+            this.panel13.Location = new System.Drawing.Point(587, 8);
             this.panel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(234, 596);
+            this.panel13.Size = new System.Drawing.Size(234, 645);
             this.panel13.TabIndex = 4;
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.Coral;
-            this.panel18.Controls.Add(this.CHK_selectall);
-            this.panel18.Controls.Add(this.DGV_Files);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(0, 295);
-            this.panel18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(234, 301);
-            this.panel18.TabIndex = 3;
-            // 
-            // CHK_selectall
-            // 
-            this.CHK_selectall.AutoSize = true;
-            this.CHK_selectall.BackColor = System.Drawing.Color.DarkGray;
-            this.CHK_selectall.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CHK_selectall.Location = new System.Drawing.Point(0, 0);
-            this.CHK_selectall.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.CHK_selectall.Name = "CHK_selectall";
-            this.CHK_selectall.Size = new System.Drawing.Size(234, 21);
-            this.CHK_selectall.TabIndex = 1;
-            this.CHK_selectall.Text = "اختيار الكل";
-            this.CHK_selectall.UseVisualStyleBackColor = false;
-            this.CHK_selectall.Visible = false;
-            this.CHK_selectall.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // DGV_Files
             // 
@@ -322,14 +224,30 @@
             this.DGV_Files.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_Files.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Files.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGV_Files.Location = new System.Drawing.Point(0, 0);
+            this.DGV_Files.Location = new System.Drawing.Point(0, 323);
             this.DGV_Files.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DGV_Files.Name = "DGV_Files";
             this.DGV_Files.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.DGV_Files.RowHeadersVisible = false;
-            this.DGV_Files.Size = new System.Drawing.Size(234, 301);
+            this.DGV_Files.Size = new System.Drawing.Size(234, 322);
             this.DGV_Files.TabIndex = 0;
             this.DGV_Files.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Files_CellClick);
+            // 
+            // CHK_selectall
+            // 
+            this.CHK_selectall.AutoSize = true;
+            this.CHK_selectall.BackColor = System.Drawing.Color.DarkGray;
+            this.CHK_selectall.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CHK_selectall.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CHK_selectall.Location = new System.Drawing.Point(0, 295);
+            this.CHK_selectall.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CHK_selectall.Name = "CHK_selectall";
+            this.CHK_selectall.Size = new System.Drawing.Size(234, 28);
+            this.CHK_selectall.TabIndex = 1;
+            this.CHK_selectall.Text = "اختيار الكل";
+            this.CHK_selectall.UseVisualStyleBackColor = false;
+            this.CHK_selectall.Visible = false;
+            this.CHK_selectall.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // panel17
             // 
@@ -348,7 +266,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(89, 12);
+            this.label1.Location = new System.Drawing.Point(80, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 27);
             this.label1.TabIndex = 0;
@@ -374,7 +292,7 @@
             this.DGV_Folders.AllowUserToResizeColumns = false;
             this.DGV_Folders.AllowUserToResizeRows = false;
             this.DGV_Folders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGV_Folders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DGV_Folders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Folders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV_Folders.Location = new System.Drawing.Point(0, 34);
             this.DGV_Folders.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -503,17 +421,25 @@
             // 
             // panel12
             // 
+            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel12.AutoScroll = true;
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.Controls.Add(this.panel_viwe_DT_bookRecive_date);
+            this.panel12.Controls.Add(this.label20);
+            this.panel12.Controls.Add(this.TXT_SearchKEys);
+            this.panel12.Controls.Add(this.DT_bookRecive_date);
+            this.panel12.Controls.Add(this.DT_bookDate);
+            this.panel12.Controls.Add(this.TXT_bookNumber);
+            this.panel12.Controls.Add(this.TXT_Book_recive_number);
+            this.panel12.Controls.Add(this.TXT_Subject);
+            this.panel12.Controls.Add(this.TXT_To);
+            this.panel12.Controls.Add(this.TXT_From);
             this.panel12.Controls.Add(this.COM_priority);
             this.panel12.Controls.Add(this.COM_privicy);
             this.panel12.Controls.Add(this.COM_PaperType);
             this.panel12.Controls.Add(this.COM_bookType);
-            this.panel12.Controls.Add(this.DT_bookRecive_date);
-            this.panel12.Controls.Add(this.DT_bookDate);
             this.panel12.Controls.Add(this.BTN_Archive);
-            this.panel12.Controls.Add(this.TXT_SearchKEys);
-            this.panel12.Controls.Add(this.TXT_bookNumber);
             this.panel12.Controls.Add(this.label7);
             this.panel12.Controls.Add(this.label8);
             this.panel12.Controls.Add(this.label16);
@@ -524,140 +450,220 @@
             this.panel12.Controls.Add(this.label21);
             this.panel12.Controls.Add(this.label12);
             this.panel12.Controls.Add(this.label13);
-            this.panel12.Controls.Add(this.TXT_To);
             this.panel12.Controls.Add(this.label14);
-            this.panel12.Controls.Add(this.TXT_From);
             this.panel12.Controls.Add(this.label15);
-            this.panel12.Controls.Add(this.TXT_Subject);
             this.panel12.Controls.Add(this.label17);
             this.panel12.Controls.Add(this.label18);
-            this.panel12.Controls.Add(this.TXT_Book_recive_number);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel12.Location = new System.Drawing.Point(755, 0);
+            this.panel12.Controls.Add(this.label2);
+            this.panel12.Controls.Add(this.label19);
+            this.panel12.Controls.Add(this.label6);
+            this.panel12.Controls.Add(this.label5);
+            this.panel12.Controls.Add(this.label3);
+            this.panel12.Controls.Add(this.label_check_input_DT_bookRecive_date);
+            this.panel12.Location = new System.Drawing.Point(823, 8);
             this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(736, 596);
+            this.panel12.Size = new System.Drawing.Size(736, 645);
             this.panel12.TabIndex = 3;
             // 
-            // COM_priority
+            // panel_viwe_DT_bookRecive_date
             // 
-            this.COM_priority.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.COM_priority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.COM_priority.FormattingEnabled = true;
-            this.COM_priority.Items.AddRange(new object[] {
-            "عادي",
-            "عاجل",
-            "فوري"});
-            this.COM_priority.Location = new System.Drawing.Point(357, 184);
-            this.COM_priority.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.COM_priority.Name = "COM_priority";
-            this.COM_priority.Size = new System.Drawing.Size(158, 24);
-            this.COM_priority.TabIndex = 10;
+            this.panel_viwe_DT_bookRecive_date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_viwe_DT_bookRecive_date.Location = new System.Drawing.Point(395, 114);
+            this.panel_viwe_DT_bookRecive_date.Name = "panel_viwe_DT_bookRecive_date";
+            this.panel_viwe_DT_bookRecive_date.Size = new System.Drawing.Size(118, 28);
+            this.panel_viwe_DT_bookRecive_date.TabIndex = 157;
             // 
-            // COM_privicy
+            // label20
             // 
-            this.COM_privicy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.COM_privicy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.COM_privicy.FormattingEnabled = true;
-            this.COM_privicy.Items.AddRange(new object[] {
-            "محدود",
-            "سري"});
-            this.COM_privicy.Location = new System.Drawing.Point(357, 118);
-            this.COM_privicy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.COM_privicy.Name = "COM_privicy";
-            this.COM_privicy.Size = new System.Drawing.Size(158, 24);
-            this.COM_privicy.TabIndex = 9;
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(101, 443);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(23, 27);
+            this.label20.TabIndex = 156;
+            this.label20.Text = "*";
             // 
-            // COM_PaperType
+            // TXT_SearchKEys
             // 
-            this.COM_PaperType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.COM_PaperType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.COM_PaperType.FormattingEnabled = true;
-            this.COM_PaperType.Items.AddRange(new object[] {
-            "اصلي",
-            "استنساخ",
-            "",
-            ""});
-            this.COM_PaperType.Location = new System.Drawing.Point(363, 256);
-            this.COM_PaperType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.COM_PaperType.Name = "COM_PaperType";
-            this.COM_PaperType.Size = new System.Drawing.Size(158, 24);
-            this.COM_PaperType.TabIndex = 11;
-            // 
-            // COM_bookType
-            // 
-            this.COM_bookType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.COM_bookType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.COM_bookType.FormattingEnabled = true;
-            this.COM_bookType.Location = new System.Drawing.Point(357, 48);
-            this.COM_bookType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.COM_bookType.Name = "COM_bookType";
-            this.COM_bookType.Size = new System.Drawing.Size(158, 24);
-            this.COM_bookType.TabIndex = 8;
+            this.TXT_SearchKEys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_SearchKEys.BackColor = System.Drawing.Color.White;
+            this.TXT_SearchKEys.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXT_SearchKEys.Location = new System.Drawing.Point(22, 44);
+            this.TXT_SearchKEys.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TXT_SearchKEys.Multiline = true;
+            this.TXT_SearchKEys.Name = "TXT_SearchKEys";
+            this.TXT_SearchKEys.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TXT_SearchKEys.Size = new System.Drawing.Size(350, 351);
+            this.TXT_SearchKEys.TabIndex = 9;
             // 
             // DT_bookRecive_date
             // 
             this.DT_bookRecive_date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT_bookRecive_date.Font = new System.Drawing.Font("Tahoma", 11F);
             this.DT_bookRecive_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DT_bookRecive_date.Location = new System.Drawing.Point(551, 256);
+            this.DT_bookRecive_date.Location = new System.Drawing.Point(393, 113);
             this.DT_bookRecive_date.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DT_bookRecive_date.Name = "DT_bookRecive_date";
-            this.DT_bookRecive_date.Size = new System.Drawing.Size(158, 24);
+            this.DT_bookRecive_date.Size = new System.Drawing.Size(158, 30);
             this.DT_bookRecive_date.TabIndex = 4;
             // 
             // DT_bookDate
             // 
             this.DT_bookDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT_bookDate.Font = new System.Drawing.Font("Tahoma", 11F);
             this.DT_bookDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DT_bookDate.Location = new System.Drawing.Point(551, 118);
+            this.DT_bookDate.Location = new System.Drawing.Point(394, 45);
             this.DT_bookDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DT_bookDate.Name = "DT_bookDate";
-            this.DT_bookDate.Size = new System.Drawing.Size(158, 24);
+            this.DT_bookDate.Size = new System.Drawing.Size(158, 30);
             this.DT_bookDate.TabIndex = 2;
             this.DT_bookDate.Value = new System.DateTime(2022, 3, 23, 0, 0, 0, 0);
-            // 
-            // BTN_Archive
-            // 
-            this.BTN_Archive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTN_Archive.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.BTN_Archive.Font = new System.Drawing.Font("Marlett", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_Archive.Location = new System.Drawing.Point(579, 544);
-            this.BTN_Archive.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BTN_Archive.Name = "BTN_Archive";
-            this.BTN_Archive.Size = new System.Drawing.Size(128, 49);
-            this.BTN_Archive.TabIndex = 16;
-            this.BTN_Archive.Text = "ارشفة";
-            this.BTN_Archive.UseVisualStyleBackColor = false;
-            this.BTN_Archive.Click += new System.EventHandler(this.BTN_Archive_Click);
-            // 
-            // TXT_SearchKEys
-            // 
-            this.TXT_SearchKEys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXT_SearchKEys.Location = new System.Drawing.Point(27, 372);
-            this.TXT_SearchKEys.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TXT_SearchKEys.Multiline = true;
-            this.TXT_SearchKEys.Name = "TXT_SearchKEys";
-            this.TXT_SearchKEys.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TXT_SearchKEys.Size = new System.Drawing.Size(682, 164);
-            this.TXT_SearchKEys.TabIndex = 13;
             // 
             // TXT_bookNumber
             // 
             this.TXT_bookNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_bookNumber.BackColor = System.Drawing.Color.White;
             this.TXT_bookNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_bookNumber.Location = new System.Drawing.Point(551, 45);
+            this.TXT_bookNumber.Location = new System.Drawing.Point(558, 45);
             this.TXT_bookNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TXT_bookNumber.Multiline = true;
             this.TXT_bookNumber.Name = "TXT_bookNumber";
             this.TXT_bookNumber.Size = new System.Drawing.Size(158, 31);
             this.TXT_bookNumber.TabIndex = 1;
             // 
+            // TXT_Book_recive_number
+            // 
+            this.TXT_Book_recive_number.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_Book_recive_number.BackColor = System.Drawing.Color.White;
+            this.TXT_Book_recive_number.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXT_Book_recive_number.Location = new System.Drawing.Point(557, 112);
+            this.TXT_Book_recive_number.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TXT_Book_recive_number.Multiline = true;
+            this.TXT_Book_recive_number.Name = "TXT_Book_recive_number";
+            this.TXT_Book_recive_number.Size = new System.Drawing.Size(158, 31);
+            this.TXT_Book_recive_number.TabIndex = 3;
+            this.TXT_Book_recive_number.TextChanged += new System.EventHandler(this.TXT_Book_recive_number_TextChanged);
+            // 
+            // TXT_Subject
+            // 
+            this.TXT_Subject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_Subject.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TXT_Subject.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.TXT_Subject.BackColor = System.Drawing.Color.White;
+            this.TXT_Subject.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXT_Subject.Location = new System.Drawing.Point(394, 175);
+            this.TXT_Subject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TXT_Subject.Multiline = true;
+            this.TXT_Subject.Name = "TXT_Subject";
+            this.TXT_Subject.Size = new System.Drawing.Size(321, 31);
+            this.TXT_Subject.TabIndex = 5;
+            this.TXT_Subject.TextChanged += new System.EventHandler(this.TXT_Subject_TextChanged);
+            // 
+            // TXT_To
+            // 
+            this.TXT_To.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_To.BackColor = System.Drawing.Color.White;
+            this.TXT_To.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXT_To.Location = new System.Drawing.Point(393, 285);
+            this.TXT_To.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TXT_To.Multiline = true;
+            this.TXT_To.Name = "TXT_To";
+            this.TXT_To.Size = new System.Drawing.Size(321, 31);
+            this.TXT_To.TabIndex = 7;
+            // 
+            // TXT_From
+            // 
+            this.TXT_From.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_From.BackColor = System.Drawing.Color.White;
+            this.TXT_From.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXT_From.Location = new System.Drawing.Point(393, 229);
+            this.TXT_From.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TXT_From.Multiline = true;
+            this.TXT_From.Name = "TXT_From";
+            this.TXT_From.Size = new System.Drawing.Size(321, 31);
+            this.TXT_From.TabIndex = 6;
+            // 
+            // COM_priority
+            // 
+            this.COM_priority.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.COM_priority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COM_priority.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.COM_priority.FormattingEnabled = true;
+            this.COM_priority.Items.AddRange(new object[] {
+            "عادي",
+            "عاجل",
+            "فوري"});
+            this.COM_priority.Location = new System.Drawing.Point(280, 440);
+            this.COM_priority.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.COM_priority.Name = "COM_priority";
+            this.COM_priority.Size = new System.Drawing.Size(139, 30);
+            this.COM_priority.TabIndex = 12;
+            // 
+            // COM_privicy
+            // 
+            this.COM_privicy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.COM_privicy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COM_privicy.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.COM_privicy.FormattingEnabled = true;
+            this.COM_privicy.Items.AddRange(new object[] {
+            "محدود",
+            "سري"});
+            this.COM_privicy.Location = new System.Drawing.Point(425, 440);
+            this.COM_privicy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.COM_privicy.Name = "COM_privicy";
+            this.COM_privicy.Size = new System.Drawing.Size(139, 30);
+            this.COM_privicy.TabIndex = 11;
+            // 
+            // COM_PaperType
+            // 
+            this.COM_PaperType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.COM_PaperType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COM_PaperType.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.COM_PaperType.FormattingEnabled = true;
+            this.COM_PaperType.Items.AddRange(new object[] {
+            "استنساخ",
+            "أصلية"});
+            this.COM_PaperType.Location = new System.Drawing.Point(130, 440);
+            this.COM_PaperType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.COM_PaperType.Name = "COM_PaperType";
+            this.COM_PaperType.Size = new System.Drawing.Size(139, 30);
+            this.COM_PaperType.TabIndex = 13;
+            // 
+            // COM_bookType
+            // 
+            this.COM_bookType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.COM_bookType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COM_bookType.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.COM_bookType.FormattingEnabled = true;
+            this.COM_bookType.Location = new System.Drawing.Point(570, 440);
+            this.COM_bookType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.COM_bookType.Name = "COM_bookType";
+            this.COM_bookType.Size = new System.Drawing.Size(139, 30);
+            this.COM_bookType.TabIndex = 10;
+            // 
+            // BTN_Archive
+            // 
+            this.BTN_Archive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_Archive.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.BTN_Archive.Font = new System.Drawing.Font("Marlett", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_Archive.Location = new System.Drawing.Point(101, 478);
+            this.BTN_Archive.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BTN_Archive.Name = "BTN_Archive";
+            this.BTN_Archive.Size = new System.Drawing.Size(205, 49);
+            this.BTN_Archive.TabIndex = 14;
+            this.BTN_Archive.Text = "ارشفة";
+            this.BTN_Archive.UseVisualStyleBackColor = false;
+            this.BTN_Archive.Click += new System.EventHandler(this.BTN_Archive_Click);
+            // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(623, 17);
+            this.label7.Location = new System.Drawing.Point(630, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 27);
             this.label7.TabIndex = 136;
@@ -668,7 +674,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(616, 91);
+            this.label8.Location = new System.Drawing.Point(448, 16);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 27);
             this.label8.TabIndex = 137;
@@ -679,7 +685,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(413, 157);
+            this.label16.Location = new System.Drawing.Point(315, 413);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(115, 27);
             this.label16.TabIndex = 145;
@@ -690,7 +696,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(641, 157);
+            this.label9.Location = new System.Drawing.Point(640, 82);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 27);
             this.label9.TabIndex = 138;
@@ -699,20 +705,22 @@
             // TXT_notes
             // 
             this.TXT_notes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXT_notes.Location = new System.Drawing.Point(27, 259);
+            this.TXT_notes.BackColor = System.Drawing.Color.White;
+            this.TXT_notes.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXT_notes.Location = new System.Drawing.Point(393, 349);
             this.TXT_notes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TXT_notes.Multiline = true;
             this.TXT_notes.Name = "TXT_notes";
             this.TXT_notes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TXT_notes.Size = new System.Drawing.Size(312, 96);
-            this.TXT_notes.TabIndex = 15;
+            this.TXT_notes.Size = new System.Drawing.Size(321, 46);
+            this.TXT_notes.TabIndex = 8;
             // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(628, 226);
+            this.label10.Location = new System.Drawing.Point(453, 81);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(93, 27);
             this.label10.TabIndex = 139;
@@ -723,7 +731,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(269, 15);
+            this.label11.Location = new System.Drawing.Point(645, 146);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 27);
             this.label11.TabIndex = 140;
@@ -734,7 +742,7 @@
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(420, 91);
+            this.label21.Location = new System.Drawing.Point(462, 413);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(107, 27);
             this.label21.TabIndex = 150;
@@ -745,7 +753,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(431, 17);
+            this.label12.Location = new System.Drawing.Point(625, 410);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(89, 27);
             this.label12.TabIndex = 141;
@@ -756,73 +764,40 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(312, 89);
+            this.label13.Location = new System.Drawing.Point(677, 198);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(34, 27);
+            this.label13.Size = new System.Drawing.Size(42, 27);
             this.label13.TabIndex = 142;
-            this.label13.Text = "من";
-            // 
-            // TXT_To
-            // 
-            this.TXT_To.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXT_To.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_To.Location = new System.Drawing.Point(27, 182);
-            this.TXT_To.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TXT_To.Multiline = true;
-            this.TXT_To.Name = "TXT_To";
-            this.TXT_To.Size = new System.Drawing.Size(312, 31);
-            this.TXT_To.TabIndex = 7;
+            this.label13.Text = "مــــــــن";
             // 
             // label14
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(317, 155);
+            this.label14.Location = new System.Drawing.Point(673, 258);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(31, 27);
+            this.label14.Size = new System.Drawing.Size(42, 27);
             this.label14.TabIndex = 143;
-            this.label14.Text = "الى";
-            // 
-            // TXT_From
-            // 
-            this.TXT_From.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXT_From.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_From.Location = new System.Drawing.Point(27, 111);
-            this.TXT_From.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TXT_From.Multiline = true;
-            this.TXT_From.Name = "TXT_From";
-            this.TXT_From.Size = new System.Drawing.Size(312, 31);
-            this.TXT_From.TabIndex = 6;
+            this.label14.Text = "الــــــــى";
             // 
             // label15
             // 
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(592, 341);
+            this.label15.Location = new System.Drawing.Point(259, 13);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(112, 27);
             this.label15.TabIndex = 144;
             this.label15.Text = "مفاتيح البحث";
-            // 
-            // TXT_Subject
-            // 
-            this.TXT_Subject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXT_Subject.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_Subject.Location = new System.Drawing.Point(27, 43);
-            this.TXT_Subject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TXT_Subject.Multiline = true;
-            this.TXT_Subject.Name = "TXT_Subject";
-            this.TXT_Subject.Size = new System.Drawing.Size(312, 31);
-            this.TXT_Subject.TabIndex = 5;
             // 
             // label17
             // 
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(440, 226);
+            this.label17.Location = new System.Drawing.Point(179, 412);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(95, 27);
             this.label17.TabIndex = 146;
@@ -833,170 +808,130 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(267, 227);
+            this.label18.Location = new System.Drawing.Point(629, 320);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(86, 27);
             this.label18.TabIndex = 147;
             this.label18.Text = "ملاحضات";
             // 
-            // TXT_Book_recive_number
+            // label2
             // 
-            this.TXT_Book_recive_number.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXT_Book_recive_number.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_Book_recive_number.Location = new System.Drawing.Point(551, 184);
-            this.TXT_Book_recive_number.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TXT_Book_recive_number.Multiline = true;
-            this.TXT_Book_recive_number.Name = "TXT_Book_recive_number";
-            this.TXT_Book_recive_number.Size = new System.Drawing.Size(158, 31);
-            this.TXT_Book_recive_number.TabIndex = 3;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(375, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 27);
+            this.label2.TabIndex = 151;
+            this.label2.Text = "*";
             // 
-            // panel10
+            // label19
             // 
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(12, 608);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1491, 12);
-            this.panel10.TabIndex = 5;
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Red;
+            this.label19.Location = new System.Drawing.Point(3, 48);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(23, 27);
+            this.label19.TabIndex = 155;
+            this.label19.Text = "*";
             // 
-            // panel9
+            // label6
             // 
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(12, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1491, 12);
-            this.panel9.TabIndex = 4;
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(375, 288);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(23, 27);
+            this.label6.TabIndex = 154;
+            this.label6.Text = "*";
             // 
-            // panel8
+            // label5
             // 
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(12, 620);
-            this.panel8.TabIndex = 3;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(375, 233);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 27);
+            this.label5.TabIndex = 153;
+            this.label5.Text = "*";
             // 
-            // panel6
+            // label3
             // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1503, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(12, 620);
-            this.panel6.TabIndex = 2;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(375, 177);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 27);
+            this.label3.TabIndex = 152;
+            this.label3.Text = "*";
+            // 
+            // label_check_input_DT_bookRecive_date
+            // 
+            this.label_check_input_DT_bookRecive_date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_check_input_DT_bookRecive_date.AutoSize = true;
+            this.label_check_input_DT_bookRecive_date.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_check_input_DT_bookRecive_date.ForeColor = System.Drawing.Color.Red;
+            this.label_check_input_DT_bookRecive_date.Location = new System.Drawing.Point(375, 117);
+            this.label_check_input_DT_bookRecive_date.Name = "label_check_input_DT_bookRecive_date";
+            this.label_check_input_DT_bookRecive_date.Size = new System.Drawing.Size(23, 27);
+            this.label_check_input_DT_bookRecive_date.TabIndex = 158;
+            this.label_check_input_DT_bookRecive_date.Text = "*";
+            this.label_check_input_DT_bookRecive_date.Visible = false;
             // 
             // metroTabPage4
             // 
-            this.metroTabPage4.Controls.Add(this.panel32);
-            this.metroTabPage4.Controls.Add(this.panel27);
-            this.metroTabPage4.Controls.Add(this.panel28);
-            this.metroTabPage4.Controls.Add(this.panel30);
-            this.metroTabPage4.Controls.Add(this.panel31);
+            this.metroTabPage4.Controls.Add(this.DGV_assignation);
             this.metroTabPage4.HorizontalScrollbarBarColor = true;
             this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.HorizontalScrollbarSize = 12;
             this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(1515, 620);
+            this.metroTabPage4.Size = new System.Drawing.Size(1563, 653);
             this.metroTabPage4.TabIndex = 4;
             this.metroTabPage4.Text = "المتابعة";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.VerticalScrollbarSize = 12;
             // 
-            // panel32
-            // 
-            this.panel32.Controls.Add(this.DGV_assignation);
-            this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel32.Location = new System.Drawing.Point(12, 128);
-            this.panel32.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(1491, 492);
-            this.panel32.TabIndex = 11;
-            // 
             // DGV_assignation
             // 
             this.DGV_assignation.AllowUserToAddRows = false;
             this.DGV_assignation.AllowUserToDeleteRows = false;
-            this.DGV_assignation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV_assignation.FilterAndSortEnabled = true;
             this.DGV_assignation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.DGV_assignation.Location = new System.Drawing.Point(0, 0);
+            this.DGV_assignation.Location = new System.Drawing.Point(143, 82);
             this.DGV_assignation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DGV_assignation.Name = "DGV_assignation";
             this.DGV_assignation.ReadOnly = true;
             this.DGV_assignation.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGV_assignation.Size = new System.Drawing.Size(1491, 492);
+            this.DGV_assignation.Size = new System.Drawing.Size(1250, 274);
             this.DGV_assignation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.DGV_assignation.TabIndex = 0;
             this.DGV_assignation.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_assignation_CellDoubleClick);
             // 
-            // panel27
-            // 
-            this.panel27.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel27.Location = new System.Drawing.Point(12, 12);
-            this.panel27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(1491, 116);
-            this.panel27.TabIndex = 10;
-            // 
-            // panel28
-            // 
-            this.panel28.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel28.Location = new System.Drawing.Point(12, 0);
-            this.panel28.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(1491, 12);
-            this.panel28.TabIndex = 9;
-            // 
-            // panel30
-            // 
-            this.panel30.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel30.Location = new System.Drawing.Point(0, 0);
-            this.panel30.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(12, 620);
-            this.panel30.TabIndex = 8;
-            // 
-            // panel31
-            // 
-            this.panel31.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel31.Location = new System.Drawing.Point(1503, 0);
-            this.panel31.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(12, 620);
-            this.panel31.TabIndex = 7;
-            // 
-            // metroPanel4
-            // 
-            this.metroPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroPanel4.HorizontalScrollbarBarColor = true;
-            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.HorizontalScrollbarSize = 12;
-            this.metroPanel4.Location = new System.Drawing.Point(12, 714);
-            this.metroPanel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(1523, 12);
-            this.metroPanel4.TabIndex = 8;
-            this.metroPanel4.VerticalScrollbarBarColor = true;
-            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.VerticalScrollbarSize = 12;
-            // 
             // metroPanel3
             // 
+            this.metroPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel3.Controls.Add(this.PICBOX_failICON);
             this.metroPanel3.Controls.Add(this.PICBOX_successICON);
             this.metroPanel3.Controls.Add(this.LBL_FTPconValue);
-            this.metroPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 12;
-            this.metroPanel3.Location = new System.Drawing.Point(12, 0);
+            this.metroPanel3.Location = new System.Drawing.Point(1400, 12);
             this.metroPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(1523, 52);
+            this.metroPanel3.Size = new System.Drawing.Size(155, 52);
             this.metroPanel3.TabIndex = 7;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
@@ -1036,36 +971,6 @@
             this.LBL_FTPconValue.TabIndex = 2;
             this.LBL_FTPconValue.Text = "متصل";
             this.LBL_FTPconValue.Visible = false;
-            // 
-            // metroPanel2
-            // 
-            this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 12;
-            this.metroPanel2.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(12, 726);
-            this.metroPanel2.TabIndex = 6;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 12;
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 12;
-            this.metroPanel1.Location = new System.Drawing.Point(1535, 0);
-            this.metroPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(12, 726);
-            this.metroPanel1.TabIndex = 5;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 12;
             // 
             // button6
             // 
@@ -1113,27 +1018,27 @@
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Controls.Add(this.panel23);
+            this.panel5.Controls.Add(this.metroPanel3);
             this.panel5.Controls.Add(this.panel22);
             this.panel5.Controls.Add(this.panel21);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.panel29);
             this.panel5.Controls.Add(this.LBL_ARCHIVEtitle);
             this.panel5.Controls.Add(this.lbl_loginDepartment);
             this.panel5.Controls.Add(this.lbl_LoginUsername);
             this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(35, 49);
+            this.panel5.Location = new System.Drawing.Point(23, 37);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1547, 158);
+            this.panel5.Size = new System.Drawing.Size(1571, 158);
             this.panel5.TabIndex = 4;
             // 
             // panel23
             // 
             this.panel23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel23.Controls.Add(this.LBL_permitionType);
-            this.panel23.Location = new System.Drawing.Point(1141, 138);
+            this.panel23.Location = new System.Drawing.Point(1165, 138);
             this.panel23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(272, 26);
@@ -1153,7 +1058,7 @@
             // 
             this.panel22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel22.Controls.Add(this.LBL_department);
-            this.panel22.Location = new System.Drawing.Point(1141, 116);
+            this.panel22.Location = new System.Drawing.Point(1165, 116);
             this.panel22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(272, 26);
@@ -1173,7 +1078,7 @@
             // 
             this.panel21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel21.Controls.Add(this.LBL_USERNAME);
-            this.panel21.Location = new System.Drawing.Point(1141, 91);
+            this.panel21.Location = new System.Drawing.Point(1165, 91);
             this.panel21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(272, 26);
@@ -1196,31 +1101,13 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1419, 133);
+            this.label4.Location = new System.Drawing.Point(1443, 133);
             this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label4.Size = new System.Drawing.Size(132, 24);
             this.label4.TabIndex = 170;
             this.label4.Text = ":         الصلاحية  ";
-            // 
-            // panel29
-            // 
-            this.panel29.Controls.Add(this.FOLDERS_prefermCLick);
-            this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel29.Location = new System.Drawing.Point(0, 0);
-            this.panel29.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(1547, 12);
-            this.panel29.TabIndex = 4;
-            // 
-            // FOLDERS_prefermCLick
-            // 
-            this.FOLDERS_prefermCLick.Location = new System.Drawing.Point(12, 7);
-            this.FOLDERS_prefermCLick.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.FOLDERS_prefermCLick.Name = "FOLDERS_prefermCLick";
-            this.FOLDERS_prefermCLick.Size = new System.Drawing.Size(12, 12);
-            this.FOLDERS_prefermCLick.TabIndex = 169;
-            this.FOLDERS_prefermCLick.Text = "ؤةي";
-            this.FOLDERS_prefermCLick.UseVisualStyleBackColor = true;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LBL_ARCHIVEtitle
             // 
@@ -1241,23 +1128,26 @@
             this.lbl_loginDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_loginDepartment.AutoSize = true;
             this.lbl_loginDepartment.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_loginDepartment.Location = new System.Drawing.Point(1414, 111);
+            this.lbl_loginDepartment.Location = new System.Drawing.Point(1438, 111);
             this.lbl_loginDepartment.Name = "lbl_loginDepartment";
+            this.lbl_loginDepartment.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_loginDepartment.Size = new System.Drawing.Size(136, 24);
             this.lbl_loginDepartment.TabIndex = 2;
             this.lbl_loginDepartment.Text = " :             القسم  ";
+            this.lbl_loginDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_LoginUsername
             // 
             this.lbl_LoginUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_LoginUsername.AutoSize = true;
             this.lbl_LoginUsername.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LoginUsername.Location = new System.Drawing.Point(1419, 86);
+            this.lbl_LoginUsername.Location = new System.Drawing.Point(1443, 86);
             this.lbl_LoginUsername.Name = "lbl_LoginUsername";
+            this.lbl_LoginUsername.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_LoginUsername.Size = new System.Drawing.Size(132, 24);
             this.lbl_LoginUsername.TabIndex = 1;
             this.lbl_LoginUsername.Text = ": اسم المستخدم  ";
-            this.lbl_LoginUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_LoginUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -1276,28 +1166,22 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1617, 970);
-            this.Controls.Add(this.panel7);
+            this.ClientSize = new System.Drawing.Size(1617, 915);
+            this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.DisplayHeader = false;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(23, 37, 23, 25);
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Right;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel7.ResumeLayout(false);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PicB_displayBOOK)).EndInit();
             this.panel13.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            this.panel18.PerformLayout();
+            this.panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Files)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
@@ -1310,7 +1194,6 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.metroTabPage4.ResumeLayout(false);
-            this.panel32.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).EndInit();
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
@@ -1324,38 +1207,21 @@
             this.panel22.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
-            this.panel29.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LBL_ARCHIVEtitle;
         private System.Windows.Forms.Label lbl_loginDepartment;
         private System.Windows.Forms.Label lbl_LoginUsername;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel29;
-        private MetroFramework.Controls.MetroPanel metroPanel4;
         private MetroFramework.Controls.MetroPanel metroPanel3;
-        private MetroFramework.Controls.MetroPanel metroPanel2;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage4;
-        private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button BTN_Archive;
@@ -1379,7 +1245,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox TXT_Book_recive_number;
-        private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel15;
@@ -1410,13 +1275,7 @@
         private System.Windows.Forms.DateTimePicker DT_bookDate;
         private System.Windows.Forms.Label LBL_department;
         private System.Windows.Forms.Label LBL_USERNAME;
-        private System.Windows.Forms.Button FOLDERS_prefermCLick;
         private System.Windows.Forms.Button BTN_RefrshFolders;
-        private System.Windows.Forms.Panel panel32;
-        private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.Panel panel30;
-        private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.Label LBL_permitionType;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel21;
@@ -1425,8 +1284,17 @@
         private System.Windows.Forms.PictureBox PICBOX_successICON;
         private System.Windows.Forms.Label LBL_FTPconValue;
         private System.Windows.Forms.PictureBox PICBOX_failICON;
-        private Zuby.ADGV.AdvancedDataGridView DGV_assignation;
         private System.Windows.Forms.ComboBox COM_PaperType;
+        private MetroFramework.Controls.MetroTabPage metroTabPage4;
+        private Zuby.ADGV.AdvancedDataGridView DGV_assignation;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel_viwe_DT_bookRecive_date;
+        private System.Windows.Forms.Label label_check_input_DT_bookRecive_date;
     }
 }
 
