@@ -97,6 +97,12 @@
     <Compile Include="Folder_view_data\Form_view_data_dqv.Designer.cs">
       <DependentUpon>Form_view_data_dqv.cs</DependentUpon>
     </Compile>
+    <Compile Include="FollowUp\Form_Manager_FollowUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FollowUp\Form_Manager_FollowUp.Designer.cs">
+      <DependentUpon>Form_Manager_FollowUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Folder_view_data\Form_view_data_dqv.resx">
       <DependentUpon>Form_view_data_dqv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FollowUp\Form_Manager_FollowUp.resx">
+      <DependentUpon>Form_Manager_FollowUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

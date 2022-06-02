@@ -876,8 +876,8 @@ where ArchiveBookID={0}", bookID, con);
                 return;
             }
 
-                try
-                {
+                //try
+                //{
                 int Archive_bookID = Convert.ToInt32(book_ID.ToString());
               
                 string task = comboB_FollowUp_Title.Text;
@@ -935,11 +935,11 @@ where ArchiveBookID={0}", bookID, con);
 
                 MessageBox.Show("تم اضافة متابعة جديدة ");
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
 
         }
 
