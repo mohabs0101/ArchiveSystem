@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_seach = new System.Windows.Forms.TextBox();
             this.btn_search_claer = new System.Windows.Forms.Button();
             this.Label2_count_doc = new System.Windows.Forms.Label();
@@ -65,6 +65,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_show_filter = new System.Windows.Forms.Button();
             this.btn_fill_doc = new System.Windows.Forms.Button();
+            this.checkBox_search_all = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.numericUpDown_Width_columns = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_font_size)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_view_data_doc)).BeginInit();
             this.panel_filter.SuspendLayout();
@@ -74,13 +77,14 @@
             this.tabPage2.SuspendLayout();
             this.panel_DT_bookRecive_date.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Width_columns)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_seach
             // 
             this.txt_seach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_seach.Font = new System.Drawing.Font("Tahoma", 10.2F);
-            this.txt_seach.Location = new System.Drawing.Point(1144, 9);
+            this.txt_seach.Location = new System.Drawing.Point(1069, 8);
             this.txt_seach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_seach.Multiline = true;
             this.txt_seach.Name = "txt_seach";
@@ -98,7 +102,7 @@
             this.btn_search_claer.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btn_search_claer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_search_claer.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btn_search_claer.Location = new System.Drawing.Point(1146, 10);
+            this.btn_search_claer.Location = new System.Drawing.Point(1071, 9);
             this.btn_search_claer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_search_claer.Name = "btn_search_claer";
             this.btn_search_claer.Size = new System.Drawing.Size(35, 34);
@@ -111,7 +115,7 @@
             // 
             this.Label2_count_doc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label2_count_doc.AutoSize = true;
-            this.Label2_count_doc.Location = new System.Drawing.Point(968, 29);
+            this.Label2_count_doc.Location = new System.Drawing.Point(886, 28);
             this.Label2_count_doc.Name = "Label2_count_doc";
             this.Label2_count_doc.Size = new System.Drawing.Size(23, 17);
             this.Label2_count_doc.TabIndex = 401;
@@ -121,7 +125,7 @@
             // 
             this.Label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(970, 11);
+            this.Label1.Location = new System.Drawing.Point(895, 10);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(70, 17);
             this.Label1.TabIndex = 400;
@@ -132,7 +136,7 @@
             this.Label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label15.AutoSize = true;
             this.Label15.BackColor = System.Drawing.Color.White;
-            this.Label15.Location = new System.Drawing.Point(997, 28);
+            this.Label15.Location = new System.Drawing.Point(922, 27);
             this.Label15.Name = "Label15";
             this.Label15.Size = new System.Drawing.Size(13, 17);
             this.Label15.TabIndex = 408;
@@ -143,7 +147,7 @@
             this.Label2_count_doc_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label2_count_doc_search.AutoSize = true;
             this.Label2_count_doc_search.BackColor = System.Drawing.Color.White;
-            this.Label2_count_doc_search.Location = new System.Drawing.Point(1010, 28);
+            this.Label2_count_doc_search.Location = new System.Drawing.Point(935, 27);
             this.Label2_count_doc_search.Name = "Label2_count_doc_search";
             this.Label2_count_doc_search.Size = new System.Drawing.Size(59, 17);
             this.Label2_count_doc_search.TabIndex = 407;
@@ -167,7 +171,7 @@
             this.NumericUpDown_font_size.Size = new System.Drawing.Size(51, 24);
             this.NumericUpDown_font_size.TabIndex = 409;
             this.NumericUpDown_font_size.Value = new decimal(new int[] {
-            10,
+            11,
             0,
             0,
             0});
@@ -192,23 +196,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.advanc_dgv_view_data_doc.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.advanc_dgv_view_data_doc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_view_data_doc.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 11F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_view_data_doc.DefaultCellStyle = dataGridViewCellStyle4;
             this.advanc_dgv_view_data_doc.EnableHeadersVisualStyles = false;
             this.advanc_dgv_view_data_doc.FilterAndSortEnabled = true;
             this.advanc_dgv_view_data_doc.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
@@ -532,7 +536,7 @@
             this.btn_show_filter.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_show_filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_show_filter.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_show_filter.Location = new System.Drawing.Point(1094, 9);
+            this.btn_show_filter.Location = new System.Drawing.Point(1019, 8);
             this.btn_show_filter.Name = "btn_show_filter";
             this.btn_show_filter.Size = new System.Drawing.Size(47, 37);
             this.btn_show_filter.TabIndex = 416;
@@ -544,7 +548,7 @@
             // 
             this.btn_fill_doc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_fill_doc.Font = new System.Drawing.Font("Tahoma", 10.2F);
-            this.btn_fill_doc.Location = new System.Drawing.Point(826, 10);
+            this.btn_fill_doc.Location = new System.Drawing.Point(751, 9);
             this.btn_fill_doc.Name = "btn_fill_doc";
             this.btn_fill_doc.Size = new System.Drawing.Size(95, 33);
             this.btn_fill_doc.TabIndex = 417;
@@ -552,12 +556,68 @@
             this.btn_fill_doc.UseVisualStyleBackColor = true;
             this.btn_fill_doc.Click += new System.EventHandler(this.btn_fill_doc_Click);
             // 
+            // checkBox_search_all
+            // 
+            this.checkBox_search_all.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox_search_all.AutoSize = true;
+            this.checkBox_search_all.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_search_all.Location = new System.Drawing.Point(1413, 7);
+            this.checkBox_search_all.Name = "checkBox_search_all";
+            this.checkBox_search_all.Size = new System.Drawing.Size(66, 40);
+            this.checkBox_search_all.TabIndex = 418;
+            this.checkBox_search_all.Text = "بحث\r\n بالكل";
+            this.checkBox_search_all.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox_search_all.UseVisualStyleBackColor = true;
+            this.checkBox_search_all.CheckedChanged += new System.EventHandler(this.checkBox_search_all_CheckedChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(236, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 18);
+            this.label10.TabIndex = 420;
+            this.label10.Text = "حجم الخط";
+            // 
+            // numericUpDown_Width_columns
+            // 
+            this.numericUpDown_Width_columns.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericUpDown_Width_columns.Location = new System.Drawing.Point(179, 14);
+            this.numericUpDown_Width_columns.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numericUpDown_Width_columns.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.numericUpDown_Width_columns.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown_Width_columns.Name = "numericUpDown_Width_columns";
+            this.numericUpDown_Width_columns.Size = new System.Drawing.Size(51, 24);
+            this.numericUpDown_Width_columns.TabIndex = 419;
+            this.numericUpDown_Width_columns.Value = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            this.numericUpDown_Width_columns.ValueChanged += new System.EventHandler(this.numericUpDown_Width_columns_ValueChanged);
+            // 
             // Form_view_data_dqv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1499, 818);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.numericUpDown_Width_columns);
+            this.Controls.Add(this.checkBox_search_all);
             this.Controls.Add(this.btn_fill_doc);
             this.Controls.Add(this.panel_filter);
             this.Controls.Add(this.btn_show_filter);
@@ -590,6 +650,7 @@
             this.panel_DT_bookRecive_date.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Width_columns)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,5 +692,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox com_mode_filter_bookRecive;
         private System.Windows.Forms.Button btn_fill_doc;
+        private System.Windows.Forms.CheckBox checkBox_search_all;
+        internal System.Windows.Forms.Label label10;
+        internal System.Windows.Forms.NumericUpDown numericUpDown_Width_columns;
     }
 }

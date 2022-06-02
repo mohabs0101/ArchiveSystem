@@ -32,7 +32,7 @@ namespace ArchiveSystem.Folder_view_data
 
        public void fill_dgv_view_data_doc()
         {
-
+            Cursor = Cursors.WaitCursor;
 
             adapter = new SqlDataAdapter(@"SELECT
 
@@ -42,10 +42,11 @@ dbo.ArchiveBooks_TBL.BookDate as [تاريخ الكتاب],
 dbo.ArchiveBooks_TBL.InboundNumber as [رقم واردنا],
 dbo.ArchiveBooks_TBL.InboundDate as [تاريخ واردنا],
 dbo.ArchiveBooks_TBL.Subject as [موضوع الكتاب],
+dbo.ArchiveBooks_TBL.SearchKeys as [مفاتيح البحث],
 dbo.BooksType_TBL.BookTypeName as [النوع(الكابينة)],
 dbo.ArchiveBooks_TBL.[From] as [من],
 dbo.ArchiveBooks_TBL.[To] as [الى],
-dbo.ArchiveBooks_TBL.SearchKeys as [مفاتيح البحث],
+
 dbo.ArchiveBooks_TBL.BookPriority as [الاولوية],
 dbo.ArchiveBooks_TBL.ArchivedDate as [تاريخ الارشفة],
 dbo.ArchiveBooks_TBL.BookPaperType as [نوع النسخة],
@@ -78,7 +79,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             adapter.Fill(dt);
             advanc_dgv_view_data_doc.DataSource = dt;
             Label2_count_doc.Text = Convert.ToString(BindingContext[dt].Count);
-
+            Cursor = Cursors.Default;
         }
 
 
@@ -95,10 +96,12 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             //   }
 
 
-            advanc_dgv_view_data_doc.RowTemplate.Height = 30;
+
+
+            advanc_dgv_view_data_doc.RowTemplate.Height = 40;
 
             advanc_dgv_view_data_doc.Columns[0].HeaderCell.Style.BackColor = Color.DeepSkyBlue;
-            advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 11);
+            advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12);
 
 
             advanc_dgv_view_data_doc.AlternatingRowsDefaultCellStyle.BackColor = Color.Silver;
@@ -106,6 +109,12 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
             advanc_dgv_view_data_doc.RowsDefaultCellStyle.SelectionBackColor = Color.Orange;
             advanc_dgv_view_data_doc.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
+            advanc_dgv_view_data_doc.Columns[0].Width = 0;
+            advanc_dgv_view_data_doc.Columns[5].Width = 170;
+            advanc_dgv_view_data_doc.Columns[6].Width = 350;
+            advanc_dgv_view_data_doc.Columns[8].Width = 180;
+            advanc_dgv_view_data_doc.Columns[9].Width = 180;
         }
 
         private void btn_search_claer_Click(object sender, EventArgs e)
@@ -117,10 +126,22 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
         {
             try
             {
+
+
+                if (checkBox_search_all.Checked == true)
+                {
+                    DataView dv = dt.DefaultView;
+
+                    dv.RowFilter = "[رقم الكتاب]+[تاريخ الكتاب]+[رقم واردنا]+[تاريخ واردنا]+[موضوع الكتاب]+[مفاتيح البحث]+[من]+[الى]+[الملاحظات]  Like '%" + txt_seach.Text + "%'";
+                    this.advanc_dgv_view_data_doc.DataSource = dv;
+                }
+                else
+                { 
                 DataView dv = dt.DefaultView;
 
-                dv.RowFilter = "[" + advanc_dgv_view_data_doc.Columns[col_index_select].Name + "]+[كود الكتاب]  Like '%" + txt_seach.Text + "%'";
+                dv.RowFilter = "[" + advanc_dgv_view_data_doc.Columns[col_index_select].Name + "]+[رقم الكتاب]  Like '%" + txt_seach.Text + "%'";
                 this.advanc_dgv_view_data_doc.DataSource = dv;
+                }
 
             }
             catch (Exception ex)
@@ -147,15 +168,22 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
             }
             txt_seach.Select();
+            
         }
 
 
         private void NumericUpDown_font_size_ValueChanged(object sender, EventArgs e)
         {
-
+       
             this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", Convert.ToInt32(NumericUpDown_font_size.Value) + 1);
             this.advanc_dgv_view_data_doc.DefaultCellStyle.Font = new Font("Tahoma", Convert.ToInt32(NumericUpDown_font_size.Value));
+           
+        }
 
+        private void numericUpDown_Width_columns_ValueChanged(object sender, EventArgs e)
+        {
+            this.advanc_dgv_view_data_doc.RowTemplate.Height = Convert.ToInt32(numericUpDown_Width_columns.Value);
+            fill_dgv_view_data_doc();
         }
 
         private void advanc_dgv_view_data_doc_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -175,7 +203,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
         string ftp_server_password = ConfigurationManager.AppSettings["FTP_Server_pass"];
 
         //The path of the file on the client computer with which we will download the files from the FTP file temporarily, and then we delete the downloaded files
-        string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
+        public static string path_folder_client_temp  = "";//نسند لة قيمة في حدث الدبل كلك
 
         public string[] GetFileList()
         {
@@ -188,7 +216,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             {
                 //                                          Here we put the path IP and of the FTP file server
                 //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\"));
-                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[6].Value.ToString() + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString() + @"\"));
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[7].Value.ToString() + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString() + @"\"));
                 reqFTP.UseBinary = true;
                 reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
                 reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
@@ -234,7 +262,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                 FileStream outputStream = new FileStream(path_folder_client_temp + "\\" + fileName, FileMode.Create);
                 //                                           Here we put the path IP, and file name of the FTP file server
                 //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\" + fileName)); 
-                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[6].Value.ToString() + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString() + @"\" + fileName));
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[7].Value.ToString() + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString() + @"\" + fileName));
                 reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
                 reqFTP.UseBinary = true;
                 reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
@@ -268,11 +296,11 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
         {
             try
             {
-                string[] files = GetFileList();
+                //اولا نحذف جميع الفولدرات المنزلة سابقا
 
-                System.IO.DirectoryInfo di = new DirectoryInfo(path_folder_client_temp);
+                System.IO.DirectoryInfo di = new DirectoryInfo(ConfigurationManager.AppSettings["Path_Folder_Client_Temp"]);
 
-                foreach (FileInfo file in di.GetFiles())
+                foreach (DirectoryInfo file in di.GetDirectories())
                 {
                     ////////////important code/////////////
                     //It allows us to delete when the file is used by the processor
@@ -280,10 +308,22 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                     System.GC.WaitForPendingFinalizers();
                     //----------end-------------
 
-                    file.Delete();
+                    file.Delete(true);
 
                 }
 
+                //ثانيا في كل مرة نشاء فولدر باسم جديد لتفادي بقاء استخدام الملف من قبل المعالج
+                string temp = "";
+                temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"] + @"\Temp" + DateTime.Now.ToString("yyyyMMddhhmmss");
+                Directory.CreateDirectory(temp);
+
+                path_folder_client_temp = temp;
+
+                //ثالثا نجل الصور
+                string[] files = GetFileList();
+
+
+                //ننزل الصور من السيرفر ftp
                 if (files != null)
                 {
                     foreach (string file in files)
@@ -428,6 +468,10 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             fill_dgv_view_data_doc();
         }
 
+        private void checkBox_search_all_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_seach.Select();
+        }
 
        
     }

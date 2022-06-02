@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -100,7 +101,30 @@ namespace ArchiveSystem
 
         private void Login_Load(object sender, EventArgs e)
         {
+            //اولا نحذف جميع الفولدرات المنزلة سابقا تحسبا لعدم حذفها بسبب استخدامه من قبل المعالج
+            try
+            {
 
+           
+            System.IO.DirectoryInfo di = new DirectoryInfo(ConfigurationManager.AppSettings["Path_Folder_Client_Temp"]);
+
+            foreach (DirectoryInfo file in di.GetDirectories())
+            {
+                ////////////important code/////////////
+                //It allows us to delete when the file is used by the processor
+                System.GC.Collect();
+                System.GC.WaitForPendingFinalizers();
+                //----------end-------------
+
+                file.Delete(true);
+
+            }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            this.TopMost = false;
         }
     }
 }
