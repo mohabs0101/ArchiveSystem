@@ -1,50 +1,129 @@
-﻿using System;
+﻿using ArchiveSystem.Folder_view_data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ArchiveSystem.FollowUp
 {
-    public partial class Form_Manager_FollowUp : MetroFramework.Forms.MetroForm
+    public partial class Form_Manager_FollowUp : Form 
     {
         public Form_Manager_FollowUp()
         {
             InitializeComponent();
         }
 
+        string _BookCode = "";
+        string _bookID ="";
+        string _date_book;
+        string _sbj_book;
+
+
+        
+
+        public Form_Manager_FollowUp(string BookCode ,string bookID, string date_book, string sbj_book)
+        {
+            _BookCode = BookCode;
+            _bookID = bookID;
+            _date_book = date_book;
+            _sbj_book = sbj_book;
+
+
+            InitializeComponent();
+        }
+
         //connection string from app config
         public static string _con = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         SqlConnection con = new SqlConnection(_con);
+      
+
+        void fill_Departments()
+        {
+            try
+            {
+                string query = string.Format(@"  
+SELECT  [DepartmentID]
+      ,[DepartmentName]
+  FROM [ArchiveSystem].[dbo].[Departments_TBL]", con);
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dep = new DataTable();
+
+                adp.Fill(dep);
+
+                listView_Departments.View = View.Details;
+                listView_Departments.GridLines = true;
+                listView_Departments.Columns.Add("معرف", 25);
+                listView_Departments.Columns.Add("القسم", 300);
+
+                foreach (DataRow r in dep.Rows)
+                {
+
+                    ListViewItem item = new ListViewItem(r["DepartmentID"].ToString());
+                    item.SubItems.Add(r["DepartmentName"].ToString());
+
+                    listView_Departments.Items.AddRange(new ListViewItem[] { item });
+
+                }
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+
+
+
+
+
 
         //this function will bring books that have assign to my department
-         void fill_FollowUp()
+        void fill_FollowUp()
         {
 
             string query = string.Format(@"  SELECT
-      ArchiveFollowUpID as [معرف المهمة],
-      ArchiveBookID as [رقم الكتاب],
-	  Department_AssignTO_ID as [الى القسم],
-Task as [المهمة],
-Action as [الاجراء],
-Note as [الملاحظات],
-DateAdded as [تاريخ اضافة المهة],
 
-            FROM[ArchiveSystem].[dbo].[ArchiveFollowUp]
-  ", con);
-//DepID
- //inner JOIN[ArchiveBooks_TBL] ON[ArchiveFollowUp].ArchiveBookID = [ArchiveBooks_TBL].ArchiveBookID
- //     inner JOIN[BooksType_TBL] ON[ArchiveBooks_TBL].[BooksTypeID] = [BooksType_TBL].[BooksTypeID]
-	//     inner JOIN[Departments_TBL] ON[ArchiveBooks_TBL].[DepartmentID_archivedBy] = [Departments_TBL].[DepartmentID]
-	//     inner JOIN[Users_TBL] ON[ArchiveBooks_TBL].[UserID_archivedBy] = [Users_TBL].[UserID]
-	    
- //  where[ArchiveFollowUp].[Department_AssignTO_ID] = {0}
+             [dbo].[ArchiveFollowUp]. type_follow_task as [النوع],
+  [dbo].[ArchiveFollowUp]. BookCode as [كود الكتاب],
+             [dbo].[ArchiveFollowUp]. ArchiveBookID as [رقم الكتاب],
+             [dbo].[ArchiveFollowUp]. Department_From_me_ID as [من قسم],
+        	 [dbo]. [Departments_TBL]. DepartmentName as [الى قسم],
+        [dbo].[ArchiveFollowUp].Task as [المهمة],
+       [dbo].[ArchiveFollowUp]. Action as [الاجراء],
+       [dbo].[ArchiveFollowUp]. Note as [الملاحظات],
+[dbo].[Users_TBL].Username as [موظف الاضافة],
+       [dbo].[ArchiveFollowUp]. DateAdded as [تاريخ اضافة المهة],
+ArchiveFollowUpID  as [المعرف]
+
+                    FROM[ArchiveSystem].[dbo].[ArchiveFollowUp]
+inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Departments_TBL].[DepartmentID]
+
+               inner JOIN[Users_TBL] ON[ArchiveFollowUp].[User_Add] = [Users_TBL].[UserID]
+          ", con);
+            //DepID
+            //inner JOIN[ArchiveBooks_TBL] ON[ArchiveFollowUp].ArchiveBookID = [ArchiveBooks_TBL].ArchiveBookID
+            //     inner JOIN[BooksType_TBL] ON[ArchiveBooks_TBL].[BooksTypeID] = [BooksType_TBL].[BooksTypeID]
+              
+
+            //  where[ArchiveFollowUp].[Department_AssignTO_ID] = {0}
 
 
             con.Open();
@@ -66,7 +145,236 @@ DateAdded as [تاريخ اضافة المهة],
 
         private void Form_Manager_FollowUp_Load(object sender, EventArgs e)
         {
+            txt_book_id.Text = _bookID;
+            txt_Date_doc.Text = _date_book;
+            txt_sbj_doc.Text = _sbj_book;
+
+            fill_Departments();
             fill_FollowUp();
+
+            advanc_dgv_FollowUp.Columns[10].Visible = false;
+        }
+
+        private void BTN_addTask_Click(object sender, EventArgs e)
+        {
+            if (comboB_FollowUp_Title.Text == "")
+            {
+                comboB_FollowUp_Title.BackColor = Color.LightSalmon;
+                MessageBox.Show("يجب اضافة عنوان", "لم يتم ");
+                return;
+            }
+            else { comboB_FollowUp_Title.BackColor = Color.White; }
+
+
+
+            if (listView_Departments.CheckedItems.Count != 0)
+            { }
+
+            else
+            {
+                MessageBox.Show("يجب الاشارة الى قسم واحد على الاقل وذالك من خلال وضع علامة صح", "لم يتم ");
+                return;
+            }
+
+            //try
+            //{
+          
+
+            string task = comboB_FollowUp_Title.Text;
+            string DateAdded = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
+
+            ListView.CheckedListViewItemCollection breakfast = this.listView_Departments.CheckedItems;
+            con.Open();
+            foreach (ListViewItem Item in breakfast)
+            {
+                int Department_To_you_ID = Convert.ToInt32(listView_Departments.Items[Item.Index].SubItems[0].Text);
+
+                string query = string.Format(@"INSERT INTO [dbo].[ArchiveFollowUp](type_follow_task,BookCode,ArchiveBookID,Department_From_me_ID,Department_To_you_ID,Task,Action,Note,User_Add,DateAdded)
+                          
+                         VALUES(@type_follow_task,@BookCode,@ArchiveBookID,@Department_From_me_ID,@Department_To_you_ID,@Task,@Action,@Note,@User_Add,@DateAdded)",  con);
+                            
+                          
+              
+                   SqlCommand cmd = new SqlCommand(query, con);
+
+                //حسب القيمة التي تاتي من فورم عرض جميع الكتب اذا كود الكتاب  يمتلك على قيمة  اذا تسجل ك متابعة كتاب
+                //اما اذا لاتوجد قيمة كود الكتاب وكان فارغ اذا تسجل ك مهمة عامة لاتحتوي على كتاب
+                string type_follow_task;
+                if (_BookCode == "")
+                {
+                    type_follow_task = "مهمة عامة";
+                    _BookCode = "0";
+                    _bookID = "بدون مرفق";
+                }
+                else
+                {
+                    type_follow_task = "متابعة كتاب";
+                   
+                }
+
+
+               
+                cmd.Parameters.Add(new SqlParameter("@type_follow_task", SqlDbType.NVarChar)).Value = type_follow_task;
+                cmd.Parameters.Add(new SqlParameter("@BookCode", SqlDbType.NVarChar)).Value = _BookCode;
+                cmd.Parameters.Add(new SqlParameter("@ArchiveBookID", SqlDbType.NVarChar)).Value = _bookID;
+                cmd.Parameters.Add(new SqlParameter("@Department_From_me_ID", SqlDbType.Int)).Value = Login._depID;
+                cmd.Parameters.Add(new SqlParameter("@Department_To_you_ID", SqlDbType.Int)).Value = Department_To_you_ID;
+                cmd.Parameters.Add(new SqlParameter("@Task", SqlDbType.NVarChar)).Value = task;
+                cmd.Parameters.Add(new SqlParameter("@Action", SqlDbType.NVarChar)).Value =  "انتظار الاجراء";
+                cmd.Parameters.Add(new SqlParameter("@Note", SqlDbType.NVarChar)).Value = "" ;
+                cmd.Parameters.Add(new SqlParameter("@User_Add", SqlDbType.Int)).Value = Login._userID;
+                cmd.Parameters.Add(new SqlParameter("@DateAdded", SqlDbType.NVarChar)).Value =DateAdded;
+               
+              
+                int check = (int)cmd.ExecuteNonQuery();
+
+                if (check != 0)
+                {
+
+
+                    ////final status to doc
+                    //String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where ArchiveBookID = " + book_ID;
+
+                    //SqlCommand cmd1 = new SqlCommand(strQuery, con);
+
+                    //cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "قيد المتابعة";
+
+                    //cmd1.ExecuteNonQuery();
+                    //comboB_FollowUp_Title.Text = "";
+                }
+
+                else if (check == 0)
+                {
+                    MessageBox.Show("لم يتم ادخال المعلومات ");
+                }
+            }
+            con.Close();
+
+            fill_FollowUp();
+
+
+            MessageBox.Show("تم اضافة متابعة جديدة ");
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
+
+        }
+
+        private void btn_fill_followup_Click(object sender, EventArgs e)
+        {
+            fill_FollowUp();
+        }
+
+        public static string BookCode;
+        private void advanc_dgv_FollowUp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            BookCode = advanc_dgv_FollowUp.CurrentRow.Cells[1].Value.ToString();
+            if (BookCode != "0")
+            {
+            Form_show_docs s_doc1 = new Form_show_docs(BookCode);
+            s_doc1.Show();
+            }
+            else
+            {
+                MessageBox.Show("(لايوجد مرفق لان النوع (مهمة عامة) وليس (متابعة كتاب");
+            }
+           
+        }
+
+        private void TSM_show_doc_Click(object sender, EventArgs e)
+        {
+            advanc_dgv_FollowUp_CellDoubleClick(null, null);
+        }
+
+        private void BTN_editTask_Click(object sender, EventArgs e)
+        {
+            if (advanc_dgv_FollowUp.RowCount == 0)
+            {
+                MessageBox.Show("لاتوجد مهام لتعديلها", "لم يتم ");
+                return;
+            }
+
+            comboB_FollowUp_Title.Text = Convert.ToString(advanc_dgv_FollowUp.CurrentRow.Cells[5].Value);
+
+            string deName = Convert.ToString(advanc_dgv_FollowUp.CurrentRow.Cells[4].Value);
+            string item="";
+            for (int x = 0; x < listView_Departments.Items.Count; x++)
+
+            {
+                item = Convert.ToString(listView_Departments.Items[x].SubItems[1].Text);
+                if (item == deName)
+                {
+                   
+                           
+                    listView_Departments.CheckedItems[x].Checked = true;
+                }
+                else
+                {
+                    listView_Departments.CheckedItems[x].Checked = false;
+
+                }
+            }
+        }
+
+        private void BTN_deleteTask_Click(object sender, EventArgs e)
+        {
+            if (advanc_dgv_FollowUp.RowCount == 0)
+            {
+                MessageBox.Show("لايمكن الحذف لاتوجد مهام لحذفها", "لم يتم ");
+                return;
+            }
+
+
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("هل انت متاكد بانك تريد حذف هذة المهمة", "تاكيد", buttons);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Delete from ArchiveFollowUp where ArchiveFollowUpID = @ArchiveFollowUpID", con);
+            cmd.Parameters.Add(new SqlParameter("@ArchiveFollowUpID", SqlDbType.NVarChar)).Value = advanc_dgv_FollowUp.CurrentRow.Cells[10].Value;
+            cmd.ExecuteNonQuery();
+            con.Close();
+            fill_FollowUp();
+
+        }
+
+        private void tSMenuItem_FollowUp_Save_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            String strQuery = @"Update ArchiveFollowUp set Action = @Action, Note = @Note Where ArchiveFollowUpID = " + advanc_dgv_FollowUp.CurrentRow.Cells[10].Value;
+
+            SqlCommand cmd1 = new SqlCommand(strQuery, con);
+
+            cmd1.Parameters.Add(new SqlParameter("@Action", SqlDbType.NVarChar)).Value = tSComBox_FollowUp_type.SelectedItem;
+            cmd1.Parameters.Add(new SqlParameter("@Note", SqlDbType.NVarChar)).Value = tSTXT_FollowUp_Not.Text;
+
+            cmd1.ExecuteNonQuery();
+
+
+            con.Close();
+
+            fill_FollowUp();
+
+            tSComBox_FollowUp_type.Text = "";
+            tSTXT_FollowUp_Not.Text = "";
+        }
+
+        private void btn_task_send_Click(object sender, EventArgs e)
+        {
+            panel_state_send_recive.BackColor = Color.Green;
+        }
+
+        private void btn_task_recive_Click(object sender, EventArgs e)
+        {
+            panel_state_send_recive.BackColor = Color.Firebrick;
         }
     }
 }

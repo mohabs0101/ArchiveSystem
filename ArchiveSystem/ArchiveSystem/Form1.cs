@@ -17,6 +17,7 @@ using System.Management;
 using System.Data.SqlClient;
 using ArchiveSystem.Folder_view_data;
 using System.Text.RegularExpressions;
+using ArchiveSystem.FollowUp;
 
 namespace ArchiveSystem
 {
@@ -88,14 +89,16 @@ namespace ArchiveSystem
             Doc_source = Properties.Settings.Default.DOC_Source.ToString(); // doc source
             metroTabControl1.RightToLeft = RightToLeft.Yes;
             metroTabControl1.RightToLeftLayout = true;
+          
+
 
             Refresh_Folders();
             Fill_bookType();
             callLogin_info();
 
-            //DepartmentBooks();
-            AssignmentBooks();
 
+
+         
  //check ftp if connected or not 
             try
             {
@@ -134,7 +137,7 @@ namespace ArchiveSystem
             //--------------end------------------
 
 
-            //--------------shukri-----------------------
+            //--------------show tap Form_view_data_dqv-----------------------
 
             Form_view_data_dqv new_tab = new Form_view_data_dqv();
             TabPage t = new TabPage();
@@ -148,6 +151,18 @@ namespace ArchiveSystem
 
             //---------------end-----------------
 
+            //--------------show tap-----------------------
+            Form_Manager_FollowUp new_tab2 = new Form_Manager_FollowUp();
+            TabPage t2 = new TabPage();
+            new_tab2.TopLevel = false;
+            t2.Controls.Add(new_tab2);
+            metroTabControl1.TabPages.Insert(2, t2);//or  metroTabControl1.TabPages.Add(t2);
+            new_tab2.Show();
+            new_tab2.Dock = DockStyle.Fill;
+            int x2 = metroTabControl1.TabCount;
+            t2.Text = "المتابعة والمهام";// + x
+           
+            //---------------end-----------------
 
             this.WindowState = FormWindowState.Maximized;
 
@@ -640,64 +655,7 @@ namespace ArchiveSystem
             CHK_selectall.Visible = true;
         }
 
-         //this function will bring books that have assign to my department
-        private void AssignmentBooks()
-        {
-            try
-            {
-                string query = string.Format(@"  SELECT
-       [BookCode] as 'رمز الكتاب'
-      ,[BookNumber] as 'رقم الكتاب'
-      ,[BookDate]as 'تاريخ الكتاب'
-      ,[InboundNumber]as 'رقم واردنا'
-      ,[InboundDate]as 'تاريخ واردنا'
-      ,[Subject]as 'الموضوع'
-      ,[BooksType_TBL].[BookTypeName]as 'نوع الكتاب'
-      ,[From]as 'من'
-      ,[To]as 'الى'
-      ,[BookPriority]as 'الاولوية'
-      ,[ArchivedDate]as 'تاريخ الارشفة'
-      ,[BookPaperType]as 'نوع النسخة'
-      ,[Notes]as 'ملاحظات'
-      ,[Departments_TBL].[DepartmentName]as 'ارشفة بواسطة-قسم'
-      ,[Users_TBL].[Username]as 'ارشفة بواسطة-اسم'
-      ,[BookStatus]as 'حالة الكتاب'
-      ,[Privacy]as 'الخصوصية'
-      ,[SearchKeys]as 'مفاتيح البحث'
-	  
-            FROM[ArchiveSystem].[dbo].[ArchiveFollowUp]
-   inner JOIN[ArchiveBooks_TBL] ON[ArchiveFollowUp].ArchiveBookID = [ArchiveBooks_TBL].ArchiveBookID
-      inner JOIN[BooksType_TBL] ON[ArchiveBooks_TBL].[BooksTypeID] = [BooksType_TBL].[BooksTypeID]
-	     inner JOIN[Departments_TBL] ON[ArchiveBooks_TBL].[DepartmentID_archivedBy] = [Departments_TBL].[DepartmentID]
-	     inner JOIN[Users_TBL] ON[ArchiveBooks_TBL].[UserID_archivedBy] = [Users_TBL].[UserID]
-	    
-   where[ArchiveFollowUp].[Department_AssignTO_ID] = {0}", DepID, con);
-
-
-
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-
-                DataTable AssignBooks = new DataTable();
-
-                adp.Fill(AssignBooks);
-                DGV_assignation.DataSource = AssignBooks;
-
-                con.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-
-
-        }
+       
 
         //get folders (scanned books) of speacific folders
         public void Refresh_Folders()

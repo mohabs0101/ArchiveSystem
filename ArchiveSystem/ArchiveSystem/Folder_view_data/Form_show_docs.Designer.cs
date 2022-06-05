@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_show_docs));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel5 = new System.Windows.Forms.Panel();
             this.TXT_bookStatus = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -125,7 +125,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BTN_addTask = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_show_doc)).BeginInit();
             this.panel14.SuspendLayout();
@@ -409,32 +408,33 @@
             this.TSM_open_all_file,
             this.TSM_delete});
             this.ContextMenuStrip_right_click.Name = "ContextMenuStrip_right_click";
-            this.ContextMenuStrip_right_click.Size = new System.Drawing.Size(168, 94);
+            this.ContextMenuStrip_right_click.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ContextMenuStrip_right_click.Size = new System.Drawing.Size(170, 94);
             // 
             // TSM_open_file
             // 
             this.TSM_open_file.Name = "TSM_open_file";
-            this.TSM_open_file.Size = new System.Drawing.Size(167, 28);
+            this.TSM_open_file.Size = new System.Drawing.Size(169, 28);
             this.TSM_open_file.Text = "فتح";
             this.TSM_open_file.Click += new System.EventHandler(this.TSM_open_file_Click_1);
             // 
             // ToolStripSeparator1
             // 
             this.ToolStripSeparator1.Name = "ToolStripSeparator1";
-            this.ToolStripSeparator1.Size = new System.Drawing.Size(164, 6);
+            this.ToolStripSeparator1.Size = new System.Drawing.Size(166, 6);
             // 
             // TSM_open_all_file
             // 
             this.TSM_open_all_file.Name = "TSM_open_all_file";
-            this.TSM_open_all_file.Size = new System.Drawing.Size(167, 28);
+            this.TSM_open_all_file.Size = new System.Drawing.Size(169, 28);
             this.TSM_open_all_file.Text = "فتح الكل";
             this.TSM_open_all_file.Click += new System.EventHandler(this.TSM_open_all_file_Click_1);
             // 
             // TSM_delete
             // 
             this.TSM_delete.Name = "TSM_delete";
-            this.TSM_delete.Size = new System.Drawing.Size(167, 28);
-            this.TSM_delete.Text = "مسح المرفق";
+            this.TSM_delete.Size = new System.Drawing.Size(169, 28);
+            this.TSM_delete.Text = "حذف المرفق";
             this.TSM_delete.Click += new System.EventHandler(this.TSM_delete_Click);
             // 
             // ImageList_add_viwe
@@ -1094,24 +1094,24 @@
             this.advanc_dgv_Assign_Comment.AllowUserToOrderColumns = true;
             this.advanc_dgv_Assign_Comment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_Assign_Comment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_Assign_Comment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.advanc_dgv_Assign_Comment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advanc_dgv_Assign_Comment.ContextMenuStrip = this.contextMenuStrip_FollowUp;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_Assign_Comment.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_Assign_Comment.DefaultCellStyle = dataGridViewCellStyle4;
             this.advanc_dgv_Assign_Comment.EnableHeadersVisualStyles = false;
             this.advanc_dgv_Assign_Comment.FilterAndSortEnabled = true;
             this.advanc_dgv_Assign_Comment.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
@@ -1342,12 +1342,6 @@
             this.label6.TabIndex = 226;
             this.label6.Text = "عنوان المتابعة";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // Form_show_docs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1459,7 +1453,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ListView listView_Departments;
         private System.Windows.Forms.TextBox TXT_bookStatus;
         private System.Windows.Forms.Label label2;

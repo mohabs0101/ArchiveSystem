@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_seach = new System.Windows.Forms.TextBox();
             this.btn_search_claer = new System.Windows.Forms.Button();
             this.Label2_count_doc = new System.Windows.Forms.Label();
@@ -68,6 +69,9 @@
             this.checkBox_search_all = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.numericUpDown_Width_columns = new System.Windows.Forms.NumericUpDown();
+            this.contexMenuStrip_right_click = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.TSM_show_doc = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSM_Add_FollowUp = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_font_size)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_view_data_doc)).BeginInit();
             this.panel_filter.SuspendLayout();
@@ -78,6 +82,7 @@
             this.panel_DT_bookRecive_date.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Width_columns)).BeginInit();
+            this.contexMenuStrip_right_click.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_seach
@@ -196,23 +201,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.advanc_dgv_view_data_doc.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.advanc_dgv_view_data_doc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 11F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_view_data_doc.DefaultCellStyle = dataGridViewCellStyle4;
+            this.advanc_dgv_view_data_doc.ContextMenuStrip = this.contexMenuStrip_right_click;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 11F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_view_data_doc.DefaultCellStyle = dataGridViewCellStyle2;
             this.advanc_dgv_view_data_doc.EnableHeadersVisualStyles = false;
             this.advanc_dgv_view_data_doc.FilterAndSortEnabled = true;
             this.advanc_dgv_view_data_doc.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
@@ -609,6 +615,29 @@
             0});
             this.numericUpDown_Width_columns.ValueChanged += new System.EventHandler(this.numericUpDown_Width_columns_ValueChanged);
             // 
+            // contexMenuStrip_right_click
+            // 
+            this.contexMenuStrip_right_click.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contexMenuStrip_right_click.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSM_show_doc,
+            this.TSM_Add_FollowUp});
+            this.contexMenuStrip_right_click.Name = "contexMenuStrip_right_click";
+            this.contexMenuStrip_right_click.Size = new System.Drawing.Size(211, 80);
+            // 
+            // TSM_show_doc
+            // 
+            this.TSM_show_doc.Name = "TSM_show_doc";
+            this.TSM_show_doc.Size = new System.Drawing.Size(210, 24);
+            this.TSM_show_doc.Text = "عرض الكتاب";
+            this.TSM_show_doc.Click += new System.EventHandler(this.TSM_show_doc_Click);
+            // 
+            // TSM_Add_FollowUp
+            // 
+            this.TSM_Add_FollowUp.Name = "TSM_Add_FollowUp";
+            this.TSM_Add_FollowUp.Size = new System.Drawing.Size(210, 24);
+            this.TSM_Add_FollowUp.Text = "اضافة متابعة";
+            this.TSM_Add_FollowUp.Click += new System.EventHandler(this.TSM_Add_FollowUp_Click);
+            // 
             // Form_view_data_dqv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -621,7 +650,6 @@
             this.Controls.Add(this.btn_fill_doc);
             this.Controls.Add(this.panel_filter);
             this.Controls.Add(this.btn_show_filter);
-            this.Controls.Add(this.advanc_dgv_view_data_doc);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.NumericUpDown_font_size);
             this.Controls.Add(this.Label15);
@@ -630,6 +658,7 @@
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.btn_search_claer);
             this.Controls.Add(this.txt_seach);
+            this.Controls.Add(this.advanc_dgv_view_data_doc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_view_data_dqv";
@@ -651,6 +680,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Width_columns)).EndInit();
+            this.contexMenuStrip_right_click.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -695,5 +725,8 @@
         private System.Windows.Forms.CheckBox checkBox_search_all;
         internal System.Windows.Forms.Label label10;
         internal System.Windows.Forms.NumericUpDown numericUpDown_Width_columns;
+        private System.Windows.Forms.ContextMenuStrip contexMenuStrip_right_click;
+        private System.Windows.Forms.ToolStripMenuItem TSM_show_doc;
+        private System.Windows.Forms.ToolStripMenuItem TSM_Add_FollowUp;
     }
 }

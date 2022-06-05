@@ -42,7 +42,7 @@ namespace ArchiveSystem.EditeDocs
         string BookNumber = Form_show_docs._BookNumber;
         string subject = Form_show_docs._subject;
         string Typee = Form_show_docs._BookType;
-        string book_code = Form_show_docs._bookCode;
+        string book_code = Form_show_docs._BookCode;
 
         private void EditeDocs_Load(object sender, EventArgs e)
         {
@@ -362,7 +362,7 @@ namespace ArchiveSystem.EditeDocs
                 FileStream outputStream = new FileStream(path_folder_client_temp + "\\" + fileName, FileMode.Create);
                 //                                           Here we put the path IP, and file name of the FTP file server
                 //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\" + fileName)); 
-                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(FTP_ip + "/" + Typee+ "/" + book_code + "/" + fileName));
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(FTP_ip + "/" + Typee + "/" + book_code + "/" + fileName));
                 reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
                 reqFTP.UseBinary = true;
                 reqFTP.Credentials = new NetworkCredential(FTP_user, FTP_pass);

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Net;
 using System.Collections;
+using ArchiveSystem.FollowUp;
 
 namespace ArchiveSystem.Folder_view_data
 {
@@ -192,164 +193,17 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
         }
 
 
-        /////////Code to read and download FTP files from the server/////////////
-        //You must first create a file on the server and set the FTP for it.To save files with
-
-        //1-Read FTP File
-
-        //This variables is Existing in a file App.config in the program
-        string ftp_server_Ip = ConfigurationManager.AppSettings["FTP_Server_Ip"];
-        string ftp_server_username = ConfigurationManager.AppSettings["FTP_Server_user"];
-        string ftp_server_password = ConfigurationManager.AppSettings["FTP_Server_pass"];
-
-        //The path of the file on the client computer with which we will download the files from the FTP file temporarily, and then we delete the downloaded files
-        public static string path_folder_client_temp  = "";//نسند لة قيمة في حدث الدبل كلك
-
-        public string[] GetFileList()
-        {
-
-
-            string[] downloadFiles;
-            StringBuilder result = new StringBuilder();
-            FtpWebRequest reqFTP;
-            try
-            {
-                //                                          Here we put the path IP and of the FTP file server
-                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\"));
-                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[7].Value.ToString() + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString() + @"\"));
-                reqFTP.UseBinary = true;
-                reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
-                reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
-                WebResponse response = reqFTP.GetResponse();
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                string line = reader.ReadLine();
-                while (line != null)
-                {
-                    result.Append(line);
-                    result.Append("\n");
-                    line = reader.ReadLine();
-                }
-                // to remove the trailing '\n'
-                //if (result.Length==0)
-                //{
-                //    MessageBox.Show("هذا الكتاب لا يحتوي على مستندات");
-                //}
-                result.Remove(result.ToString().LastIndexOf('\n'), 1);
-                reader.Close();
-                response.Close();
-
-                return result.ToString().Split('\n');
-
-            }
-            catch (Exception ex)
-            {
-                //System.Windows.Forms.MessageBox.Show(ex.Message);
-                downloadFiles = null;
-                return downloadFiles;
-            }
-        }
-
-        //2-Download FTP Files
-        private void Download(string fileName)
-        {
-
-            FtpWebRequest reqFTP;
-            try
-            {
-
-                //filePath = <<The full path where the file is to be created. the>>,
-                //fileName = <<Name of the file to be createdNeed not name on FTP server. name name()>>
-                FileStream outputStream = new FileStream(path_folder_client_temp + "\\" + fileName, FileMode.Create);
-                //                                           Here we put the path IP, and file name of the FTP file server
-                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\" + fileName)); 
-                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[7].Value.ToString() + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString() + @"\" + fileName));
-                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
-                reqFTP.UseBinary = true;
-                reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
-                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
-                Stream ftpStream = response.GetResponseStream();
-                long cl = response.ContentLength;
-                int bufferSize = 2048;
-                int readCount;
-                byte[] buffer = new byte[bufferSize];
-                readCount = ftpStream.Read(buffer, 0, bufferSize);
-                while (readCount > 0)
-                {
-                    outputStream.Write(buffer, 0, readCount);
-                    readCount = ftpStream.Read(buffer, 0, bufferSize);
-                }
-                ftpStream.Close();
-                outputStream.Close();
-                response.Close();
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
+       
         public static string BookCode;
         private void advanc_dgv_view_data_doc_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                //اولا نحذف جميع الفولدرات المنزلة سابقا
-
-                System.IO.DirectoryInfo di = new DirectoryInfo(ConfigurationManager.AppSettings["Path_Folder_Client_Temp"]);
-
-                foreach (DirectoryInfo file in di.GetDirectories())
-                {
-                    ////////////important code/////////////
-                    //It allows us to delete when the file is used by the processor
-                    System.GC.Collect();
-                    System.GC.WaitForPendingFinalizers();
-                    //----------end-------------
-
-                    file.Delete(true);
-
-                }
-
-                //ثانيا في كل مرة نشاء فولدر باسم جديد لتفادي بقاء استخدام الملف من قبل المعالج
-                string temp = "";
-                temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"] + @"\Temp" + DateTime.Now.ToString("yyyyMMddhhmmss");
-                Directory.CreateDirectory(temp);
-
-                path_folder_client_temp = temp;
-
-                //ثالثا نجل الصور
-                string[] files = GetFileList();
-
-
-                //ننزل الصور من السيرفر ftp
-                if (files != null)
-                {
-                    foreach (string file in files)
-                    {
-
-                        Download(file); 
-
-                    }
-                }    
-                   
-
-
-                var path = string.Format(path_folder_client_temp);
+         
 
                 BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
 
                 Form_show_docs s_doc1 = new Form_show_docs(BookCode);
                 s_doc1.Show();
 
-                //System.Diagnostics.Process.Start(path);
-
-            }
-            catch (WebException ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
         }
         //-----------------END------------------------
 
@@ -473,6 +327,27 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             txt_seach.Select();
         }
 
-       
+        private void TSM_show_doc_Click(object sender, EventArgs e)
+        {
+            advanc_dgv_view_data_doc_CellDoubleClick_1(null, null);
+        }
+        public static string BookID;
+        public static string date_book;
+        public static string sbj_book;
+        private void TSM_Add_FollowUp_Click(object sender, EventArgs e)
+        {
+            
+            BookID = advanc_dgv_view_data_doc.CurrentRow.Cells[1].Value.ToString();
+            date_book = advanc_dgv_view_data_doc.CurrentRow.Cells[2].Value.ToString();
+            sbj_book = advanc_dgv_view_data_doc.CurrentRow.Cells[5].Value.ToString();
+            Form_Manager_FollowUp f_doc1 = new Form_Manager_FollowUp(BookCode, BookID , date_book, sbj_book);
+          
+            f_doc1.FormBorderStyle = FormBorderStyle.Sizable;
+            //f_doc1.WindowState= FormWindowState.Minimized;
+            f_doc1.panel_details_doc.Visible = true;
+
+                f_doc1.Show();
+           
+        }
     }
 }

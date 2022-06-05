@@ -23,14 +23,13 @@ namespace ArchiveSystem.Folder_view_data
         public static string _BookNumber;
         public static string _subject;
         public static string _BookType;
-        public static string _bookCode;
-        public static string _BC;
+        public static string _BookCode;
 
         public static string Archived_by_department_name;//bring this when page load(source fromread_details_doc)
 
-        public Form_show_docs( string BookCode)
+        public Form_show_docs(string BookCode)
         {
-            _BC = BookCode;
+            _BookCode = BookCode;
             InitializeComponent();
         }
         public static implicit operator Form_show_docs(ScanDialog v)
@@ -182,7 +181,7 @@ dbo.ArchiveBooks_TBL.Privacy
                   dbo.BooksType_TBL ON dbo.ArchiveBooks_TBL.BooksTypeID = dbo.BooksType_TBL.BooksTypeID
 WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
-            cmd.Parameters.AddWithValue("@Param1", _BC);
+            cmd.Parameters.AddWithValue("@Param1", _BookCode);
 
             SqlDataReader dr1 = cmd.ExecuteReader();
 
@@ -214,7 +213,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
                 _BookNumber = dr1["BookNumber"].ToString();
                 _subject = TXT_Subject.Text;
                 _BookType = COM_bookType.Text;
-                _bookCode = txt_book_code.Text;
+               
                 Archived_by_department_name = txt_DepartmentName.Text;
 
             }
@@ -222,51 +221,175 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             con.Close();
         }
 
-  //      void Bring_assignTable()
-  //      {
-  //          try
-  //          {
-               
-  //              int Login_dep =Convert.ToInt32( Login._depID.ToString());
-  //              int book_archivedBy_depID = Convert.ToInt32(book_ID.ToString());
-  //              string query = string.Format(@" SELECT   [BooksTypeID]
-  //    ,[BookTypeName]
-  //FROM [ArchiveSystem].[dbo].[BooksType_TBL]", con);
 
-  //              con.Open();
-  //              SqlCommand cmd = new SqlCommand(query, con);
 
-  //              SqlDataAdapter adp = new SqlDataAdapter(cmd);
 
-  //              DataTable booktypes = new DataTable();
 
-  //              adp.Fill(booktypes);
-  //              COM_bookType.DataSource = booktypes;
-  //              COM_bookType.DisplayMember = "BookTypeName";
-  //              COM_bookType.ValueMember = "BooksTypeID";
+        //-------------------code Ftp reade files-------------------------
+        /////////Code to read and download FTP files from the server/////////////
+        //You must first create a file on the server and set the FTP for it.To save files with
 
-  //              con.Close();
+        //1-Read FTP File
 
-  //          }
-  //          catch (Exception ex)
-  //          {
-  //              MessageBox.Show(ex.ToString());
-  //          }
+        //This variables is Existing in a file App.config in the program
+        string ftp_server_Ip = ConfigurationManager.AppSettings["FTP_Server_Ip"];
+        string ftp_server_username = ConfigurationManager.AppSettings["FTP_Server_user"];
+        string ftp_server_password = ConfigurationManager.AppSettings["FTP_Server_pass"];
+       
+        //The path of the file on the client computer with which we will download the files from the FTP file temporarily, and then we delete the downloaded files
+        public static string path_folder_client_temp = "";//نسند لة قيمة في حدث 
 
-  //      }
-        //public void PrefermCall()
-        //{
-        //    show_files_doc();
 
-        //}
-        public void show_files_doc()
+
+
+        public string[] GetFileList()
+        {
+
+
+            string[] downloadFiles;
+            StringBuilder result = new StringBuilder();
+            FtpWebRequest reqFTP;
+            try
+            {
+                //                                          Here we put the path IP and of the FTP file server
+                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\"));
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + _BookType + @"\" + _BookCode + @"\"));
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
+                reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
+                WebResponse response = reqFTP.GetResponse();
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                string line = reader.ReadLine();
+                while (line != null)
+                {
+                    result.Append(line);
+                    result.Append("\n");
+                    line = reader.ReadLine();
+                }
+                // to remove the trailing '\n'
+                //if (result.Length==0)
+                //{
+                //    MessageBox.Show("هذا الكتاب لا يحتوي على مستندات");
+                //}
+                result.Remove(result.ToString().LastIndexOf('\n'), 1);
+                reader.Close();
+                response.Close();
+
+                return result.ToString().Split('\n');
+
+            }
+            catch (Exception ex)
+            {
+                //System.Windows.Forms.MessageBox.Show(ex.Message);
+                downloadFiles = null;
+                return downloadFiles;
+            }
+        }
+
+        //2-Download FTP Files
+        private void Download(string fileName)
+        {
+
+            FtpWebRequest reqFTP;
+            try
+            {
+
+                //filePath = <<The full path where the file is to be created. the>>,
+                //fileName = <<Name of the file to be createdNeed not name on FTP server. name name()>>
+                FileStream outputStream = new FileStream(path_folder_client_temp + "\\" + fileName, FileMode.Create);
+                //                                           Here we put the path IP, and file name of the FTP file server
+                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\" + fileName)); 
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + _BookType + @"\" + _BookCode + @"\" + fileName));
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                Stream ftpStream = response.GetResponseStream();
+                long cl = response.ContentLength;
+                int bufferSize = 2048;
+                int readCount;
+                byte[] buffer = new byte[bufferSize];
+                readCount = ftpStream.Read(buffer, 0, bufferSize);
+                while (readCount > 0)
+                {
+                    outputStream.Write(buffer, 0, readCount);
+                    readCount = ftpStream.Read(buffer, 0, bufferSize);
+                }
+                ftpStream.Close();
+                outputStream.Close();
+                response.Close();
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void Read_FTP()
+        {
+            try
+            {
+                //اولا نحذف جميع الفولدرات المنزلة سابقا
+
+                System.IO.DirectoryInfo di = new DirectoryInfo(ConfigurationManager.AppSettings["Path_Folder_Client_Temp"]);
+
+                foreach (DirectoryInfo file in di.GetDirectories())
+                {
+                    ////////////important code/////////////
+                    //It allows us to delete when the file is used by the processor
+                    System.GC.Collect();
+                    System.GC.WaitForPendingFinalizers();
+                    //----------end-------------
+
+                    file.Delete(true);
+
+                }
+
+                //ثانيا في كل مرة نشاء فولدر باسم جديد لتفادي بقاء استخدام الملف من قبل المعالج
+                string temp = "";
+                temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"] + @"\Temp" + DateTime.Now.ToString("yyyyMMddhhmmss");
+                Directory.CreateDirectory(temp);
+
+                path_folder_client_temp = temp;
+
+                //ثالثا نجل الصور
+                string[] files = GetFileList();
+
+
+                //ننزل الصور من السيرفر ftp
+                if (files != null)
+                {
+                    foreach (string file in files)
+                    {
+
+                        Download(file);
+
+                    }
+                }
+
+
+
+                var path = string.Format(path_folder_client_temp);
+            }
+             
+            catch (WebException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+    //----------------end----------------------
+
+    public void show_files_doc()
         {
             Cursor = Cursors.WaitCursor;
             ListView_show_doc.Items.Clear();
             ImageList_add_viwe.Images.Clear();
 
           
-            foreach (string file in System.IO.Directory.GetFiles(Form_view_data_dqv.path_folder_client_temp))
+            foreach (string file in System.IO.Directory.GetFiles(path_folder_client_temp))
             {
 
                 fn_g = file;
@@ -295,7 +418,9 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
         private void Form_show_docs_Load_1(object sender, EventArgs e)
         {
             TabControlBookdetails.SelectTab(0);
-         
+
+          
+
 
             TabControlBookdetails.RightToLeft = RightToLeft.Yes;
             TabControlBookdetails.RightToLeftLayout = true;
@@ -307,14 +432,16 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             ListView_show_doc.Columns[0].Width = 250;
 
 
-           
 
             read_details_doc();
+            Read_FTP();
+
+           
             show_files_doc();
             fill_Departments();
         
 
-            BringFolloWUp_TBL();
+            //BringFolloWUp_TBL();
 
           
 
@@ -323,10 +450,10 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             //Bring_assignTable();
 
 
-            advanc_dgv_Assign_Comment.Columns[3].Width = 200;
-            advanc_dgv_Assign_Comment.Columns[4].Width = 150;
-            advanc_dgv_Assign_Comment.Columns[5].Width = 90;
-            advanc_dgv_Assign_Comment.Columns[6].Width = 200;
+            //advanc_dgv_Assign_Comment.Columns[3].Width = 200;
+            //advanc_dgv_Assign_Comment.Columns[4].Width = 150;
+            //advanc_dgv_Assign_Comment.Columns[5].Width = 90;
+            //advanc_dgv_Assign_Comment.Columns[6].Width = 200;
 
 
             tSComBox_FollowUp_type.SelectedIndex = 0;
@@ -440,7 +567,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             //{
                 try
                 {
-                    path_file_name = Form_view_data_dqv.path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                    path_file_name = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
                    
                     //pictureBox_show_doc.Load(pic);
                     //or
@@ -479,38 +606,38 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
         private void TSM_open_all_file_Click_1(object sender, EventArgs e)
         {
           
-            System.Diagnostics.Process.Start(Form_view_data_dqv.path_folder_client_temp);
+            System.Diagnostics.Process.Start(path_folder_client_temp);
         }
 
         private void BTN_addMoreDcos_Click(object sender, EventArgs e)
         {
             this.Hide();
-            EditeDocs.EditeDocs ed = new EditeDocs.EditeDocs(_BC);
+            EditeDocs.EditeDocs ed = new EditeDocs.EditeDocs(_BookCode);
             ed.Show();
 
         }
 
         private void TSM_delete_Click(object sender, EventArgs e)
         {
-           
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("هل انت متاكد بانك تريد حذف هذة المرفق", "تاكيد", buttons);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
             ListView.SelectedListViewItemCollection breakfast = this.ListView_show_doc.SelectedItems;
 
             foreach (ListViewItem Item in breakfast)
             {
-                path_file_name = Form_view_data_dqv.path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
+                path_file_name = path_folder_client_temp + @"\" + ListView_show_doc.Items[Item.Index].SubItems[0].Text;
 
                 string fn = ListView_show_doc.Items[Item.Index].SubItems[0].Text;
 
 
                 //------------
-                string FTP_ip = ConfigurationSettings.AppSettings["FTP_Server_Ip"];
-                string FTP_user = ConfigurationSettings.AppSettings["FTP_Server_user"];
-                string FTP_pass = ConfigurationSettings.AppSettings["FTP_Server_pass"];
-                string type = COM_bookType.Text;
-                string bookcode = txt_book_code.Text;
-
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + type + "/" + bookcode + "/" + fn);
-                request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
+               
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftp_server_Ip + _BookType + "/" + _BookCode + "/" + fn);
+                request.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
                 //delete it from server
                 request.Method = WebRequestMethods.Ftp.DeleteFile;
 
@@ -556,7 +683,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
            
 
-            foreach (string file in System.IO.Directory.GetFiles(Form_view_data_dqv.path_folder_client_temp))
+            foreach (string file in System.IO.Directory.GetFiles(path_folder_client_temp))
             {
 
                 fn_g = file;
@@ -624,7 +751,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
         private void BTN_SAVE_Click(object sender, EventArgs e)
         {
-          
+            Cursor = Cursors.WaitCursor;
             string BookNumber = TXT_bookNumber.Text;
 
             string Subject = TXT_Subject.Text;
@@ -688,7 +815,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
            else
             {
-                Cursor = Cursors.WaitCursor;
+             
                 String strQuery ;
             con.Open();
 
@@ -750,13 +877,13 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             }
 
 
-
+            Cursor = Cursors.Default;
 
         }
 
 
         //-///////////////start code FollowUp//////////////////
-
+       
         //i have login dep id and i have selected book archived dep id 
         // if they matched so it mean the book i opened is created by same dep so bring full assignation table 
         // else if not matchet ether the book i opened assing to me or not 
@@ -790,14 +917,14 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
                 string query3 = string.Format(@"SELECT  [ArchiveFollowUpID]
       ,[ArchiveBookID]
-      ,[Department_AssignTO_ID]
+      ,[Department_To_you_ID]
       ,[Task] as 'المهمة'
       ,[DepartmentName] as 'القسم'
       ,[Action] as 'الاجراء المتخذم'
       ,[Note] as 'ملاحضة'
       ,[DateAdded] as 'تاريخ الاضافة'
   FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] INNER JOIN
-                  dbo.Departments_TBL ON dbo.ArchiveFollowUp.Department_AssignTO_ID = dbo.Departments_TBL.DepartmentID 
+                  dbo.Departments_TBL ON dbo.ArchiveFollowUp.Department_To_you_ID = dbo.Departments_TBL.DepartmentID 
 where ArchiveBookID={0}", bookID, con);
 
                 con.Open();

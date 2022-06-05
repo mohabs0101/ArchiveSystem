@@ -907,6 +907,9 @@
             // 
             this.DGV_assignation.AllowUserToAddRows = false;
             this.DGV_assignation.AllowUserToDeleteRows = false;
+            this.DGV_assignation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_assignation.FilterAndSortEnabled = true;
             this.DGV_assignation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
             this.DGV_assignation.Location = new System.Drawing.Point(143, 82);
@@ -914,6 +917,7 @@
             this.DGV_assignation.Name = "DGV_assignation";
             this.DGV_assignation.ReadOnly = true;
             this.DGV_assignation.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DGV_assignation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_assignation.Size = new System.Drawing.Size(1250, 274);
             this.DGV_assignation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.DGV_assignation.TabIndex = 0;
@@ -1286,7 +1290,6 @@
         private System.Windows.Forms.PictureBox PICBOX_failICON;
         private System.Windows.Forms.ComboBox COM_PaperType;
         private MetroFramework.Controls.MetroTabPage metroTabPage4;
-        private Zuby.ADGV.AdvancedDataGridView DGV_assignation;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label19;
@@ -1295,6 +1298,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel_viwe_DT_bookRecive_date;
         private System.Windows.Forms.Label label_check_input_DT_bookRecive_date;
+        private Zuby.ADGV.AdvancedDataGridView DGV_assignation;
     }
 }
 
