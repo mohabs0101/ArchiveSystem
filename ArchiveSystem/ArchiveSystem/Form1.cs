@@ -49,29 +49,111 @@ namespace ArchiveSystem
 
 
         DataTable DT_TEXTBOX = new DataTable();
-        void Auto_complit_TXT_Subject() //نظع هذا السب في حدث الفورم لود
+        void Auto_complet_subject()
+         //نظع هذا السب في حدث الفورم لود
         {
-            //DT_TEXTBOX.Clear();
-            //SqlDataAdapter adapter1 = new SqlDataAdapter(@"select Subject from ArchiveBooks_TBL", con);
+            try
+            {
+                string query = string.Format(@" SELECT [Subject] FROM [ArchiveSystem].[dbo].[ArchiveBooks_TBL]", con);
 
-            //adapter1.Fill(DT_TEXTBOX);
-            //AutoCompleteStringCollection source_txt_foundation_center_name = new AutoCompleteStringCollection();
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
 
-            //for (int i = 0; i < DT_TEXTBOX.Rows.Count - 1; i++)
-            //{
-            //    source_txt_foundation_center_name.Add(Convert.ToString(DT_TEXTBOX.Rows[i]["Subject"]));
-            //}
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                adp.Fill(dt);
+                AutoCompleteStringCollection ds = new AutoCompleteStringCollection();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    ds.Add(dt.Rows[i][0].ToString());
+                }
+                this.TXT_Subject.AutoCompleteCustomSource = ds;
+                this.TXT_Subject.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                this.TXT_Subject.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                con.Close();
 
 
-            //TXT_Subject.AutoCompleteCustomSource = source_txt_foundation_center_name;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
-
-          
 
         }
-      
-  
 
+
+        void Auto_complet_from()
+        //نظع هذا السب في حدث الفورم لود
+        {
+            try
+            {
+                string query = string.Format(@" SELECT [From] FROM [ArchiveSystem].[dbo].[ArchiveBooks_TBL]", con);
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                adp.Fill(dt);
+                AutoCompleteStringCollection ds = new AutoCompleteStringCollection();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    ds.Add(dt.Rows[i][0].ToString());
+                }
+                this.TXT_From.AutoCompleteCustomSource = ds;
+                this.TXT_From.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                this.TXT_From.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
+        void Auto_complet_to()
+        //نظع هذا السب في حدث الفورم لود
+        {
+            try
+            {
+                string query = string.Format(@" SELECT [To] FROM [ArchiveSystem].[dbo].[ArchiveBooks_TBL]", con);
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                adp.Fill(dt);
+                AutoCompleteStringCollection ds = new AutoCompleteStringCollection();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    ds.Add(dt.Rows[i][0].ToString());
+                }
+                this.TXT_To.AutoCompleteCustomSource = ds;
+                this.TXT_To.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                this.TXT_To.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
+        
 
 
 
@@ -95,11 +177,12 @@ namespace ArchiveSystem
             Refresh_Folders();
             Fill_bookType();
             callLogin_info();
+            Auto_complet_subject();
+            Auto_complet_from();
+            Auto_complet_to();
 
 
-
-         
- //check ftp if connected or not 
+            //check ftp if connected or not 
             try
             {
 
@@ -922,12 +1005,11 @@ namespace ArchiveSystem
             }
         }
 
-        private void TXT_Subject_TextChanged(object sender, EventArgs e)
+      
+
+        private void TXT_Subject_TextChanged_1(object sender, EventArgs e)
         {
-            Auto_complit_TXT_Subject();
+
         }
-
-
-     
     }
 }
