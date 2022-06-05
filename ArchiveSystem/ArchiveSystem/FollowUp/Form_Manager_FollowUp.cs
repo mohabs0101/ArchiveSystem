@@ -209,7 +209,6 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
                 else
                 {
                     type_follow_task = "متابعة كتاب";
-                   
                 }
 
 
@@ -230,18 +229,23 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
 
                 if (check != 0)
                 {
+                    //if (_BookCode != "")
+                    //{
+                    //    con.Open();
+                    //    //final status to doc
+                    //    String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where BookCode = @BookCode ";
+                    //    SqlCommand cmd1 = new SqlCommand(strQuery, con);
+                    //    cmd1.Parameters.Add(new SqlParameter("@BookCode", SqlDbType.NVarChar)).Value = _BookCode;
 
-
-                    ////final status to doc
-                    //String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where ArchiveBookID = " + book_ID;
-
-                    //SqlCommand cmd1 = new SqlCommand(strQuery, con);
-
-                    //cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "قيد المتابعة";
-
-                    //cmd1.ExecuteNonQuery();
-                    //comboB_FollowUp_Title.Text = "";
-                }
+                        
+                    //    cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "قيد المتابعة";
+                    //    cmd1.ExecuteNonQuery();
+                    //    con.Close();
+                    //    con.Open();
+                      
+                    //}
+               
+                 }
 
                 else if (check == 0)
                 {
