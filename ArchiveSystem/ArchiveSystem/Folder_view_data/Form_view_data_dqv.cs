@@ -331,12 +331,14 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
         {
             advanc_dgv_view_data_doc_CellDoubleClick_1(null, null);
         }
+       
         public static string BookID;
         public static string date_book;
         public static string sbj_book;
         private void TSM_Add_FollowUp_Click(object sender, EventArgs e)
         {
-            
+
+            BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
             BookID = advanc_dgv_view_data_doc.CurrentRow.Cells[1].Value.ToString();
             date_book = advanc_dgv_view_data_doc.CurrentRow.Cells[2].Value.ToString();
             sbj_book = advanc_dgv_view_data_doc.CurrentRow.Cells[5].Value.ToString();

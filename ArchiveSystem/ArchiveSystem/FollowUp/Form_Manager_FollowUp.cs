@@ -229,23 +229,23 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
 
                 if (check != 0)
                 {
-                    //if (_BookCode != "")
-                    //{
-                    //    con.Open();
-                    //    //final status to doc
-                    //    String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where BookCode = @BookCode ";
-                    //    SqlCommand cmd1 = new SqlCommand(strQuery, con);
-                    //    cmd1.Parameters.Add(new SqlParameter("@BookCode", SqlDbType.NVarChar)).Value = _BookCode;
+                    if (_BookCode != "")
+                    {
+                        //con.Open();
+                        //final status to doc
+                        String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where BookCode = @BookCode ";
+                        SqlCommand cmd1 = new SqlCommand(strQuery, con);
+                        cmd1.Parameters.Add(new SqlParameter("@BookCode", SqlDbType.NVarChar)).Value = _BookCode;
 
-                        
-                    //    cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "قيد المتابعة";
-                    //    cmd1.ExecuteNonQuery();
-                    //    con.Close();
-                    //    con.Open();
-                      
-                    //}
-               
-                 }
+
+                        cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "قيد المتابعة";
+                        cmd1.ExecuteNonQuery();
+                        //con.Close();
+                       
+
+                    }
+
+                }
 
                 else if (check == 0)
                 {
@@ -340,12 +340,38 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
                 return;
             }
 
+            var dgv_CurrentRow_BC = Convert.ToString(advanc_dgv_FollowUp.CurrentRow.Cells[1].Value);
             con.Open();
             SqlCommand cmd = new SqlCommand("Delete from ArchiveFollowUp where ArchiveFollowUpID = @ArchiveFollowUpID", con);
             cmd.Parameters.Add(new SqlParameter("@ArchiveFollowUpID", SqlDbType.NVarChar)).Value = advanc_dgv_FollowUp.CurrentRow.Cells[10].Value;
             cmd.ExecuteNonQuery();
             con.Close();
+
             fill_FollowUp();
+
+            string state = "no_found";
+            for (int x = 0; x < advanc_dgv_FollowUp.Rows.Count; x++)
+
+            {
+                if (Convert.ToString(advanc_dgv_FollowUp.CurrentRow.Cells[x].Value) == dgv_CurrentRow_BC)
+                {
+                    state = "found";
+                    break;
+                }
+
+            }
+
+            if (state == "no_found")
+            {
+                MessageBox.Show("no_found");
+            }
+            else
+            {
+                MessageBox.Show("found");
+            }
+
+
+           
 
         }
 
