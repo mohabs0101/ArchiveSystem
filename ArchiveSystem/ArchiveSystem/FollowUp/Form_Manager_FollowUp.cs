@@ -317,7 +317,7 @@ AND ([ArchiveFollowUp].FollowStatus = @Param2)
             BookCode = advanc_dgv_FollowUp.CurrentRow.Cells[1].Value.ToString();
             if (BookCode != "0")
             {
-            Form_show_docs s_doc1 = new Form_show_docs(BookCode);
+            Form_show_edit_docs s_doc1 = new Form_show_edit_docs(BookCode);
             s_doc1.Show();
             }
             else

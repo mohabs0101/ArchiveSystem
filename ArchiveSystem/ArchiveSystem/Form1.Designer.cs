@@ -71,11 +71,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.TXT_notes = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -85,8 +82,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label_check_input_DT_bookRecive_date = new System.Windows.Forms.Label();
-            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.DGV_assignation = new Zuby.ADGV.AdvancedDataGridView();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.PICBOX_failICON = new System.Windows.Forms.PictureBox();
             this.PICBOX_successICON = new System.Windows.Forms.PictureBox();
@@ -121,8 +119,6 @@
             this.panel20.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel12.SuspendLayout();
-            this.metroTabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).BeginInit();
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PICBOX_failICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PICBOX_successICON)).BeginInit();
@@ -136,7 +132,6 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.metroTabControl1.Location = new System.Drawing.Point(23, 195);
@@ -715,17 +710,6 @@
             this.label10.TabIndex = 139;
             this.label10.Text = "تاريخ واردنا";
             // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(646, 146);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 27);
-            this.label11.TabIndex = 140;
-            this.label11.Text = "الموضوع";
-            // 
             // label21
             // 
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -747,28 +731,6 @@
             this.label12.Size = new System.Drawing.Size(89, 27);
             this.label12.TabIndex = 141;
             this.label12.Text = "نوع الكتاب";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(678, 206);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 27);
-            this.label13.TabIndex = 142;
-            this.label13.Text = "مــــــــن";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(674, 262);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 27);
-            this.label14.TabIndex = 143;
-            this.label14.Text = "الــــــــى";
             // 
             // label15
             // 
@@ -876,41 +838,38 @@
             this.label_check_input_DT_bookRecive_date.Text = "*";
             this.label_check_input_DT_bookRecive_date.Visible = false;
             // 
-            // metroTabPage4
+            // label11
             // 
-            this.metroTabPage4.Controls.Add(this.DGV_assignation);
-            this.metroTabPage4.HorizontalScrollbarBarColor = true;
-            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.HorizontalScrollbarSize = 12;
-            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(1332, 526);
-            this.metroTabPage4.TabIndex = 4;
-            this.metroTabPage4.Text = "المتابعة";
-            this.metroTabPage4.VerticalScrollbarBarColor = true;
-            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.VerticalScrollbarSize = 12;
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(646, 146);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 27);
+            this.label11.TabIndex = 140;
+            this.label11.Text = "الموضوع";
             // 
-            // DGV_assignation
+            // label13
             // 
-            this.DGV_assignation.AllowUserToAddRows = false;
-            this.DGV_assignation.AllowUserToDeleteRows = false;
-            this.DGV_assignation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DGV_assignation.FilterAndSortEnabled = true;
-            this.DGV_assignation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.DGV_assignation.Location = new System.Drawing.Point(143, 82);
-            this.DGV_assignation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.DGV_assignation.Name = "DGV_assignation";
-            this.DGV_assignation.ReadOnly = true;
-            this.DGV_assignation.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGV_assignation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_assignation.Size = new System.Drawing.Size(1017, 148);
-            this.DGV_assignation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.DGV_assignation.TabIndex = 0;
-            this.DGV_assignation.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_assignation_CellDoubleClick);
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(678, 206);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(42, 27);
+            this.label13.TabIndex = 142;
+            this.label13.Text = "مــــــــن";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(674, 262);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 27);
+            this.label14.TabIndex = 143;
+            this.label14.Text = "الــــــــى";
             // 
             // metroPanel3
             // 
@@ -1185,8 +1144,6 @@
             this.panel15.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            this.metroTabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_assignation)).EndInit();
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PICBOX_failICON)).EndInit();
@@ -1274,7 +1231,6 @@
         private System.Windows.Forms.Label LBL_FTPconValue;
         private System.Windows.Forms.PictureBox PICBOX_failICON;
         private System.Windows.Forms.ComboBox COM_PaperType;
-        private MetroFramework.Controls.MetroTabPage metroTabPage4;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label19;
@@ -1283,7 +1239,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel_viwe_DT_bookRecive_date;
         private System.Windows.Forms.Label label_check_input_DT_bookRecive_date;
-        private Zuby.ADGV.AdvancedDataGridView DGV_assignation;
         private System.Windows.Forms.TextBox TXT_Subject;
         private System.Windows.Forms.TextBox TXT_From;
         private System.Windows.Forms.TextBox TXT_To;

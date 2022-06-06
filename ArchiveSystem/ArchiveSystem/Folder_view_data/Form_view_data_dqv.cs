@@ -202,7 +202,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
                 BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
 
-                Form_show_docs s_doc1 = new Form_show_docs(BookCode);
+                Form_show_edit_docs s_doc1 = new Form_show_edit_docs(BookCode);
                 s_doc1.Show();
 
         }
