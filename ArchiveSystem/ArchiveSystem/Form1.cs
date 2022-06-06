@@ -868,11 +868,45 @@ namespace ArchiveSystem
             }
         }
 
-      
 
-        private void TXT_Subject_TextChanged_1(object sender, EventArgs e)
+
+        // --Code Zoom Mouse----
+        protected override void OnMouseWheel(MouseEventArgs ea)
         {
+            //  flag = 1;
+            // Override OnMouseWheel event, for zooming in/out with the scroll wheel
+            if (PicB_displayBOOK.Image != null)
+            {
+                // If the mouse wheel is moved forward (Zoom in)
+                if (ea.Delta > 0)
+                {
+                    // Check if the pictureBox dimensions are in range (15 is the minimum and maximum zoom level)
+                    if ((PicB_displayBOOK.Width < (15 * this.Width)) && (PicB_displayBOOK.Height < (15 * this.Height)))
+                    {
+                        // Change the size of the picturebox, multiply it by the ZOOMFACTOR
+                        PicB_displayBOOK.Width = (int)(PicB_displayBOOK.Width * 1.25);
+                        PicB_displayBOOK.Height = (int)(PicB_displayBOOK.Height * 1.25);
 
+                        // Formula to move the picturebox, to zoom in the point selected by the mouse cursor
+                        PicB_displayBOOK.Top = (int)(ea.Y - 1.25 * (ea.Y - PicB_displayBOOK.Top));
+                        PicB_displayBOOK.Left = (int)(ea.X - 1.25 * (ea.X - PicB_displayBOOK.Left));
+                    }
+                }
+                else
+                {
+                    // Check if the pictureBox dimensions are in range (15 is the minimum and maximum zoom level)
+                    if ((PicB_displayBOOK.Width > (panel14.Width)) && (PicB_displayBOOK.Height > (panel14.Height)))
+                    {
+                        // Change the size of the picturebox, divide it by the ZOOMFACTOR
+                        PicB_displayBOOK.Width = (int)(PicB_displayBOOK.Width / 1.25);
+                        PicB_displayBOOK.Height = (int)(PicB_displayBOOK.Height / 1.25);
+
+                        // Formula to move the picturebox, to zoom in the point selected by the mouse cursor
+                        PicB_displayBOOK.Top = (int)(ea.Y - 0.80 * (ea.Y - PicB_displayBOOK.Top));
+                        PicB_displayBOOK.Left = (int)(ea.X - 0.80 * (ea.X - PicB_displayBOOK.Left));
+                    }
+                }
+            }
         }
     }
 }

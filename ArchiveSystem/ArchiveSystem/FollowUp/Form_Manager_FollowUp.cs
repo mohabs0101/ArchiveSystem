@@ -313,18 +313,22 @@ AND ([ArchiveFollowUp].FollowStatus = @Param2)
         public static string BookCode;
         private void advanc_dgv_FollowUp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+           
 
             BookCode = advanc_dgv_FollowUp.CurrentRow.Cells[1].Value.ToString();
             if (BookCode != "0")
             {
+            Cursor = Cursors.WaitCursor;
             Form_show_edit_docs s_doc1 = new Form_show_edit_docs(BookCode);
             s_doc1.Show();
+           Cursor = Cursors.Default;
             }
             else
             {
                 MessageBox.Show("(لايوجد مرفق لان النوع (مهمة عامة) وليس (متابعة كتاب");
             }
-           
+          
+
         }
 
         private void TSM_show_doc_Click(object sender, EventArgs e)

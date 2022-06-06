@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_show_edit_docs));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel5 = new System.Windows.Forms.Panel();
             this.TXT_bookStatus = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -103,10 +103,15 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.advanc_dgv_FollowUp = new Zuby.ADGV.AdvancedDataGridView();
-            this.label_count_send = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label_count_send = new System.Windows.Forms.Label();
+            this.advanc_dgv_FollowUp = new Zuby.ADGV.AdvancedDataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_show_doc)).BeginInit();
             this.panel14.SuspendLayout();
@@ -119,6 +124,7 @@
             this.panel12.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_FollowUp)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel5
@@ -279,11 +285,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_show_doc.BackColor = System.Drawing.Color.White;
-            this.pictureBox_show_doc.Location = new System.Drawing.Point(4, 48);
+            this.pictureBox_show_doc.Location = new System.Drawing.Point(0, 0);
             this.pictureBox_show_doc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox_show_doc.Name = "pictureBox_show_doc";
-            this.pictureBox_show_doc.Size = new System.Drawing.Size(513, 622);
-            this.pictureBox_show_doc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_show_doc.Size = new System.Drawing.Size(513, 631);
+            this.pictureBox_show_doc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_show_doc.TabIndex = 1;
             this.pictureBox_show_doc.TabStop = false;
             // 
@@ -294,11 +300,10 @@
             this.panel14.Controls.Add(this.btn_Rotate_90);
             this.panel14.Controls.Add(this.btn_zoom_in);
             this.panel14.Controls.Add(this.btn_Rotate_180);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(0, 0);
+            this.panel14.Location = new System.Drawing.Point(6, 4);
             this.panel14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(520, 41);
+            this.panel14.Size = new System.Drawing.Size(520, 39);
             this.panel14.TabIndex = 2;
             // 
             // btn_zoom_out
@@ -987,9 +992,12 @@
             this.TabControlBookdetails.Size = new System.Drawing.Size(1394, 725);
             this.TabControlBookdetails.TabIndex = 0;
             this.TabControlBookdetails.UseSelectable = true;
+            this.TabControlBookdetails.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControlBookdetails_Selected);
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.panel1);
+            this.metroTabPage1.Controls.Add(this.panel14);
             this.metroTabPage1.Controls.Add(this.panel7);
             this.metroTabPage1.Controls.Add(this.panel16);
             this.metroTabPage1.Controls.Add(this.panel9);
@@ -1015,11 +1023,10 @@
             this.panel16.AutoScroll = true;
             this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel16.Controls.Add(this.pictureBox_show_doc);
-            this.panel16.Controls.Add(this.panel14);
-            this.panel16.Location = new System.Drawing.Point(2, 4);
+            this.panel16.Location = new System.Drawing.Point(6, 48);
             this.panel16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(520, 679);
+            this.panel16.Size = new System.Drawing.Size(516, 631);
             this.panel16.TabIndex = 2;
             // 
             // panel9
@@ -1066,55 +1073,18 @@
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 12;
             // 
-            // advanc_dgv_FollowUp
+            // label19
             // 
-            this.advanc_dgv_FollowUp.AllowUserToAddRows = false;
-            this.advanc_dgv_FollowUp.AllowUserToDeleteRows = false;
-            this.advanc_dgv_FollowUp.AllowUserToOrderColumns = true;
-            this.advanc_dgv_FollowUp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_FollowUp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.advanc_dgv_FollowUp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_FollowUp.DefaultCellStyle = dataGridViewCellStyle4;
-            this.advanc_dgv_FollowUp.EnableHeadersVisualStyles = false;
-            this.advanc_dgv_FollowUp.FilterAndSortEnabled = true;
-            this.advanc_dgv_FollowUp.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.advanc_dgv_FollowUp.Location = new System.Drawing.Point(3, 41);
-            this.advanc_dgv_FollowUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.advanc_dgv_FollowUp.Name = "advanc_dgv_FollowUp";
-            this.advanc_dgv_FollowUp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.advanc_dgv_FollowUp.RowTemplate.Height = 26;
-            this.advanc_dgv_FollowUp.Size = new System.Drawing.Size(1374, 613);
-            this.advanc_dgv_FollowUp.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.advanc_dgv_FollowUp.TabIndex = 227;
-            // 
-            // label_count_send
-            // 
-            this.label_count_send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_count_send.BackColor = System.Drawing.Color.White;
-            this.label_count_send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_count_send.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_count_send.Location = new System.Drawing.Point(6, 8);
-            this.label_count_send.Name = "label_count_send";
-            this.label_count_send.Size = new System.Drawing.Size(136, 29);
-            this.label_count_send.TabIndex = 425;
-            this.label_count_send.Text = "0";
-            this.label_count_send.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.BackColor = System.Drawing.Color.White;
+            this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label19.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(982, 8);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(395, 29);
+            this.label19.TabIndex = 427;
+            this.label19.Text = "جميع المتابعات التي حصلت على هذا الكتاب";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
@@ -1129,20 +1099,132 @@
             this.label6.Text = "عدد المتابعات:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label19
+            // label_count_send
             // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.BackColor = System.Drawing.Color.White;
-            this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(982, 8);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(395, 29);
-            this.label19.TabIndex = 427;
-            this.label19.Text = "جميع المتابعات التي حصلت على هذا الكتاب";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_count_send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_count_send.BackColor = System.Drawing.Color.White;
+            this.label_count_send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label_count_send.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_count_send.Location = new System.Drawing.Point(6, 8);
+            this.label_count_send.Name = "label_count_send";
+            this.label_count_send.Size = new System.Drawing.Size(136, 29);
+            this.label_count_send.TabIndex = 425;
+            this.label_count_send.Text = "0";
+            this.label_count_send.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form_show_docs
+            // advanc_dgv_FollowUp
+            // 
+            this.advanc_dgv_FollowUp.AllowUserToAddRows = false;
+            this.advanc_dgv_FollowUp.AllowUserToDeleteRows = false;
+            this.advanc_dgv_FollowUp.AllowUserToOrderColumns = true;
+            this.advanc_dgv_FollowUp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_FollowUp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.advanc_dgv_FollowUp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_FollowUp.DefaultCellStyle = dataGridViewCellStyle6;
+            this.advanc_dgv_FollowUp.EnableHeadersVisualStyles = false;
+            this.advanc_dgv_FollowUp.FilterAndSortEnabled = true;
+            this.advanc_dgv_FollowUp.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.advanc_dgv_FollowUp.Location = new System.Drawing.Point(3, 41);
+            this.advanc_dgv_FollowUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.advanc_dgv_FollowUp.Name = "advanc_dgv_FollowUp";
+            this.advanc_dgv_FollowUp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.advanc_dgv_FollowUp.RowTemplate.Height = 26;
+            this.advanc_dgv_FollowUp.Size = new System.Drawing.Size(1374, 613);
+            this.advanc_dgv_FollowUp.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.advanc_dgv_FollowUp.TabIndex = 227;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Location = new System.Drawing.Point(6, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(520, 39);
+            this.panel1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(42, 3);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 35);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Zoom OUT";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btn_zoom_out_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(379, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 35);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "R 90";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btn_Rotate_90_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(158, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(113, 34);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Zoom IN";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btn_zoom_in_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(277, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(96, 34);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "R 180";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.btn_Rotate_180_Click);
+            // 
+            // Form_show_edit_docs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1150,7 +1232,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.TabControlBookdetails);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form_show_docs";
+            this.Name = "Form_show_edit_docs";
             this.Padding = new System.Windows.Forms.Padding(23, 74, 23, 25);
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Load += new System.EventHandler(this.Form_show_edit_docs_Load_1);
@@ -1168,6 +1250,7 @@
             this.panel12.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_FollowUp)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1248,5 +1331,10 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label_count_send;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

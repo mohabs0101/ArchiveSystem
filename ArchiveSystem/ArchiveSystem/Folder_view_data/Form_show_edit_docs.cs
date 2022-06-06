@@ -344,7 +344,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
     public void show_files_doc()
         {
-            Cursor = Cursors.WaitCursor;
+           
             ListView_show_doc.Items.Clear();
             ImageList_add_viwe.Images.Clear();
 
@@ -367,7 +367,7 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
 
             }
-            Cursor = Cursors.Default;
+           
         }
 
 
@@ -407,7 +407,22 @@ AND([ArchiveFollowUp].BookCode = @Param2)
             advanc_dgv_FollowUp.DataSource = FollUp_dt;
             label_count_send.Text = Convert.ToString(FollUp_dt.Rows.Count);
         }
+        private void TabControlBookdetails_Selected(object sender, TabControlEventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
 
+            fill_FollowUp();
+            advanc_dgv_FollowUp.Columns[0].Width = 180;
+            advanc_dgv_FollowUp.Columns[1].Width = 200;
+            advanc_dgv_FollowUp.Columns[2].Width = 100;
+            advanc_dgv_FollowUp.Columns[3].Width = 200;
+            advanc_dgv_FollowUp.Columns[4].Width = 200;
+            advanc_dgv_FollowUp.Columns[5].Width = 160;
+            advanc_dgv_FollowUp.Columns[6].Width = 80;
+
+            Cursor = Cursors.Default;
+
+        }
 
         private void Form_show_edit_docs_Load_1(object sender, EventArgs e)
         {
@@ -432,15 +447,9 @@ AND([ArchiveFollowUp].BookCode = @Param2)
 
            
             show_files_doc();
-            fill_FollowUp();
+           
 
-            advanc_dgv_FollowUp.Columns[0].Width = 180;
-            advanc_dgv_FollowUp.Columns[1].Width = 200;
-            advanc_dgv_FollowUp.Columns[2].Width = 100;
-            advanc_dgv_FollowUp.Columns[3].Width = 200;
-            advanc_dgv_FollowUp.Columns[4].Width = 200;
-            advanc_dgv_FollowUp.Columns[5].Width = 160;
-            advanc_dgv_FollowUp.Columns[6].Width = 80;
+          
         }
 
         private void cm_type_show_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -461,70 +470,8 @@ AND([ArchiveFollowUp].BookCode = @Param2)
             }
         }
 
-        private void btn_add_Tracker_Click_1(object sender, EventArgs e)
-        {
-           
-        }
+       
 
-        private void ZoomInOut(bool zoom)
-        {
-            try
-            {
-                //Zoom ratio by which the images will be zoomed by default
-                int zoomRatio = 10;
-                //Set the zoomed width and height
-                int widthZoom = pictureBox_show_doc.Width * zoomRatio / 100;
-                int heightZoom = pictureBox_show_doc.Height * zoomRatio / 100;
-                //zoom = true --> zoom in
-                //zoom = false --> zoom out
-                if (!zoom)
-                {
-                    widthZoom *= -1;
-                    heightZoom *= -1;
-                }
-                //Add the width and height to the picture box dimensions
-                pictureBox_show_doc.Width += widthZoom;
-                pictureBox_show_doc.Height += heightZoom;
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-        }
-
-        private void btn_zoom_out_Click_1(object sender, EventArgs e)
-        {
-            ZoomInOut(false);
-        }
-
-        private void btn_zoom_in_Click_1(object sender, EventArgs e)
-        {
-            ZoomInOut(true);
-        }
-        void Rotat_img(RotateFlipType r90)
-        {
-            try
-            {
-                Image img = pictureBox_show_doc.Image;
-                img.RotateFlip(r90);
-                pictureBox_show_doc.Image = img;
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-        private void btn_Rotate_180_Click(object sender, EventArgs e)
-        {
-            Rotat_img(RotateFlipType.Rotate180FlipNone);
-        }
-
-        private void btn_Rotate_90_Click(object sender, EventArgs e)
-        {
-            Rotat_img(RotateFlipType.Rotate90FlipNone);
-
-        }
 
         string path_file_name;
         private void ListView_show_doc_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -855,101 +802,7 @@ AND([ArchiveFollowUp].BookCode = @Param2)
         }
 
 
-        //-///////////////start code FollowUp//////////////////
-       
-        //i have login dep id and i have selected book archived dep id 
-        // if they matched so it mean the book i opened is created by same dep so bring full assignation table 
-        // else if not matchet ether the book i opened assing to me or not 
-        //so i will bring the rows that have [Department_AssignTO_ID] as my login dep id 
-        // if it return empty it means there is no assign to me in it
-        void BringFolloWUp_TBL()
-        {
-            int bookID = Convert.ToInt32(book_ID); //book id of selected book
-
-            int departmentID = Login._depID;//login dep id
-
-            //bring archiveByDepID by its name 
-            string query2 = string.Format(@"SELECT   [DepartmentID]  ,[DepartmentName]
-    
-  FROM [ArchiveSystem].[dbo].[Departments_TBL] where [DepartmentName]=N'{0}'", Archived_by_department_name, con);
-
-            con.Open();
-            SqlCommand cmd2 = new SqlCommand(query2, con);
-
-            SqlDataAdapter adp2 = new SqlDataAdapter(cmd2);
-
-            DataTable dt2 = new DataTable();
-            con.Close();
-            adp2.Fill(dt2);
-            int DepArch_by_ID_ = Convert.ToInt32(dt2.Rows[0][0].ToString());
-
-            int archived_by_bookID = DepArch_by_ID_; //book archived by id 
-
-            if (departmentID == archived_by_bookID)
-            {
-
-                string query3 = string.Format(@"SELECT  [ArchiveFollowUpID]
-      ,[ArchiveBookID]
-      ,[Department_To_you_ID]
-      ,[Task] as 'المهمة'
-      ,[DepartmentName] as 'القسم'
-      ,[Action] as 'الاجراء المتخذم'
-      ,[Note] as 'ملاحضة'
-      ,[DateAdded] as 'تاريخ الاضافة'
-  FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] INNER JOIN
-                  dbo.Departments_TBL ON dbo.ArchiveFollowUp.Department_To_you_ID = dbo.Departments_TBL.DepartmentID 
-where ArchiveBookID={0}", bookID, con);
-
-                con.Open();
-                SqlCommand cmd3 = new SqlCommand(query3, con);
-
-                SqlDataAdapter adp3 = new SqlDataAdapter(cmd3);
-
-                DataTable dt3 = new DataTable();
-                con.Close();
-                adp3.Fill(dt3);
-                advanc_dgv_FollowUp.DataSource = dt3;
-
-                advanc_dgv_FollowUp.Columns[0].Visible = false;
-                advanc_dgv_FollowUp.Columns[1].Visible = false;
-                advanc_dgv_FollowUp.Columns[2].Visible = false;
-            }
-            else if (departmentID != archived_by_bookID) // it means the book i opened not created by my department
-            {
-                string query = string.Format(@"SELECT 
-       [ArchiveFollowUpID]
-      ,[ArchiveBookID]
-      ,[Department_AssignTO_ID]
-      ,[Task] as 'المهمة'
-      ,[DepartmentName] as 'القسم'
-      ,[Action] as 'الاجراء المتخذم'
-      ,[Note] as 'ملاحضة'
-      ,[DateAdded] as 'تاريخ الاضافة'
-  FROM [ArchiveSystem].[dbo].[ArchiveFollowUp] INNER JOIN
-                  dbo.Departments_TBL ON dbo.ArchiveFollowUp.Department_AssignTO_ID = dbo.Departments_TBL.DepartmentID 
-   where [Department_AssignTO_ID]={0} and [ArchiveBookID]={1} ", departmentID, bookID, con);
-
-
-
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-
-                DataTable dt = new DataTable();
-                con.Close();
-                adp.Fill(dt);
-                advanc_dgv_FollowUp.DataSource = dt;
-
-                advanc_dgv_FollowUp.Columns[0].Visible = false;
-                advanc_dgv_FollowUp.Columns[1].Visible = false;
-                advanc_dgv_FollowUp.Columns[2].Visible = false;
-                
-            }
-
-
-        }
+      
         
         private void TXT_Book_recive_number_TextChanged(object sender, EventArgs e)
         {
@@ -967,6 +820,114 @@ where ArchiveBookID={0}", bookID, con);
             }
         }
 
-        
+
+
+
+
+
+
+        //---- code Zoom and Rotate------
+
+        private void ZoomInOut(bool zoom)
+        {
+            try
+            {
+                //Zoom ratio by which the images will be zoomed by default
+                int zoomRatio = 10;
+                //Set the zoomed width and height
+                int widthZoom = pictureBox_show_doc.Width * zoomRatio / 100;
+                int heightZoom = pictureBox_show_doc.Height * zoomRatio / 100;
+                //zoom = true --> zoom in
+                //zoom = false --> zoom out
+                if (!zoom)
+                {
+                    widthZoom *= -1;
+                    heightZoom *= -1;
+                }
+                //Add the width and height to the picture box dimensions
+                pictureBox_show_doc.Width += widthZoom;
+                pictureBox_show_doc.Height += heightZoom;
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+        private void btn_zoom_out_Click_1(object sender, EventArgs e)
+        {
+            ZoomInOut(false);
+        }
+
+        private void btn_zoom_in_Click_1(object sender, EventArgs e)
+        {
+            ZoomInOut(true);
+        }
+        void Rotat_img(RotateFlipType r90)
+        {
+            try
+            {
+                Image img = pictureBox_show_doc.Image;
+                img.RotateFlip(r90);
+                pictureBox_show_doc.Image = img;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private void btn_Rotate_180_Click(object sender, EventArgs e)
+        {
+            Rotat_img(RotateFlipType.Rotate180FlipNone);
+        }
+
+        private void btn_Rotate_90_Click(object sender, EventArgs e)
+        {
+            Rotat_img(RotateFlipType.Rotate90FlipNone);
+
+        }
+
+        // -- Zoom Mouse
+        protected override void OnMouseWheel(MouseEventArgs ea)
+        {
+            //  flag = 1;
+            // Override OnMouseWheel event, for zooming in/out with the scroll wheel
+            if (pictureBox_show_doc.Image != null)
+            {
+                // If the mouse wheel is moved forward (Zoom in)
+                if (ea.Delta > 0)
+                {
+                    // Check if the pictureBox dimensions are in range (15 is the minimum and maximum zoom level)
+                    if ((pictureBox_show_doc.Width < (15 * this.Width)) && (pictureBox_show_doc.Height < (15 * this.Height)))
+                    {
+                        // Change the size of the picturebox, multiply it by the ZOOMFACTOR
+                        pictureBox_show_doc.Width = (int)(pictureBox_show_doc.Width * 1.25);
+                        pictureBox_show_doc.Height = (int)(pictureBox_show_doc.Height * 1.25);
+
+                        // Formula to move the picturebox, to zoom in the point selected by the mouse cursor
+                        pictureBox_show_doc.Top = (int)(ea.Y - 1.25 * (ea.Y - pictureBox_show_doc.Top));
+                        pictureBox_show_doc.Left = (int)(ea.X - 1.25 * (ea.X - pictureBox_show_doc.Left));
+                    }
+                }
+                else
+                {
+                    // Check if the pictureBox dimensions are in range (15 is the minimum and maximum zoom level)
+                    if ((pictureBox_show_doc.Width > (panel16.Width)) && (pictureBox_show_doc.Height > (panel16.Height)))
+                    {
+                        // Change the size of the picturebox, divide it by the ZOOMFACTOR
+                        pictureBox_show_doc.Width = (int)(pictureBox_show_doc.Width / 1.25);
+                        pictureBox_show_doc.Height = (int)(pictureBox_show_doc.Height / 1.25);
+
+                        // Formula to move the picturebox, to zoom in the point selected by the mouse cursor
+                        pictureBox_show_doc.Top = (int)(ea.Y - 0.80 * (ea.Y - pictureBox_show_doc.Top));
+                        pictureBox_show_doc.Left = (int)(ea.X - 0.80 * (ea.X - pictureBox_show_doc.Left));
+                    }
+                }
+            }
+        }
+
+
+
     }
 }

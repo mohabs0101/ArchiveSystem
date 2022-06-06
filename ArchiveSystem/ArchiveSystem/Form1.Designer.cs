@@ -188,7 +188,7 @@
             this.PicB_displayBOOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PicB_displayBOOK.Name = "PicB_displayBOOK";
             this.PicB_displayBOOK.Size = new System.Drawing.Size(344, 577);
-            this.PicB_displayBOOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PicB_displayBOOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicB_displayBOOK.TabIndex = 0;
             this.PicB_displayBOOK.TabStop = false;
             this.PicB_displayBOOK.Click += new System.EventHandler(this.PicB_displayBOOK_Click);
@@ -484,7 +484,6 @@
             this.TXT_Subject.Name = "TXT_Subject";
             this.TXT_Subject.Size = new System.Drawing.Size(322, 32);
             this.TXT_Subject.TabIndex = 160;
-            this.TXT_Subject.TextChanged += new System.EventHandler(this.TXT_Subject_TextChanged_1);
             // 
             // panel_viwe_DT_bookRecive_date
             // 

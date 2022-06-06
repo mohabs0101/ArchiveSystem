@@ -125,9 +125,10 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
         private void txt_seach_TextChanged(object sender, EventArgs e)
         {
+           
             try
             {
-
+ Cursor = Cursors.WaitCursor;
 
                 if (checkBox_search_all.Checked == true)
                 {
@@ -144,19 +145,21 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                    
                  this.advanc_dgv_view_data_doc.DataSource = dv;
                 }
-
+              Cursor = Cursors.Default;
             }
             catch (Exception ex)
             {
+              
                 MessageBox.Show(ex + "يجب اختيار عمود لبحث بة");
             }
-
+           
 
         }
 
         int col_index_select = 1;
         private void advanc_dgv_view_data_doc_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
             txt_seach.Clear();
 
             col_index_select = e.ColumnIndex;
@@ -170,7 +173,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
             }
             txt_seach.Select();
-            
+            Cursor = Cursors.Default;
         }
 
 
@@ -198,13 +201,13 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
         public static string BookCode;
         private void advanc_dgv_view_data_doc_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-         
+            Cursor = Cursors.WaitCursor;
 
-                BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
+            BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
 
                 Form_show_edit_docs s_doc1 = new Form_show_edit_docs(BookCode);
                 s_doc1.Show();
-
+            Cursor = Cursors.Default;
         }
         //-----------------END------------------------
 
