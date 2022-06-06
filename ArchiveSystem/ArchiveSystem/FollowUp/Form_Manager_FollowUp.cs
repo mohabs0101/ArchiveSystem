@@ -591,8 +591,10 @@ AND ([ArchiveFollowUp].FollowStatus = @Param2)
 
             SqlCommand cmd1 = new SqlCommand(strQuery, con);
 
+            string not = "* التاريخ:- " + DateTime.Now + "   " + "*المستخدم:- " + Login._userID + "-" + Login._user + "   " + "*الاجراء المتخذ:- " + tSComBox_FollowUp_type.SelectedItem + "   " +  "*الملاحظلات المضافة:- " + tSTXT_FollowUp_Not.Text;
+            not = advanc_dgv_FollowUp.CurrentRow.Cells[7].Value + "      ـــــــــــــــــــــــــــــ     " + not;
             cmd1.Parameters.Add(new SqlParameter("@Action", SqlDbType.NVarChar)).Value = tSComBox_FollowUp_type.SelectedItem;
-            cmd1.Parameters.Add(new SqlParameter("@Note", SqlDbType.NVarChar)).Value = tSTXT_FollowUp_Not.Text;
+            cmd1.Parameters.Add(new SqlParameter("@Note", SqlDbType.NVarChar)).Value = not;
 
             cmd1.ExecuteNonQuery();
 

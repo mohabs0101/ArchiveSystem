@@ -73,8 +73,8 @@
             this.btn_Active_FollowStatus = new System.Windows.Forms.Button();
             this.btn_end_FollowStatus = new System.Windows.Forms.Button();
             this.panel_contener_buttons = new System.Windows.Forms.Panel();
-            this.txt_not = new System.Windows.Forms.TextBox();
             this.btn_active_status_FollowUp = new System.Windows.Forms.Button();
+            this.txt_not = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_FollowUp)).BeginInit();
             this.contextMenuStrip_FollowUp.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -219,7 +219,7 @@
             // 
             // tSMenuItem_FollowUp_Save
             // 
-            this.tSMenuItem_FollowUp_Save.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.tSMenuItem_FollowUp_Save.BackColor = System.Drawing.Color.SeaGreen;
             this.tSMenuItem_FollowUp_Save.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tSMenuItem_FollowUp_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.tSMenuItem_FollowUp_Save.Name = "tSMenuItem_FollowUp_Save";
@@ -314,7 +314,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.White;
             this.label19.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(185, 72);
+            this.label19.Location = new System.Drawing.Point(195, 72);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(117, 27);
             this.label19.TabIndex = 413;
@@ -323,7 +323,8 @@
             // BTN_addTask
             // 
             this.BTN_addTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTN_addTask.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BTN_addTask.BackColor = System.Drawing.Color.SeaGreen;
+            this.BTN_addTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_addTask.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_addTask.Location = new System.Drawing.Point(225, 428);
             this.BTN_addTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -340,7 +341,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(194, 10);
+            this.label6.Location = new System.Drawing.Point(201, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 24);
             this.label6.TabIndex = 414;
@@ -610,6 +611,20 @@
             this.panel_contener_buttons.Size = new System.Drawing.Size(289, 50);
             this.panel_contener_buttons.TabIndex = 428;
             // 
+            // btn_active_status_FollowUp
+            // 
+            this.btn_active_status_FollowUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_active_status_FollowUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_active_status_FollowUp.Location = new System.Drawing.Point(107, 4);
+            this.btn_active_status_FollowUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_active_status_FollowUp.Name = "btn_active_status_FollowUp";
+            this.btn_active_status_FollowUp.Size = new System.Drawing.Size(76, 41);
+            this.btn_active_status_FollowUp.TabIndex = 431;
+            this.btn_active_status_FollowUp.Text = "تنشيط";
+            this.btn_active_status_FollowUp.UseVisualStyleBackColor = true;
+            this.btn_active_status_FollowUp.Visible = false;
+            this.btn_active_status_FollowUp.Click += new System.EventHandler(this.btn_active_status_FollowUp_Click);
+            // 
             // txt_not
             // 
             this.txt_not.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -626,20 +641,6 @@
             this.txt_not.TabIndex = 430;
             this.txt_not.Text = "الطلبات التي قمت بارسالها وبانتظار اتخاذ الاجراء المناسب لها من الاقسام التي تم ا" +
     "لاشارة لها";
-            // 
-            // btn_active_status_FollowUp
-            // 
-            this.btn_active_status_FollowUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_active_status_FollowUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_active_status_FollowUp.Location = new System.Drawing.Point(107, 4);
-            this.btn_active_status_FollowUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_active_status_FollowUp.Name = "btn_active_status_FollowUp";
-            this.btn_active_status_FollowUp.Size = new System.Drawing.Size(76, 41);
-            this.btn_active_status_FollowUp.TabIndex = 431;
-            this.btn_active_status_FollowUp.Text = "تنشيط";
-            this.btn_active_status_FollowUp.UseVisualStyleBackColor = true;
-            this.btn_active_status_FollowUp.Visible = false;
-            this.btn_active_status_FollowUp.Click += new System.EventHandler(this.btn_active_status_FollowUp_Click);
             // 
             // Form_Manager_FollowUp
             // 
