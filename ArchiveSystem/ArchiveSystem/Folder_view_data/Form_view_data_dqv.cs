@@ -141,7 +141,8 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                 DataView dv = dt.DefaultView;
 
                 dv.RowFilter = "[" + advanc_dgv_view_data_doc.Columns[col_index_select].Name + "]+[رقم الكتاب]  Like '%" + txt_seach.Text + "%'";
-                this.advanc_dgv_view_data_doc.DataSource = dv;
+                   
+                 this.advanc_dgv_view_data_doc.DataSource = dv;
                 }
 
             }

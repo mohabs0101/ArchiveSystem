@@ -115,7 +115,9 @@
             this.advanc_dgv_FollowUp.FilterAndSortEnabled = true;
             this.advanc_dgv_FollowUp.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advanc_dgv_FollowUp.Location = new System.Drawing.Point(12, 92);
+            this.advanc_dgv_FollowUp.MultiSelect = false;
             this.advanc_dgv_FollowUp.Name = "advanc_dgv_FollowUp";
+            this.advanc_dgv_FollowUp.ReadOnly = true;
             this.advanc_dgv_FollowUp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.advanc_dgv_FollowUp.RowTemplate.Height = 26;
             this.advanc_dgv_FollowUp.Size = new System.Drawing.Size(832, 529);
@@ -323,13 +325,14 @@
             // BTN_addTask
             // 
             this.BTN_addTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTN_addTask.BackColor = System.Drawing.Color.SeaGreen;
+            this.BTN_addTask.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.BTN_addTask.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SeaGreen;
             this.BTN_addTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_addTask.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_addTask.Location = new System.Drawing.Point(225, 428);
+            this.BTN_addTask.Location = new System.Drawing.Point(167, 428);
             this.BTN_addTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTN_addTask.Name = "BTN_addTask";
-            this.BTN_addTask.Size = new System.Drawing.Size(82, 41);
+            this.BTN_addTask.Size = new System.Drawing.Size(140, 41);
             this.BTN_addTask.TabIndex = 415;
             this.BTN_addTask.Text = "اضافة";
             this.BTN_addTask.UseVisualStyleBackColor = false;

@@ -101,6 +101,8 @@ namespace ArchiveSystem
 
         private void Login_Load(object sender, EventArgs e)
         {
+
+
             //اولا نحذف جميع الفولدرات المنزلة سابقا تحسبا لعدم حذفها بسبب استخدامه من قبل المعالج
             try
             {

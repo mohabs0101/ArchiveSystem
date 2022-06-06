@@ -392,36 +392,39 @@ AND ([ArchiveFollowUp].FollowStatus = @Param2)
                 fill_FollowUp_recive();
                 fill_FollowUp_send();
 
-            string state="";
-            for (int x = 0; x < advanc_dgv_FollowUp.Rows.Count; x++)
 
-            {
-                var CurrentRow_loop =Convert.ToString(advanc_dgv_FollowUp.Rows[x].Cells[1].Value);
-                if (CurrentRow_loop == dgv_CurrentRow_BC)
+                if (FollowStatus != "منتهي")
                 {
-                    state = "found";
-                    break;
-                }
-                else
-                {
-                    state = "no_found";
-                }
+                    string state = "";
+                    for (int x = 0; x < advanc_dgv_FollowUp.Rows.Count; x++)
 
-            }
+                    {
+                        var CurrentRow_loop = Convert.ToString(advanc_dgv_FollowUp.Rows[x].Cells[1].Value);
+                        if (CurrentRow_loop == dgv_CurrentRow_BC)
+                        {
+                            state = "found";
+                            break;
+                        }
+                        else
+                        {
+                            state = "no_found";
+                        }
 
-            if (state == "no_found")
-            {
-                    con.Open();
-                    //final status to doc
-                    String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where BookCode = @BookCode";
-                    SqlCommand cmd1 = new SqlCommand(strQuery, con);
-                    cmd1.Parameters.Add(new SqlParameter("@BookCode", SqlDbType.NVarChar)).Value = dgv_CurrentRow_BC;
-                  
-                    cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "بدون متابعة";
-                    cmd1.ExecuteNonQuery();
-                    con.Close();
+                    }
+
+                    if (state == "no_found")
+                    {
+                        con.Open();
+                        //final status to doc
+                        String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where BookCode = @BookCode";
+                        SqlCommand cmd1 = new SqlCommand(strQuery, con);
+                        cmd1.Parameters.Add(new SqlParameter("@BookCode", SqlDbType.NVarChar)).Value = dgv_CurrentRow_BC;
+
+                        cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "بدون متابعة";
+                        cmd1.ExecuteNonQuery();
+                        con.Close();
+                    }
                 }
-
                 MessageBox.Show("تم حذف الطب نهائياً");
             }
             else if (check == 0)

@@ -215,7 +215,7 @@ namespace ArchiveSystem
                 LBL_FTPconValue.Visible = true;
                 PICBOX_failICON.Visible = true;
                 PICBOX_successICON.Visible = false;
-
+                MessageBox.Show("لايوجد اتصال ب ملف FTP");
             }
             //--------------end------------------
 

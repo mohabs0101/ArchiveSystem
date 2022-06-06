@@ -44,47 +44,7 @@ namespace ArchiveSystem.Folder_view_data
 
     
 
-        void fill_Departments()
-        {
-            try
-            {
-                string query = string.Format(@"  
-SELECT  [DepartmentID]
-      ,[DepartmentName]
-  FROM [ArchiveSystem].[dbo].[Departments_TBL]", con);
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-
-                DataTable dep = new DataTable();
-
-                adp.Fill(dep);
-
-                listView_Departments.View = View.Details;
-                listView_Departments.GridLines = true;
-                listView_Departments.Columns.Add("معرف", 25);
-                listView_Departments.Columns.Add("القسم", 300);
-
-                foreach (DataRow r in dep.Rows)
-                {
-                  
-                    ListViewItem item = new ListViewItem(r["DepartmentID"].ToString());
-                    item.SubItems.Add(r["DepartmentName"].ToString());
-
-                    listView_Departments.Items.AddRange(new ListViewItem[] {item });
-                       
-                }
-                con.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+       
 
 
 
@@ -410,9 +370,43 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
             Cursor = Cursors.Default;
         }
 
-       
 
-       
+
+
+        void fill_FollowUp()
+        {
+
+            SqlDataAdapter adp1 = new SqlDataAdapter(@"SELECT
+
+             
+        	 [dbo].[Departments_TBL]. DepartmentName as [ارسال الى قسم],
+             [dbo].[ArchiveFollowUp].Task as [عنوان الطلب],
+             [dbo].[ArchiveFollowUp]. Action as [الاجراء المتخذ],
+             [dbo].[ArchiveFollowUp]. Note as [الملاحظات],
+             [dbo].[Users_TBL].Username as [موظف الاضافة],
+             [dbo].[ArchiveFollowUp]. DateAdded as [تاريخ اضافة],
+             [dbo].[ArchiveFollowUp].FollowStatus as [الحالة النهائية]
+             
+
+
+                    FROM[ArchiveSystem].[dbo].[ArchiveFollowUp]
+               inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Departments_TBL].[DepartmentID]
+
+               inner JOIN[Users_TBL] ON[ArchiveFollowUp].[User_Add] = [Users_TBL].[UserID]
+WHERE([ArchiveFollowUp].Department_From_me_ID = @Param1)
+AND([ArchiveFollowUp].BookCode = @Param2)
+
+          ", con);
+            adp1.SelectCommand.Parameters.AddWithValue("@Param1", Login._depID);
+            adp1.SelectCommand.Parameters.AddWithValue("@Param2", _BookCode);
+
+            DataTable FollUp_dt = new DataTable();
+            FollUp_dt.Clear();
+
+            adp1.Fill(FollUp_dt);
+            advanc_dgv_FollowUp.DataSource = FollUp_dt;
+            label_count_send.Text = Convert.ToString(FollUp_dt.Rows.Count);
+        }
 
 
         private void Form_show_docs_Load_1(object sender, EventArgs e)
@@ -438,36 +432,15 @@ WHERE  (dbo.ArchiveBooks_TBL.BookCode) = @Param1 ", con);
 
            
             show_files_doc();
-            fill_Departments();
-        
+            fill_FollowUp();
 
-            //BringFolloWUp_TBL();
-
-          
-
-
-
-            //Bring_assignTable();
-
-
-            //advanc_dgv_Assign_Comment.Columns[3].Width = 200;
-            //advanc_dgv_Assign_Comment.Columns[4].Width = 150;
-            //advanc_dgv_Assign_Comment.Columns[5].Width = 90;
-            //advanc_dgv_Assign_Comment.Columns[6].Width = 200;
-
-
-            tSComBox_FollowUp_type.SelectedIndex = 0;
-
-
-
-            if (BookStatus == "بدون متابعة")
-            {
-                btn_edit_status_FollowUp.Text = "اضافة الى المتابعه"; 
-            }
-            else
-            {
-                btn_edit_status_FollowUp.Text = "ازالة من المتابعه";
-            }
+            advanc_dgv_FollowUp.Columns[0].Width = 180;
+            advanc_dgv_FollowUp.Columns[1].Width = 200;
+            advanc_dgv_FollowUp.Columns[2].Width = 100;
+            advanc_dgv_FollowUp.Columns[3].Width = 200;
+            advanc_dgv_FollowUp.Columns[4].Width = 200;
+            advanc_dgv_FollowUp.Columns[5].Width = 160;
+            advanc_dgv_FollowUp.Columns[6].Width = 80;
         }
 
         private void cm_type_show_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -935,11 +908,11 @@ where ArchiveBookID={0}", bookID, con);
                 DataTable dt3 = new DataTable();
                 con.Close();
                 adp3.Fill(dt3);
-                advanc_dgv_Assign_Comment.DataSource = dt3;
+                advanc_dgv_FollowUp.DataSource = dt3;
 
-                advanc_dgv_Assign_Comment.Columns[0].Visible = false;
-                advanc_dgv_Assign_Comment.Columns[1].Visible = false;
-                advanc_dgv_Assign_Comment.Columns[2].Visible = false;
+                advanc_dgv_FollowUp.Columns[0].Visible = false;
+                advanc_dgv_FollowUp.Columns[1].Visible = false;
+                advanc_dgv_FollowUp.Columns[2].Visible = false;
             }
             else if (departmentID != archived_by_bookID) // it means the book i opened not created by my department
             {
@@ -967,233 +940,17 @@ where ArchiveBookID={0}", bookID, con);
                 DataTable dt = new DataTable();
                 con.Close();
                 adp.Fill(dt);
-                advanc_dgv_Assign_Comment.DataSource = dt;
+                advanc_dgv_FollowUp.DataSource = dt;
 
-                advanc_dgv_Assign_Comment.Columns[0].Visible = false;
-                advanc_dgv_Assign_Comment.Columns[1].Visible = false;
-                advanc_dgv_Assign_Comment.Columns[2].Visible = false;
-
-                comboB_FollowUp_Title.Enabled = false;
-                listView_Departments.Enabled = false;
-                BTN_addTask.Enabled = false;
-
-
-
+                advanc_dgv_FollowUp.Columns[0].Visible = false;
+                advanc_dgv_FollowUp.Columns[1].Visible = false;
+                advanc_dgv_FollowUp.Columns[2].Visible = false;
+                
             }
 
 
         }
-
-        private void BTN_addTask_Click(object sender, EventArgs e)
-        {
-            if (comboB_FollowUp_Title.Text == "")
-            {
-                comboB_FollowUp_Title.BackColor = Color.LightSalmon;
-            }
-            else { comboB_FollowUp_Title.BackColor = Color.White; }
-
-          
-
-            if (listView_Departments.CheckedItems.Count != 0)
-            { }
-
-            else
-            {
-                MessageBox.Show("يجب الاشارة الى قسم واحد على الاقل وذالك من خلال وضع علامة صح", "لم يتم ");
-                return;
-            }
-
-                //try
-                //{
-                int Archive_bookID = Convert.ToInt32(book_ID.ToString());
-              
-                string task = comboB_FollowUp_Title.Text;
-                string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
-
-                ListView.CheckedListViewItemCollection breakfast = this.listView_Departments.CheckedItems;
-                con.Open();
-                foreach (ListViewItem Item in breakfast)
-                {
-                    int Department_assintToID = Convert.ToInt32(listView_Departments.Items[Item.Index].SubItems[0].Text);
-                      
-                       string query = string.Format(@"INSERT INTO [dbo].[ArchiveFollowUp]
-                           ([ArchiveBookID]
-                          ,[Department_AssignTO_ID]
-                          ,[Task]
-                           ,[Action]
-                         ,[Note]
-                        ,[DateAdded]
-                          )
-                         VALUES
-                            ({0},{1},N'{2}','{3}','{4}','{5}')
-                          ", Archive_bookID, Department_assintToID, task, "انتظار الاجراء", "", currentDate, con);
- 
-
-
-
-                      
-                         SqlCommand cmd = new SqlCommand(query, con);
-                       int check = (int)cmd.ExecuteNonQuery();
-
-                    if (check != 0)
-                    {
-                      
-
-                       //final status to doc
-                String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where ArchiveBookID = " + book_ID;
-
-                SqlCommand cmd1 = new SqlCommand(strQuery, con);
-
-                cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "قيد المتابعة";
-              
-                cmd1.ExecuteNonQuery();
-                     comboB_FollowUp_Title.Text = "";
-                    }
-
-                    else if (check == 0)
-                    {
-                    MessageBox.Show("لم يتم ادخال المعلومات ");
-                    }
-                }
-                con.Close();
-
-                BringFolloWUp_TBL();
-
-
-                MessageBox.Show("تم اضافة متابعة جديدة ");
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
-
-        }
-
-        private void tSMenuItem_FollowUp_Save_Click(object sender, EventArgs e)
-        {
-            con.Open();
-          
-            String strQuery = @"Update ArchiveFollowUp set Action = @Action, Note = @Note Where ArchiveFollowUpID = " + advanc_dgv_Assign_Comment.CurrentRow.Cells[0].Value;
-
-            SqlCommand cmd1 = new SqlCommand(strQuery, con);
-
-            cmd1.Parameters.Add(new SqlParameter("@Action", SqlDbType.NVarChar)).Value = tSComBox_FollowUp_type.SelectedItem;
-            cmd1.Parameters.Add(new SqlParameter("@Note", SqlDbType.NVarChar)).Value = tSTXT_FollowUp_Not.Text;
-
-            cmd1.ExecuteNonQuery();
-
-
-            con.Close();
-
-            BringFolloWUp_TBL();
-
-            tSComBox_FollowUp_type.Text = "";
-            tSTXT_FollowUp_Not.Text = "";
-        }
-
-        private void BTN_deleteTask_Click(object sender, EventArgs e)
-        {
-            if (advanc_dgv_Assign_Comment.RowCount == 0)
-            {
-                MessageBox.Show("لايمكن الحذف لاتوجد مهام لحذفها","لم يتم ");
-               return ;
-            }
-
-          
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show("هل انت متاكد بانك تريد حذف هذة المهمة", "تاكيد", buttons);
-            if (result == DialogResult.No)
-            {
-              return;
-            }
         
-            con.Open();
-            SqlCommand cmd = new SqlCommand("Delete from ArchiveFollowUp where ArchiveFollowUpID =" + advanc_dgv_Assign_Comment.CurrentRow.Cells[0].Value, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            BringFolloWUp_TBL();
-        
-        }
-
-        private void BTN_editTask_Click(object sender, EventArgs e)
-        {
-            if (advanc_dgv_Assign_Comment.RowCount == 0)
-            {
-                MessageBox.Show("لاتوجد مهام لتعديلها", "لم يتم ");
-                return;
-            }
-
-            comboB_FollowUp_Title.Text = Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[3].Value);
-            string deName = Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[4].Value);
-
-            for (int x = 0; x < listView_Departments.Items.Count; x++)
-
-            {
-                if (listView_Departments.Items[x].ToString() == deName)
-                {
-                    listView_Departments.CheckedItems[x].Checked = true;
-                    
-                }
-                else
-                {
-                    listView_Departments.CheckedItems[x].Checked = false;
-                }
-            }
-        }
-
-        private void advanc_dgv_Assign_Comment_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            tSComBox_FollowUp_type.SelectedItem = Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[5].Value);
-            tSTXT_FollowUp_Not.Text = Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[6].Value);
-        }
-
-        private void btn_edit_status_FollowUp_Click(object sender, EventArgs e)
-        {
-
-          if (btn_edit_status_FollowUp.Text == "اضافة الى المتابعه")
-            {
-            con.Open();
-            //final status to doc
-            String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where ArchiveBookID = " + book_ID;
-            SqlCommand cmd1 = new SqlCommand(strQuery, con);
-            cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "قيد المتابعة";
-            cmd1.ExecuteNonQuery();
-            con.Close();
-            btn_edit_status_FollowUp.Text = "ازالة من المتابعه";
-            MessageBox.Show("تم اضافة الكتاب الى المتابعة", "تم ");
-            }
-          else
-            {
-                for (int x = 0; x < advanc_dgv_Assign_Comment.Rows.Count; x++)
-
-                {
-                    if (Convert.ToString(advanc_dgv_Assign_Comment.CurrentRow.Cells[5].Value) != "مكتمل")
-                    {
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                 DialogResult result = MessageBox.Show("توجد مهمة واحدة او اكثر قيد المتابعة الى الان, ولم يتم عمل لها اجراء مكتمل "+ System.Environment.NewLine + "هل انته متاكد من ازالة الكتاب من المتابعه", "تاكيد", buttons);
-                if (result == DialogResult.No)
-                {
-                    return;
-                }
-                    break;
-                }
-                   
-                }
-
-                con.Open();
-                //final status to doc
-                String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where ArchiveBookID = " + book_ID;
-                SqlCommand cmd1 = new SqlCommand(strQuery, con);
-                cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "بدون متابعة";
-                cmd1.ExecuteNonQuery();
-                con.Close();
-                btn_edit_status_FollowUp.Text = "اضافة الى المتابعه";
-                MessageBox.Show("تم ازالة الكتاب من المتابعة", "تم ");
-            }
-           
-        }
-
         private void TXT_Book_recive_number_TextChanged(object sender, EventArgs e)
         {
             {
@@ -1209,5 +966,7 @@ where ArchiveBookID={0}", bookID, con);
                 }
             }
         }
+
+        
     }
 }
