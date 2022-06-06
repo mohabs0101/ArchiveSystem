@@ -50,6 +50,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Scanning_Folder = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.TXT_To = new System.Windows.Forms.TextBox();
+            this.TXT_From = new System.Windows.Forms.TextBox();
             this.TXT_Subject = new System.Windows.Forms.TextBox();
             this.panel_viwe_DT_bookRecive_date = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
@@ -106,8 +108,6 @@
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TXT_From = new System.Windows.Forms.TextBox();
-            this.TXT_To = new System.Windows.Forms.TextBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -445,6 +445,20 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(631, 421);
             this.panel12.TabIndex = 3;
+            // 
+            // TXT_To
+            // 
+            this.TXT_To.Location = new System.Drawing.Point(321, 228);
+            this.TXT_To.Name = "TXT_To";
+            this.TXT_To.Size = new System.Drawing.Size(275, 27);
+            this.TXT_To.TabIndex = 162;
+            // 
+            // TXT_From
+            // 
+            this.TXT_From.Location = new System.Drawing.Point(322, 185);
+            this.TXT_From.Name = "TXT_From";
+            this.TXT_From.Size = new System.Drawing.Size(275, 27);
+            this.TXT_From.TabIndex = 161;
             // 
             // TXT_Subject
             // 
@@ -1094,20 +1108,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // TXT_From
-            // 
-            this.TXT_From.Location = new System.Drawing.Point(322, 185);
-            this.TXT_From.Name = "TXT_From";
-            this.TXT_From.Size = new System.Drawing.Size(275, 27);
-            this.TXT_From.TabIndex = 161;
-            // 
-            // TXT_To
-            // 
-            this.TXT_To.Location = new System.Drawing.Point(321, 228);
-            this.TXT_To.Name = "TXT_To";
-            this.TXT_To.Size = new System.Drawing.Size(275, 27);
-            this.TXT_To.TabIndex = 162;
             // 
             // Form1
             // 
