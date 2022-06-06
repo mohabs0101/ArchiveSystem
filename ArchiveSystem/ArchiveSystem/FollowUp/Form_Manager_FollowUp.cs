@@ -597,7 +597,7 @@ AND ([ArchiveFollowUp].FollowStatus = @Param2)
             cmd1.Parameters.Add(new SqlParameter("@Note", SqlDbType.NVarChar)).Value = not;
 
             cmd1.ExecuteNonQuery();
-
+           
 
             con.Close();
 
