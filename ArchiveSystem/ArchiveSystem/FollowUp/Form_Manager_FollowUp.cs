@@ -96,63 +96,104 @@ SELECT  [DepartmentID]
 
 
         //this function will bring books that have assign to my department
-        void fill_FollowUp()
+        string FollowStatus="نشط";
+      
+        void fill_FollowUp_send()
         {
 
-            string query = string.Format(@"  SELECT
+            SqlDataAdapter adp1 = new SqlDataAdapter(@"SELECT
 
              [dbo].[ArchiveFollowUp]. type_follow_task as [النوع],
-  [dbo].[ArchiveFollowUp]. BookCode as [كود الكتاب],
+             [dbo].[ArchiveFollowUp]. BookCode as [كود الكتاب],
              [dbo].[ArchiveFollowUp]. ArchiveBookID as [رقم الكتاب],
              [dbo].[ArchiveFollowUp]. Department_From_me_ID as [من قسم],
-        	 [dbo]. [Departments_TBL]. DepartmentName as [الى قسم],
-        [dbo].[ArchiveFollowUp].Task as [المهمة],
-       [dbo].[ArchiveFollowUp]. Action as [الاجراء],
-       [dbo].[ArchiveFollowUp]. Note as [الملاحظات],
-[dbo].[Users_TBL].Username as [موظف الاضافة],
-       [dbo].[ArchiveFollowUp]. DateAdded as [تاريخ اضافة المهة],
-ArchiveFollowUpID  as [المعرف]
+        	 [dbo].[Departments_TBL]. DepartmentName as [ارسال الى قسم],
+             [dbo].[ArchiveFollowUp].Task as [عنوان الطلب],
+             [dbo].[ArchiveFollowUp]. Action as [الاجراء المتخذ],
+             [dbo].[ArchiveFollowUp]. Note as [الملاحظات],
+             [dbo].[Users_TBL].Username as [موظف الاضافة],
+             [dbo].[ArchiveFollowUp]. DateAdded as [تاريخ اضافة],
+             [dbo].[ArchiveFollowUp].FollowStatus as [الحالة النهائية],
+             [dbo].[ArchiveFollowUp].ArchiveFollowUpID as [المعرف]
+
 
                     FROM[ArchiveSystem].[dbo].[ArchiveFollowUp]
-inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Departments_TBL].[DepartmentID]
+               inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Departments_TBL].[DepartmentID]
 
                inner JOIN[Users_TBL] ON[ArchiveFollowUp].[User_Add] = [Users_TBL].[UserID]
+WHERE([ArchiveFollowUp].Department_From_me_ID = @Param1)
+
+AND ([ArchiveFollowUp].FollowStatus = @Param2)
           ", con);
-            //DepID
-            //inner JOIN[ArchiveBooks_TBL] ON[ArchiveFollowUp].ArchiveBookID = [ArchiveBooks_TBL].ArchiveBookID
-            //     inner JOIN[BooksType_TBL] ON[ArchiveBooks_TBL].[BooksTypeID] = [BooksType_TBL].[BooksTypeID]
-              
+            adp1.SelectCommand.Parameters.AddWithValue("@Param1", Login._depID);
+            adp1.SelectCommand.Parameters.AddWithValue("@Param2", FollowStatus);
 
-            //  where[ArchiveFollowUp].[Department_AssignTO_ID] = {0}
+            DataTable FollUp_dt = new DataTable();
+            FollUp_dt.Clear();
+
+            adp1.Fill(FollUp_dt);
+            advanc_dgv_FollowUp.DataSource = FollUp_dt;
+            label_count_send.Text =Convert.ToString(FollUp_dt.Rows.Count);
+        }
+
+        void fill_FollowUp_recive()
+        {
+
+            SqlDataAdapter adp1 = new SqlDataAdapter(@"SELECT
+
+             [dbo].[ArchiveFollowUp]. type_follow_task as [النوع],
+             [dbo].[ArchiveFollowUp]. BookCode as [كود الكتاب],
+             [dbo].[ArchiveFollowUp]. ArchiveBookID as [رقم الكتاب],
+             [dbo].[ArchiveFollowUp]. Department_From_me_ID as [من قسم],
+        	 [dbo].[Departments_TBL]. DepartmentName as [مستلم من قسم],
+             [dbo].[ArchiveFollowUp].Task as [عنوان الطلب],
+             [dbo].[ArchiveFollowUp]. Action as [الاجراء المتخذ],
+             [dbo].[ArchiveFollowUp]. Note as [الملاحظات],
+             [dbo].[Users_TBL].Username as [موظف الاضافة],
+             [dbo].[ArchiveFollowUp]. DateAdded as [تاريخ اضافة],
+             [dbo].[ArchiveFollowUp].FollowStatus as [الحالة النهائية],
+             [dbo].[ArchiveFollowUp].ArchiveFollowUpID as [المعرف]
 
 
-            con.Open();
-            SqlCommand cmd = new SqlCommand(query, con);
+                    FROM[ArchiveSystem].[dbo].[ArchiveFollowUp]
+               inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Departments_TBL].[DepartmentID]
 
-            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+               inner JOIN[Users_TBL] ON[ArchiveFollowUp].[User_Add] = [Users_TBL].[UserID]
+WHERE([ArchiveFollowUp].Department_To_you_ID = @Param1)
 
-            DataTable AssignBooks = new DataTable();
+AND ([ArchiveFollowUp].FollowStatus = @Param2)
+          ", con);
+            adp1.SelectCommand.Parameters.AddWithValue("@Param1", Login._depID);
+            adp1.SelectCommand.Parameters.AddWithValue("@Param2", FollowStatus);
+            DataTable FollUp_dt = new DataTable();
+            FollUp_dt.Clear();
 
-            adp.Fill(AssignBooks);
-            advanc_dgv_FollowUp.DataSource = AssignBooks;
-
-            con.Close();
-
-
-
+            adp1.Fill(FollUp_dt);
+            advanc_dgv_FollowUp.DataSource = FollUp_dt;
+            label_count_recive.Text = Convert.ToString(FollUp_dt.Rows.Count);
         }
 
 
         private void Form_Manager_FollowUp_Load(object sender, EventArgs e)
         {
+            contextMenuStrip_FollowUp.Enabled = false;
+
             txt_book_id.Text = _bookID;
             txt_Date_doc.Text = _date_book;
             txt_sbj_doc.Text = _sbj_book;
 
             fill_Departments();
-            fill_FollowUp();
+            
+            fill_FollowUp_recive();
+            fill_FollowUp_send();
 
-            advanc_dgv_FollowUp.Columns[10].Visible = false;
+            advanc_dgv_FollowUp.Columns[1].Visible = false;
+            advanc_dgv_FollowUp.Columns[3].Visible = false;
+            advanc_dgv_FollowUp.Columns[11].Visible = false;
+
+            advanc_dgv_FollowUp.Columns[4].Width = 150;
+            advanc_dgv_FollowUp.Columns[5].Width = 150;
+            advanc_dgv_FollowUp.Columns[7].Width = 200;
         }
 
         private void BTN_addTask_Click(object sender, EventArgs e)
@@ -189,9 +230,9 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
             {
                 int Department_To_you_ID = Convert.ToInt32(listView_Departments.Items[Item.Index].SubItems[0].Text);
 
-                string query = string.Format(@"INSERT INTO [dbo].[ArchiveFollowUp](type_follow_task,BookCode,ArchiveBookID,Department_From_me_ID,Department_To_you_ID,Task,Action,Note,User_Add,DateAdded)
+                string query = string.Format(@"INSERT INTO [dbo].[ArchiveFollowUp](type_follow_task,BookCode,ArchiveBookID,Department_From_me_ID,Department_To_you_ID,Task,Action,Note,User_Add,DateAdded,FollowStatus)
                           
-                         VALUES(@type_follow_task,@BookCode,@ArchiveBookID,@Department_From_me_ID,@Department_To_you_ID,@Task,@Action,@Note,@User_Add,@DateAdded)",  con);
+                         VALUES(@type_follow_task,@BookCode,@ArchiveBookID,@Department_From_me_ID,@Department_To_you_ID,@Task,@Action,@Note,@User_Add,@DateAdded,@FollowStatus)",  con);
                             
                           
               
@@ -223,8 +264,8 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
                 cmd.Parameters.Add(new SqlParameter("@Note", SqlDbType.NVarChar)).Value = "" ;
                 cmd.Parameters.Add(new SqlParameter("@User_Add", SqlDbType.Int)).Value = Login._userID;
                 cmd.Parameters.Add(new SqlParameter("@DateAdded", SqlDbType.NVarChar)).Value =DateAdded;
-               
-              
+                cmd.Parameters.Add(new SqlParameter("@FollowStatus", SqlDbType.NVarChar)).Value ="نشط";
+
                 int check = (int)cmd.ExecuteNonQuery();
 
                 if (check != 0)
@@ -254,7 +295,7 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
             }
             con.Close();
 
-            fill_FollowUp();
+            fill_FollowUp_send();
 
 
             MessageBox.Show("تم اضافة متابعة جديدة ");
@@ -267,10 +308,7 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
 
         }
 
-        private void btn_fill_followup_Click(object sender, EventArgs e)
-        {
-            fill_FollowUp();
-        }
+        
 
         public static string BookCode;
         private void advanc_dgv_FollowUp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -334,7 +372,7 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
 
 
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show("هل انت متاكد بانك تريد حذف هذة المهمة", "تاكيد", buttons);
+            DialogResult result = MessageBox.Show("هل انت متاكد بانك تريد حذف الطلب", "تاكيد", buttons);
             if (result == DialogResult.No)
             {
                 return;
@@ -343,43 +381,213 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
             var dgv_CurrentRow_BC = Convert.ToString(advanc_dgv_FollowUp.CurrentRow.Cells[1].Value);
             con.Open();
             SqlCommand cmd = new SqlCommand("Delete from ArchiveFollowUp where ArchiveFollowUpID = @ArchiveFollowUpID", con);
-            cmd.Parameters.Add(new SqlParameter("@ArchiveFollowUpID", SqlDbType.NVarChar)).Value = advanc_dgv_FollowUp.CurrentRow.Cells[10].Value;
-            cmd.ExecuteNonQuery();
-            con.Close();
+            cmd.Parameters.Add(new SqlParameter("@ArchiveFollowUpID", SqlDbType.NVarChar)).Value = advanc_dgv_FollowUp.CurrentRow.Cells[11].Value;
+            int check = (int)cmd.ExecuteNonQuery();
 
-            fill_FollowUp();
+            if (check != 0)
+            {
 
-            string state = "no_found";
+             con.Close();
+
+                fill_FollowUp_recive();
+                fill_FollowUp_send();
+
+            string state="";
             for (int x = 0; x < advanc_dgv_FollowUp.Rows.Count; x++)
 
             {
-                if (Convert.ToString(advanc_dgv_FollowUp.CurrentRow.Cells[x].Value) == dgv_CurrentRow_BC)
+                var CurrentRow_loop =Convert.ToString(advanc_dgv_FollowUp.Rows[x].Cells[1].Value);
+                if (CurrentRow_loop == dgv_CurrentRow_BC)
                 {
                     state = "found";
                     break;
+                }
+                else
+                {
+                    state = "no_found";
                 }
 
             }
 
             if (state == "no_found")
             {
-                MessageBox.Show("no_found");
-            }
-            else
-            {
-                MessageBox.Show("found");
-            }
+                    con.Open();
+                    //final status to doc
+                    String strQuery = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where BookCode = @BookCode";
+                    SqlCommand cmd1 = new SqlCommand(strQuery, con);
+                    cmd1.Parameters.Add(new SqlParameter("@BookCode", SqlDbType.NVarChar)).Value = dgv_CurrentRow_BC;
+                  
+                    cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "بدون متابعة";
+                    cmd1.ExecuteNonQuery();
+                    con.Close();
+                }
 
+                MessageBox.Show("تم حذف الطب نهائياً");
+            }
+            else if (check == 0)
+            {
+                MessageBox.Show("لم تتم العملية ");
+            }
+          
 
            
 
         }
 
-        private void tSMenuItem_FollowUp_Save_Click(object sender, EventArgs e)
+        private void btn_end_status_FollowUp_Click(object sender, EventArgs e)
         {
+            if (advanc_dgv_FollowUp.RowCount == 0)
+            {
+                MessageBox.Show("لايمكن الانهاء لاتوجد مهام لانهائها", "لم يتم ");
+                return;
+            }
+
+
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("هل انت متاكد بانك تريد انهاء الطلب", "تاكيد", buttons);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            var dgv_CurrentRow_BC = Convert.ToString(advanc_dgv_FollowUp.CurrentRow.Cells[1].Value);
+            con.Open();
+          
+            //final status to doc
+            String strQuery = @"Update ArchiveFollowUp set FollowStatus = @FollowStatus Where ArchiveFollowUpID = @ArchiveFollowUpID";
+            SqlCommand cmd = new SqlCommand(strQuery, con);
+            cmd.Parameters.Add(new SqlParameter("@ArchiveFollowUpID", SqlDbType.NVarChar)).Value = advanc_dgv_FollowUp.CurrentRow.Cells[11].Value;
+
+            cmd.Parameters.Add(new SqlParameter("@FollowStatus", SqlDbType.NVarChar)).Value = "منتهي";
+          
+            int check = (int)cmd.ExecuteNonQuery();
+
+            if (check != 0)
+            {
+
+                con.Close();
+
+                fill_FollowUp_recive();
+                fill_FollowUp_send();
+
+                string state = "";
+                for (int x = 0; x < advanc_dgv_FollowUp.Rows.Count; x++)
+
+                {
+                    var CurrentRow_loop = Convert.ToString(advanc_dgv_FollowUp.Rows[x].Cells[1].Value);
+                    if (CurrentRow_loop == dgv_CurrentRow_BC)
+                    {
+                        state = "found";
+                        break;
+                    }
+                    else
+                    {
+                        state = "no_found";
+                    }
+
+                }
+
+                if (state == "no_found")
+                {
+                    con.Open();
+                    //final status to doc
+                    String strQuery1 = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where BookCode = @BookCode";
+                    SqlCommand cmd1 = new SqlCommand(strQuery1, con);
+                    cmd1.Parameters.Add(new SqlParameter("@BookCode", SqlDbType.NVarChar)).Value = dgv_CurrentRow_BC;
+
+                    cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "بدون متابعة";
+                    cmd1.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("تم انهاء الطب ولايمكن مشاهدة من باقي الاقسام و يمكن مشاهدة الطلب في خانة الطلبات المنتهية لديك");
+                }
+
+
+            }
+            else if (check == 0)
+            {
+                MessageBox.Show("لم تتم العملية ");
+            }
+
+
+       
+
+        
+        }
+
+        private void btn_active_status_FollowUp_Click(object sender, EventArgs e)
+        {
+            if (advanc_dgv_FollowUp.RowCount == 0)
+            {
+                MessageBox.Show("لايمكن التنشيط لاتوجد مهام لتنشيطها", "لم يتم ");
+                return;
+            }
+
+
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("هل انت متاكد بانك تريد اعادة تنشيط هذا الطلب", "تاكيد", buttons);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            var dgv_CurrentRow_BC = Convert.ToString(advanc_dgv_FollowUp.CurrentRow.Cells[1].Value);
             con.Open();
 
-            String strQuery = @"Update ArchiveFollowUp set Action = @Action, Note = @Note Where ArchiveFollowUpID = " + advanc_dgv_FollowUp.CurrentRow.Cells[10].Value;
+            //final status to doc
+            String strQuery = @"Update ArchiveFollowUp set FollowStatus = @FollowStatus Where ArchiveFollowUpID = @ArchiveFollowUpID";
+            SqlCommand cmd = new SqlCommand(strQuery, con);
+            cmd.Parameters.Add(new SqlParameter("@ArchiveFollowUpID", SqlDbType.NVarChar)).Value = advanc_dgv_FollowUp.CurrentRow.Cells[11].Value;
+
+            cmd.Parameters.Add(new SqlParameter("@FollowStatus", SqlDbType.NVarChar)).Value = "نشط";
+
+            int check = (int)cmd.ExecuteNonQuery();
+
+            if (check != 0)
+            {
+
+                con.Close();
+
+
+               fill_FollowUp_recive();
+                fill_FollowUp_send();
+                
+
+             
+                    con.Open();
+                    //final status to doc
+                    String strQuery1 = @"Update ArchiveBooks_TBL set BookStatus = @BookStatus Where BookCode = @BookCode";
+                    SqlCommand cmd1 = new SqlCommand(strQuery1, con);
+                    cmd1.Parameters.Add(new SqlParameter("@BookCode", SqlDbType.NVarChar)).Value = dgv_CurrentRow_BC;
+
+                    cmd1.Parameters.Add(new SqlParameter("@BookStatus", SqlDbType.NVarChar)).Value = "قيد المتابعة";
+                    cmd1.ExecuteNonQuery();
+                    con.Close();
+
+                MessageBox.Show("تم اعادة تنشيط الطب يمكن مشاهدة الطلب في خانة الطلبات النشطة");
+
+            }
+            else if (check == 0)
+            {
+                MessageBox.Show("لم تتم العملية ");
+            }
+
+        }
+
+
+
+        private void tSMenuItem_FollowUp_Save_Click(object sender, EventArgs e)
+        {
+            if (tSComBox_FollowUp_type.Text == "")
+            {
+                tSComBox_FollowUp_type.BackColor = Color.LightSalmon;
+                MessageBox.Show("يجب اختيار اجراء", "لم يتم ");
+                return;
+            }
+            else { tSComBox_FollowUp_type.BackColor = Color.White; }
+
+            con.Open();
+
+            String strQuery = @"Update ArchiveFollowUp set Action = @Action, Note = @Note Where ArchiveFollowUpID = " + advanc_dgv_FollowUp.CurrentRow.Cells[11].Value;
 
             SqlCommand cmd1 = new SqlCommand(strQuery, con);
 
@@ -391,7 +599,7 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
 
             con.Close();
 
-            fill_FollowUp();
+            fill_FollowUp_recive();
 
             tSComBox_FollowUp_type.Text = "";
             tSTXT_FollowUp_Not.Text = "";
@@ -399,12 +607,52 @@ inner JOIN[Departments_TBL] ON[ArchiveFollowUp].[Department_To_you_ID] = [Depart
 
         private void btn_task_send_Click(object sender, EventArgs e)
         {
-            panel_state_send_recive.BackColor = Color.Green;
+            
+            fill_FollowUp_send();
+            panel_state_send_recive.BackColor = Color.Teal;
+
+            contextMenuStrip_FollowUp.Enabled = false;
+            BTN_addTask.Enabled = true;
+            btn_Active_FollowStatus.Visible = true;
+            btn_end_FollowStatus.Visible = true;
+            txt_not.Visible = true;
+            panel_contener_buttons.Visible = true;
         }
 
         private void btn_task_recive_Click(object sender, EventArgs e)
         {
+
+            FollowStatus = "نشط";
+            fill_FollowUp_recive();
             panel_state_send_recive.BackColor = Color.Firebrick;
+
+            contextMenuStrip_FollowUp.Enabled = true;
+            BTN_addTask.Enabled = false;
+            btn_Active_FollowStatus.Visible = false;
+            btn_end_FollowStatus.Visible = false;
+            txt_not.Visible = false;
+            panel_contener_buttons.Visible = false;
+           
         }
+
+        private void btn_Active_FollowStatus_Click(object sender, EventArgs e)
+        {
+            FollowStatus = "نشط";
+            btn_end_status_FollowUp.Visible = true;
+            btn_active_status_FollowUp.Visible = false;
+            fill_FollowUp_send();
+            txt_not.Text = "الطلبات التي قمت بارسالها وبانتظار اتخاذ الاجراء المناسب لها من الاقسام التي تم الاشارة لها";
+        }
+
+        private void btn_end_FollowStatus_Click(object sender, EventArgs e)
+        {
+            FollowStatus = "منتهي";
+            btn_end_status_FollowUp.Visible = false;
+            btn_active_status_FollowUp.Visible = true;
+            fill_FollowUp_send();
+            txt_not.Text = "الطلبات التي تم اتخاذ الاجراءالمناسب لها وقمت بانهائها علماً هذة الطلبات لاتظهر بعد الانهاء عند باقي الاقسام التي تم الاشارة لها ";
+        }
+
+       
     }
 }
