@@ -423,7 +423,109 @@ AND([ArchiveFollowUp].BookCode = @Param2)
             Cursor = Cursors.Default;
 
         }
+        void Auto_complet_subject()
+        //نظع هذا السب في حدث الفورم لود
+        {
+            try
+            {
+                string query = string.Format(@" SELECT [Subject] FROM [ArchiveSystem].[dbo].[ArchiveBooks_TBL]", con);
 
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                adp.Fill(dt);
+                AutoCompleteStringCollection ds = new AutoCompleteStringCollection();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    ds.Add(dt.Rows[i][0].ToString());
+                }
+                this.TXT_Subject.AutoCompleteCustomSource = ds;
+                this.TXT_Subject.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                this.TXT_Subject.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
+
+        void Auto_complet_from()
+        //نظع هذا السب في حدث الفورم لود
+        {
+            try
+            {
+                string query = string.Format(@" SELECT [From] FROM [ArchiveSystem].[dbo].[ArchiveBooks_TBL]", con);
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                adp.Fill(dt);
+                AutoCompleteStringCollection ds = new AutoCompleteStringCollection();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    ds.Add(dt.Rows[i][0].ToString());
+                }
+                this.TXT_From.AutoCompleteCustomSource = ds;
+                this.TXT_From.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                this.TXT_From.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
+        void Auto_complet_to()
+        //نظع هذا السب في حدث الفورم لود
+        {
+            try
+            {
+                string query = string.Format(@" SELECT [To] FROM [ArchiveSystem].[dbo].[ArchiveBooks_TBL]", con);
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                adp.Fill(dt);
+                AutoCompleteStringCollection ds = new AutoCompleteStringCollection();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    ds.Add(dt.Rows[i][0].ToString());
+                }
+                this.TXT_To.AutoCompleteCustomSource = ds;
+                this.TXT_To.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                this.TXT_To.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
         private void Form_show_edit_docs_Load_1(object sender, EventArgs e)
         {
             TabControlBookdetails.SelectTab(0);
@@ -447,9 +549,11 @@ AND([ArchiveFollowUp].BookCode = @Param2)
 
            
             show_files_doc();
-           
+            Auto_complet_subject();
 
-          
+            Auto_complet_from();
+            Auto_complet_to();
+
         }
 
         private void cm_type_show_SelectedIndexChanged_1(object sender, EventArgs e)
