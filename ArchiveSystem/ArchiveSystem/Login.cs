@@ -98,6 +98,40 @@ namespace ArchiveSystem
             }
 
         }
+        void Auto_complet_username()
+        //نظع هذا السب في حدث الفورم لود
+        {
+            try
+            {
+                string query = string.Format(@"SELECT [Username]FROM [ArchiveSystem].[dbo].[Users_TBL]", con);
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                adp.Fill(dt);
+                AutoCompleteStringCollection ds = new AutoCompleteStringCollection();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    ds.Add(dt.Rows[i][0].ToString());
+                }
+                this.TXT_User.AutoCompleteCustomSource = ds;
+                this.TXT_User.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                this.TXT_User.AutoCompleteMode = AutoCompleteMode.Append;
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
 
         private void Login_Load(object sender, EventArgs e)
         {
@@ -106,8 +140,9 @@ namespace ArchiveSystem
             //اولا نحذف جميع الفولدرات المنزلة سابقا تحسبا لعدم حذفها بسبب استخدامه من قبل المعالج
             try
             {
+                Auto_complet_username();
 
-           
+
             System.IO.DirectoryInfo di = new DirectoryInfo(ConfigurationManager.AppSettings["Path_Folder_Client_Temp"]);
 
             foreach (DirectoryInfo file in di.GetDirectories())

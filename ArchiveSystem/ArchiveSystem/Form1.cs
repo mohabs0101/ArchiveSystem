@@ -18,6 +18,7 @@ using System.Data.SqlClient;
 using ArchiveSystem.Folder_view_data;
 using System.Text.RegularExpressions;
 using ArchiveSystem.FollowUp;
+using ArchiveSystem.EditeDocs;
 
 namespace ArchiveSystem
 {
@@ -42,7 +43,7 @@ namespace ArchiveSystem
         public int DepID = 0;
 
 
-      
+
         //connection string from app config
         public static string _con = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         SqlConnection con = new SqlConnection(_con);
@@ -50,7 +51,7 @@ namespace ArchiveSystem
 
         DataTable DT_TEXTBOX = new DataTable();
         void Auto_complet_subject()
-         //نظع هذا السب في حدث الفورم لود
+        //نظع هذا السب في حدث الفورم لود
         {
             try
             {
@@ -153,7 +154,7 @@ namespace ArchiveSystem
 
 
         }
-        
+
 
 
 
@@ -164,14 +165,14 @@ namespace ArchiveSystem
             //--------------moh------------------
             // set indexes of comboboxes
             metroTabControl1.SelectTab(0);
-            
+
             COM_PaperType.SelectedIndex = 0;
             COM_priority.SelectedIndex = 0;
             COM_privicy.SelectedIndex = 0;
             Doc_source = Properties.Settings.Default.DOC_Source.ToString(); // doc source
             metroTabControl1.RightToLeft = RightToLeft.Yes;
             metroTabControl1.RightToLeftLayout = true;
-          
+
 
 
             Refresh_Folders();
@@ -192,15 +193,15 @@ namespace ArchiveSystem
                 request.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
 
                 // This example assumes the FTP site uses anonymous logon.
-                request.Credentials = new NetworkCredential(FTP_user,FTP_pass);
+                request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
 
                 FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 
                 Stream responseStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(responseStream);
                 Console.WriteLine(reader.ReadToEnd());
-               
-             
+
+
                 reader.Close();
                 response.Close();
                 PICBOX_successICON.Visible = true;
@@ -244,12 +245,12 @@ namespace ArchiveSystem
             new_tab2.Dock = DockStyle.Fill;
             int x2 = metroTabControl1.TabCount;
             t2.Text = "المتابعة والمهام";// + x
-           
+
             //---------------end-----------------
 
             this.WindowState = FormWindowState.Maximized;
 
-       
+
 
         }
 
@@ -312,13 +313,13 @@ namespace ArchiveSystem
         //archive both db and ftp files
         private void BTN_Archive_Click(object sender, EventArgs e)
         {
-           
+
             Random rand = new Random();
             int ran = rand.Next(100000, 999999);
 
             string subject_ = TXT_Subject.Text;
             string subject = Regex.Replace(subject_, @"[^0-9a-zA-Zء-ي]", " ");
-            
+
 
             string datenow = DateTime.Now.ToString("hhmmss");
             string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
@@ -337,18 +338,18 @@ namespace ArchiveSystem
             int userid = Login._userID;
 
             //اذا كان رقم واردنا فارغ نقوم بادخال تاريخ واردنا
-            string InboundDate="";
+            string InboundDate = "";
             if (TXT_Book_recive_number.Text == "")
             {
                 InboundDate = "";
             }
             else
             {
-            string InboundDate_ = DT_bookRecive_date.Text;
-            DateTime oDate = Convert.ToDateTime(InboundDate_);
-             InboundDate = oDate.ToString("yyyy/MM/dd");
+                string InboundDate_ = DT_bookRecive_date.Text;
+                DateTime oDate = Convert.ToDateTime(InboundDate_);
+                InboundDate = oDate.ToString("yyyy/MM/dd");
             }
-            
+
 
 
             string DT_bookDate_ = DT_bookDate.Text;
@@ -358,7 +359,7 @@ namespace ArchiveSystem
 
 
 
-          
+
 
             string InboundNumber = TXT_Book_recive_number.Text;
 
@@ -376,7 +377,7 @@ namespace ArchiveSystem
                 {
                     if (is_checked == true)
                     {
-                         
+
                         files_checked.Add(DGV_Files.Rows[i].Cells[1].Value.ToString());
                     }
                 }
@@ -386,38 +387,38 @@ namespace ArchiveSystem
                 List<TextBox> boxes = new List<TextBox>();
                 if (string.IsNullOrWhiteSpace(TXT_bookNumber.Text))
                 {
-                    
+
                     boxes.Add(TXT_bookNumber);
                 }
                 else { TXT_bookNumber.BackColor = Color.White; }
-               
+
 
                 if (string.IsNullOrWhiteSpace(TXT_Subject.Text))
                 {
-                    
+
                     boxes.Add(TXT_Subject);
                 }
                 else { TXT_Subject.BackColor = Color.White; }
                 if (string.IsNullOrWhiteSpace(TXT_From.Text))
                 {
-                    
+
                     boxes.Add(TXT_From);
                 }
                 else { TXT_From.BackColor = Color.White; }
 
                 if (string.IsNullOrWhiteSpace(TXT_To.Text))
                 {
-                   
+
                     boxes.Add(TXT_To);
                 }
                 else { TXT_To.BackColor = Color.White; }
                 if (string.IsNullOrWhiteSpace(TXT_SearchKEys.Text))
                 {
-                    
+
                     boxes.Add(TXT_SearchKEys);
                 }
                 else { TXT_SearchKEys.BackColor = Color.White; }
-                 
+
                 foreach (var item in boxes)
                 {
                     if (string.IsNullOrWhiteSpace(item.Text))
@@ -463,7 +464,7 @@ namespace ArchiveSystem
 
                     reader.Close();
                     response.Close();
-                   
+
 
                 }
                 catch
@@ -474,7 +475,7 @@ namespace ArchiveSystem
                 }
 
 
-              string  bookStatus_FollowUp = "بدون متابعة";
+                string bookStatus_FollowUp = "بدون متابعة";
                 string query = string.Format(@"INSERT INTO [dbo].[ArchiveBooks_TBL]
            ([BookCode]
            ,[BookNumber]
@@ -531,7 +532,7 @@ namespace ArchiveSystem
 
                     string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
 
-                     int i = 0;
+                    int i = 0;
                     //foreach on checked files
                     foreach (var item in files_checked)
                     {
@@ -539,16 +540,16 @@ namespace ArchiveSystem
                         string filenamechecked = item.ToString();
                         foreach (string file in Files)
                         {
-                            
-                                
+
+
                             string file_name = Path.GetFileName(file);
 
                             if (file_name == filenamechecked)
                             {
-                               
+
                                 //upload selected files only 
                                 //string fn = subject + file_name;
-                                string fn = BookNumber+subject +DateTime.Now.ToString("yyyyMMddhhmmss") + i + Path.GetExtension(file);
+                                string fn = BookNumber + subject + DateTime.Now.ToString("yyyyMMddhhmmss") + i + Path.GetExtension(file);
 
                                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + fn);
                                 request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
@@ -587,7 +588,7 @@ namespace ArchiveSystem
                     TXT_To.Clear();
                     TXT_SearchKEys.Clear();
                     TXT_notes.Clear();
-                     COM_PaperType.SelectedIndex = 0;
+                    COM_PaperType.SelectedIndex = 0;
                     COM_priority.SelectedIndex = 0;
                     COM_privicy.SelectedIndex = 0;
                     COM_bookType.SelectedIndex = 0;
@@ -642,7 +643,7 @@ namespace ArchiveSystem
                 catch
                 {
                 }
-                
+
 
             }
         }
@@ -659,18 +660,18 @@ namespace ArchiveSystem
         //display picbox in windows
         private void PicB_displayBOOK_Click(object sender, EventArgs e)
         {
-          try
-            { 
-            // Use default image viewer  
-             System.Diagnostics.Process.Start(picture_path);
+            try
+            {
+                // Use default image viewer  
+                System.Diagnostics.Process.Start(picture_path);
             }
             catch
             {
                 MessageBox.Show("لاتوجد صورة لعرضها");
             }
 
-   
-         
+
+
         }
 
 
@@ -697,7 +698,7 @@ namespace ArchiveSystem
         //select folder to scann into
         private void Scanning_Folder_Click(object sender, EventArgs e)
         {
-          
+
             try
             {
                 Folder_Brows_DOC_Source.ShowDialog();
@@ -715,8 +716,8 @@ namespace ArchiveSystem
 
 
         }
-         
-        
+
+
         //refres folder to display its files 
         public void folder_update()
 
@@ -742,7 +743,7 @@ namespace ArchiveSystem
             CHK_selectall.Visible = true;
         }
 
-       
+
 
         //get folders (scanned books) of speacific folders
         public void Refresh_Folders()
@@ -913,6 +914,41 @@ namespace ArchiveSystem
                     }
                 }
             }
+        }
+
+        private void BTN_LogOut_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+
+            //Form_show_edit_docs showdoc = new Form_show_edit_docs(BookCode);
+
+            //Form_show_edit_docs obj1 = (Form_show_edit_docs)Application.OpenForms["Form_show_edit_docs"];
+            //obj1.Close();
+
+            //ScanDialog obj2 = (ScanDialog)Application.OpenForms["ScanDialog"];
+            //obj2.Close();
+
+            //SelectScanner obj3 = (SelectScanner)Application.OpenForms["SelectScanner"];
+            //obj3.Close();
+
+            //AddDocs obj4 = (AddDocs)Application.OpenForms["AddDocs"];
+            //obj4.Hide();
+
+
+           
+            //    List<Form> formsToClose = new List<Form>();
+            //    foreach (Form form in Application.OpenForms)
+            //    {
+            //        if (form != this)
+            //        {
+            //            formsToClose.Add(form);
+            //        }
+            //    }
+
+            //    formsToClose.ForEach(f => f.Close());
+             
+            //Login log_in = new Login();
+            //log_in.Show();
         }
     }
 }
