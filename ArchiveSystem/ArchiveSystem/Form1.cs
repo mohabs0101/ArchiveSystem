@@ -215,7 +215,7 @@ namespace ArchiveSystem
                 LBL_FTPconValue.Visible = true;
                 PICBOX_failICON.Visible = true;
                 PICBOX_successICON.Visible = false;
-
+                MessageBox.Show("لايوجد اتصال ب ملف FTP");
             }
             //--------------end------------------
 
@@ -312,9 +312,7 @@ namespace ArchiveSystem
         //archive both db and ftp files
         private void BTN_Archive_Click(object sender, EventArgs e)
         {
-
-
-
+           
             Random rand = new Random();
 
 
@@ -469,7 +467,7 @@ namespace ArchiveSystem
                 catch
                 {
 
-                    MessageBox.Show("لا يمكن الادخال تأكد من الاتصال بالشبكة");
+                    MessageBox.Show("لا يمكن الادخال لايوجد اتصال ب FTP");
                     return;
                 }
 
@@ -802,6 +800,8 @@ namespace ArchiveSystem
                 MessageBox.Show(ex.ToString());
             }
         }
+
+
         //get info from login  form
         void callLogin_info()
         {
@@ -850,144 +850,7 @@ namespace ArchiveSystem
             }
             con.Close();
         }
-        string ftp_server_Ip = ConfigurationManager.AppSettings["FTP_Server_Ip"];
-        string ftp_server_username = ConfigurationManager.AppSettings["FTP_Server_user"];
-        string ftp_server_password = ConfigurationManager.AppSettings["FTP_Server_pass"];
 
-        //The path of the file on the client computer with which we will download the files from the FTP file temporarily, and then we delete the downloaded files
-        string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
-        public  string BookCode;
-        private void Download(string fileName)
-        {
-
-            FtpWebRequest reqFTP;
-            try
-            {
-
-                //filePath = <<The full path where the file is to be created. the>>,
-                //fileName = <<Name of the file to be createdNeed not name on FTP server. name name()>>
-                FileStream outputStream = new FileStream(path_folder_client_temp + "\\" + fileName, FileMode.Create);
-                //                                           Here we put the path IP, and file name of the FTP file server
-                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\" + fileName)); 
-                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + DGV_assignation.CurrentRow.Cells[6].Value.ToString() + @"\" + DGV_assignation.CurrentRow.Cells[0].Value.ToString() + @"\" + fileName));
-                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
-                reqFTP.UseBinary = true;
-                reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
-                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
-                Stream ftpStream = response.GetResponseStream();
-                long cl = response.ContentLength;
-                int bufferSize = 2048;
-                int readCount;
-                byte[] buffer = new byte[bufferSize];
-                readCount = ftpStream.Read(buffer, 0, bufferSize);
-                while (readCount > 0)
-                {
-                    outputStream.Write(buffer, 0, readCount);
-                    readCount = ftpStream.Read(buffer, 0, bufferSize);
-                }
-                ftpStream.Close();
-                outputStream.Close();
-                response.Close();
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        public string[] GetFileList()
-        {
-
-
-            string[] downloadFiles;
-            StringBuilder result = new StringBuilder();
-            FtpWebRequest reqFTP;
-            try
-            {
-                //                                          Here we put the path IP and of the FTP file server
-                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\"));
-                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + DGV_assignation.CurrentRow.Cells[6].Value.ToString() + @"\" + DGV_assignation.CurrentRow.Cells[0].Value.ToString() + @"\"));
-                reqFTP.UseBinary = true;
-                reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
-                reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
-                WebResponse response = reqFTP.GetResponse();
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                string line = reader.ReadLine();
-                while (line != null)
-                {
-                    result.Append(line);
-                    result.Append("\n");
-                    line = reader.ReadLine();
-                }
-                // to remove the trailing '\n'
-                //if (result.Length==0)
-                //{
-                //    MessageBox.Show("هذا الكتاب لا يحتوي على مستندات");
-                //}
-                result.Remove(result.ToString().LastIndexOf('\n'), 1);
-                reader.Close();
-                response.Close();
-
-                return result.ToString().Split('\n');
-
-            }
-            catch (Exception ex)
-            {
-                //System.Windows.Forms.MessageBox.Show(ex.Message);
-                downloadFiles = null;
-                return downloadFiles;
-            }
-        }
-        private void DGV_assignation_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                string[] files = GetFileList();
-
-                System.IO.DirectoryInfo di = new DirectoryInfo(path_folder_client_temp);
-
-                foreach (FileInfo file in di.GetFiles())
-                {
-                    ////////////important code/////////////
-                    //It allows us to delete when the file is used by the processor
-                    System.GC.Collect();
-                    System.GC.WaitForPendingFinalizers();
-                    //----------end-------------
-
-                    file.Delete();
-
-                }
-
-                if (files != null)
-                {
-                    foreach (string file in files)
-                    {
-
-                        Download(file);
-
-                    }
-                }
-
-
-
-                var path = string.Format(path_folder_client_temp);
-
-                BookCode = DGV_assignation.CurrentRow.Cells[0].Value.ToString();
-
-                Form_show_docs s_doc1 = new Form_show_docs(BookCode);
-                s_doc1.Show();
-
-                //System.Diagnostics.Process.Start(path);
-
-            }
-            catch (WebException ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
 
         private void BTN_RefrshFolders_Click(object sender, EventArgs e)
         {
@@ -1008,11 +871,45 @@ namespace ArchiveSystem
             }
         }
 
-      
 
-        private void TXT_Subject_TextChanged_1(object sender, EventArgs e)
+
+        // --Code Zoom Mouse----
+        protected override void OnMouseWheel(MouseEventArgs ea)
         {
+            //  flag = 1;
+            // Override OnMouseWheel event, for zooming in/out with the scroll wheel
+            if (PicB_displayBOOK.Image != null)
+            {
+                // If the mouse wheel is moved forward (Zoom in)
+                if (ea.Delta > 0)
+                {
+                    // Check if the pictureBox dimensions are in range (15 is the minimum and maximum zoom level)
+                    if ((PicB_displayBOOK.Width < (15 * this.Width)) && (PicB_displayBOOK.Height < (15 * this.Height)))
+                    {
+                        // Change the size of the picturebox, multiply it by the ZOOMFACTOR
+                        PicB_displayBOOK.Width = (int)(PicB_displayBOOK.Width * 1.25);
+                        PicB_displayBOOK.Height = (int)(PicB_displayBOOK.Height * 1.25);
 
+                        // Formula to move the picturebox, to zoom in the point selected by the mouse cursor
+                        PicB_displayBOOK.Top = (int)(ea.Y - 1.25 * (ea.Y - PicB_displayBOOK.Top));
+                        PicB_displayBOOK.Left = (int)(ea.X - 1.25 * (ea.X - PicB_displayBOOK.Left));
+                    }
+                }
+                else
+                {
+                    // Check if the pictureBox dimensions are in range (15 is the minimum and maximum zoom level)
+                    if ((PicB_displayBOOK.Width > (panel14.Width)) && (PicB_displayBOOK.Height > (panel14.Height)))
+                    {
+                        // Change the size of the picturebox, divide it by the ZOOMFACTOR
+                        PicB_displayBOOK.Width = (int)(PicB_displayBOOK.Width / 1.25);
+                        PicB_displayBOOK.Height = (int)(PicB_displayBOOK.Height / 1.25);
+
+                        // Formula to move the picturebox, to zoom in the point selected by the mouse cursor
+                        PicB_displayBOOK.Top = (int)(ea.Y - 0.80 * (ea.Y - PicB_displayBOOK.Top));
+                        PicB_displayBOOK.Left = (int)(ea.X - 0.80 * (ea.X - PicB_displayBOOK.Left));
+                    }
+                }
+            }
         }
     }
 }

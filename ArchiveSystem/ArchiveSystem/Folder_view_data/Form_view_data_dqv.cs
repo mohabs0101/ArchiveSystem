@@ -125,9 +125,10 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
         private void txt_seach_TextChanged(object sender, EventArgs e)
         {
+           
             try
             {
-
+ Cursor = Cursors.WaitCursor;
 
                 if (checkBox_search_all.Checked == true)
                 {
@@ -141,21 +142,24 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                 DataView dv = dt.DefaultView;
 
                 dv.RowFilter = "[" + advanc_dgv_view_data_doc.Columns[col_index_select].Name + "]+[رقم الكتاب]  Like '%" + txt_seach.Text + "%'";
-                this.advanc_dgv_view_data_doc.DataSource = dv;
+                   
+                 this.advanc_dgv_view_data_doc.DataSource = dv;
                 }
-
+              Cursor = Cursors.Default;
             }
             catch (Exception ex)
             {
+              
                 MessageBox.Show(ex + "يجب اختيار عمود لبحث بة");
             }
-
+           
 
         }
 
         int col_index_select = 1;
         private void advanc_dgv_view_data_doc_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
             txt_seach.Clear();
 
             col_index_select = e.ColumnIndex;
@@ -169,7 +173,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
             }
             txt_seach.Select();
-            
+            Cursor = Cursors.Default;
         }
 
 
@@ -197,13 +201,13 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
         public static string BookCode;
         private void advanc_dgv_view_data_doc_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-         
+            Cursor = Cursors.WaitCursor;
 
-                BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
+            BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
 
-                Form_show_docs s_doc1 = new Form_show_docs(BookCode);
+                Form_show_edit_docs s_doc1 = new Form_show_edit_docs(BookCode);
                 s_doc1.Show();
-
+            Cursor = Cursors.Default;
         }
         //-----------------END------------------------
 
@@ -331,12 +335,14 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
         {
             advanc_dgv_view_data_doc_CellDoubleClick_1(null, null);
         }
+       
         public static string BookID;
         public static string date_book;
         public static string sbj_book;
         private void TSM_Add_FollowUp_Click(object sender, EventArgs e)
         {
-            
+
+            BookCode = advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString();
             BookID = advanc_dgv_view_data_doc.CurrentRow.Cells[1].Value.ToString();
             date_book = advanc_dgv_view_data_doc.CurrentRow.Cells[2].Value.ToString();
             sbj_book = advanc_dgv_view_data_doc.CurrentRow.Cells[5].Value.ToString();

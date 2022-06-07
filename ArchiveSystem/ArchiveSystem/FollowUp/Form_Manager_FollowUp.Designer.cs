@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.advanc_dgv_FollowUp = new Zuby.ADGV.AdvancedDataGridView();
             this.contextMenuStrip_FollowUp = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.اختارالاجراءالمناسبToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,13 +50,12 @@
             this.BTN_deleteTask = new System.Windows.Forms.Button();
             this.listView_Departments = new System.Windows.Forms.ListView();
             this.BTN_editTask = new System.Windows.Forms.Button();
-            this.btn_edit_status_FollowUp = new System.Windows.Forms.Button();
+            this.btn_end_status_FollowUp = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.BTN_addTask = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_fill_followup = new System.Windows.Forms.Button();
             this.panel_details_doc = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_sbj_doc = new System.Windows.Forms.TextBox();
@@ -69,14 +68,20 @@
             this.btn_task_recive = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_state_send_recive = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label_count_recive = new System.Windows.Forms.Label();
+            this.label_count_send = new System.Windows.Forms.Label();
+            this.btn_Active_FollowStatus = new System.Windows.Forms.Button();
+            this.btn_end_FollowStatus = new System.Windows.Forms.Button();
+            this.panel_contener_buttons = new System.Windows.Forms.Panel();
+            this.btn_active_status_FollowUp = new System.Windows.Forms.Button();
+            this.txt_not = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_FollowUp)).BeginInit();
             this.contextMenuStrip_FollowUp.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_details_doc.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel_contener_buttons.SuspendLayout();
             this.SuspendLayout();
             // 
             // advanc_dgv_FollowUp
@@ -88,32 +93,34 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.advanc_dgv_FollowUp.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 11F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_FollowUp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 11F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_FollowUp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.advanc_dgv_FollowUp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advanc_dgv_FollowUp.ContextMenuStrip = this.contextMenuStrip_FollowUp;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 11F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advanc_dgv_FollowUp.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 11F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advanc_dgv_FollowUp.DefaultCellStyle = dataGridViewCellStyle2;
             this.advanc_dgv_FollowUp.EnableHeadersVisualStyles = false;
             this.advanc_dgv_FollowUp.FilterAndSortEnabled = true;
             this.advanc_dgv_FollowUp.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.advanc_dgv_FollowUp.Location = new System.Drawing.Point(0, 42);
+            this.advanc_dgv_FollowUp.Location = new System.Drawing.Point(12, 92);
+            this.advanc_dgv_FollowUp.MultiSelect = false;
             this.advanc_dgv_FollowUp.Name = "advanc_dgv_FollowUp";
+            this.advanc_dgv_FollowUp.ReadOnly = true;
             this.advanc_dgv_FollowUp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.advanc_dgv_FollowUp.RowTemplate.Height = 26;
-            this.advanc_dgv_FollowUp.Size = new System.Drawing.Size(844, 619);
+            this.advanc_dgv_FollowUp.Size = new System.Drawing.Size(832, 529);
             this.advanc_dgv_FollowUp.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advanc_dgv_FollowUp.TabIndex = 412;
             this.advanc_dgv_FollowUp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advanc_dgv_FollowUp_CellDoubleClick);
@@ -214,7 +221,7 @@
             // 
             // tSMenuItem_FollowUp_Save
             // 
-            this.tSMenuItem_FollowUp_Save.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.tSMenuItem_FollowUp_Save.BackColor = System.Drawing.Color.SeaGreen;
             this.tSMenuItem_FollowUp_Save.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tSMenuItem_FollowUp_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.tSMenuItem_FollowUp_Save.Name = "tSMenuItem_FollowUp_Save";
@@ -251,9 +258,9 @@
             // 
             // BTN_deleteTask
             // 
-            this.BTN_deleteTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_deleteTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_deleteTask.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_deleteTask.Location = new System.Drawing.Point(96, 428);
+            this.BTN_deleteTask.Location = new System.Drawing.Point(30, 4);
             this.BTN_deleteTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTN_deleteTask.Name = "BTN_deleteTask";
             this.BTN_deleteTask.Size = new System.Drawing.Size(64, 41);
@@ -279,9 +286,9 @@
             // 
             // BTN_editTask
             // 
-            this.BTN_editTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_editTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_editTask.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_editTask.Location = new System.Drawing.Point(161, 428);
+            this.BTN_editTask.Location = new System.Drawing.Point(204, 4);
             this.BTN_editTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTN_editTask.Name = "BTN_editTask";
             this.BTN_editTask.Size = new System.Drawing.Size(65, 41);
@@ -290,17 +297,18 @@
             this.BTN_editTask.UseVisualStyleBackColor = true;
             this.BTN_editTask.Click += new System.EventHandler(this.BTN_editTask_Click);
             // 
-            // btn_edit_status_FollowUp
+            // btn_end_status_FollowUp
             // 
-            this.btn_edit_status_FollowUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_edit_status_FollowUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_edit_status_FollowUp.Location = new System.Drawing.Point(124, 471);
-            this.btn_edit_status_FollowUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_edit_status_FollowUp.Name = "btn_edit_status_FollowUp";
-            this.btn_edit_status_FollowUp.Size = new System.Drawing.Size(178, 29);
-            this.btn_edit_status_FollowUp.TabIndex = 418;
-            this.btn_edit_status_FollowUp.Text = "اضافة الى المتابعه";
-            this.btn_edit_status_FollowUp.UseVisualStyleBackColor = true;
+            this.btn_end_status_FollowUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_end_status_FollowUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_end_status_FollowUp.Location = new System.Drawing.Point(114, 4);
+            this.btn_end_status_FollowUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_end_status_FollowUp.Name = "btn_end_status_FollowUp";
+            this.btn_end_status_FollowUp.Size = new System.Drawing.Size(69, 41);
+            this.btn_end_status_FollowUp.TabIndex = 418;
+            this.btn_end_status_FollowUp.Text = "انهاء";
+            this.btn_end_status_FollowUp.UseVisualStyleBackColor = true;
+            this.btn_end_status_FollowUp.Click += new System.EventHandler(this.btn_end_status_FollowUp_Click);
             // 
             // label19
             // 
@@ -308,7 +316,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.White;
             this.label19.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(185, 72);
+            this.label19.Location = new System.Drawing.Point(195, 72);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(117, 27);
             this.label19.TabIndex = 413;
@@ -317,12 +325,14 @@
             // BTN_addTask
             // 
             this.BTN_addTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTN_addTask.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BTN_addTask.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.BTN_addTask.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SeaGreen;
+            this.BTN_addTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_addTask.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_addTask.Location = new System.Drawing.Point(225, 428);
+            this.BTN_addTask.Location = new System.Drawing.Point(167, 428);
             this.BTN_addTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTN_addTask.Name = "BTN_addTask";
-            this.BTN_addTask.Size = new System.Drawing.Size(82, 41);
+            this.BTN_addTask.Size = new System.Drawing.Size(140, 41);
             this.BTN_addTask.TabIndex = 415;
             this.BTN_addTask.Text = "اضافة";
             this.BTN_addTask.UseVisualStyleBackColor = false;
@@ -334,11 +344,11 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(194, 10);
+            this.label6.Location = new System.Drawing.Point(201, 14);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 24);
+            this.label6.Size = new System.Drawing.Size(113, 24);
             this.label6.TabIndex = 414;
-            this.label6.Text = "اضافة عنوان";
+            this.label6.Text = "عنوان الطلب";
             // 
             // panel1
             // 
@@ -356,30 +366,15 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.comboB_FollowUp_Title);
-            this.panel3.Controls.Add(this.btn_edit_status_FollowUp);
-            this.panel3.Controls.Add(this.btn_fill_followup);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.listView_Departments);
             this.panel3.Controls.Add(this.label19);
-            this.panel3.Controls.Add(this.BTN_deleteTask);
             this.panel3.Controls.Add(this.BTN_addTask);
-            this.panel3.Controls.Add(this.BTN_editTask);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 136);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(317, 534);
             this.panel3.TabIndex = 423;
-            // 
-            // btn_fill_followup
-            // 
-            this.btn_fill_followup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_fill_followup.Location = new System.Drawing.Point(21, 429);
-            this.btn_fill_followup.Name = "btn_fill_followup";
-            this.btn_fill_followup.Size = new System.Drawing.Size(74, 41);
-            this.btn_fill_followup.TabIndex = 422;
-            this.btn_fill_followup.Text = "تحديث";
-            this.btn_fill_followup.UseVisualStyleBackColor = true;
-            this.btn_fill_followup.Click += new System.EventHandler(this.btn_fill_followup_Click);
             // 
             // panel_details_doc
             // 
@@ -491,7 +486,7 @@
             // btn_task_send
             // 
             this.btn_task_send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_task_send.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btn_task_send.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
             this.btn_task_send.FlatAppearance.BorderSize = 3;
             this.btn_task_send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_task_send.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -527,8 +522,8 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.panel_state_send_recive);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label_count_recive);
+            this.panel2.Controls.Add(this.label_count_send);
             this.panel2.Controls.Add(this.btn_task_send);
             this.panel2.Controls.Add(this.btn_task_recive);
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -538,34 +533,117 @@
             // 
             // panel_state_send_recive
             // 
-            this.panel_state_send_recive.BackColor = System.Drawing.Color.Green;
+            this.panel_state_send_recive.BackColor = System.Drawing.Color.Teal;
             this.panel_state_send_recive.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_state_send_recive.Location = new System.Drawing.Point(0, 42);
             this.panel_state_send_recive.Name = "panel_state_send_recive";
             this.panel_state_send_recive.Size = new System.Drawing.Size(847, 5);
             this.panel_state_send_recive.TabIndex = 423;
             // 
-            // label7
+            // label_count_recive
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(455, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 24);
-            this.label7.TabIndex = 424;
-            this.label7.Text = "8";
+            this.label_count_recive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_count_recive.BackColor = System.Drawing.Color.Firebrick;
+            this.label_count_recive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label_count_recive.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_count_recive.Location = new System.Drawing.Point(433, 3);
+            this.label_count_recive.Name = "label_count_recive";
+            this.label_count_recive.Size = new System.Drawing.Size(50, 40);
+            this.label_count_recive.TabIndex = 424;
+            this.label_count_recive.Text = "0";
+            this.label_count_recive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // label_count_send
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(655, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 24);
-            this.label5.TabIndex = 424;
-            this.label5.Text = "5";
+            this.label_count_send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_count_send.BackColor = System.Drawing.Color.Teal;
+            this.label_count_send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label_count_send.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_count_send.Location = new System.Drawing.Point(641, 3);
+            this.label_count_send.Name = "label_count_send";
+            this.label_count_send.Size = new System.Drawing.Size(50, 40);
+            this.label_count_send.TabIndex = 424;
+            this.label_count_send.Text = "0";
+            this.label_count_send.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_Active_FollowStatus
+            // 
+            this.btn_Active_FollowStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Active_FollowStatus.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Active_FollowStatus.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btn_Active_FollowStatus.FlatAppearance.BorderSize = 3;
+            this.btn_Active_FollowStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Active_FollowStatus.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Active_FollowStatus.ForeColor = System.Drawing.Color.Green;
+            this.btn_Active_FollowStatus.Location = new System.Drawing.Point(741, 55);
+            this.btn_Active_FollowStatus.Name = "btn_Active_FollowStatus";
+            this.btn_Active_FollowStatus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btn_Active_FollowStatus.Size = new System.Drawing.Size(103, 37);
+            this.btn_Active_FollowStatus.TabIndex = 425;
+            this.btn_Active_FollowStatus.Text = "النشطة";
+            this.btn_Active_FollowStatus.UseVisualStyleBackColor = false;
+            this.btn_Active_FollowStatus.Click += new System.EventHandler(this.btn_Active_FollowStatus_Click);
+            // 
+            // btn_end_FollowStatus
+            // 
+            this.btn_end_FollowStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_end_FollowStatus.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_end_FollowStatus.FlatAppearance.BorderColor = System.Drawing.Color.Goldenrod;
+            this.btn_end_FollowStatus.FlatAppearance.BorderSize = 3;
+            this.btn_end_FollowStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_end_FollowStatus.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_end_FollowStatus.ForeColor = System.Drawing.Color.Goldenrod;
+            this.btn_end_FollowStatus.Location = new System.Drawing.Point(638, 55);
+            this.btn_end_FollowStatus.Name = "btn_end_FollowStatus";
+            this.btn_end_FollowStatus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btn_end_FollowStatus.Size = new System.Drawing.Size(103, 37);
+            this.btn_end_FollowStatus.TabIndex = 427;
+            this.btn_end_FollowStatus.Text = "المنتهية";
+            this.btn_end_FollowStatus.UseVisualStyleBackColor = false;
+            this.btn_end_FollowStatus.Click += new System.EventHandler(this.btn_end_FollowStatus_Click);
+            // 
+            // panel_contener_buttons
+            // 
+            this.panel_contener_buttons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_contener_buttons.Controls.Add(this.btn_end_status_FollowUp);
+            this.panel_contener_buttons.Controls.Add(this.btn_active_status_FollowUp);
+            this.panel_contener_buttons.Controls.Add(this.BTN_deleteTask);
+            this.panel_contener_buttons.Controls.Add(this.BTN_editTask);
+            this.panel_contener_buttons.Location = new System.Drawing.Point(555, 623);
+            this.panel_contener_buttons.Name = "panel_contener_buttons";
+            this.panel_contener_buttons.Size = new System.Drawing.Size(289, 50);
+            this.panel_contener_buttons.TabIndex = 428;
+            // 
+            // btn_active_status_FollowUp
+            // 
+            this.btn_active_status_FollowUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_active_status_FollowUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_active_status_FollowUp.Location = new System.Drawing.Point(107, 4);
+            this.btn_active_status_FollowUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_active_status_FollowUp.Name = "btn_active_status_FollowUp";
+            this.btn_active_status_FollowUp.Size = new System.Drawing.Size(76, 41);
+            this.btn_active_status_FollowUp.TabIndex = 431;
+            this.btn_active_status_FollowUp.Text = "تنشيط";
+            this.btn_active_status_FollowUp.UseVisualStyleBackColor = true;
+            this.btn_active_status_FollowUp.Visible = false;
+            this.btn_active_status_FollowUp.Click += new System.EventHandler(this.btn_active_status_FollowUp_Click);
+            // 
+            // txt_not
+            // 
+            this.txt_not.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_not.BackColor = System.Drawing.Color.White;
+            this.txt_not.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_not.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_not.ForeColor = System.Drawing.Color.Gray;
+            this.txt_not.Location = new System.Drawing.Point(12, 58);
+            this.txt_not.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_not.Multiline = true;
+            this.txt_not.Name = "txt_not";
+            this.txt_not.ReadOnly = true;
+            this.txt_not.Size = new System.Drawing.Size(620, 26);
+            this.txt_not.TabIndex = 430;
+            this.txt_not.Text = "الطلبات التي قمت بارسالها وبانتظار اتخاذ الاجراء المناسب لها من الاقسام التي تم ا" +
+    "لاشارة لها";
             // 
             // Form_Manager_FollowUp
             // 
@@ -573,6 +651,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1174, 673);
+            this.Controls.Add(this.txt_not);
+            this.Controls.Add(this.panel_contener_buttons);
+            this.Controls.Add(this.btn_end_FollowStatus);
+            this.Controls.Add(this.btn_Active_FollowStatus);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.advanc_dgv_FollowUp);
@@ -592,8 +674,9 @@
             this.panel_details_doc.ResumeLayout(false);
             this.panel_details_doc.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel_contener_buttons.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -604,7 +687,7 @@
         private System.Windows.Forms.Button BTN_deleteTask;
         private System.Windows.Forms.ListView listView_Departments;
         private System.Windows.Forms.Button BTN_editTask;
-        private System.Windows.Forms.Button btn_edit_status_FollowUp;
+        private System.Windows.Forms.Button btn_end_status_FollowUp;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button BTN_addTask;
         private System.Windows.Forms.Label label6;
@@ -629,7 +712,6 @@
         private System.Windows.Forms.TextBox txt_Date_doc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btn_fill_followup;
         private System.Windows.Forms.ToolStripMenuItem TSM_show_doc;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Panel panel_details_doc;
@@ -637,7 +719,12 @@
         private System.Windows.Forms.Button btn_task_recive;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel_state_send_recive;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_count_recive;
+        private System.Windows.Forms.Label label_count_send;
+        private System.Windows.Forms.Button btn_Active_FollowStatus;
+        private System.Windows.Forms.Button btn_end_FollowStatus;
+        private System.Windows.Forms.Panel panel_contener_buttons;
+        private System.Windows.Forms.TextBox txt_not;
+        private System.Windows.Forms.Button btn_active_status_FollowUp;
     }
 }
