@@ -314,11 +314,11 @@ namespace ArchiveSystem
         {
            
             Random rand = new Random();
-
+            int ran = rand.Next(100000, 999999);
 
             string subject_ = TXT_Subject.Text;
             string subject = Regex.Replace(subject_, @"[^0-9a-zA-Zء-ي]", " ");
-            int ran = rand.Next(100000, 999999);
+            
 
             string datenow = DateTime.Now.ToString("hhmmss");
             string currentDate = DateTime.Now.ToString("yyyy/MM/dd");
@@ -327,9 +327,12 @@ namespace ArchiveSystem
 
             //allow only araic and english alphabets and numbers and remove all special charicters
             string book_code = Regex.Replace(book_code_, @"[^0-9a-zA-Zء-ي]", " ");
-            
-            
-               
+
+            string BookNumber_ = TXT_bookNumber.Text;
+            string BookNumber = Regex.Replace(BookNumber_, @"[^0-9a-zA-Zء-ي]", " ");
+
+
+
             int departmentID = Login._depID;
             int userid = Login._userID;
 
@@ -355,12 +358,11 @@ namespace ArchiveSystem
 
 
 
-            string BookNumber_ = TXT_bookNumber.Text;
-            string BookNumber = Regex.Replace(BookNumber_, @"[^0-9a-zA-Zء-ي]", " ");
+          
 
             string InboundNumber = TXT_Book_recive_number.Text;
 
-            string Subject = TXT_Subject.Text;
+            //string Subject = TXT_Subject.Text;
             string From = TXT_From.Text;
             string To = TXT_To.Text;
             string SearchKeys = TXT_SearchKEys.Text;
@@ -379,7 +381,7 @@ namespace ArchiveSystem
                     }
                 }
             }
-            if (string.IsNullOrWhiteSpace(BookNumber) || string.IsNullOrWhiteSpace(Subject) || string.IsNullOrWhiteSpace(From) || string.IsNullOrWhiteSpace(To) || string.IsNullOrWhiteSpace(SearchKeys))
+            if (string.IsNullOrWhiteSpace(BookNumber) || string.IsNullOrWhiteSpace(subject_) || string.IsNullOrWhiteSpace(From) || string.IsNullOrWhiteSpace(To) || string.IsNullOrWhiteSpace(SearchKeys))
             {
                 List<TextBox> boxes = new List<TextBox>();
                 if (string.IsNullOrWhiteSpace(TXT_bookNumber.Text))
@@ -497,7 +499,7 @@ namespace ArchiveSystem
             ) output INSERTED.ArchiveBookID
      VALUES
            (N'{0}',N'{1}','{2}',N'{3}','{4}',N'{5}',{6},N'{7}',N'{8}',N'{9}','{10}',N'{11}',N'{12}',{13},{14},N'{15}',N'{16}',N'{17}')
-", book_code, BookNumber, DT_bookDateE, InboundNumber, InboundDate, Subject, COM_bookType.SelectedValue, From, To, COM_priority.Text, currentDate, COM_PaperType.Text, TXT_notes.Text, departmentID, userid, bookStatus_FollowUp, COM_privicy.Text, SearchKeys, con);
+", book_code, BookNumber_, DT_bookDateE, InboundNumber, InboundDate, subject_, COM_bookType.SelectedValue, From, To, COM_priority.Text, currentDate, COM_PaperType.Text, TXT_notes.Text, departmentID, userid, bookStatus_FollowUp, COM_privicy.Text, SearchKeys, con);
 
 
 
@@ -529,7 +531,7 @@ namespace ArchiveSystem
 
                     string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
 
-
+                     int i = 0;
                     //foreach on checked files
                     foreach (var item in files_checked)
                     {
@@ -537,7 +539,8 @@ namespace ArchiveSystem
                         string filenamechecked = item.ToString();
                         foreach (string file in Files)
                         {
-
+                            
+                                
                             string file_name = Path.GetFileName(file);
 
                             if (file_name == filenamechecked)
@@ -545,7 +548,7 @@ namespace ArchiveSystem
                                
                                 //upload selected files only 
                                 //string fn = subject + file_name;
-                                string fn = BookNumber+subject +DateTime.Now.ToString("yyyyMMddhhmmss")+ Path.GetExtension(file);
+                                string fn = BookNumber+subject +DateTime.Now.ToString("yyyyMMddhhmmss") + i + Path.GetExtension(file);
 
                                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + fn);
                                 request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
@@ -571,7 +574,7 @@ namespace ArchiveSystem
 
                             }
 
-
+                            i++;
 
                         }
                     }

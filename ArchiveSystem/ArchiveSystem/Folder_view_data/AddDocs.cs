@@ -20,12 +20,12 @@ using System.Text.RegularExpressions;
 
 namespace ArchiveSystem.EditeDocs
 {
-    public partial class EditeDocs : MetroFramework.Forms.MetroForm
+    public partial class AddDocs : MetroFramework.Forms.MetroForm
     {
         public static string _bc;
-        public EditeDocs(string bc)
+        public AddDocs(string _BookCode)
         {
-            _bc = bc;
+            _bc = _BookCode;
 
             InitializeComponent();
         }
@@ -47,7 +47,7 @@ namespace ArchiveSystem.EditeDocs
 
 
         string Typee = Form_show_edit_docs._BookType;
-        string book_code = Form_show_edit_docs._BookCode;
+        //string book_code = Form_show_edit_docs._BookCode;
 
         private void AddDocs_Load(object sender, EventArgs e)
         {
@@ -218,7 +218,7 @@ namespace ArchiveSystem.EditeDocs
 
             string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
 
-
+            int ii = 0;
             //foreach on checked files
             foreach (var item in files_checked)
             {
@@ -236,9 +236,9 @@ namespace ArchiveSystem.EditeDocs
 
 
 
-                        string fn = Filtered_BookNumber + Filtered_subject + DateTime.Now.ToString("yyyyMMddhhmmss") + Path.GetExtension(file);
+                        string fn = Filtered_BookNumber + Filtered_subject + DateTime.Now.ToString("yyyyMMddhhmmss") + ii + Path.GetExtension(file);
 
-                        FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + fn);
+                        FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + _bc + "/" + fn);
                         request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
                         request.Method = WebRequestMethods.Ftp.UploadFile;
 
@@ -250,46 +250,25 @@ namespace ArchiveSystem.EditeDocs
 
                         }
 
-                        //delete imges after copy it 
-                        if (File.Exists(file))
-                        {
-                            File.Delete(file);
+                        ////delete imges after copy it 
+                        //if (File.Exists(file))
+                        //{
+                        //    File.Delete(file);
 
 
 
-                        }
+                        //}
 
 
                     }
 
-
+                ii++;
 
                 }
             }
             folder_update();
 
-            string[] files = GetFileList();
-
-            System.IO.DirectoryInfo di = new DirectoryInfo(path_folder_client_temp);
-
-            foreach (FileInfo file in di.GetFiles())
-            {
-                ////////////important code/////////////
-                //It allows us to delete when the file is used by the processor
-                System.GC.Collect();
-                System.GC.WaitForPendingFinalizers();
-                //----------end-------------
-
-                file.Delete();
-
-            }
-            if (files != null)
-            {
-                foreach (string file in files)
-                {
-
-                    Download(file);
-                }
+           
 
                 var path = string.Format(path_folder_client_temp);
 
@@ -306,95 +285,9 @@ namespace ArchiveSystem.EditeDocs
                 MessageBox.Show("تم ارفاق المستندات");
                
 
-            }
-            else if (files == null)
-            {
-                MessageBox.Show("الرجاء اختيار مستند");
-            }
-
+        
         }
-        private string[] GetFileList()
-        {
-
-
-            string[] downloadFiles;
-            StringBuilder result = new StringBuilder();
-            FtpWebRequest reqFTP;
-            try
-            {
-                //                                          Here we put the path IP and of the FTP file server
-                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\"));
-                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(FTP_ip + "/" + Typee + "/" + book_code+ "/"));
-                reqFTP.UseBinary = true;
-                reqFTP.Credentials = new NetworkCredential(FTP_user, FTP_pass);
-                reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
-                WebResponse response = reqFTP.GetResponse();
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                string line = reader.ReadLine();
-                while (line != null)
-                {
-                    result.Append(line);
-                    result.Append("\n");
-                    line = reader.ReadLine();
-                }
-                // to remove the trailing '\n'
-                //if (result.Length !=0)
-                //{
-                    result.Remove(result.ToString().LastIndexOf('\n'), 1);
-                //}
-                reader.Close();
-                response.Close();
-
-                return result.ToString().Split('\n');
-
-            }
-            catch (Exception ex)
-            {
-                //System.Windows.Forms.MessageBox.Show(ex.Message);
-                downloadFiles = null;
-                return downloadFiles;
-            }
-        }
-        private void Download(string fileName)
-        {
-
-            FtpWebRequest reqFTP;
-            try
-            {
-
-                //filePath = <<The full path where the file is to be created. the>>,
-                //fileName = <<Name of the file to be createdNeed not name on FTP server. name name()>>
-                FileStream outputStream = new FileStream(path_folder_client_temp + "\\" + fileName, FileMode.Create);
-                //                                           Here we put the path IP, and file name of the FTP file server
-                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\" + fileName)); 
-                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(FTP_ip + "/" + Typee + "/" + book_code + "/" + fileName));
-                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
-                reqFTP.UseBinary = true;
-                reqFTP.Credentials = new NetworkCredential(FTP_user, FTP_pass);
-                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
-                Stream ftpStream = response.GetResponseStream();
-                long cl = response.ContentLength;
-                int bufferSize = 2048;
-                int readCount;
-                byte[] buffer = new byte[bufferSize];
-                readCount = ftpStream.Read(buffer, 0, bufferSize);
-                while (readCount > 0)
-                {
-                    outputStream.Write(buffer, 0, readCount);
-                    readCount = ftpStream.Read(buffer, 0, bufferSize);
-                }
-                ftpStream.Close();
-                outputStream.Close();
-                response.Close();
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+     
 
         private void BTN_GobackToDetails_Click(object sender, EventArgs e)
         {

@@ -636,7 +636,7 @@ AND([ArchiveFollowUp].BookCode = @Param2)
         private void BTN_addMoreDcos_Click(object sender, EventArgs e)
         {
             this.Hide();
-            EditeDocs.EditeDocs ed = new EditeDocs.EditeDocs(_BookCode);
+            EditeDocs.AddDocs ed = new EditeDocs.AddDocs(_BookCode);
             ed.Show();
 
         }
