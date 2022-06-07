@@ -16,6 +16,7 @@ using System.Globalization;
 using System.Management;
 using System.Data.SqlClient;
 using ArchiveSystem.Folder_view_data;
+using System.Text.RegularExpressions;
 
 namespace ArchiveSystem.EditeDocs
 {
@@ -41,6 +42,10 @@ namespace ArchiveSystem.EditeDocs
 
         string BookNumber = Form_show_edit_docs._BookNumber;
         string subject = Form_show_edit_docs._subject;
+        string Filtered_BookNumber = Regex.Replace(Form_show_edit_docs._BookNumber, @"[^0-9a-zA-Zء-ي]", " ");
+        string Filtered_subject = Regex.Replace(Form_show_edit_docs._subject, @"[^0-9a-zA-Zء-ي]", " ");
+
+
         string Typee = Form_show_edit_docs._BookType;
         string book_code = Form_show_edit_docs._BookCode;
 
@@ -229,9 +234,9 @@ namespace ArchiveSystem.EditeDocs
                         //upload selected files only 
 
 
-                        
 
-                        string fn = BookNumber + DateTime.Now.ToString("yyyyMMddhhmmss") + Path.GetExtension(file);
+
+                        string fn = Filtered_BookNumber + Filtered_subject + DateTime.Now.ToString("yyyyMMddhhmmss") + Path.GetExtension(file);
 
                         FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + fn);
                         request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
