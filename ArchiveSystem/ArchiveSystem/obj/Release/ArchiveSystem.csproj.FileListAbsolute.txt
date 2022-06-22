@@ -12,8 +12,6 @@ C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem
 C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.csproj.SuggestedBindingRedirects.cache
 C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\Interop.WIA.dll
 C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.csproj.ResolveComReference.cache
-C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.EditeDocs.EditeDocs.resources
-C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.Folder_view_data.Form_show_docs.resources
 C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.Folder_view_data.Form_view_data_dqv.resources
 C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.Form1.resources
 C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.Login.resources
@@ -50,3 +48,6 @@ C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\
 C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.csproj.CopyComplete
 C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.exe
 C:\Users\anas office\Documents\GitHub\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.pdb
+C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.EditeDocs.AddDocs.resources
+C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.Folder_view_data.Form_show_edit_docs.resources
+C:\Users\mohab.MOHAMMED\Desktop\Github\ArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Release\ArchiveSystem.FollowUp.Form_Manager_FollowUp.resources

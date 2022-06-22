@@ -26,6 +26,11 @@ namespace ArchiveSystem
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
 
+        //default taps indexes 
+        public static int books_list_index =1;
+        public static int  followUp_index =2;
+
+
         //get this values from app onfig
         string FTP_ip = ConfigurationSettings.AppSettings["FTP_Server_Ip"];
         string FTP_user = ConfigurationSettings.AppSettings["FTP_Server_user"];
@@ -162,9 +167,39 @@ namespace ArchiveSystem
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            //if (metroTabControl1.SelectedIndex == 1)
+            //{
+
+            //}
+
+
+
+
+                //اذا كان البرمشن متابعه ومهام قم بعرض تاب المتابعه والمهام فقط
+
+
+
+                int departmentID = Login._permitionTYpeID;
+            if (departmentID == 7)
+
+
+            {
+                //remove index 0 and set new indexes
+                metroTabControl1.TabPages.Remove(metroTabPage1);
+                books_list_index = 0;
+                followUp_index = 1;
+           
+            }
+
+
             //--------------moh------------------
             // set indexes of comboboxes
-            metroTabControl1.SelectTab(0);
+            if (departmentID != 7)
+            {
+                metroTabControl1.SelectTab(0);
+            }
+
+
 
             COM_PaperType.SelectedIndex = 0;
             COM_priority.SelectedIndex = 0;
@@ -227,12 +262,12 @@ namespace ArchiveSystem
             TabPage t = new TabPage();
             new_tab.TopLevel = false;
             t.Controls.Add(new_tab);
-            metroTabControl1.TabPages.Insert(1, t);//or  metroTabControl1.TabPages.Add(t);
+            metroTabControl1.TabPages.Insert(books_list_index, t);//or  metroTabControl1.TabPages.Add(t);
             new_tab.Show();
             new_tab.Dock = DockStyle.Fill;
             int x = metroTabControl1.TabCount;
             t.Text = "الارشيف العام";// + x
-
+            
             //---------------end-----------------
 
             //--------------show tap-----------------------
@@ -240,7 +275,7 @@ namespace ArchiveSystem
             TabPage t2 = new TabPage();
             new_tab2.TopLevel = false;
             t2.Controls.Add(new_tab2);
-            metroTabControl1.TabPages.Insert(2, t2);//or  metroTabControl1.TabPages.Add(t2);
+            metroTabControl1.TabPages.Insert(followUp_index, t2);//or  metroTabControl1.TabPages.Add(t2);
             new_tab2.Show();
             new_tab2.Dock = DockStyle.Fill;
             int x2 = metroTabControl1.TabCount;
@@ -249,6 +284,7 @@ namespace ArchiveSystem
             //---------------end-----------------
 
             this.WindowState = FormWindowState.Maximized;
+
 
 
 
@@ -608,7 +644,11 @@ namespace ArchiveSystem
 
                     MessageBox.Show("تم ارشفة الكتاب");
 
+                    //Form_view_data_dqv fvd = new Form_view_data_dqv();
 
+                    //fvd.fill_dgv_view_data_doc();
+                    ////fvd.Form_view_data_dqv_Load();
+                    //button2.PerformClick();
 
                 }
 
@@ -935,7 +975,7 @@ namespace ArchiveSystem
             //obj4.Hide();
 
 
-           
+
             //    List<Form> formsToClose = new List<Form>();
             //    foreach (Form form in Application.OpenForms)
             //    {
@@ -946,9 +986,30 @@ namespace ArchiveSystem
             //    }
 
             //    formsToClose.ForEach(f => f.Close());
-             
+
             //Login log_in = new Login();
             //log_in.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form_view_data_dqv vd = new Form_view_data_dqv();
+            vd.fill_dgv_view_data_doc();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+       
+           
+        }
+
+        private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (metroTabControl1.SelectedTab.Text == "الارشيف العام")
+            //{
+            //    Form_view_data_dqv vd = new Form_view_data_dqv();
+            //    vd.Form_view_data_dqv_Load(null, EventArgs.Empty);
+            //}
         }
     }
 }

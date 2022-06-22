@@ -125,6 +125,16 @@ namespace ArchiveSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap footer2 {
+            get {
+                object obj = ResourceManager.GetObject("footer2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap footerr {
             get {
                 object obj = ResourceManager.GetObject("footerr", resourceCulture);

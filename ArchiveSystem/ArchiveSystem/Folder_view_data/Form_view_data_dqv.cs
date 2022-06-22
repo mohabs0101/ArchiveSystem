@@ -71,26 +71,33 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 //AND(dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
 
             adapter.SelectCommand.Parameters.AddWithValue("@Param1", DT_bookDate_from.Value.Date);
-            adapter.SelectCommand.Parameters.AddWithValue("@Param2", DT_bookDate_to.Value.Date);
+            adapter.SelectCommand.Parameters.AddWithValue("@Param2", DateTime.Now);
             //adapter.SelectCommand.Parameters.AddWithValue("@Param3", DT_bookRecive_date_from.Value.Date);
             //adapter.SelectCommand.Parameters.AddWithValue("@Param4", DT_bookRecive_date_to.Value.Date);
 
             dt.Clear();
 
             adapter.Fill(dt);
+             
+            
+            
             advanc_dgv_view_data_doc.DataSource = dt;
             Label2_count_doc.Text = Convert.ToString(BindingContext[dt].Count);
             Cursor = Cursors.Default;
         }
 
-
+       
         public void Form_view_data_dqv_Load(object sender, EventArgs e)
         {
+            this.Refresh();
+
             DT_bookDate_to.Value = DateTime.Now;
             DT_bookRecive_date_to.Value = DateTime.Now;
 
             fill_dgv_view_data_doc();
+            //btn_fill_doc.PerformClick();
 
+           
             //for (int i = 0; i < advanc_dgv_view_data_doc.Columns.Count - 1; i++)
             //   {
             //    advanc_dgv_view_data_doc.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -193,9 +200,11 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
         private void advanc_dgv_view_data_doc_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            
             Label2_count_doc_search.Text = Convert.ToString(advanc_dgv_view_data_doc.RowCount);
-        }
 
+        }
+        
 
        
         public static string BookCode;
@@ -321,7 +330,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             }
         }
 
-        private void btn_fill_doc_Click(object sender, EventArgs e)
+        public void btn_fill_doc_Click(object sender, EventArgs e)
         {
             fill_dgv_view_data_doc();
         }
@@ -354,6 +363,42 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
                 f_doc1.Show();
            
+        }
+
+        private void advanc_dgv_view_data_doc_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void txt_seach_MouseEnter(object sender, EventArgs e)
+        {
+            btn_fill_doc.PerformClick();
+        }
+
+        private void btn_show_filter_MouseEnter(object sender, EventArgs e)
+        {
+          btn_fill_doc.PerformClick();
+        }
+
+        private void advanc_dgv_view_data_doc_MouseLeave(object sender, EventArgs e)
+        {
+            //btn_fill_doc.PerformClick();
+        }
+
+        private void btn_fill_doc_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_fill_doc_CursorChanged(object sender, EventArgs e)
+        {
+          
+
+        }
+
+        private void panel3_MouseEnter(object sender, EventArgs e)
+        {
+            btn_fill_doc.PerformClick();
         }
     }
 }

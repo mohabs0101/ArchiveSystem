@@ -259,10 +259,17 @@ namespace ArchiveSystem.EditeDocs
 
                         //}
 
+                        if (File.Exists(file))
+                        {
+                            File.Delete(file);
+
+
+
+                        }
 
                     }
 
-                ii++;
+                    ii++;
 
                 }
             }

@@ -95,6 +95,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.Folder_Brows_DOC_Source = new System.Windows.Forms.FolderBrowserDialog();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BTN_LogOut = new System.Windows.Forms.Button();
             this.panel23 = new System.Windows.Forms.Panel();
             this.LBL_permitionType = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
@@ -106,7 +107,6 @@
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BTN_LogOut = new System.Windows.Forms.Button();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -139,9 +139,10 @@
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.RightToLeftLayout = true;
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(1148, 462);
+            this.metroTabControl1.Size = new System.Drawing.Size(1257, 610);
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
+            this.metroTabControl1.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
             // 
             // metroTabPage1
             // 
@@ -155,7 +156,7 @@
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.metroTabPage1.Size = new System.Drawing.Size(1140, 420);
+            this.metroTabPage1.Size = new System.Drawing.Size(1249, 568);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "كتاب جديد";
             this.metroTabPage1.VerticalScrollbar = true;
@@ -173,7 +174,7 @@
             this.panel14.Controls.Add(this.PicB_displayBOOK);
             this.panel14.Location = new System.Drawing.Point(0, 6);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(299, 417);
+            this.panel14.Size = new System.Drawing.Size(360, 565);
             this.panel14.TabIndex = 5;
             // 
             // PicB_displayBOOK
@@ -184,7 +185,7 @@
             this.PicB_displayBOOK.BackColor = System.Drawing.Color.White;
             this.PicB_displayBOOK.Location = new System.Drawing.Point(3, 3);
             this.PicB_displayBOOK.Name = "PicB_displayBOOK";
-            this.PicB_displayBOOK.Size = new System.Drawing.Size(294, 411);
+            this.PicB_displayBOOK.Size = new System.Drawing.Size(354, 559);
             this.PicB_displayBOOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicB_displayBOOK.TabIndex = 0;
             this.PicB_displayBOOK.TabStop = false;
@@ -201,9 +202,9 @@
             this.panel13.Controls.Add(this.panel17);
             this.panel13.Controls.Add(this.panel16);
             this.panel13.Controls.Add(this.panel15);
-            this.panel13.Location = new System.Drawing.Point(304, 6);
+            this.panel13.Location = new System.Drawing.Point(366, 6);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(201, 421);
+            this.panel13.Size = new System.Drawing.Size(194, 569);
             this.panel13.TabIndex = 4;
             // 
             // DGV_Files
@@ -219,7 +220,7 @@
             this.DGV_Files.Name = "DGV_Files";
             this.DGV_Files.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.DGV_Files.RowHeadersVisible = false;
-            this.DGV_Files.Size = new System.Drawing.Size(201, 158);
+            this.DGV_Files.Size = new System.Drawing.Size(194, 306);
             this.DGV_Files.TabIndex = 0;
             this.DGV_Files.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Files_CellClick);
             // 
@@ -231,7 +232,7 @@
             this.CHK_selectall.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CHK_selectall.Location = new System.Drawing.Point(0, 240);
             this.CHK_selectall.Name = "CHK_selectall";
-            this.CHK_selectall.Size = new System.Drawing.Size(201, 23);
+            this.CHK_selectall.Size = new System.Drawing.Size(194, 23);
             this.CHK_selectall.TabIndex = 1;
             this.CHK_selectall.Text = "اختيار الكل";
             this.CHK_selectall.UseVisualStyleBackColor = false;
@@ -245,7 +246,7 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel17.Location = new System.Drawing.Point(0, 206);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(201, 34);
+            this.panel17.Size = new System.Drawing.Size(194, 34);
             this.panel17.TabIndex = 2;
             // 
             // label1
@@ -269,7 +270,7 @@
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 57);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(201, 149);
+            this.panel16.Size = new System.Drawing.Size(194, 149);
             this.panel16.TabIndex = 1;
             // 
             // DGV_Folders
@@ -286,7 +287,7 @@
             this.DGV_Folders.ReadOnly = true;
             this.DGV_Folders.RowHeadersVisible = false;
             this.DGV_Folders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            this.DGV_Folders.Size = new System.Drawing.Size(201, 121);
+            this.DGV_Folders.Size = new System.Drawing.Size(194, 121);
             this.DGV_Folders.TabIndex = 0;
             this.DGV_Folders.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Folders_CellMouseClick);
             // 
@@ -299,7 +300,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(0, 0);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(201, 28);
+            this.panel19.Size = new System.Drawing.Size(194, 28);
             this.panel19.TabIndex = 1;
             // 
             // panel20
@@ -308,7 +309,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(39, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(102, 28);
+            this.panel20.Size = new System.Drawing.Size(95, 28);
             this.panel20.TabIndex = 169;
             // 
             // TXT_addFolder
@@ -318,7 +319,7 @@
             this.TXT_addFolder.Location = new System.Drawing.Point(0, 0);
             this.TXT_addFolder.Multiline = true;
             this.TXT_addFolder.Name = "TXT_addFolder";
-            this.TXT_addFolder.Size = new System.Drawing.Size(102, 28);
+            this.TXT_addFolder.Size = new System.Drawing.Size(95, 28);
             this.TXT_addFolder.TabIndex = 167;
             this.TXT_addFolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -327,7 +328,7 @@
             this.BTN_addfolder.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.BTN_addfolder.Dock = System.Windows.Forms.DockStyle.Right;
             this.BTN_addfolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_addfolder.Location = new System.Drawing.Point(141, 0);
+            this.BTN_addfolder.Location = new System.Drawing.Point(134, 0);
             this.BTN_addfolder.Name = "BTN_addfolder";
             this.BTN_addfolder.Size = new System.Drawing.Size(39, 28);
             this.BTN_addfolder.TabIndex = 168;
@@ -353,7 +354,7 @@
             // 
             this.BTN_RefrshFolders.Dock = System.Windows.Forms.DockStyle.Right;
             this.BTN_RefrshFolders.Image = global::ArchiveSystem.Properties.Resources.icons8_refresh_16;
-            this.BTN_RefrshFolders.Location = new System.Drawing.Point(180, 0);
+            this.BTN_RefrshFolders.Location = new System.Drawing.Point(173, 0);
             this.BTN_RefrshFolders.Name = "BTN_RefrshFolders";
             this.BTN_RefrshFolders.Size = new System.Drawing.Size(21, 28);
             this.BTN_RefrshFolders.TabIndex = 168;
@@ -368,7 +369,7 @@
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(0, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(201, 57);
+            this.panel15.Size = new System.Drawing.Size(194, 57);
             this.panel15.TabIndex = 0;
             // 
             // button1
@@ -377,7 +378,7 @@
             this.button1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 35);
+            this.button1.Size = new System.Drawing.Size(194, 35);
             this.button1.TabIndex = 0;
             this.button1.Text = "مسح ضؤي";
             this.button1.UseVisualStyleBackColor = true;
@@ -390,7 +391,7 @@
             this.Scanning_Folder.Font = new System.Drawing.Font("Nirmala UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Scanning_Folder.Location = new System.Drawing.Point(0, 35);
             this.Scanning_Folder.Name = "Scanning_Folder";
-            this.Scanning_Folder.Size = new System.Drawing.Size(201, 22);
+            this.Scanning_Folder.Size = new System.Drawing.Size(194, 22);
             this.Scanning_Folder.TabIndex = 166;
             this.Scanning_Folder.Text = "تحديث المصدر";
             this.Scanning_Folder.UseVisualStyleBackColor = false;
@@ -437,39 +438,44 @@
             this.panel12.Controls.Add(this.label11);
             this.panel12.Controls.Add(this.label13);
             this.panel12.Controls.Add(this.label14);
-            this.panel12.Location = new System.Drawing.Point(506, 6);
+            this.panel12.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.panel12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel12.Location = new System.Drawing.Point(566, 6);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(631, 421);
+            this.panel12.Size = new System.Drawing.Size(680, 565);
             this.panel12.TabIndex = 3;
             // 
             // TXT_To
             // 
-            this.TXT_To.Location = new System.Drawing.Point(337, 236);
+            this.TXT_To.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_To.Location = new System.Drawing.Point(389, 236);
             this.TXT_To.Name = "TXT_To";
             this.TXT_To.Size = new System.Drawing.Size(275, 27);
-            this.TXT_To.TabIndex = 162;
+            this.TXT_To.TabIndex = 7;
             // 
             // TXT_From
             // 
-            this.TXT_From.Location = new System.Drawing.Point(339, 188);
+            this.TXT_From.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_From.Location = new System.Drawing.Point(389, 187);
             this.TXT_From.Name = "TXT_From";
             this.TXT_From.Size = new System.Drawing.Size(275, 27);
-            this.TXT_From.TabIndex = 161;
+            this.TXT_From.TabIndex = 6;
             // 
             // TXT_Subject
             // 
-            this.TXT_Subject.Location = new System.Drawing.Point(336, 141);
+            this.TXT_Subject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_Subject.Location = new System.Drawing.Point(387, 141);
             this.TXT_Subject.Name = "TXT_Subject";
             this.TXT_Subject.Size = new System.Drawing.Size(277, 27);
-            this.TXT_Subject.TabIndex = 160;
+            this.TXT_Subject.TabIndex = 5;
             // 
             // panel_viwe_DT_bookRecive_date
             // 
             this.panel_viwe_DT_bookRecive_date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_viwe_DT_bookRecive_date.Location = new System.Drawing.Point(323, 93);
+            this.panel_viwe_DT_bookRecive_date.Location = new System.Drawing.Point(386, 93);
             this.panel_viwe_DT_bookRecive_date.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_viwe_DT_bookRecive_date.Name = "panel_viwe_DT_bookRecive_date";
-            this.panel_viwe_DT_bookRecive_date.Size = new System.Drawing.Size(101, 23);
+            this.panel_viwe_DT_bookRecive_date.Size = new System.Drawing.Size(104, 23);
             this.panel_viwe_DT_bookRecive_date.TabIndex = 157;
             // 
             // label20
@@ -478,7 +484,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(73, 370);
+            this.label20.Location = new System.Drawing.Point(139, 370);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(18, 21);
             this.label20.TabIndex = 156;
@@ -489,11 +495,11 @@
             this.TXT_SearchKEys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TXT_SearchKEys.BackColor = System.Drawing.Color.White;
             this.TXT_SearchKEys.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_SearchKEys.Location = new System.Drawing.Point(3, 36);
+            this.TXT_SearchKEys.Location = new System.Drawing.Point(27, 36);
             this.TXT_SearchKEys.Multiline = true;
             this.TXT_SearchKEys.Name = "TXT_SearchKEys";
             this.TXT_SearchKEys.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TXT_SearchKEys.Size = new System.Drawing.Size(301, 292);
+            this.TXT_SearchKEys.Size = new System.Drawing.Size(343, 292);
             this.TXT_SearchKEys.TabIndex = 9;
             // 
             // DT_bookRecive_date
@@ -501,7 +507,7 @@
             this.DT_bookRecive_date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DT_bookRecive_date.Font = new System.Drawing.Font("Tahoma", 11F);
             this.DT_bookRecive_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DT_bookRecive_date.Location = new System.Drawing.Point(321, 92);
+            this.DT_bookRecive_date.Location = new System.Drawing.Point(387, 92);
             this.DT_bookRecive_date.Name = "DT_bookRecive_date";
             this.DT_bookRecive_date.Size = new System.Drawing.Size(136, 25);
             this.DT_bookRecive_date.TabIndex = 4;
@@ -511,9 +517,9 @@
             this.DT_bookDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DT_bookDate.Font = new System.Drawing.Font("Tahoma", 11F);
             this.DT_bookDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DT_bookDate.Location = new System.Drawing.Point(322, 37);
+            this.DT_bookDate.Location = new System.Drawing.Point(385, 37);
             this.DT_bookDate.Name = "DT_bookDate";
-            this.DT_bookDate.Size = new System.Drawing.Size(136, 25);
+            this.DT_bookDate.Size = new System.Drawing.Size(139, 25);
             this.DT_bookDate.TabIndex = 2;
             this.DT_bookDate.Value = new System.DateTime(2022, 3, 23, 0, 0, 0, 0);
             // 
@@ -522,7 +528,7 @@
             this.TXT_bookNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TXT_bookNumber.BackColor = System.Drawing.Color.White;
             this.TXT_bookNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_bookNumber.Location = new System.Drawing.Point(462, 37);
+            this.TXT_bookNumber.Location = new System.Drawing.Point(528, 37);
             this.TXT_bookNumber.Multiline = true;
             this.TXT_bookNumber.Name = "TXT_bookNumber";
             this.TXT_bookNumber.Size = new System.Drawing.Size(136, 26);
@@ -533,7 +539,7 @@
             this.TXT_Book_recive_number.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TXT_Book_recive_number.BackColor = System.Drawing.Color.White;
             this.TXT_Book_recive_number.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_Book_recive_number.Location = new System.Drawing.Point(461, 91);
+            this.TXT_Book_recive_number.Location = new System.Drawing.Point(528, 92);
             this.TXT_Book_recive_number.Multiline = true;
             this.TXT_Book_recive_number.Name = "TXT_Book_recive_number";
             this.TXT_Book_recive_number.Size = new System.Drawing.Size(136, 26);
@@ -550,7 +556,7 @@
             "عادي",
             "عاجل",
             "فوري"});
-            this.COM_priority.Location = new System.Drawing.Point(226, 369);
+            this.COM_priority.Location = new System.Drawing.Point(292, 369);
             this.COM_priority.Name = "COM_priority";
             this.COM_priority.Size = new System.Drawing.Size(120, 25);
             this.COM_priority.TabIndex = 12;
@@ -564,7 +570,7 @@
             this.COM_privicy.Items.AddRange(new object[] {
             "محدود",
             "سري"});
-            this.COM_privicy.Location = new System.Drawing.Point(350, 369);
+            this.COM_privicy.Location = new System.Drawing.Point(416, 369);
             this.COM_privicy.Name = "COM_privicy";
             this.COM_privicy.Size = new System.Drawing.Size(120, 25);
             this.COM_privicy.TabIndex = 11;
@@ -578,7 +584,7 @@
             this.COM_PaperType.Items.AddRange(new object[] {
             "استنساخ",
             "أصلية"});
-            this.COM_PaperType.Location = new System.Drawing.Point(97, 369);
+            this.COM_PaperType.Location = new System.Drawing.Point(163, 369);
             this.COM_PaperType.Name = "COM_PaperType";
             this.COM_PaperType.Size = new System.Drawing.Size(120, 25);
             this.COM_PaperType.TabIndex = 13;
@@ -589,7 +595,7 @@
             this.COM_bookType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.COM_bookType.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.COM_bookType.FormattingEnabled = true;
-            this.COM_bookType.Location = new System.Drawing.Point(475, 369);
+            this.COM_bookType.Location = new System.Drawing.Point(541, 369);
             this.COM_bookType.Name = "COM_bookType";
             this.COM_bookType.Size = new System.Drawing.Size(120, 25);
             this.COM_bookType.TabIndex = 10;
@@ -597,13 +603,14 @@
             // BTN_Archive
             // 
             this.BTN_Archive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTN_Archive.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.BTN_Archive.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BTN_Archive.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_Archive.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SeaGreen;
-            this.BTN_Archive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_Archive.Font = new System.Drawing.Font("Marlett", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_Archive.Location = new System.Drawing.Point(4, 398);
+            this.BTN_Archive.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_Archive.ForeColor = System.Drawing.Color.White;
+            this.BTN_Archive.Location = new System.Drawing.Point(566, 415);
             this.BTN_Archive.Name = "BTN_Archive";
-            this.BTN_Archive.Size = new System.Drawing.Size(143, 40);
+            this.BTN_Archive.Size = new System.Drawing.Size(98, 40);
             this.BTN_Archive.TabIndex = 14;
             this.BTN_Archive.Text = "ارشفة";
             this.BTN_Archive.UseVisualStyleBackColor = false;
@@ -614,7 +621,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(524, 14);
+            this.label7.Location = new System.Drawing.Point(596, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 21);
             this.label7.TabIndex = 136;
@@ -625,7 +632,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(368, 13);
+            this.label8.Location = new System.Drawing.Point(444, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 21);
             this.label8.TabIndex = 137;
@@ -636,7 +643,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(256, 347);
+            this.label16.Location = new System.Drawing.Point(326, 347);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(90, 21);
             this.label16.TabIndex = 145;
@@ -647,7 +654,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(533, 67);
+            this.label9.Location = new System.Drawing.Point(605, 66);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 21);
             this.label9.TabIndex = 138;
@@ -658,7 +665,7 @@
             this.TXT_notes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TXT_notes.BackColor = System.Drawing.Color.White;
             this.TXT_notes.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_notes.Location = new System.Drawing.Point(321, 289);
+            this.TXT_notes.Location = new System.Drawing.Point(387, 289);
             this.TXT_notes.Multiline = true;
             this.TXT_notes.Name = "TXT_notes";
             this.TXT_notes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -670,7 +677,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(372, 66);
+            this.label10.Location = new System.Drawing.Point(453, 66);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 21);
             this.label10.TabIndex = 139;
@@ -681,7 +688,7 @@
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(382, 347);
+            this.label21.Location = new System.Drawing.Point(456, 347);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(84, 21);
             this.label21.TabIndex = 150;
@@ -692,7 +699,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(521, 344);
+            this.label12.Location = new System.Drawing.Point(592, 347);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 21);
             this.label12.TabIndex = 141;
@@ -703,7 +710,7 @@
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(206, 11);
+            this.label15.Location = new System.Drawing.Point(285, 12);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(89, 21);
             this.label15.TabIndex = 144;
@@ -714,7 +721,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(139, 345);
+            this.label17.Location = new System.Drawing.Point(213, 347);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(74, 21);
             this.label17.TabIndex = 146;
@@ -725,7 +732,7 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(523, 265);
+            this.label18.Location = new System.Drawing.Point(600, 265);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(67, 21);
             this.label18.TabIndex = 147;
@@ -737,7 +744,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(305, 40);
+            this.label2.Location = new System.Drawing.Point(371, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 21);
             this.label2.TabIndex = 151;
@@ -749,7 +756,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(-13, 39);
+            this.label19.Location = new System.Drawing.Point(3, 35);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(18, 21);
             this.label19.TabIndex = 155;
@@ -761,7 +768,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(305, 242);
+            this.label6.Location = new System.Drawing.Point(371, 242);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(18, 21);
             this.label6.TabIndex = 154;
@@ -773,7 +780,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(305, 193);
+            this.label5.Location = new System.Drawing.Point(371, 193);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 21);
             this.label5.TabIndex = 153;
@@ -785,7 +792,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(305, 144);
+            this.label3.Location = new System.Drawing.Point(371, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(18, 21);
             this.label3.TabIndex = 152;
@@ -797,7 +804,7 @@
             this.label_check_input_DT_bookRecive_date.AutoSize = true;
             this.label_check_input_DT_bookRecive_date.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_check_input_DT_bookRecive_date.ForeColor = System.Drawing.Color.Red;
-            this.label_check_input_DT_bookRecive_date.Location = new System.Drawing.Point(305, 95);
+            this.label_check_input_DT_bookRecive_date.Location = new System.Drawing.Point(371, 95);
             this.label_check_input_DT_bookRecive_date.Name = "label_check_input_DT_bookRecive_date";
             this.label_check_input_DT_bookRecive_date.Size = new System.Drawing.Size(18, 21);
             this.label_check_input_DT_bookRecive_date.TabIndex = 158;
@@ -809,7 +816,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(537, 119);
+            this.label11.Location = new System.Drawing.Point(608, 121);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 21);
             this.label11.TabIndex = 140;
@@ -820,22 +827,22 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(564, 167);
+            this.label13.Location = new System.Drawing.Point(636, 163);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 21);
+            this.label13.Size = new System.Drawing.Size(29, 21);
             this.label13.TabIndex = 142;
-            this.label13.Text = "مــــــــن";
+            this.label13.Text = "مــن";
             // 
             // label14
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(561, 213);
+            this.label14.Location = new System.Drawing.Point(635, 212);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(35, 21);
+            this.label14.Size = new System.Drawing.Size(28, 21);
             this.label14.TabIndex = 143;
-            this.label14.Text = "الــــــــى";
+            this.label14.Text = "الـى";
             // 
             // metroPanel3
             // 
@@ -845,7 +852,7 @@
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(43, 154);
+            this.metroPanel3.Location = new System.Drawing.Point(41, 161);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(122, 32);
             this.metroPanel3.TabIndex = 7;
@@ -944,14 +951,28 @@
             this.panel5.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel5.Location = new System.Drawing.Point(20, 30);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1148, 128);
+            this.panel5.Size = new System.Drawing.Size(1257, 128);
             this.panel5.TabIndex = 4;
+            // 
+            // BTN_LogOut
+            // 
+            this.BTN_LogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_LogOut.BackColor = System.Drawing.Color.Red;
+            this.BTN_LogOut.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_LogOut.ForeColor = System.Drawing.Color.White;
+            this.BTN_LogOut.Location = new System.Drawing.Point(1147, 12);
+            this.BTN_LogOut.Name = "BTN_LogOut";
+            this.BTN_LogOut.Size = new System.Drawing.Size(97, 37);
+            this.BTN_LogOut.TabIndex = 174;
+            this.BTN_LogOut.Text = "تسجيل الخروج";
+            this.BTN_LogOut.UseVisualStyleBackColor = false;
+            this.BTN_LogOut.Click += new System.EventHandler(this.BTN_LogOut_Click);
             // 
             // panel23
             // 
             this.panel23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel23.Controls.Add(this.LBL_permitionType);
-            this.panel23.Location = new System.Drawing.Point(800, 112);
+            this.panel23.Location = new System.Drawing.Point(909, 112);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(233, 21);
             this.panel23.TabIndex = 173;
@@ -970,7 +991,7 @@
             // 
             this.panel22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel22.Controls.Add(this.LBL_department);
-            this.panel22.Location = new System.Drawing.Point(800, 94);
+            this.panel22.Location = new System.Drawing.Point(909, 94);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(233, 21);
             this.panel22.TabIndex = 172;
@@ -989,7 +1010,7 @@
             // 
             this.panel21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel21.Controls.Add(this.LBL_USERNAME);
-            this.panel21.Location = new System.Drawing.Point(800, 74);
+            this.panel21.Location = new System.Drawing.Point(909, 74);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(233, 21);
             this.panel21.TabIndex = 171;
@@ -1011,7 +1032,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1038, 108);
+            this.label4.Location = new System.Drawing.Point(1147, 108);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label4.Size = new System.Drawing.Size(106, 19);
@@ -1027,7 +1048,8 @@
             this.LBL_ARCHIVEtitle.Font = new System.Drawing.Font("Microsoft Tai Le", 12.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_ARCHIVEtitle.ForeColor = System.Drawing.Color.Cornsilk;
             this.LBL_ARCHIVEtitle.Image = ((System.Drawing.Image)(resources.GetObject("LBL_ARCHIVEtitle.Image")));
-            this.LBL_ARCHIVEtitle.Location = new System.Drawing.Point(144, 35);
+            this.LBL_ARCHIVEtitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LBL_ARCHIVEtitle.Location = new System.Drawing.Point(106, 12);
             this.LBL_ARCHIVEtitle.Name = "LBL_ARCHIVEtitle";
             this.LBL_ARCHIVEtitle.Size = new System.Drawing.Size(158, 22);
             this.LBL_ARCHIVEtitle.TabIndex = 3;
@@ -1038,7 +1060,7 @@
             this.lbl_loginDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_loginDepartment.AutoSize = true;
             this.lbl_loginDepartment.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_loginDepartment.Location = new System.Drawing.Point(1034, 90);
+            this.lbl_loginDepartment.Location = new System.Drawing.Point(1143, 90);
             this.lbl_loginDepartment.Name = "lbl_loginDepartment";
             this.lbl_loginDepartment.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_loginDepartment.Size = new System.Drawing.Size(110, 19);
@@ -1051,7 +1073,7 @@
             this.lbl_LoginUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_LoginUsername.AutoSize = true;
             this.lbl_LoginUsername.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LoginUsername.Location = new System.Drawing.Point(1038, 70);
+            this.lbl_LoginUsername.Location = new System.Drawing.Point(1147, 70);
             this.lbl_LoginUsername.Name = "lbl_LoginUsername";
             this.lbl_LoginUsername.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_LoginUsername.Size = new System.Drawing.Size(105, 19);
@@ -1064,28 +1086,18 @@
             this.pictureBox1.BackColor = System.Drawing.Color.SandyBrown;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-24, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 73);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // BTN_LogOut
-            // 
-            this.BTN_LogOut.Location = new System.Drawing.Point(1042, 12);
-            this.BTN_LogOut.Name = "BTN_LogOut";
-            this.BTN_LogOut.Size = new System.Drawing.Size(93, 45);
-            this.BTN_LogOut.TabIndex = 174;
-            this.BTN_LogOut.Text = "تسجيل الخروج";
-            this.BTN_LogOut.UseVisualStyleBackColor = true;
-            this.BTN_LogOut.Click += new System.EventHandler(this.BTN_LogOut_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1188, 640);
+            this.ClientSize = new System.Drawing.Size(1297, 788);
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.panel5);

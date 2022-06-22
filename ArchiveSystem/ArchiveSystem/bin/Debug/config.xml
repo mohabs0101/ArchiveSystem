@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Config xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ScannerID>{6BDD1FC6-810F-11D0-BEC7-08002BE2092F}\0001</ScannerID>
   <ScannerName>CANON DR-C225 USB</ScannerName>
   <ButtonVID>0</ButtonVID>
