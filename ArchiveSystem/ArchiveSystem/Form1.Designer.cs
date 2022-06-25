@@ -734,9 +734,9 @@
             this.label18.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(600, 265);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(67, 21);
+            this.label18.Size = new System.Drawing.Size(65, 21);
             this.label18.TabIndex = 147;
-            this.label18.Text = "ملاحضات";
+            this.label18.Text = "ملاحظات";
             // 
             // label2
             // 

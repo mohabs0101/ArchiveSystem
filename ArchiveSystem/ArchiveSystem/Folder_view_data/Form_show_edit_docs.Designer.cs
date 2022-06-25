@@ -99,6 +99,7 @@
             this.TabControlBookdetails = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.pictureBox_show_doc = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
@@ -106,7 +107,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label_count_send = new System.Windows.Forms.Label();
             this.advanc_dgv_FollowUp = new Zuby.ADGV.AdvancedDataGridView();
-            this.pictureBox_show_doc = new System.Windows.Forms.PictureBox();
             this.panel5.SuspendLayout();
             this.panel14.SuspendLayout();
             this.ContextMenuStrip_right_click.SuspendLayout();
@@ -114,11 +114,11 @@
             this.TabControlBookdetails.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_show_doc)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel12.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_FollowUp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_show_doc)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -290,7 +290,7 @@
             this.btn_zoom_out.Name = "btn_zoom_out";
             this.btn_zoom_out.Size = new System.Drawing.Size(54, 28);
             this.btn_zoom_out.TabIndex = 7;
-            this.btn_zoom_out.Text = "تبعيد";
+            this.btn_zoom_out.Text = "تصغير";
             this.btn_zoom_out.UseVisualStyleBackColor = false;
             this.btn_zoom_out.Click += new System.EventHandler(this.btn_zoom_out_Click_1);
             // 
@@ -320,7 +320,7 @@
             this.btn_zoom_in.Name = "btn_zoom_in";
             this.btn_zoom_in.Size = new System.Drawing.Size(59, 28);
             this.btn_zoom_in.TabIndex = 6;
-            this.btn_zoom_in.Text = "تقريب";
+            this.btn_zoom_in.Text = "تكبير";
             this.btn_zoom_in.UseVisualStyleBackColor = false;
             this.btn_zoom_in.Click += new System.EventHandler(this.btn_zoom_in_Click_1);
             // 
@@ -973,6 +973,20 @@
             this.panel16.Size = new System.Drawing.Size(361, 604);
             this.panel16.TabIndex = 2;
             // 
+            // pictureBox_show_doc
+            // 
+            this.pictureBox_show_doc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_show_doc.BackColor = System.Drawing.Color.White;
+            this.pictureBox_show_doc.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_show_doc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox_show_doc.Name = "pictureBox_show_doc";
+            this.pictureBox_show_doc.Size = new System.Drawing.Size(358, 604);
+            this.pictureBox_show_doc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_show_doc.TabIndex = 1;
+            this.pictureBox_show_doc.TabStop = false;
+            // 
             // panel9
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1090,20 +1104,6 @@
             this.advanc_dgv_FollowUp.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advanc_dgv_FollowUp.TabIndex = 227;
             // 
-            // pictureBox_show_doc
-            // 
-            this.pictureBox_show_doc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_show_doc.BackColor = System.Drawing.Color.White;
-            this.pictureBox_show_doc.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox_show_doc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox_show_doc.Name = "pictureBox_show_doc";
-            this.pictureBox_show_doc.Size = new System.Drawing.Size(358, 604);
-            this.pictureBox_show_doc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_show_doc.TabIndex = 1;
-            this.pictureBox_show_doc.TabStop = false;
-            // 
             // Form_show_edit_docs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1123,11 +1123,11 @@
             this.TabControlBookdetails.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_show_doc)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.advanc_dgv_FollowUp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_show_doc)).EndInit();
             this.ResumeLayout(false);
 
         }

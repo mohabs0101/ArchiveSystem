@@ -65,22 +65,34 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
            
             WHERE(dbo.ArchiveBooks_TBL.BookDate between @Param1 and @Param2)
-
+            and (dbo.ArchiveBooks_TBL.Privacy like '%' + @Param3 + '%' )  
                 ", con);
 
-//AND(dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
+            //AND(dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
 
+
+            String v = "";
+            if (Login._permitionTYpeID == 1)
+            {
+                v = "";
+            }
+            else
+            {
+                v = "محدود";
+            }
             adapter.SelectCommand.Parameters.AddWithValue("@Param1", DT_bookDate_from.Value.Date);
             adapter.SelectCommand.Parameters.AddWithValue("@Param2", DateTime.Now);
+             
+                adapter.SelectCommand.Parameters.AddWithValue("@Param3", v);
             //adapter.SelectCommand.Parameters.AddWithValue("@Param3", DT_bookRecive_date_from.Value.Date);
             //adapter.SelectCommand.Parameters.AddWithValue("@Param4", DT_bookRecive_date_to.Value.Date);
 
             dt.Clear();
 
+
             adapter.Fill(dt);
+
              
-            
-            
             advanc_dgv_view_data_doc.DataSource = dt;
             Label2_count_doc.Text = Convert.ToString(BindingContext[dt].Count);
             Cursor = Cursors.Default;
