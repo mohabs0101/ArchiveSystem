@@ -102,6 +102,10 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
        
         public void Form_view_data_dqv_Load(object sender, EventArgs e)
         {
+            if (Login._permitionTYpeID == 1)//admin
+            {
+                btn_openInBrowser.Visible = true;
+            }
             this.Refresh();
 
             DT_bookDate_to.Value = DateTime.Now;
@@ -431,6 +435,11 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             }
 
            
+        }
+
+        private void btn_openInBrowser_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://192.168.10.11:9016/");
         }
     }
 }
