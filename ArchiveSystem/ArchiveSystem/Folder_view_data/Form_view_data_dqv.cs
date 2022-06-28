@@ -55,8 +55,8 @@ dbo.ArchiveBooks_TBL.Notes as [الملاحظات],
 dbo.Departments_TBL.DepartmentName as [القسم],
 dbo.Users_TBL.Username as [المستخدم],
 dbo.ArchiveBooks_TBL.BookStatus as [حالة الكتاب],
-dbo.ArchiveBooks_TBL.Privacy as [الخصوصية]
-
+dbo.ArchiveBooks_TBL.Privacy as [الخصوصية],
+dbo.ArchiveBooks_TBL.ArchiveBookID as [المعرف]
 
 FROM   dbo.ArchiveBooks_TBL INNER JOIN
                   dbo.Departments_TBL ON dbo.ArchiveBooks_TBL.DepartmentID_archivedBy = dbo.Departments_TBL.DepartmentID INNER JOIN
@@ -69,23 +69,24 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                 ", con);
 
             //AND(dbo.ArchiveBooks_TBL.InboundDate between @Param3 and @Param4)
+//adapter.SelectCommand.Parameters.AddWithValue("@Param3", DT_bookRecive_date_from.Value.Date);
+            //adapter.SelectCommand.Parameters.AddWithValue("@Param4", DT_bookRecive_date_to.Value.Date);
 
-
-            String v = "";
+            String Privacy = "";
             if (Login._permitionTYpeID == 1)
             {
-                v = "";
+                Privacy = "";
             }
             else
             {
-                v = "محدود";
+                Privacy = "محدود";
             }
             adapter.SelectCommand.Parameters.AddWithValue("@Param1", DT_bookDate_from.Value.Date);
             adapter.SelectCommand.Parameters.AddWithValue("@Param2", DateTime.Now);
              
-                adapter.SelectCommand.Parameters.AddWithValue("@Param3", v);
-            //adapter.SelectCommand.Parameters.AddWithValue("@Param3", DT_bookRecive_date_from.Value.Date);
-            //adapter.SelectCommand.Parameters.AddWithValue("@Param4", DT_bookRecive_date_to.Value.Date);
+                adapter.SelectCommand.Parameters.AddWithValue("@Param3", Privacy);
+
+            
 
             dt.Clear();
 
@@ -109,11 +110,11 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             fill_dgv_view_data_doc();
             //btn_fill_doc.PerformClick();
 
-           
+
             //for (int i = 0; i < advanc_dgv_view_data_doc.Columns.Count - 1; i++)
-            //   {
-            //    advanc_dgv_view_data_doc.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
-            //   }
+            //{
+            //    advanc_dgv_view_data_doc.Columns[i].SortMode = DataGridViewColumnSortMode.Programmatic;
+            //}
 
 
 
@@ -135,6 +136,9 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             advanc_dgv_view_data_doc.Columns[6].Width = 350;
             advanc_dgv_view_data_doc.Columns[8].Width = 180;
             advanc_dgv_view_data_doc.Columns[9].Width = 180;
+
+            //advanc_dgv_view_data_doc.Columns[18].Visible = false;
+
         }
 
         private void btn_search_claer_Click(object sender, EventArgs e)
@@ -411,6 +415,22 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
         private void panel3_MouseEnter(object sender, EventArgs e)
         {
             btn_fill_doc.PerformClick();
+        }
+
+        private void btn_sort_Click(object sender, EventArgs e)
+        {
+            if (btn_sort.Text == "ترتيب تصاعدي")
+            {
+                 advanc_dgv_view_data_doc.Sort(advanc_dgv_view_data_doc.Columns[18], System.ComponentModel.ListSortDirection.Descending);
+             btn_sort.Text = "ترتيب تنازلي";
+            }
+            else if (btn_sort.Text == "ترتيب تنازلي")
+            {
+                advanc_dgv_view_data_doc.Sort(advanc_dgv_view_data_doc.Columns[18], System.ComponentModel.ListSortDirection.Ascending);
+                  btn_sort.Text = "ترتيب تصاعدي";
+            }
+
+           
         }
     }
 }

@@ -166,39 +166,25 @@ namespace ArchiveSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           //اذا كان البرمشن متابعه ومهام قم بعرض تاب المتابعه والمهام فقط
+            //permition code
+            if (Login._permitionTYpeID == 1)//admin
+          {
 
-            //if (metroTabControl1.SelectedIndex == 1)
-            //{
-
-            //}
-
-
-
-
-                //اذا كان البرمشن متابعه ومهام قم بعرض تاب المتابعه والمهام فقط
-
-
-
-                int departmentID = Login._permitionTYpeID;
-            if (departmentID == 7)
-
-
-            {
-                //remove index 0 and set new indexes
-                metroTabControl1.TabPages.Remove(metroTabPage1);
-                books_list_index = 0;
-                followUp_index = 1;
-           
-            }
+          }
+          else
+          {
+            //remove index 0 and set new indexes
+           metroTabControl1.TabPages.Remove(metroTabPage1);
+           books_list_index = 0;
+           followUp_index = 1;
+          }
 
 
             //--------------moh------------------
-            // set indexes of comboboxes
-            if (departmentID != 7)
-            {
-                metroTabControl1.SelectTab(0);
-            }
-
+           
+            //metroTabControl1.SelectTab(0);
+           
 
 
             COM_PaperType.SelectedIndex = 0;

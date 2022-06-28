@@ -531,6 +531,19 @@ AND([ArchiveFollowUp].BookCode = @Param2)
         }
         private void Form_show_edit_docs_Load_1(object sender, EventArgs e)
         {
+            //permition code
+            if (Login._permitionTYpeID == 1)//admin
+            {
+
+            }
+            else
+            {
+                BTN_SAVE.Enabled = false;
+                BTN_addMoreDcos.Enabled = false;
+                TSM_delete.Enabled = false;
+            }
+
+
             TabControlBookdetails.SelectTab(0);
 
           
