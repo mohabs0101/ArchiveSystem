@@ -677,10 +677,10 @@
             // btn_sort
             // 
             this.btn_sort.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.btn_sort.Location = new System.Drawing.Point(299, 6);
+            this.btn_sort.Location = new System.Drawing.Point(278, 5);
             this.btn_sort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_sort.Name = "btn_sort";
-            this.btn_sort.Size = new System.Drawing.Size(111, 27);
+            this.btn_sort.Size = new System.Drawing.Size(99, 27);
             this.btn_sort.TabIndex = 422;
             this.btn_sort.Text = "ترتيب تصاعدي";
             this.btn_sort.UseVisualStyleBackColor = true;
@@ -688,12 +688,16 @@
             // 
             // btn_openInBrowser
             // 
-            this.btn_openInBrowser.Location = new System.Drawing.Point(697, 0);
+            this.btn_openInBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_openInBrowser.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_openInBrowser.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_openInBrowser.ForeColor = System.Drawing.Color.Cornsilk;
+            this.btn_openInBrowser.Location = new System.Drawing.Point(383, 5);
             this.btn_openInBrowser.Name = "btn_openInBrowser";
-            this.btn_openInBrowser.Size = new System.Drawing.Size(69, 36);
+            this.btn_openInBrowser.Size = new System.Drawing.Size(142, 27);
             this.btn_openInBrowser.TabIndex = 423;
             this.btn_openInBrowser.Text = "فتح في المتصفح";
-            this.btn_openInBrowser.UseVisualStyleBackColor = true;
+            this.btn_openInBrowser.UseVisualStyleBackColor = false;
             this.btn_openInBrowser.Visible = false;
             this.btn_openInBrowser.Click += new System.EventHandler(this.btn_openInBrowser_Click);
             // 
