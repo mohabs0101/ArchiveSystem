@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="archiveDataset" targetNamespace="http://tempuri.org/archiveDataset.xsd" xmlns:mstns="http://tempuri.org/archiveDataset.xsd" xmlns="http://tempuri.org/archiveDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ArchiveSystemConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ArchiveSystemConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ArchiveSystem.Properties.Settings.GlobalReference.Default.ArchiveSystemConnectionString3" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ArchiveSystemConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ArchiveSystemConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ArchiveSystem.Properties.Settings.GlobalReference.Default.ArchiveSystemConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ArchiveSystemConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+
+dbo.ArchiveBooks_TBL.BookCode  ,
+dbo.ArchiveBooks_TBL.BookNumber  ,
+dbo.ArchiveBooks_TBL.BookDate  ,
+dbo.ArchiveBooks_TBL.InboundNumber  ,
+dbo.ArchiveBooks_TBL.InboundDate ,
+dbo.ArchiveBooks_TBL.Subject  ,
+dbo.ArchiveBooks_TBL.SearchKeys ,
+dbo.BooksType_TBL.BookTypeName ,
+dbo.ArchiveBooks_TBL.[From],
+dbo.ArchiveBooks_TBL.[To] ,
+
+dbo.ArchiveBooks_TBL.BookPriority ,
+dbo.ArchiveBooks_TBL.ArchivedDate,
+dbo.ArchiveBooks_TBL.BookPaperType ,
+dbo.ArchiveBooks_TBL.Notes ,
+dbo.Departments_TBL.DepartmentName,
+dbo.Users_TBL.Username ,
+dbo.ArchiveBooks_TBL.BookStatus ,
+dbo.ArchiveBooks_TBL.Privacy
+ 
+
+FROM   dbo.ArchiveBooks_TBL INNER JOIN
+                  dbo.Departments_TBL ON dbo.ArchiveBooks_TBL.DepartmentID_archivedBy = dbo.Departments_TBL.DepartmentID
+				  INNER JOIN
+                  dbo.Users_TBL ON dbo.ArchiveBooks_TBL.UserID_archivedBy = dbo.Users_TBL.UserID
+				  INNER JOIN
+                  dbo.BooksType_TBL ON dbo.ArchiveBooks_TBL.BooksTypeID = dbo.BooksType_TBL.BooksTypeID
+
+           
+            </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BookCode" DataSetColumn="BookCode" />
+              <Mapping SourceColumn="BookNumber" DataSetColumn="BookNumber" />
+              <Mapping SourceColumn="BookDate" DataSetColumn="BookDate" />
+              <Mapping SourceColumn="InboundNumber" DataSetColumn="InboundNumber" />
+              <Mapping SourceColumn="InboundDate" DataSetColumn="InboundDate" />
+              <Mapping SourceColumn="Subject" DataSetColumn="Subject" />
+              <Mapping SourceColumn="SearchKeys" DataSetColumn="SearchKeys" />
+              <Mapping SourceColumn="BookTypeName" DataSetColumn="BookTypeName" />
+              <Mapping SourceColumn="From" DataSetColumn="From" />
+              <Mapping SourceColumn="To" DataSetColumn="To" />
+              <Mapping SourceColumn="BookPriority" DataSetColumn="BookPriority" />
+              <Mapping SourceColumn="ArchivedDate" DataSetColumn="ArchivedDate" />
+              <Mapping SourceColumn="BookPaperType" DataSetColumn="BookPaperType" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="DepartmentName" DataSetColumn="DepartmentName" />
+              <Mapping SourceColumn="Username" DataSetColumn="Username" />
+              <Mapping SourceColumn="BookStatus" DataSetColumn="BookStatus" />
+              <Mapping SourceColumn="Privacy" DataSetColumn="Privacy" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="archiveDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="archiveDataset" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="archiveDataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BookCode" msprop:Generator_ColumnPropNameInRow="BookCode" msprop:Generator_ColumnPropNameInTable="BookCodeColumn" msprop:Generator_ColumnVarNameInTable="columnBookCode" msprop:Generator_UserColumnName="BookCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookNumber" msprop:Generator_ColumnPropNameInRow="BookNumber" msprop:Generator_ColumnPropNameInTable="BookNumberColumn" msprop:Generator_ColumnVarNameInTable="columnBookNumber" msprop:Generator_UserColumnName="BookNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookDate" msprop:Generator_ColumnPropNameInRow="BookDate" msprop:Generator_ColumnPropNameInTable="BookDateColumn" msprop:Generator_ColumnVarNameInTable="columnBookDate" msprop:Generator_UserColumnName="BookDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InboundNumber" msprop:Generator_ColumnPropNameInRow="InboundNumber" msprop:Generator_ColumnPropNameInTable="InboundNumberColumn" msprop:Generator_ColumnVarNameInTable="columnInboundNumber" msprop:Generator_UserColumnName="InboundNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InboundDate" msprop:Generator_ColumnPropNameInRow="InboundDate" msprop:Generator_ColumnPropNameInTable="InboundDateColumn" msprop:Generator_ColumnVarNameInTable="columnInboundDate" msprop:Generator_UserColumnName="InboundDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Subject" msprop:Generator_ColumnPropNameInRow="Subject" msprop:Generator_ColumnPropNameInTable="SubjectColumn" msprop:Generator_ColumnVarNameInTable="columnSubject" msprop:Generator_UserColumnName="Subject" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SearchKeys" msprop:Generator_ColumnPropNameInRow="SearchKeys" msprop:Generator_ColumnPropNameInTable="SearchKeysColumn" msprop:Generator_ColumnVarNameInTable="columnSearchKeys" msprop:Generator_UserColumnName="SearchKeys" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookTypeName" msprop:Generator_ColumnPropNameInRow="BookTypeName" msprop:Generator_ColumnPropNameInTable="BookTypeNameColumn" msprop:Generator_ColumnVarNameInTable="columnBookTypeName" msprop:Generator_UserColumnName="BookTypeName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="From" msprop:Generator_ColumnPropNameInRow="From" msprop:Generator_ColumnPropNameInTable="FromColumn" msprop:Generator_ColumnVarNameInTable="columnFrom" msprop:Generator_UserColumnName="From" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="To" msprop:Generator_ColumnPropNameInRow="To" msprop:Generator_ColumnPropNameInTable="ToColumn" msprop:Generator_ColumnVarNameInTable="columnTo" msprop:Generator_UserColumnName="To" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookPriority" msprop:Generator_ColumnPropNameInRow="BookPriority" msprop:Generator_ColumnPropNameInTable="BookPriorityColumn" msprop:Generator_ColumnVarNameInTable="columnBookPriority" msprop:Generator_UserColumnName="BookPriority" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ArchivedDate" msprop:Generator_ColumnPropNameInRow="ArchivedDate" msprop:Generator_ColumnPropNameInTable="ArchivedDateColumn" msprop:Generator_ColumnVarNameInTable="columnArchivedDate" msprop:Generator_UserColumnName="ArchivedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BookPaperType" msprop:Generator_ColumnPropNameInRow="BookPaperType" msprop:Generator_ColumnPropNameInTable="BookPaperTypeColumn" msprop:Generator_ColumnVarNameInTable="columnBookPaperType" msprop:Generator_UserColumnName="BookPaperType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Notes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DepartmentName" msprop:Generator_ColumnPropNameInRow="DepartmentName" msprop:Generator_ColumnPropNameInTable="DepartmentNameColumn" msprop:Generator_ColumnVarNameInTable="columnDepartmentName" msprop:Generator_UserColumnName="DepartmentName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Username" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_UserColumnName="Username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookStatus" msprop:Generator_ColumnPropNameInRow="BookStatus" msprop:Generator_ColumnPropNameInTable="BookStatusColumn" msprop:Generator_ColumnVarNameInTable="columnBookStatus" msprop:Generator_UserColumnName="BookStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Privacy" msprop:Generator_ColumnPropNameInRow="Privacy" msprop:Generator_ColumnPropNameInTable="PrivacyColumn" msprop:Generator_ColumnVarNameInTable="columnPrivacy" msprop:Generator_UserColumnName="Privacy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

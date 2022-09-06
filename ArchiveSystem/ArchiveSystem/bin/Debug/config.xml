@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ScannerID>{6BDD1FC6-810F-11D0-BEC7-08002BE2092F}\0001</ScannerID>
+  <ScannerName>CANON DR-C225 USB</ScannerName>
+  <ButtonVID>0</ButtonVID>
+  <ButtonPID>0</ButtonPID>
+  <ButtonReadSize>0</ButtonReadSize>
+  <AutoConnect>false</AutoConnect>
+  <SavePath>C:\Users\mohab.MOHAMMED\Desktop\archivedocs\ذاتية</SavePath>
+  <ScanDpi>100</ScanDpi>
+  <ScanColor>1</ScanColor>
+  <ScanADF>true</ScanADF>
+  <ScanTryFlatbed>true</ScanTryFlatbed>
+  <StartMinimized>false</StartMinimized>
+  <ShowErrors>false</ShowErrors>
+</Config>
